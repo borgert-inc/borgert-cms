@@ -38,7 +38,8 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Laravel 5</div>
+                <div class="title">Rocket CMS</div>
+                <h4>Laravel 5.2</h4>
             </div>
         </div>
     </body>

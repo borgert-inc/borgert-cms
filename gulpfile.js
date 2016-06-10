@@ -11,6 +11,19 @@ var elixir = require('laravel-elixir');
  |
  */
 
+
+elixir.config.sourcemaps = false;
+
 elixir(function(mix) {
-    mix.sass('app.scss');
+
+    mix.less('app.less','public/assets/admin/css');
+    mix.scripts('app.js', 'public/assets/admin/js');
+
+  //   mix.browserSync({
+  //   	proxy: 'public/index.php',
+  //   	ui: {
+		//     port: 8000
+		// }
+  //   });
+
 });

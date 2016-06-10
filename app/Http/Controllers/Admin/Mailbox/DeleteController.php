@@ -15,12 +15,11 @@ class DeleteController extends Controller
 
         if(is_null($request->messages)){
             \Session::flash('info', 'Nenhuma mensagem foi selecionado.');
-        } else {
-
-            Mailbox::destroy($request->messages);
-            \Session::flash('success', 'A(s) mensagen(s) foram removida(s) com sucesso!');
-
+            return redirect()->route('admin.mailbox.inbox');
         }
+
+        Mailbox::destroy($request->messages);
+        \Session::flash('success', 'A(s) mensagen(s) foram removida(s) com sucesso!');
 
         return redirect()->route('admin.mailbox.inbox');
 

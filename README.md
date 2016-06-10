@@ -49,10 +49,55 @@ Em outro console iniciamos o gulp para assistir nossos arquivos less caso tiver 
 
 ## Estrutura e Diretórios:
 
+### Routes
+* Novas rotas para outros modulos do CMS devem ser apenas incluidas dentro da pasta `app/Http/Routes/Admin/` utilizando o prefixo ou como segue o modelo.
+
+``
+Route::group(['prefix' => 'blog', 'as' => 'blog.'], function() {
+	// Suas regras para rotas
+});
+``
+
+### Controllers
+* Os controllers são salvos dentro da pasta `app/Http/Controllers/Admin/`
+
+### Models
+* Os models são salvos dentro da pasta `app/Models/Admin/`
+
+### Assets
+* Utilizando o comando `gulp watch` em background ficará escutando os arquivos LESS, JS e caso tiver alguma alteração são compilados e salvos na pasta `public/assets/[css,js]/`
+
+
 ...
 
 ## Screenshots
 
+![alt tag](http://i.imgur.com/YChCpxi.png)
+
 ![alt tag](http://i.imgur.com/1jZasYG.png)
+
+-----
+
+## PHP Libraries
+
+* [laravel/laravel](https://github.com/laravel/laravel) - A PHP Framework For Web Artisans
+* [thomaswelton/laravel-gravatar](https://github.com/thomaswelton/laravel-gravatar) - Image gravatar
+
+-----
+
+## Javascript Libraries
+
+* Animate.css
+* Bootstrap
+* Chart.js
+* Font Awesome
+* Jquery
+* Jquery UI
+* Metis Menu
+* Pace
+* Slim Scroll
+* Summer Note
+
+Para novas libraries procure no site <a href="http://bower.io/search/">bower.io/search/</a> e utilize o comando `bower install X_PACKAGE_X --save` que irá instalar na pasta `public/assets/components/`
 
 

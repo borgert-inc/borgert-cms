@@ -109,7 +109,6 @@ class UsersController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(Request $request)
@@ -117,20 +116,21 @@ class UsersController extends Controller
 
         if(is_null($request->users)){
             \Session::flash('info', 'Nenhum usuário foi selecionado.');
-        } else {
-
-            $user = \Auth::user();
-
-            if(in_array($user->id, $request->users)){
-                \Session::flash('warning', 'Você não pode excluir seu próprio usuário!');
-            } else {
-                Users::destroy($request->users);
-                \Session::flash('success', 'O usuário(s) removido(s) com sucesso!');
-            }
-            
+            return redirect()->route('admin.users.list');
         }
 
+        $user = \Auth::user();
+
+        if(in_array($user->id, $request->users)){
+            \Session::flash('warning', 'Você não pode excluir seu próprio usuário!');
+            return redirect()->route('admin.users.list');
+        }
+
+        Users::destroy($request->users);
+        \Session::flash('success', 'O usuário(s) removido(s) com sucesso!');
+            
         return redirect()->route('admin.users.list');
 
     }
+
 }

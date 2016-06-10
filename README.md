@@ -4,7 +4,7 @@ Um simples CMS para iniciar projetos em Laravel 5.2.
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ad3c062e22ba4c25b8017041b619e217)](https://www.codacy.com/app/odirleiborgert/rocket-planet?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=odirleiborgert/rocket-planet&amp;utm_campaign=Badge_Grade)
 
 #### Quer participar?
-- Fazendo um pull request ou [crie issue](https://github.com/odirleiborgert/rocket-cms/issues).
+- Fazendo um pull request ou crie uma [issue](https://github.com/odirleiborgert/rocket-cms/issues).
 
 
 -----
@@ -131,9 +131,9 @@ Route::group(['prefix' => 'blog', 'as' => 'blog.'], function() {
 <a name="screenshots"></a>
 ## Screenshots
 
-![alt tag](http://i.imgur.com/YChCpxi.png)
+![alt tag](http://i.imgur.com/Ox6vGP1.png)
 
-![alt tag](http://i.imgur.com/1jZasYG.png)
+![alt tag](http://i.imgur.com/dQQKLzM.png)
 
 -----
 <a name="php-libraries"></a>

@@ -18,7 +18,7 @@
         
         <div class="middle-box text-center loginscreen animated fadeInDown">
             
-            <img src="{{ asset('assets/admin/img/rocket.png') }}" class="img-circle">
+            <img src="{{ asset('assets/admin/img/rocket-medium.png') }}" class="img-circle">
 
             <h3>Bem Vindo ao Rocket CMS</h3>
 

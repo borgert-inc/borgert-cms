@@ -109,14 +109,15 @@ class CategorysController extends Controller
     public function destroy(Request $request)
     {
         if(is_null($request->categorys)){
-            \Session::flash('info', 'Nenhuma categoria foi selecionada.');
-        } else {
-
-            Categorys::destroy($request->categorys);
-            \Session::flash('success', 'A(s) categorias(s) foram removida(s) com sucesso!');
             
-        }
+            \Session::flash('info', 'Nenhuma categoria foi selecionada.');
+            
+            return redirect()->route('admin.blog.categorys.list');
+        } 
 
+        Categorys::destroy($request->categorys);
+        \Session::flash('success', 'A(s) categorias(s) foram removida(s) com sucesso!');
+            
         return redirect()->route('admin.blog.categorys.list');
     }
 }

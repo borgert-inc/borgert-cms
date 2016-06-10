@@ -19,7 +19,7 @@ class TrashController extends Controller
         return view('admin.mailbox.trash', ['mailbox' => $mailbox]);
     }
 
-    public function trash(Request $request, $id)
+    public function trash($id)
     {
        
         $mailbox = Mailbox::find($id);

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\Security;
 
 use Auth;
+use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -19,9 +20,9 @@ class LoginController extends Controller
      *
      * @return Response
      */
-    public function authenticate()
+    public function authenticate(Request $request)
     {
-        if (Auth::attempt(['email' => $_POST['email'], 'password' => $_POST['password']])) {
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             return redirect()->route('admin.index');
         }
 

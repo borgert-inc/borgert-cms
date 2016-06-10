@@ -20,7 +20,7 @@ class ArchiveController extends Controller
     }
 
 
-    public function archive(Request $request, $id)
+    public function archive($id)
     {
        
         $mailbox = Mailbox::find($id);

@@ -121,12 +121,11 @@ class ContentsController extends Controller
     {
         if(is_null($request->contents)){
             \Session::flash('info', 'Nenhuma produto foi selecionado.');
-        } else {
-
-            Contents::destroy($request->contents);
-            \Session::flash('success', 'O(s) produto(s) foram removido(s) com sucesso!');
-            
+            return redirect()->route('admin.products.contents.list');
         }
+
+        Contents::destroy($request->contents);
+        \Session::flash('success', 'O(s) produto(s) foram removido(s) com sucesso!');
 
         return redirect()->route('admin.products.contents.list');
     }

@@ -125,13 +125,15 @@ class PostsController extends Controller
     {
         
         if(is_null($request->posts)){
-            \Session::flash('info', 'Nenhum post foi selecionado.');
-        } else {
-
-            Posts::destroy($request->posts);
-            \Session::flash('success', 'O(s) post(s) foram removido(s) com sucesso!');
             
-        }
+            \Session::flash('info', 'Nenhum post foi selecionado.');
+            
+            return redirect()->route('admin.blog.posts.list');
+
+        } 
+
+        Posts::destroy($request->posts);
+        \Session::flash('success', 'O(s) post(s) foram removido(s) com sucesso!');
 
         return redirect()->route('admin.blog.posts.list');
 

@@ -123,13 +123,13 @@ class ContentsController extends Controller
 
         if(is_null($request->contents)){
             \Session::flash('info', 'Nenhuma conteúdo foi selecionado.');
-        } else {
-
-            Contents::destroy($request->contents);
-            \Session::flash('success', 'O(s) conteúdos(s) foram removido(s) com sucesso!');
-            
+            return redirect()->route('admin.pages.contents.list');
         }
 
+        Contents::destroy($request->contents);
+        \Session::flash('success', 'O(s) conteúdos(s) foram removido(s) com sucesso!');
+
         return redirect()->route('admin.pages.contents.list');
+
     }
 }

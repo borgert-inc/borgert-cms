@@ -8,7 +8,7 @@ Um simples CMS para iniciar projetos em Laravel 5.2.
 ## Guia de Instalação:
 
 #### Passo 1: 
-Instalamos os plugins para os processos utilizados
+Instalamos gulp, laravel-elixir, bootstrap-sass e demais pacotes via npm.
 ``` bash
 npm install
 ```
@@ -79,10 +79,10 @@ Route::group(['prefix' => 'blog', 'as' => 'blog.'], function() {
 * Os models são salvos dentro da pasta `app/Models/Admin/`
 
 ### Assets
-* Utilizando o comando `gulp watch` em background ficará escutando os arquivos LESS, JS e caso tiver alguma alteração são compilados e salvos na pasta `public/assets/[css,js]/`
+* Utilizando o comando `gulp watch` em background ficará escutando os arquivos LESS, JS que está  no diretório `resources/assets/[js,less,sass]` e quando for detectado alguma neles são compilados e salvos na pasta `public/assets/[css,js]/`
 
 
-...
+-----
 
 ## Screenshots
 

@@ -165,6 +165,6 @@ Para novas libraries procure no site <a href="http://bower.io/search/">bower.io/
 <a name="licenca"></a>
 ## Licença
 
-Este é um software livre distribuído sob os termos da licença MIT
+Este é um software livre distribuído sob os termos da licença MIT. © [Odirlei Borgert](http://www.odirleiborgert.com.br)
 
 -----

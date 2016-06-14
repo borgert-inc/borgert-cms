@@ -19,9 +19,13 @@
         <!-- Animate.css -->
         <link href="{!! asset('assets/components/animate.css/animate.min.css') !!}" rel="stylesheet">
 
+
         <!-- App -->
         <link href="{!! asset('assets/admin/css/app.css') !!}" rel="stylesheet">
 
+        <!-- Blueimp Jquery File Upload -->
+        <link href="{!! asset('assets/components/blueimp-file-upload/css/jquery.fileupload.css') !!}" rel="stylesheet">
+        <link href="{!! asset('assets/components/blueimp-file-upload/css/jquery.fileupload-ui.css') !!}" rel="stylesheet">
     </head>
     <body class="fixed-sidebar">
         <div id="wrapper">
@@ -62,6 +66,7 @@
                                 <li><a href="{{ route('admin.products.contents.list') }}">Conteúdos</a></li>
                             </ul>
                         </li>
+                        <li><a href="{{ route('admin.gallerys.list') }}"><i class="fa fa-photo"></i> <span class="nav-label">Galerias de Imagens</span></a></li>
                         <li><a href="{{ route('admin.mailbox.inbox') }}"><i class="fa fa-envelope"></i> <span class="nav-label">Mailbox</span></a></li>
                         <li><a href="{{ route('admin.users.list') }}"><i class="fa fa-users"></i> <span class="nav-label">Usuários</span></a></li>
                     </ul>
@@ -103,6 +108,7 @@
             </div>
         </div>
 
+
         <!-- Mainly scripts -->
         <script src="{!! asset('assets/components/jquery/dist/jquery.min.js') !!}"></script>
 
@@ -126,8 +132,43 @@
         <!-- Pace (Loading) -->
         <script src="{!! asset('assets/components/pace/pace.min.js') !!}"></script>
 
+        @include('admin._inc.fileupload.upload')
+        @include('admin._inc.fileupload.download')
+
+        <!-- Blueimp Jquery File Upload -->
+        <script src="{!! asset('assets/components/blueimp-file-upload/js/vendor/jquery.ui.widget.js') !!}"></script>
+        <script src="{!! asset('assets/components/blueimp-tmpl/js/tmpl.min.js') !!}"></script>
+        <script src="{!! asset('assets/components/blueimp-load-image/js/load-image.all.min.js') !!}"></script>
+        <script src="{!! asset('assets/components/blueimp-canvas-to-blob/js/canvas-to-blob.min.js') !!}"></script>
+        <script src="{!! asset('assets/components/blueimp-file-upload/js/jquery.iframe-transport.js') !!}"></script>
+        <script src="{!! asset('assets/components/blueimp-file-upload/js/jquery.fileupload.js') !!}"></script>
+        <script src="{!! asset('assets/components/blueimp-file-upload/js/jquery.fileupload-process.js') !!}"></script>
+        <script src="{!! asset('assets/components/blueimp-file-upload/js/jquery.fileupload-image.js') !!}"></script>
+        <script src="{!! asset('assets/components/blueimp-file-upload/js/jquery.fileupload-audio.js') !!}"></script>
+        <script src="{!! asset('assets/components/blueimp-file-upload/js/jquery.fileupload-video.js') !!}"></script>
+        <script src="{!! asset('assets/components/blueimp-file-upload/js/jquery.fileupload-validate.js') !!}"></script>
+        <script src="{!! asset('assets/components/blueimp-file-upload/js/jquery.fileupload-ui.js') !!}"></script>
+
         <!-- App -->
         <script src="{!! asset('assets/admin/js/app.js') !!}"></script>
+
+        <script>
+
+            
+            // var existingfiles = { { $images }};
+
+            // Initialize the jQuery File Upload widget:
+            $('.fileupload').fileupload({
+                // Uncomment the following to send cross-domain cookies:
+                //xhrFields: {withCredentials: true},
+                url: '/admin/gallerys/upload'
+            });
+
+            if (typeof existingfiles !== 'undefined'){
+                $('.fileupload').fileupload('option', 'done').call($('.fileupload'), $.Event('done'), {result: existingfiles});
+            };
+
+        </script>
 
     </body>
 </html>

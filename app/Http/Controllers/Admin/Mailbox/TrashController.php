@@ -14,7 +14,7 @@ class TrashController extends Controller
 
     public function index()
     {
-    	$mailbox = Mailbox::where('map','TRASH')->paginate(10);
+    	$mailbox = Mailbox::where('map','TRASH')->orderBy('created_at', 'desc')->paginate(10);
 
         return view('admin.mailbox.trash', ['mailbox' => $mailbox]);
     }

@@ -19,7 +19,7 @@ class ContentsController extends Controller
     public function index()
     {
 
-        $contents = Contents::paginate(10);
+        $contents = Contents::orderBy('created_at', 'desc')->paginate(10);
 
         return view('admin.pages.contents.list', ['contents' => $contents]);
     }

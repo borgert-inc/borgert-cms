@@ -14,7 +14,7 @@ class ArchiveController extends Controller
 
     public function index()
     {
-    	$mailbox = Mailbox::where('map','ARCHIVE')->paginate(10);
+    	$mailbox = Mailbox::where('map','ARCHIVE')->orderBy('created_at', 'desc')->paginate(10);
 
         return view('admin.mailbox.archive', ['mailbox' => $mailbox]);
     }

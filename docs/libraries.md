@@ -1,5 +1,5 @@
 
-# Libraries - [Rocket CMS](../readme.md)
+# Libraries - Rocket CMS
 
 -----
 #### PHP Libraries

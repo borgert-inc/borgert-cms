@@ -1,5 +1,5 @@
 
-# Guia de Uso - [Rocket CMS](../readme.md)
+# Guia de Uso - Rocket CMS
 
 ## Routes
 * Novas rotas para outros modulos do CMS devem ser apenas incluidas dentro da pasta `app/Http/Routes/Admin/` utilizando o prefixo ou como segue o modelo.

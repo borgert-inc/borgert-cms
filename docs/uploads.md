@@ -1,5 +1,5 @@
 
-# Uploads [Rocket CMS](../readme.md)
+# Uploads - Rocket CMS
 
 Utilizaremos a librarie [Blueimp - jQuery File Upload](https://github.com/blueimp/jQuery-File-Upload).
 Para implantarmos upload de arquivos em outros módulos no Rocket CMS utilizaremos o passo a passo abaixo.

@@ -1,5 +1,5 @@
 
-# Modulos - [Rocket CMS](readme.md)
+# Modulos - [Rocket CMS](../readme.md)
 
 1. Blog
 	* Categorias

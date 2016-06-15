@@ -1,5 +1,5 @@
 
-# Guia de Instalação - [Rocket CMS](readme.md)
+# Guia de Instalação - [Rocket CMS](../readme.md)
 
 #### Passo 1: 
 Instalamos gulp, laravel-elixir, bootstrap-sass e demais pacotes via npm.

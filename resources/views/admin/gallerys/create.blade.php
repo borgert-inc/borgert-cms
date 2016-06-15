@@ -103,6 +103,8 @@
         // Initialize the jQuery File Upload widget:
         $('.fileupload').fileupload({
             autoUpload: true,
+            acceptFileTypes: /(\.|\/)(gif|jpe?g|png|bmp)$/i,
+            maxFileSize: 10240000, // 10 MB
             url: '{{ route('admin.gallerys.upload') }}',
         });
 
@@ -118,19 +120,6 @@
         }).done(function (result) {
             $(this).fileupload('option', 'done').call(this, $.Event('done'), {result: result});
         });
-
-
-
-// $('#post-form').fileupload({
-//        url: 'http://example.com/upload',
-//         autoUpload: true,
-//         previewMaxWidth: 120,
-//         previewMaxHeight: 90,
-//         acceptFileTypes: /(\.|\/)(gif|jpe?g|png|bmp)$/i,
-//         maxFileSize: 10240000, // 10 MB
-//         minFileSize: undefined, // No minimal file size
-//         maxNumberOfFiles: 20
-//     });
 
     </script>
 

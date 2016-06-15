@@ -101,6 +101,8 @@
         // Initialize the jQuery File Upload widget:
         $('.fileupload').fileupload({
             autoUpload: true,
+            acceptFileTypes: /(\.|\/)(gif|jpe?g|png|bmp)$/i,
+            maxFileSize: 10240000, // 10 MB
             url: '{{ route('admin.gallerys.upload',$gallery->id) }}' ,
         });
 

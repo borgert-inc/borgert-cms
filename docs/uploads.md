@@ -106,6 +106,8 @@ Para as views teremos inclusão de CSS, Javascript e HTML.
     // Initialize the jQuery File Upload widget:
     $('.fileupload').fileupload({
         autoUpload: true,
+        acceptFileTypes: /(\.|\/)(gif|jpe?g|png|bmp)$/i,
+        maxFileSize: 10240000, // 10 MB
         url: '{{ route('admin.module.upload') }}',
     });
 
@@ -137,6 +139,8 @@ Para as views teremos inclusão de CSS, Javascript e HTML.
     // Initialize the jQuery File Upload widget:
     $('.fileupload').fileupload({
         autoUpload: true,
+        acceptFileTypes: /(\.|\/)(gif|jpe?g|png|bmp)$/i,
+        maxFileSize: 10240000, // 10 MB
         url: '{{ route('admin.module.upload',$registro->id) }}',
     });
 

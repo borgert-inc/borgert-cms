@@ -1,6 +1,9 @@
 <div align="center">
 	<h1>Rocket CMS</h1>
-	<p>Um simples CMS para iniciar projetos em Laravel 5.2.</p>
+	<p>
+		Um simples CMS para iniciar projetos em Laravel 5.2 contendo alguns módulos. <br>
+		Blog, Páginas, Produtos,  Mailbox, Banco de Imagens e Usuários.
+	</p>
 	<br>
 	<img src="http://i.imgur.com/uDYYTwS.png" width="250px">
 	<br>

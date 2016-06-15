@@ -22,7 +22,7 @@ class GallerysController extends Controller
     public function index()
     {
 
-        $gallerys = Gallerys::paginate(10);
+        $gallerys = Gallerys::orderBy('created_at','desc')->paginate(10);
 
         return view('admin.gallerys.list',['gallerys' => $gallerys]);
 
@@ -36,8 +36,6 @@ class GallerysController extends Controller
     public function create()
     {
 
-        // TODO: Devemos trazer já as imagens da pasta TEMP caso exista
-        
         return view('admin.gallerys.create');
 
     }
@@ -65,7 +63,8 @@ class GallerysController extends Controller
 
         $gallery->save();
 
-        $path_from = 'gallerys/temp/';
+        $user = \Auth::User();
+        $path_from = 'gallerys/temp-' . $user->id . '/';
         $path_to = 'gallerys/' . $gallery->id;
 
         if(\Storage::disk('uploads')->exists($path_from)){
@@ -89,10 +88,7 @@ class GallerysController extends Controller
 
         $gallery = Gallerys::find($id);
 
-        // Pegamos as imagens da galeria
-        $images = \Storage::disk('uploads')->files('gallerys/' . $id);
-
-        return view('admin.gallerys.edit',['gallery' => $gallery, 'images' => $images]);
+        return view('admin.gallerys.edit',['gallery' => $gallery]);
 
     }
 
@@ -162,10 +158,12 @@ class GallerysController extends Controller
     }
 
 
-    public function upload(Request $request, $id)
+    public function upload(Request $request, $id = null)
     {
 
-        $path = 'temp';
+        $user = \Auth::User();
+
+        $path = 'temp-' . $user->id;
 
         if(is_numeric($id)){
             $path = $id;

@@ -12,11 +12,7 @@
             </td>
             <td>
                 <span class="name">
-                    {% if (file.url) { %}
-                        <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" {%=file.thumbnailUrl?'data-gallery':''%}>{%=file.name%}</a>
-                    {% } else { %}
-                        <span>{%=file.name%}</span>
-                    {% } %}
+                    <span>{%=file.name%}</span>
                 </span>
                 {% if (file.error) { %}
                     <div><span class="label label-danger">Error</span> {%=file.error%}</div>
@@ -31,7 +27,6 @@
                         <i class="fa fa-trash"></i>
                         <span>Deletar</span>
                     </button>
-                    <!-- <input type="checkbox" name="delete" value="1" class="toggle"> -->
                 {% } else { %}
                     <button class="btn btn-warning cancel">
                         <i class="fa fa-ban-circle"></i>

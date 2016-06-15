@@ -6,20 +6,6 @@
             <span>Adicionar Imagem</span>
             <input type="file" name="files[]" multiple>
         </span>
-        <button type="submit" class="btn btn-primary start">
-            <i class="fa fa-upload"></i>
-            <span>Enviar Arquivos</span>
-        </button>
-        <button type="reset" class="btn btn-warning cancel">
-            <i class="fa fa-ban"></i>
-            <span>Cancelar upload</span>
-        </button>
-        <button type="button" class="btn btn-danger delete">
-            <i class="fa fa-trash"></i>
-            <span>Deletar</span>
-        </button>
-        <!-- <input type="checkbox" class="toggle"> -->
-        <!-- The global file processing state -->
         <span class="fileupload-process"></span>
     </div>
     <!-- The global progress state -->

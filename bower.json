@@ -32,6 +32,7 @@
     "PACE": "pace#^1.0.2",
     "jquery-ui": "^1.11.4",
     "Chart.js": "chartjs#^2.1.4",
-    "summernote": "^0.8.1"
+    "summernote": "^0.8.1",
+    "blueimp-file-upload": "^9.12.5"
   }
 }

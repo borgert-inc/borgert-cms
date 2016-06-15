@@ -165,20 +165,33 @@ class GallerysController extends Controller
     public function upload(Request $request, $id)
     {
 
+        $path = 'temp';
+
+        if(is_numeric($id)){
+            $path = $id;
+        }
+
         $config = array(
-            // 'script_url' => 'admin/gallerys/upload',
-            'upload_dir' => base_path() . '/public/uploads/gallerys/temp/',
-            'upload_url' => url('/') . '/uploads/gallerys/temp/',
-            'delete_type' => 'POST',
-            // 'image_versions' => array(
-                // 'thumbnail' => array(
-                    // 'max_width' => 180,
-                    // 'max_height' => 180,
-                    // 'upload_dir' => base_path() . '/public/uploads/gallerys/thumbnails/',
-                    // 'upload_url' => url('/') . '/uploads/gallerys/thumbnails/',
-                // ),
-            // ),
+            'script_url' => '/admin/gallerys/upload/' . $path . '/',
+            'upload_dir' => base_path() . '/public/uploads/gallerys/' . $path . '/',
+            'upload_url' => url('/') . '/uploads/gallerys/' . $path . '/',
+            'delete_type' => 'GET'
         );
+
+
+        // Deletamos a imagem por GET
+        if(isset($_GET['file'])){
+
+            $file = 'gallerys/' . $path . '/' . $_GET['file'];
+            if(\Storage::disk('uploads')->has($file)){
+                \Storage::disk('uploads')->delete($file);
+            }
+
+            $thumb = 'gallerys/' . $path . '/thumbnail/' . $_GET['file'];
+            if(\Storage::disk('uploads')->has($thumb)){
+                \Storage::disk('uploads')->delete($thumb);
+            }
+        }
 
         new UploadHandler($config);
 

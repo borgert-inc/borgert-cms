@@ -11,14 +11,14 @@
             <span>Enviar Arquivos</span>
         </button>
         <button type="reset" class="btn btn-warning cancel">
-            <i class="glyphicon glyphicon-ban-circle"></i>
-            <span>Cancel upload</span>
+            <i class="fa fa-ban"></i>
+            <span>Cancelar upload</span>
         </button>
         <button type="button" class="btn btn-danger delete">
-            <i class="glyphicon glyphicon-trash"></i>
-            <span>Delete</span>
+            <i class="fa fa-trash"></i>
+            <span>Deletar</span>
         </button>
-        <input type="checkbox" class="toggle">
+        <!-- <input type="checkbox" class="toggle"> -->
         <!-- The global file processing state -->
         <span class="fileupload-process"></span>
     </div>
@@ -33,6 +33,6 @@
     </div>
 </div>
 <!-- The table listing the files available for upload/download -->
-<table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
+<table role="presentation" class="table table-striped table-align-middle"><tbody class="files"></tbody></table>
 
 

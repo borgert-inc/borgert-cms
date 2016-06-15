@@ -2,6 +2,16 @@
 
 @section('title', 'Editar galeria ', @parent)
 
+@section('stylesheet')
+
+    @parent
+    
+    <!-- Blueimp Jquery File Upload -->
+    <link href="{!! asset('assets/components/blueimp-file-upload/css/jquery.fileupload.css') !!}" rel="stylesheet">
+    <link href="{!! asset('assets/components/blueimp-file-upload/css/jquery.fileupload-ui.css') !!}" rel="stylesheet">
+
+@show
+
 @section('actions')
 	<a href="{{ route('admin.gallerys.list') }}" class="btn btn-default"><i class="fa fa-angle-left"></i> Voltar</a>
 @endsection
@@ -10,17 +20,12 @@
 	
 	@section('subtitle', 'Editar galeria')
 
-    @foreach($images as $id)
-        {{ $id }} <br>
-    @endforeach
-
     <div class="tabs-container">
 
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#tab-conteudo"> Conteúdo</a></li>
             <li><a data-toggle="tab" href="#tab-imagens"> Imagens</a></li>
         </ul>
-
 
 		<form action="{{ route('admin.gallerys.update',$gallery->id) }}" class="fileupload" method="post" enctype="multipart/form-data">
             <div class="tab-content">
@@ -68,3 +73,50 @@
 	</div>
 
 @endsection
+
+
+@section('javascript')
+
+    @parent
+
+    @include('admin._inc.fileupload.upload')
+    @include('admin._inc.fileupload.download')
+
+    <!-- Blueimp Jquery File Upload -->
+    <script type="text/javascript" src="{!! asset('assets/components/blueimp-file-upload/js/vendor/jquery.ui.widget.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('assets/components/blueimp-tmpl/js/tmpl.min.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('assets/components/blueimp-load-image/js/load-image.all.min.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('assets/components/blueimp-canvas-to-blob/js/canvas-to-blob.min.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('assets/components/blueimp-file-upload/js/jquery.iframe-transport.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('assets/components/blueimp-file-upload/js/jquery.fileupload.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('assets/components/blueimp-file-upload/js/jquery.fileupload-process.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('assets/components/blueimp-file-upload/js/jquery.fileupload-image.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('assets/components/blueimp-file-upload/js/jquery.fileupload-audio.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('assets/components/blueimp-file-upload/js/jquery.fileupload-video.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('assets/components/blueimp-file-upload/js/jquery.fileupload-validate.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('assets/components/blueimp-file-upload/js/jquery.fileupload-ui.js') !!}"></script>
+
+    <script type="text/javascript">
+        
+        // Initialize the jQuery File Upload widget:
+        $('.fileupload').fileupload({
+            autoUpload: true,
+            url: '{{ route('admin.gallerys.upload',$gallery->id) }}' ,
+        });
+
+         // Load existing files:
+        $('.fileupload').addClass('fileupload-processing');
+
+        $.ajax({
+            url: $('.fileupload').fileupload('option', 'url'),
+            dataType: 'json',
+            context: $('.fileupload')[0]
+        }).always(function () {
+            $(this).removeClass('fileupload-processing');
+        }).done(function (result) {
+            $(this).fileupload('option', 'done').call(this, $.Event('done'), {result: result});
+        });
+
+    </script>
+
+@stop

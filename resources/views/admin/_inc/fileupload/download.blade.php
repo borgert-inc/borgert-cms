@@ -11,13 +11,13 @@
                 </span>
             </td>
             <td>
-                <p class="name">
+                <span class="name">
                     {% if (file.url) { %}
                         <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" {%=file.thumbnailUrl?'data-gallery':''%}>{%=file.name%}</a>
                     {% } else { %}
                         <span>{%=file.name%}</span>
                     {% } %}
-                </p>
+                </span>
                 {% if (file.error) { %}
                     <div><span class="label label-danger">Error</span> {%=file.error%}</div>
                 {% } %}
@@ -25,17 +25,17 @@
             <td>
                 <span class="size">{%=o.formatFileSize(file.size)%}</span>
             </td>
-            <td>
+            <td class="text-right">
                 {% if (file.deleteUrl) { %}
                     <button class="btn btn-danger delete" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
-                        <i class="glyphicon glyphicon-trash"></i>
-                        <span>Delete</span>
+                        <i class="fa fa-trash"></i>
+                        <span>Deletar</span>
                     </button>
-                    <input type="checkbox" name="delete" value="1" class="toggle">
+                    <!-- <input type="checkbox" name="delete" value="1" class="toggle"> -->
                 {% } else { %}
                     <button class="btn btn-warning cancel">
-                        <i class="glyphicon glyphicon-ban-circle"></i>
-                        <span>Cancel</span>
+                        <i class="fa fa-ban-circle"></i>
+                        <span>Cancelar</span>
                     </button>
                 {% } %}
             </td>

@@ -6,21 +6,29 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
         <title>@yield('title') | Rocket CMS</title>
-        
-        <!-- Bootstrap -->
-        <link href="{!! asset('assets/components/bootstrap/dist/css/bootstrap.min.css') !!}" rel="stylesheet">
 
-        <!-- Font Awesome Icons -->
-        <link href="{!! asset('assets/components/font-awesome/css/font-awesome.min.css') !!}" rel="stylesheet">
+        @section('stylesheet')
         
-        <!-- Summernote -->
-        <link href="{!! asset('assets/components/summernote/dist/summernote.css') !!}" rel="stylesheet">
-        
-        <!-- Animate.css -->
-        <link href="{!! asset('assets/components/animate.css/animate.min.css') !!}" rel="stylesheet">
+            <!-- Bootstrap -->
+            <link href="{!! asset('assets/components/bootstrap/dist/css/bootstrap.min.css') !!}" rel="stylesheet">
 
-        <!-- App -->
-        <link href="{!! asset('assets/admin/css/app.css') !!}" rel="stylesheet">
+            <!-- Font Awesome Icons -->
+            <link href="{!! asset('assets/components/font-awesome/css/font-awesome.min.css') !!}" rel="stylesheet">
+            
+            <!-- Summernote -->
+            <link href="{!! asset('assets/components/summernote/dist/summernote.css') !!}" rel="stylesheet">
+            
+            <!-- Animate.css -->
+            <link href="{!! asset('assets/components/animate.css/animate.min.css') !!}" rel="stylesheet">
+            
+            <!-- Blueimp Jquery File Upload -->
+            <link href="{!! asset('assets/components/blueimp-file-upload/css/jquery.fileupload.css') !!}" rel="stylesheet">
+            <link href="{!! asset('assets/components/blueimp-file-upload/css/jquery.fileupload-ui.css') !!}" rel="stylesheet">
+
+            <!-- App -->
+            <link href="{!! asset('assets/admin/css/app.css') !!}" rel="stylesheet">
+
+        @show
 
     </head>
     <body class="fixed-sidebar">
@@ -62,6 +70,7 @@
                                 <li><a href="{{ route('admin.products.contents.list') }}">Conteúdos</a></li>
                             </ul>
                         </li>
+                        <li><a href="{{ route('admin.gallerys.list') }}"><i class="fa fa-photo"></i> <span class="nav-label">Galerias de Imagens</span></a></li>
                         <li><a href="{{ route('admin.mailbox.inbox') }}"><i class="fa fa-envelope"></i> <span class="nav-label">Mailbox</span></a></li>
                         <li><a href="{{ route('admin.users.list') }}"><i class="fa fa-users"></i> <span class="nav-label">Usuários</span></a></li>
                     </ul>
@@ -96,38 +105,42 @@
                 
                 <!-- Footer -->
                 <div class="footer">
-                    <div class="pull-right"><a href="https://github.com/odirleiborgert/rocket-cms" target="_blank"><u>Open Source</u> <i class="fa fa-github"></i></a> - <strong>v.0.0.2</strong></div>
+                    <div class="pull-right"><a href="https://github.com/odirleiborgert/rocket-cms" target="_blank"><u>Open Source</u> <i class="fa fa-github"></i></a> - <strong>v.0.0.3</strong></div>
                     <div><strong>Rocket CMS</strong> - {{ date('Y') }}</div>
                 </div>
 
             </div>
         </div>
 
-        <!-- Mainly scripts -->
-        <script src="{!! asset('assets/components/jquery/dist/jquery.min.js') !!}"></script>
+        @section('javascript')
 
-        <!-- jQuery UI -->
-        <script src="{!! asset('assets/components/jquery-ui/jquery-ui.min.js') !!}"></script>
+            <!-- Mainly scripts -->
+            <script type="text/javascript" src="{!! asset('assets/components/jquery/dist/jquery.min.js') !!}"></script>
 
-        <!-- Bootstrap -->
-        <script src="{!! asset('assets/components/bootstrap/dist/js/bootstrap.min.js') !!}"></script>
-        
-        <!-- Menu (Scroll && Toogle ) -->
-        <script src="{!! asset('assets/components/slimScroll/jquery.slimscroll.min.js') !!}"></script>
-        <script src="{!! asset('assets/components/metisMenu/dist/metisMenu.min.js') !!}"></script>
+            <!-- jQuery UI -->
+            <script type="text/javascript" src="{!! asset('assets/components/jquery-ui/jquery-ui.min.js') !!}"></script>
 
-        <!-- ChartJS-->
-        <script src="{!! asset('assets/components/Chart.js/dist/Chart.min.js') !!}"></script>
+            <!-- Bootstrap -->
+            <script type="text/javascript" src="{!! asset('assets/components/bootstrap/dist/js/bootstrap.min.js') !!}"></script>
+            
+            <!-- Menu (Scroll && Toogle ) -->
+            <script type="text/javascript" src="{!! asset('assets/components/slimScroll/jquery.slimscroll.min.js') !!}"></script>
+            <script type="text/javascript" src="{!! asset('assets/components/metisMenu/dist/metisMenu.min.js') !!}"></script>
 
-        <!-- Summernote (Editor) -->
-        <script src="{!! asset('assets/components/summernote/dist/summernote.min.js') !!}"></script>
-        <script src="{!! asset('assets/components/summernote/dist/lang/summernote-pt-BR.min.js') !!}"></script>
+            <!-- ChartJS-->
+            <script type="text/javascript" src="{!! asset('assets/components/Chart.js/dist/Chart.min.js') !!}"></script>
 
-        <!-- Pace (Loading) -->
-        <script src="{!! asset('assets/components/pace/pace.min.js') !!}"></script>
+            <!-- Summernote (Editor) -->
+            <script type="text/javascript" src="{!! asset('assets/components/summernote/dist/summernote.min.js') !!}"></script>
+            <script type="text/javascript" src="{!! asset('assets/components/summernote/dist/lang/summernote-pt-BR.min.js') !!}"></script>
 
-        <!-- App -->
-        <script src="{!! asset('assets/admin/js/app.js') !!}"></script>
+            <!-- Pace (Loading) -->
+            <script type="text/javascript" src="{!! asset('assets/components/pace/pace.min.js') !!}"></script>
+
+            <!-- App -->
+            <script type="text/javascript" src="{!! asset('assets/admin/js/app.js') !!}"></script>
+
+        @show
 
     </body>
 </html>

@@ -27,6 +27,8 @@
 <a name="updates"></a>
 ## Updates
 
+* v0.0.4
+	* Adicionado campos para SEO (title,description)
 * v0.0.3
 	* Módulo Galeria de Imagens
 	* Guia de utilização para upload de arquivos com [Blueimp - jQuery File Upload](https://github.com/blueimp/jQuery-File-Upload)

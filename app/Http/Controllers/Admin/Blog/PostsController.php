@@ -59,6 +59,8 @@ class PostsController extends Controller
         $post->title = $request->title;
         $post->content = $request->content;
         $post->status = $request->status;
+        $post->seo_title = $request->seo_title;
+        $post->seo_description = $request->seo_description;
 
         $post->save();
 
@@ -106,6 +108,8 @@ class PostsController extends Controller
         $post->title = $request->title;
         $post->content = $request->content;
         $post->status = $request->status;
+        $post->seo_title = $request->seo_title;
+        $post->seo_description = $request->seo_description;
 
         $post->save();
 

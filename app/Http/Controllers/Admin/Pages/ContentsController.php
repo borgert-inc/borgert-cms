@@ -59,6 +59,8 @@ class ContentsController extends Controller
         $content->title = $request->title;
         $content->content = $request->content;
         $content->status = $request->status;
+        $content->seo_title = $request->seo_title;
+        $content->seo_description = $request->seo_description;
 
         $content->save();
 
@@ -105,6 +107,8 @@ class ContentsController extends Controller
         $content->title = $request->title;
         $content->content = $request->content;
         $content->status = $request->status;
+        $content->seo_title = $request->seo_title;
+        $content->seo_description = $request->seo_description;
 
         $content->save();
 

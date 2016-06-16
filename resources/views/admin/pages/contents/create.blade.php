@@ -14,10 +14,12 @@
 
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#tab-conteudo"> Conteúdo</a></li>
+            <li><a data-toggle="tab" href="#tab-seo"> SEO</a></li>
         </ul>
 
 		<form action="{{ route('admin.pages.contents.store') }}" method="post">
             <div class="tab-content">
+
                 <div id="tab-conteudo" class="tab-pane active">
                     <div class="panel-body">
                         {{ csrf_field() }}
@@ -58,6 +60,28 @@
                         </fieldset>
                     </div>
                 </div>
+
+                <div id="tab-seo" class="tab-pane">
+                    <div class="panel-body">
+                        <fieldset class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Título:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" maxlength="70" name="seo_title" class="form-control">
+                                    <div class="text-muted">Permitido até 70 caracteres.</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Descrição:</label>
+                                <div class="col-sm-10">
+                                    <textarea maxlength="170" name="seo_description" class="form-control"></textarea>
+                                    <div class="text-muted">Permitido até 170 caracteres.</div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                
             </div>
         </form>
         

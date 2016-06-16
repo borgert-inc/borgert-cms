@@ -14,6 +14,7 @@
         
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#tab-dados"> Dados</a></li>
+            <li><a data-toggle="tab" href="#tab-seo"> SEO</a></li>
             <li><a data-toggle="tab" href="#tab-comments"> Comentários ({{ $post->comments->count() }})</a></li>
         </ul>
 
@@ -60,6 +61,27 @@
                         </fieldset>
                         
                 	</div>
+                </div>
+
+                <div id="tab-seo" class="tab-pane">
+                    <div class="panel-body">
+                        <fieldset class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Título:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" maxlength="70" name="seo_title" value="{{ $post->seo_title }}" class="form-control">
+                                    <div class="text-muted">Permitido até 70 caracteres.</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Descrição:</label>
+                                <div class="col-sm-10">
+                                    <textarea maxlength="170" name="seo_description" class="form-control">{{ $post->seo_description }}</textarea>
+                                    <div class="text-muted">Permitido até 170 caracteres.</div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
                 </div>
                 
                 <div id="tab-comments" class="tab-pane">

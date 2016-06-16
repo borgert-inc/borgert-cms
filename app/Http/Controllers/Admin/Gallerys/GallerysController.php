@@ -60,6 +60,8 @@ class GallerysController extends Controller
         $gallery->title = $request->title;
         $gallery->content = $request->content;
         $gallery->status = $request->status;
+        $gallery->seo_title = $request->seo_title;
+        $gallery->seo_description = $request->seo_description;
 
         $gallery->save();
 
@@ -108,11 +110,13 @@ class GallerysController extends Controller
             'status'      => 'required|integer',
         ]);
 
-        $gallery = new Gallerys;
+        $gallery = Gallerys::find($id);
 
         $gallery->title = $request->title;
         $gallery->content = $request->content;
         $gallery->status = $request->status;
+        $gallery->seo_title = $request->seo_title;
+        $gallery->seo_description = $request->seo_description;
 
         $gallery->save();
 

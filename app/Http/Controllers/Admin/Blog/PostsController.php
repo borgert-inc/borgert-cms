@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin\Blog;
 
 use Illuminate\Http\Request;
-
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Blog\Categorys;
 use App\Models\Admin\Blog\Posts;

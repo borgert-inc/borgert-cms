@@ -104,7 +104,7 @@ class CategorysController extends Controller
             \Session::flash('info', 'Nenhuma categoria foi selecionada.');
 
             return redirect()->route('admin.blog.categorys.list');
-        } 
+        }
 
         Categorys::destroy($request->categorys);
         \Session::flash('success', 'A(s) categorias(s) foram removida(s) com sucesso!');

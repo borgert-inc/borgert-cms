@@ -100,9 +100,9 @@ class CategorysController extends Controller
      */
     public function destroy(Request $request)
     {
-        if  (is_null($request->categorys)) {
+        if (is_null($request->categorys)) {
             \Session::flash('info', 'Nenhuma categoria foi selecionada.');
-            
+
             return redirect()->route('admin.blog.categorys.list');
         } 
 

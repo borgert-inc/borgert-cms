@@ -15,7 +15,7 @@ class DashboardController extends Controller
     public function index()
     {
 
-    	// Mailbox
+        // Mailbox
         $mailbox['inbox'] = Mailbox::where('map', 'INBOX');
         $mailbox['archive'] = Mailbox::where('map', 'ARCHIVE');
         $mailbox['trash'] = Mailbox::where('map', 'TRASH');

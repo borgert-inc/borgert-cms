@@ -3,7 +3,7 @@
 // Gallery
 Route::group(['prefix' => 'gallerys', 'as' => 'gallerys.'], function () {
 
-	// --------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------
     Route::get('list', [
         'as' => 'list', 
         'uses' => 'Admin\Gallerys\GallerysController@index'
@@ -29,7 +29,7 @@ Route::group(['prefix' => 'gallerys', 'as' => 'gallerys.'], function () {
         'uses' => 'Admin\Gallerys\GallerysController@update'
     ])->where('id', '[0-9]+');
 
-	Route::post('destroy', [
+    Route::post('destroy', [
         'as' => 'destroy', 
         'uses' => 'Admin\Gallerys\GallerysController@destroy'
     ]);
@@ -39,5 +39,5 @@ Route::group(['prefix' => 'gallerys', 'as' => 'gallerys.'], function () {
         'uses' => 'Admin\Gallerys\GallerysController@upload'
     ]);
 
-	// -------------------------------------------------------------------------------------------- 
+    // -------------------------------------------------------------------------------------------- 
 });

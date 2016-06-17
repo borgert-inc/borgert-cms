@@ -28,7 +28,7 @@ Route::group(['prefix' => 'users', 'as' => 'users.'], function() {
         'uses' => 'Admin\Users\UsersController@update'
     ])->where('id', '[0-9]+');
 
-	Route::post('destroy', [
+    Route::post('destroy', [
         'as' => 'destroy', 
         'uses' => 'Admin\Users\UsersController@destroy'
     ]); 

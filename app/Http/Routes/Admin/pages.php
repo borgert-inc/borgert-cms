@@ -24,13 +24,13 @@ Route::group(['prefix' => 'pages', 'as' => 'pages.'], function () {
 		])->where('id', '[0-9]+');
 
 		Route::post('store', [
-		    'as' => 'store', 
-		    'uses' => 'Admin\Pages\CategorysController@store'
+			'as' => 'store', 
+			'uses' => 'Admin\Pages\CategorysController@store'
 		]);
 
 		Route::post('update/{id}', [
-		    'as' => 'update', 
-		    'uses' => 'Admin\Pages\CategorysController@update'
+			'as' => 'update', 
+			'uses' => 'Admin\Pages\CategorysController@update'
 		])->where('id', '[0-9]+');
 
 		Route::post('destroy', [
@@ -38,13 +38,13 @@ Route::group(['prefix' => 'pages', 'as' => 'pages.'], function () {
 			'uses' => 'Admin\Pages\CategorysController@destroy'
 		]);
 
-    });
+	});
 
-    // --------------------------------------------------------------------------------------------
+	// --------------------------------------------------------------------------------------------
 
 	// Contents 
 	Route::group(['prefix' => 'contents', 'as' => 'contents.'], function () {
-	   
+
 		Route::get('list', [
 			'as' => 'list', 
 			'uses' => 'Admin\Pages\ContentsController@index'
@@ -61,13 +61,13 @@ Route::group(['prefix' => 'pages', 'as' => 'pages.'], function () {
 		])->where('id', '[0-9]+');
 
 		Route::post('store', [
-		    'as' => 'store', 
-		    'uses' => 'Admin\Pages\ContentsController@store'
+			'as' => 'store', 
+			'uses' => 'Admin\Pages\ContentsController@store'
 		]);
 
 		Route::post('update/{id}', [
-		    'as' => 'update', 
-		    'uses' => 'Admin\Pages\ContentsController@update'
+			'as' => 'update', 
+			'uses' => 'Admin\Pages\ContentsController@update'
 		])->where('id', '[0-9]+');
 
 		Route::post('destroy', [

@@ -3,7 +3,7 @@
 // Mailbox
 Route::group(['prefix' => 'blog', 'as' => 'blog.'], function () {
 
-    // --------------------------------------------------------------------------------------------
+	// --------------------------------------------------------------------------------------------
 
 	// Category 
 	Route::group(['prefix' => 'categorys', 'as' => 'categorys.'], function () {
@@ -37,7 +37,7 @@ Route::group(['prefix' => 'blog', 'as' => 'blog.'], function () {
 			'uses' => 'Admin\Blog\CategorysController@destroy'
 		]);
 
-    });
+	});
 
 	// --------------------------------------------------------------------------------------------
 	
@@ -73,7 +73,7 @@ Route::group(['prefix' => 'blog', 'as' => 'blog.'], function () {
 			'uses' => 'Admin\Blog\PostsController@destroy'
 		]);
 
-    });
+	});
 
 	// --------------------------------------------------------------------------------------------
 	
@@ -104,7 +104,7 @@ Route::group(['prefix' => 'blog', 'as' => 'blog.'], function () {
 			'uses' => 'Admin\Blog\CommentsController@reprove'
 		]);
 
-    });
+	});
 
 	// --------------------------------------------------------------------------------------------
 });

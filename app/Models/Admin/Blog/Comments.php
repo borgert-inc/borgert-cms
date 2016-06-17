@@ -22,5 +22,4 @@ class Comments extends Model
     {
         return $this->belongsTo('App\Models\Admin\Blog\Posts');
     }
-
 }

@@ -15,7 +15,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = Users::orderBy('created_at', 'desc')->paginate(10);
+        $users = Users::sortable(['created_at' => 'desc'])->paginate(10);
 
         return view('admin.users.list', ['users' => $users]);
     }

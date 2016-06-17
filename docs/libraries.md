@@ -6,6 +6,7 @@
 
 * [laravel/laravel](https://github.com/laravel/laravel) - A PHP Framework For Web Artisans
 * [thomaswelton/laravel-gravatar](https://github.com/thomaswelton/laravel-gravatar) - Image gravatar
+* [kyslik/column-sortable](https://github.com/Kyslik/column-sortable) - Ordenação por colunas
 
 
 -----

@@ -19,14 +19,21 @@
 
 * [Guia de Instalação](docs/installation.md)
 * [Guia de Uso](docs/usage.md)
+	* [Routes](docs/usage.md#routes)
+	* [Controllers](docs/usage.md#controllers)
+	* [Models](docs/usage.md#models)
+	* [Views](docs/usage.md#views)
+	* [Assets](docs/usage.md#assets)
+	* [Uploads](docs/uploads.md)
 * [Módulos](docs/modules.md)
-* [Uploads](docs/uploads.md)
 * [Libraries - PHP & Javascript](docs/libraries.md)
 
 -----
 <a name="updates"></a>
 ## Updates
 
+* v0.0.4
+	Adicionado campos para SEO (title,description)
 * v0.0.3
 	* Módulo Galeria de Imagens
 	* Guia de utilização para upload de arquivos com [Blueimp - jQuery File Upload](https://github.com/blueimp/jQuery-File-Upload)

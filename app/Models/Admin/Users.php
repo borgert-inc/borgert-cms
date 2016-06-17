@@ -8,21 +8,21 @@ use Kyslik\ColumnSortable\Sortable;
 
 class Users extends Model
 {
-	use SoftDeletes, Sortable;
+    use SoftDeletes, Sortable;
 
     protected $table = 'users';
 
     protected $fillable = [
-		'name', 
-		'email', 
-		'password',
+        'name',
+        'email',
+        'password',
     ];
 
     protected $sortable = [
-		'id',
-		'name',
-		'email',
-		'status',
-		'created_at',
-	];
+        'id',
+        'name',
+        'email',
+        'status',
+        'created_at',
+    ];
 }

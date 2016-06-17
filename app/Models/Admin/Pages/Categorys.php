@@ -13,13 +13,13 @@ class Categorys extends Model
     protected $table = 'pages_categorys';
 
     protected $fillable = [
-		'title',
+        'title',
     ];
 
     protected $sortable = [
-		'id',
-		'title',
-		'status',
-		'created_at',
-	];
+        'id',
+        'title',
+        'status',
+        'created_at',
+    ];
 }

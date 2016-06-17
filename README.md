@@ -34,7 +34,7 @@
 ## Updates
 
 * v0.0.5
-	Adicionado ordenação por colunas usando o Kyslik/column-sortable
+	* Adicionado ordenação por colunas usando o Kyslik/column-sortable
 * v0.0.4
 	* Adicionado campos para SEO (title,description)
 * v0.0.3

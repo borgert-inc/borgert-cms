@@ -3,8 +3,6 @@
 namespace App\Http\Controllers\Admin\Pages;
 
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Pages\Categorys;
 use App\Models\Admin\Pages\Contents;
@@ -18,7 +16,6 @@ class ContentsController extends Controller
      */
     public function index()
     {
-
         $contents = Contents::orderBy('created_at', 'desc')->paginate(10);
 
         return view('admin.pages.contents.list', ['contents' => $contents]);
@@ -31,7 +28,6 @@ class ContentsController extends Controller
      */
     public function create()
     {
-
         $categorys = Categorys::all();
 
         return view('admin.pages.contents.create', ['categorys' => $categorys]);
@@ -45,7 +41,6 @@ class ContentsController extends Controller
      */
     public function store(Request $request)
     {
-        
         $this->validate($request, [
             'category_id' => 'required|integer',
             'title'       => 'required',
@@ -77,11 +72,10 @@ class ContentsController extends Controller
      */
     public function edit($id)
     {
-
         $categorys = Categorys::all();
         $content = Contents::find($id);
 
-        return view('admin.pages.contents.edit',['categorys' => $categorys, 'content' => $content]);
+        return view('admin.pages.contents.edit', ['categorys' => $categorys, 'content' => $content]);
     }
 
     /**
@@ -93,7 +87,6 @@ class ContentsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
         $this->validate($request, [
             'category_id' => 'required|integer',
             'title'       => 'required',
@@ -124,9 +117,9 @@ class ContentsController extends Controller
      */
     public function destroy(Request $request)
     {
-
-        if(is_null($request->contents)){
+        if (is_null($request->contents)) {
             \Session::flash('info', 'Nenhuma conteúdo foi selecionado.');
+
             return redirect()->route('admin.pages.contents.list');
         }
 
@@ -134,6 +127,5 @@ class ContentsController extends Controller
         \Session::flash('success', 'O(s) conteúdos(s) foram removido(s) com sucesso!');
 
         return redirect()->route('admin.pages.contents.list');
-
     }
 }

@@ -2,9 +2,6 @@
 
 namespace App\Http\Controllers\Admin\Blog;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Blog\Comments;
 
@@ -17,10 +14,9 @@ class CommentsController extends Controller
      */
     public function index()
     {
-
         $comments = Comments::where('status', '=', 0)->paginate(10);
 
-        return view('admin.blog.comments.list',['comments' => $comments]);
+        return view('admin.blog.comments.list', ['comments' => $comments]);
     }
 
     /**
@@ -30,10 +26,9 @@ class CommentsController extends Controller
      */
     public function aproved()
     {
-
         $comments = Comments::where('status', '=', 1)->paginate(10);
 
-        return view('admin.blog.comments.aproved',['comments' => $comments]);
+        return view('admin.blog.comments.aproved', ['comments' => $comments]);
     }
 
     /**
@@ -43,10 +38,9 @@ class CommentsController extends Controller
      */
     public function reproved()
     {
-
         $comments = Comments::where('status', '=', 2)->paginate(10);
 
-        return view('admin.blog.comments.reproved',['comments' => $comments]);
+        return view('admin.blog.comments.reproved', ['comments' => $comments]);
     }
 
     /**
@@ -57,7 +51,6 @@ class CommentsController extends Controller
      */
     public function aprove($id)
     {
-        
         $comments = Comments::find($id);
         $comments->status = 1;
         $comments->save();
@@ -75,7 +68,6 @@ class CommentsController extends Controller
      */
     public function reprove($id)
     {
-        
         $comments = Comments::find($id);
         $comments->status = 2;
         $comments->save();
@@ -83,7 +75,5 @@ class CommentsController extends Controller
         \Session::flash('success', 'O comentário foi reprovado com sucesso!');
 
         return redirect()->back();
-
     }
-
 }

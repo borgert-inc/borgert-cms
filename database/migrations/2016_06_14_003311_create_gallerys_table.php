@@ -14,11 +14,11 @@ class CreateGallerysTable extends Migration
     {
         Schema::create('gallerys', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title',170);
+            $table->string('title', 170);
             $table->text('content')->nullable();
             $table->integer('status')->default(1);
-            $table->string('seo_title',70);
-            $table->string('seo_description',170);
+            $table->string('seo_title', 70);
+            $table->string('seo_description', 170);
             $table->softDeletes();
             $table->timestamps();
         });

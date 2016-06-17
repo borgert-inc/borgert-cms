@@ -7,19 +7,17 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Contents extends Model
 {
-    
     use SoftDeletes;
-    
+
     protected $table = 'pages_contents';
 
     protected $fillable = [
-    	'title',
-    	'content'
+        'title',
+        'content',
     ];
 
     public function category()
     {
         return $this->belongsTo('App\Models\Admin\Pages\Categorys');
     }
-
 }

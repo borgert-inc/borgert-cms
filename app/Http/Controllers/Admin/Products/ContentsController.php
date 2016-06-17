@@ -3,8 +3,6 @@
 namespace App\Http\Controllers\Admin\Products;
 
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Products\Categorys;
 use App\Models\Admin\Products\Contents;
@@ -66,7 +64,6 @@ class ContentsController extends Controller
         return redirect()->route('admin.products.contents.list');
     }
 
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -75,12 +72,10 @@ class ContentsController extends Controller
      */
     public function edit($id)
     {
-        
         $categorys = Categorys::all();
         $content = Contents::find($id);
 
-        return view('admin.products.contents.edit',['categorys' => $categorys, 'content' => $content]);
-
+        return view('admin.products.contents.edit', ['categorys' => $categorys, 'content' => $content]);
     }
 
     /**
@@ -123,8 +118,9 @@ class ContentsController extends Controller
      */
     public function destroy(Request $request)
     {
-        if(is_null($request->contents)){
+        if (is_null($request->contents)) {
             \Session::flash('info', 'Nenhuma produto foi selecionado.');
+
             return redirect()->route('admin.products.contents.list');
         }
 

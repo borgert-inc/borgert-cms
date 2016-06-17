@@ -2,26 +2,20 @@
 
 namespace App\Http\Controllers\Admin\Mailbox;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Mailbox;
 
 class TrashController extends Controller
 {
-
-
     public function index()
     {
-    	$mailbox = Mailbox::where('map','TRASH')->orderBy('created_at', 'desc')->paginate(10);
+        $mailbox = Mailbox::where('map', 'TRASH')->orderBy('created_at', 'desc')->paginate(10);
 
         return view('admin.mailbox.trash', ['mailbox' => $mailbox]);
     }
 
     public function trash($id)
     {
-       
         $mailbox = Mailbox::find($id);
         $mailbox->map = 'TRASH';
         $mailbox->save();
@@ -30,6 +24,4 @@ class TrashController extends Controller
 
         return redirect()->route('admin.mailbox.trash');
     }
-
-
 }

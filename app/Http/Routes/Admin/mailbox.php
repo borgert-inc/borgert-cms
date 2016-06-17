@@ -1,26 +1,25 @@
 <?php
 
 // Mailbox
-Route::group(['prefix' => 'mailbox', 'as' => 'mailbox.'], function() {
-
+Route::group(['prefix' => 'mailbox', 'as' => 'mailbox.'], function () {
     Route::get('inbox', [
-    	'as' => 'inbox', 
-    	'uses' => 'Admin\Mailbox\InboxController@index'
+        'as' => 'inbox', 
+        'uses' => 'Admin\Mailbox\InboxController@index'
     ]);
 
     Route::get('trash', [
-    	'as' => 'trash', 
-    	'uses' => 'Admin\Mailbox\TrashController@index'
+        'as' => 'trash', 
+        'uses' => 'Admin\Mailbox\TrashController@index'
     ]);
 
     Route::post('trash/{id}', [
         'as' => 'trash_in', 
         'uses' => 'Admin\Mailbox\TrashController@trash'
     ])->where('id', '[0-9]+');
-    
+
     Route::get('archive', [
-    	'as' => 'archive', 
-    	'uses' => 'Admin\Mailbox\ArchiveController@index'
+        'as' => 'archive', 
+        'uses' => 'Admin\Mailbox\ArchiveController@index'
     ]);
 
     Route::post('archive/{id}', [
@@ -34,9 +33,7 @@ Route::group(['prefix' => 'mailbox', 'as' => 'mailbox.'], function() {
     ])->where('id', '[0-9]+');
 
     Route::post('delete', [
-    	'as' => 'delete', 
-    	'uses' => 'Admin\Mailbox\DeleteController@destroy'
+        'as' => 'delete', 
+        'uses' => 'Admin\Mailbox\DeleteController@destroy'
     ]);
-    
 });
-

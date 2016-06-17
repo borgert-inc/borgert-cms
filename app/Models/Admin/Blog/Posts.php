@@ -7,15 +7,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Posts extends Model
 {
-    
     use SoftDeletes;
-    
+
     protected $table = 'blog_posts';
 
     protected $fillable = [
-    	'category_id',
-    	'title',
-    	'content'
+        'category_id',
+        'title',
+        'content',
     ];
 
     public function category()
@@ -27,5 +26,4 @@ class Posts extends Model
     {
         return $this->hasMany('App\Models\Admin\Blog\Comments', 'post_id');
     }
-
 }

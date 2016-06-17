@@ -14,7 +14,7 @@ class CreateBlogCategoryTable extends Migration
     {
         Schema::create('blog_category', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title',120);
+            $table->string('title', 120);
             $table->integer('status')->default(1);
             $table->softDeletes();
             $table->timestamps();

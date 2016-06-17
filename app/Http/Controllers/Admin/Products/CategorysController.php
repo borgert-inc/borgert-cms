@@ -3,8 +3,6 @@
 namespace App\Http\Controllers\Admin\Products;
 
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Products\Categorys;
 
@@ -41,7 +39,7 @@ class CategorysController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title'       => 'required'
+            'title'       => 'required',
         ]);
 
         $category = new Categorys;
@@ -64,10 +62,9 @@ class CategorysController extends Controller
      */
     public function edit($id)
     {
-        
         $category = Categorys::find($id);
 
-        return view('admin.products.categorys.edit',['category' => $category]);
+        return view('admin.products.categorys.edit', ['category' => $category]);
     }
 
     /**
@@ -80,7 +77,7 @@ class CategorysController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'title'       => 'required'
+            'title'       => 'required',
         ]);
 
         $category = Categorys::find($id);
@@ -103,8 +100,9 @@ class CategorysController extends Controller
      */
     public function destroy()
     {
-        if(is_null($request->categorys)){
+        if (is_null($request->categorys)) {
             \Session::flash('info', 'Nenhuma categoria foi selecionada.');
+
             return redirect()->route('admin.products.categorys.list');
         }
 

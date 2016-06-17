@@ -7,13 +7,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Categorys extends Model
 {
-    
     use SoftDeletes;
-    
+
     protected $table = 'blog_category';
 
     protected $fillable = [
-    	'title'
+		'title',
     ];
-
 }

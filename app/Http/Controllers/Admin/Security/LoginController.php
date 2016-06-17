@@ -4,15 +4,13 @@ namespace App\Http\Controllers\Admin\Security;
 
 use Auth;
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 class LoginController extends Controller
 {
     public function index()
     {
-    	return view('admin.security.login');
+        return view('admin.security.login');
     }
 
     /**
@@ -30,5 +28,4 @@ class LoginController extends Controller
 
         return redirect()->route('login');
     }
-
 }

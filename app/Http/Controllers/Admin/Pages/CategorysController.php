@@ -3,8 +3,6 @@
 namespace App\Http\Controllers\Admin\Pages;
 
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Pages\Categorys;
 
@@ -17,7 +15,6 @@ class CategorysController extends Controller
      */
     public function index()
     {
-
         $categorys = Categorys::orderBy('created_at', 'desc')->paginate(10);
 
         return view('admin.pages.categorys.list', ['categorys' => $categorys]);
@@ -41,9 +38,8 @@ class CategorysController extends Controller
      */
     public function store(Request $request)
     {
-
         $this->validate($request, [
-            'title'       => 'required'
+            'title'       => 'required',
         ]);
 
         $category = new Categorys;
@@ -56,7 +52,6 @@ class CategorysController extends Controller
         \Session::flash('success', 'A categoria foi criada com sucesso!');
 
         return redirect()->route('admin.pages.categorys.list');
-
     }
 
     /**
@@ -67,10 +62,9 @@ class CategorysController extends Controller
      */
     public function edit($id)
     {
-
         $category = Categorys::find($id);
 
-        return view('admin.pages.categorys.edit',['category' => $category]);
+        return view('admin.pages.categorys.edit', ['category' => $category]);
     }
 
     /**
@@ -83,7 +77,7 @@ class CategorysController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'title'       => 'required'
+            'title'       => 'required',
         ]);
 
         $category = Categorys::find($id);
@@ -105,12 +99,10 @@ class CategorysController extends Controller
      */
     public function destroy(Request $request)
     {
-        if(is_null($request->categorys)){
-            
+        if (is_null($request->categorys)) {
             \Session::flash('info', 'Nenhuma categoria foi selecionada.');
-            
+
             return redirect()->route('admin.pages.categorys.list');
-            
         }
 
         Categorys::destroy($request->categorys);

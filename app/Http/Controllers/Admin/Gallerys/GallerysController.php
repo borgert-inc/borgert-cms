@@ -168,13 +168,13 @@ class GallerysController extends Controller
 
 
         // Deletamos a imagem por GET
-        if (isset($_GET['file'])) {
-            $file = 'gallerys/'.$path.'/'.$_GET['file'];
+        if (isset($request->file)) {
+            $file = 'gallerys/'.$path.'/'.$request->file;
             if (\Storage::disk('uploads')->has($file)) {
                 \Storage::disk('uploads')->delete($file);
             }
 
-            $thumb = 'gallerys/'.$path.'/thumbnail/'.$_GET['file'];
+            $thumb = 'gallerys/'.$path.'/thumbnail/'.$request->file;
             if (\Storage::disk('uploads')->has($thumb)) {
                 \Storage::disk('uploads')->delete($thumb);
             }

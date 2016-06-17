@@ -4,10 +4,11 @@ namespace App\Models\Admin;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Kyslik\ColumnSortable\Sortable;
 
 class Users extends Model
 {
-	use SoftDeletes;
+	use SoftDeletes, Sortable;
 
     protected $table = 'users';
 
@@ -16,4 +17,12 @@ class Users extends Model
 		'email', 
 		'password',
     ];
+
+    protected $sortable = [
+		'id',
+		'name',
+		'email',
+		'status',
+		'created_at',
+	];
 }

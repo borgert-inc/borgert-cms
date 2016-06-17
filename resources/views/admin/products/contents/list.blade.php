@@ -19,11 +19,11 @@
                         <table class="table table-striped table-align-middle">
                             <thead>
                                 <tr>
-                                    <th>#</th>
-                                    <th>Criado em</th>
-                                    <th>Categoria</th>
-                                    <th>Título</th>
-                                    <th>Status</th>
+                                    <th>@sortablelink('id', '#')</th>
+                                    <th>@sortablelink('created_at', 'Criado em')</th>
+                                    <th>@sortablelink('category_id', 'Categoria')</th>
+                                    <th>@sortablelink('title', 'Título')</th>
+                                    <th>@sortablelink('status', 'Status')</th>
                                     <th></th>
                                 </tr>
                             </thead>

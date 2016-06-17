@@ -16,7 +16,7 @@ class GallerysController extends Controller
      */
     public function index()
     {
-        $gallerys = Gallerys::orderBy('created_at', 'desc')->paginate(10);
+        $gallerys = Gallerys::sortable(['created_at' => 'desc'])->paginate(10);
 
         return view('admin.gallerys.list', ['gallerys' => $gallerys]);
     }

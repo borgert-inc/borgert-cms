@@ -16,7 +16,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = Posts::orderBy('created_at', 'desc')->paginate(10);
+        $posts = Posts::sortable(['created_at' => 'desc'])->paginate(10);
 
         return view('admin.blog.posts.list', ['posts' => $posts]);
     }

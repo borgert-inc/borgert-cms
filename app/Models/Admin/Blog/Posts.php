@@ -4,10 +4,11 @@ namespace App\Models\Admin\Blog;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Kyslik\ColumnSortable\Sortable;
 
 class Posts extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, Sortable;
 
     protected $table = 'blog_posts';
 
@@ -15,6 +16,14 @@ class Posts extends Model
         'category_id',
         'title',
         'content',
+    ];
+
+    protected $sortable = [
+        'id',
+        'category_id',
+        'title',
+        'status',
+        'created_at',
     ];
 
     public function category()

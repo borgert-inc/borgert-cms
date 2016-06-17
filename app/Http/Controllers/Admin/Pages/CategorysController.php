@@ -52,7 +52,6 @@ class CategorysController extends Controller
         \Session::flash('success', 'A categoria foi criada com sucesso!');
 
         return redirect()->route('admin.pages.categorys.list');
-
     }
 
     /**
@@ -102,7 +101,7 @@ class CategorysController extends Controller
     {
         if (is_null($request->categorys)) {
             \Session::flash('info', 'Nenhuma categoria foi selecionada.');
-            
+
             return redirect()->route('admin.pages.categorys.list');
         }
 

@@ -12,8 +12,8 @@ class Contents extends Model
     protected $table = 'products_contents';
 
     protected $fillable = [
-    	'title',
-    	'content',
+        'title',
+        'content',
     ];
 
     public function category()

@@ -12,9 +12,9 @@ class Mailbox extends Model
     protected $table = 'mailbox';
 
     protected $fillable = [
-    	'name', 
-    	'email', 
-    	'subject',
-    	'content',
+		'name', 
+		'email', 
+		'subject',
+		'content',
     ];
 }

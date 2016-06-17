@@ -109,7 +109,6 @@ class GallerysController extends Controller
         \Session::flash('success', 'A galeria foi atualizada com sucesso!');
 
         return redirect()->route('admin.gallerys.list');
-
     }
 
     /**
@@ -145,7 +144,7 @@ class GallerysController extends Controller
     }
 
     /**
-     * Faz o envio ou carrrega as imagens de um diretório
+     * Faz o envio ou carrrega as imagens de um diretório.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -160,12 +159,12 @@ class GallerysController extends Controller
             $path = $id;
         }
 
-        $config = array(
+        $config = [
             'script_url' => '/admin/gallerys/upload/'.$path.'/',
             'upload_dir' => base_path().'/public/uploads/gallerys/'.$path.'/',
             'upload_url' => url('/').'/uploads/gallerys/'.$path.'/',
             'delete_type' => 'GET',
-        );
+        ];
 
 
         // Deletamos a imagem por GET

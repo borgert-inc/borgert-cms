@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin\Mailbox;
 
 use Illuminate\Http\Request;
-
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Mailbox;
 
@@ -11,7 +10,6 @@ class DeleteController extends Controller
 {
     public function destroy(Request $request)
     {
-
         if (is_null($request->messages)) {
             \Session::flash('info', 'Nenhuma mensagem foi selecionado.');
 

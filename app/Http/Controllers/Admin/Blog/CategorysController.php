@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin\Blog;
 
 use Illuminate\Http\Request;
-
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Blog\Categorys;
 
@@ -16,7 +15,6 @@ class CategorysController extends Controller
      */
     public function index()
     {
-
         $categorys = Categorys::orderBy('created_at', 'desc')->paginate(10);
 
         return view('admin.blog.categorys.list', ['categorys' => $categorys]);
@@ -40,7 +38,6 @@ class CategorysController extends Controller
      */
     public function store(Request $request)
     {
-
         $this->validate($request, [
             'title'       => 'required',
         ]);
@@ -55,7 +52,6 @@ class CategorysController extends Controller
         \Session::flash('success', 'A categoria foi criada com sucesso!');
 
         return redirect()->route('admin.blog.categorys.list');
-
     }
 
     /**
@@ -66,7 +62,6 @@ class CategorysController extends Controller
      */
     public function edit($id)
     {
-
         $category = Categorys::find($id);
 
         return view('admin.blog.categorys.edit', ['category' => $category]);
@@ -81,7 +76,6 @@ class CategorysController extends Controller
      */
     public function update(Request $request, $id)
     {
-
         $this->validate($request, [
             'title'       => 'required',
         ]);
@@ -96,7 +90,6 @@ class CategorysController extends Controller
         \Session::flash('success', 'A categoria foi atualizada com sucesso!');
 
         return redirect()->route('admin.blog.categorys.list');
-
     }
 
     /**
@@ -109,6 +102,7 @@ class CategorysController extends Controller
     {
         if  (is_null($request->categorys)) {
             \Session::flash('info', 'Nenhuma categoria foi selecionada.');
+            
             return redirect()->route('admin.blog.categorys.list');
         } 
 

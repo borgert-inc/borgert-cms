@@ -12,9 +12,9 @@ class Posts extends Model
     protected $table = 'blog_posts';
 
     protected $fillable = [
-    	'category_id',
-    	'title',
-    	'content',
+        'category_id',
+        'title',
+        'content',
     ];
 
     public function category()

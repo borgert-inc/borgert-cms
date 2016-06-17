@@ -123,7 +123,7 @@ class UsersController extends Controller
 
         Users::destroy($request->users);
         \Session::flash('success', 'O usuário(s) removido(s) com sucesso!');
-            
+
         return redirect()->route('admin.users.list');
     }
 }

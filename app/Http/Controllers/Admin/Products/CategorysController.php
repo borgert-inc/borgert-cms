@@ -102,7 +102,7 @@ class CategorysController extends Controller
     {
         if (is_null($request->categorys)) {
             \Session::flash('info', 'Nenhuma categoria foi selecionada.');
-            
+
             return redirect()->route('admin.products.categorys.list');
         }
 

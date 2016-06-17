@@ -64,7 +64,6 @@ class ContentsController extends Controller
         return redirect()->route('admin.products.contents.list');
     }
 
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -77,7 +76,6 @@ class ContentsController extends Controller
         $content = Contents::find($id);
 
         return view('admin.products.contents.edit', ['categorys' => $categorys, 'content' => $content]);
-
     }
 
     /**
@@ -122,7 +120,7 @@ class ContentsController extends Controller
     {
         if (is_null($request->contents)) {
             \Session::flash('info', 'Nenhuma produto foi selecionado.');
-            
+
             return redirect()->route('admin.products.contents.list');
         }
 

@@ -12,10 +12,10 @@ class Comments extends Model
     protected $table = 'blog_comments';
 
     protected $fillable = [
-    	'post_id',
-    	'name',
-    	'email',
-    	'content',
+        'post_id',
+        'name',
+        'email',
+        'content',
     ];
 
     public function post()

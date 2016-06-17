@@ -14,7 +14,6 @@ class CommentsController extends Controller
      */
     public function index()
     {
-
         $comments = Comments::where('status', '=', 0)->paginate(10);
 
         return view('admin.blog.comments.list', ['comments' => $comments]);
@@ -27,7 +26,6 @@ class CommentsController extends Controller
      */
     public function aproved()
     {
-
         $comments = Comments::where('status', '=', 1)->paginate(10);
 
         return view('admin.blog.comments.aproved', ['comments' => $comments]);
@@ -42,7 +40,7 @@ class CommentsController extends Controller
     {
         $comments = Comments::where('status', '=', 2)->paginate(10);
 
-        return view('admin.blog.comments.reproved',['comments' => $comments]);
+        return view('admin.blog.comments.reproved', ['comments' => $comments]);
     }
 
     /**

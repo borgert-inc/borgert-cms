@@ -88,7 +88,6 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
         $this->validate($request, [
             'category_id' => 'required|integer',
             'title'       => 'required',
@@ -110,7 +109,6 @@ class PostsController extends Controller
         \Session::flash('success', 'O post foi atualizado com sucesso!');
 
         return redirect()->route('admin.blog.posts.list');
-
     }
 
     /**
@@ -123,9 +121,9 @@ class PostsController extends Controller
     {
         if (is_null($request->posts)) {
             \Session::flash('info', 'Nenhum post foi selecionado.');
-            
+
             return redirect()->route('admin.blog.posts.list');
-        } 
+        }
 
         Posts::destroy($request->posts);
         \Session::flash('success', 'O(s) post(s) foram removido(s) com sucesso!');

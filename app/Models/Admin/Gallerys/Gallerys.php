@@ -12,7 +12,7 @@ class Gallerys extends Model
     protected $table = 'gallerys';
 
     protected $fillable = [
-    	'title',
-    	'content',
+		'title',
+		'content',
     ];
 }

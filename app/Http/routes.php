@@ -26,16 +26,15 @@ Route::get('auth/forget-password', ['as' => 'forget_password', 'uses' => 'Admin\
 // Router Partials
 
 Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'], function () {
+    $path = __DIR__.'/Routes/Admin';
+    $files = File::allFiles($path);
 
-	$path = __DIR__."/Routes/Admin";
-	$files = File::allFiles($path);
-
-	foreach ($files as $file) {
-		if(! file_exists($file)) {
-			throw new FileNotFoundException("O arquivo da [".$file."] da da rota não existe.");
-		}
-		require_once $file;
-	}
+    foreach ($files as $file) {
+        if (! file_exists($file)) {
+            throw new FileNotFoundException('O arquivo da ['.$file.'] da da rota não existe.');
+        }
+        require_once $file;
+    }
 });
 
 // ---------------------------------------------------------------------------------------------

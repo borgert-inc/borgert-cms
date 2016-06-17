@@ -13,14 +13,14 @@ class Gallerys extends Model
     protected $table = 'gallerys';
 
     protected $fillable = [
-		'title',
-		'content',
+        'title',
+        'content',
     ];
 
     protected $sortable = [
-		'id',
-		'title',
-		'status',
-		'created_at',
-	];
+        'id',
+        'title',
+        'status',
+        'created_at',
+    ];
 }

@@ -13,13 +13,13 @@ class Categorys extends Model
     protected $table = 'blog_category';
 
     protected $fillable = [
-		'title',
+        'title',
     ];
 
-	protected $sortable = [
-		'id',
-		'title',
-		'status',
-		'created_at',
-	];
+    protected $sortable = [
+        'id',
+        'title',
+        'status',
+        'created_at',
+    ];
 }

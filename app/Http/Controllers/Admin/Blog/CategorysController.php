@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin\Blog;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Blog\Categorys;
 
@@ -43,7 +42,7 @@ class CategorysController extends Controller
     {
 
         $this->validate($request, [
-            'title'       => 'required'
+            'title'       => 'required',
         ]);
 
         $category = new Categorys;
@@ -70,7 +69,7 @@ class CategorysController extends Controller
 
         $category = Categorys::find($id);
 
-        return view('admin.blog.categorys.edit',['category' => $category]);
+        return view('admin.blog.categorys.edit', ['category' => $category]);
     }
 
     /**
@@ -84,7 +83,7 @@ class CategorysController extends Controller
     {
 
         $this->validate($request, [
-            'title'       => 'required'
+            'title'       => 'required',
         ]);
 
         $category = Categorys::find($id);
@@ -108,16 +107,14 @@ class CategorysController extends Controller
      */
     public function destroy(Request $request)
     {
-        if(is_null($request->categorys)){
-            
+        if  (is_null($request->categorys)) {
             \Session::flash('info', 'Nenhuma categoria foi selecionada.');
-            
             return redirect()->route('admin.blog.categorys.list');
         } 
 
         Categorys::destroy($request->categorys);
         \Session::flash('success', 'A(s) categorias(s) foram removida(s) com sucesso!');
-            
+
         return redirect()->route('admin.blog.categorys.list');
     }
 }

@@ -3,8 +3,6 @@
 namespace App\Http\Controllers\Admin\Users;
 
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Users;
 
@@ -17,7 +15,6 @@ class UsersController extends Controller
      */
     public function index()
     {
-
         $users = Users::orderBy('created_at', 'desc')->paginate(10);
 
         return view('admin.users.list', ['users' => $users]);
@@ -41,11 +38,10 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-
         $this->validate($request, [
             'name'       => 'required',
             'email'      => 'required|email',
-            'password'   => 'required'
+            'password'   => 'required',
         ]);
 
         $users = new Users;
@@ -70,7 +66,6 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-     
         $user = Users::find($id);
 
         return view('admin.users.edit', ['user' => $user]);
@@ -85,11 +80,10 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-       
         $this->validate($request, [
             'name'       => 'required',
             'email'      => 'required|email',
-            'password'   => 'required'
+            'password'   => 'required',
         ]);
 
         $user = Users::find($id);
@@ -113,16 +107,17 @@ class UsersController extends Controller
      */
     public function destroy(Request $request)
     {
-
-        if(is_null($request->users)){
+        if (is_null($request->users)) {
             \Session::flash('info', 'Nenhum usuário foi selecionado.');
+
             return redirect()->route('admin.users.list');
         }
 
         $user = \Auth::user();
 
-        if(in_array($user->id, $request->users)){
+        if (in_array($user->id, $request->users)) {
             \Session::flash('warning', 'Você não pode excluir seu próprio usuário!');
+
             return redirect()->route('admin.users.list');
         }
 
@@ -130,7 +125,5 @@ class UsersController extends Controller
         \Session::flash('success', 'O usuário(s) removido(s) com sucesso!');
             
         return redirect()->route('admin.users.list');
-
     }
-
 }

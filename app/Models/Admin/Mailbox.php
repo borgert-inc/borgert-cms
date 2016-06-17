@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Mailbox extends Model
 {
-    
     use SoftDeletes;
 
     protected $table = 'mailbox';
@@ -16,7 +15,6 @@ class Mailbox extends Model
     	'name', 
     	'email', 
     	'subject',
-    	'content'
+    	'content',
     ];
-
 }

@@ -1,7 +1,7 @@
 <?php
 
 // Mailbox
-Route::group(['prefix' => 'mailbox', 'as' => 'mailbox.'], function() {
+Route::group(['prefix' => 'mailbox', 'as' => 'mailbox.'], function () {
 
     Route::get('inbox', [
     	'as' => 'inbox', 
@@ -37,6 +37,4 @@ Route::group(['prefix' => 'mailbox', 'as' => 'mailbox.'], function() {
     	'as' => 'delete', 
     	'uses' => 'Admin\Mailbox\DeleteController@destroy'
     ]);
-    
 });
-

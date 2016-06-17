@@ -14,8 +14,8 @@ class CreateBlogCommentsTable extends Migration
     {
         Schema::create('blog_comments', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name',100);
-            $table->string('email',150);
+            $table->string('name', 100);
+            $table->string('email', 150);
             $table->text('content');
             $table->integer('post_id')->unsigned();
             $table->foreign('post_id')->references('id')->on('blog_posts');

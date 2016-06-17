@@ -33,6 +33,7 @@
     "jquery-ui": "^1.11.4",
     "Chart.js": "chartjs#^2.1.4",
     "summernote": "^0.8.1",
-    "blueimp-file-upload": "^9.12.5"
+    "blueimp-file-upload": "^9.12.5",
+    "awesome-bootstrap-checkbox": "^0.3.7"
   }
 }

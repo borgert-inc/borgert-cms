@@ -1,23 +1,22 @@
 <?php
 
 // Gallery
-Route::group(['prefix' => 'gallerys', 'as' => 'gallerys.'], function() {
+Route::group(['prefix' => 'gallerys', 'as' => 'gallerys.'], function () {
 
 	// --------------------------------------------------------------------------------------------
-
     Route::get('list', [
-    	'as' => 'list', 
-    	'uses' => 'Admin\Gallerys\GallerysController@index'
+        'as' => 'list', 
+        'uses' => 'Admin\Gallerys\GallerysController@index'
     ]);
 
     Route::get('create', [
-    	'as' => 'create', 
-    	'uses' => 'Admin\Gallerys\GallerysController@create'
+        'as' => 'create', 
+        'uses' => 'Admin\Gallerys\GallerysController@create'
     ]);
 
     Route::get('edit/{id}', [
-    	'as' => 'edit', 
-    	'uses' => 'Admin\Gallerys\GallerysController@edit'
+        'as' => 'edit', 
+        'uses' => 'Admin\Gallerys\GallerysController@edit'
     ])->where('id', '[0-9]+');
 
     Route::post('store', [
@@ -31,8 +30,8 @@ Route::group(['prefix' => 'gallerys', 'as' => 'gallerys.'], function() {
     ])->where('id', '[0-9]+');
 
 	Route::post('destroy', [
-    	'as' => 'destroy', 
-    	'uses' => 'Admin\Gallerys\GallerysController@destroy'
+        'as' => 'destroy', 
+        'uses' => 'Admin\Gallerys\GallerysController@destroy'
     ]);
 
     Route::any('upload/{id?}', [
@@ -40,7 +39,5 @@ Route::group(['prefix' => 'gallerys', 'as' => 'gallerys.'], function() {
         'uses' => 'Admin\Gallerys\GallerysController@upload'
     ]);
 
-	// --------------------------------------------------------------------------------------------
-    
+	// -------------------------------------------------------------------------------------------- 
 });
-

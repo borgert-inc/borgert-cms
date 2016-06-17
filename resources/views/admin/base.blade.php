@@ -38,7 +38,7 @@
                     <ul class="nav metismenu" id="side-menu">
                         <li class="nav-header text-center">
                             <div class="profile-element">
-                                <img src="{{ asset('assets/admin/img/rocket.png') }}" class="img-circle">
+                                <img src="{{ asset('assets/admin/img/rocket.png') }}">
                                 <span class="block m-t-xs">
                                     <strong class="font-bold">ROCKET CMS</strong>
                                 </span>
@@ -105,7 +105,7 @@
                 
                 <!-- Footer -->
                 <div class="footer">
-                    <div class="pull-right"><a href="https://github.com/odirleiborgert/rocket-cms" target="_blank"><u>Open Source</u> <i class="fa fa-github"></i></a> - <strong>v.0.0.3</strong></div>
+                    <div class="pull-right"><a href="https://github.com/odirleiborgert/rocket-cms" target="_blank"><u>Open Source</u> <i class="fa fa-github"></i></a> - <strong>v.0.0.4</strong></div>
                     <div><strong>Rocket CMS</strong> - {{ date('Y') }}</div>
                 </div>
 

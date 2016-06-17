@@ -15,8 +15,8 @@
                 padding: 0;
                 width: 100%;
                 display: table;
-                font-weight: 100;
-                font-family: 'Lato';
+                font-family: 'Arial';
+                color: #888;
             }
 
             .container {
@@ -32,14 +32,30 @@
 
             .title {
                 font-size: 96px;
+                font-weight: 100;
+                font-family: 'Lato';
+            }
+            h4 {
+                font-family: 'Lato';
+            }
+            .btn {
+                text-decoration: none;
+                background-color: #E77E23;
+                color: #fff;
+                padding: 10px 15px;
+                border-radius: 4px;
+                font-size: 12px;
+                text-transform: uppercase;
             }
         </style>
     </head>
     <body>
         <div class="container">
             <div class="content">
+                <img src="{{ asset('assets/admin/img/rocket-logo.png') }}" width="250">
                 <div class="title">Rocket CMS</div>
-                <h4>Laravel 5.2</h4>
+                <h4>Framework Laravel 5.2</h4>
+                <a href="{{ route('admin.index') }}" class="btn">Entrar</a>
             </div>
         </div>
     </body>

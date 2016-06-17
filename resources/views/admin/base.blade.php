@@ -38,7 +38,7 @@
                     <ul class="nav metismenu" id="side-menu">
                         <li class="nav-header text-center">
                             <div class="profile-element">
-                                <img src="{{ asset('assets/admin/img/rocket.png') }}" class="img-circle">
+                                <img src="{{ asset('assets/admin/img/rocket.png') }}">
                                 <span class="block m-t-xs">
                                     <strong class="font-bold">ROCKET CMS</strong>
                                 </span>

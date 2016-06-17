@@ -38,7 +38,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label"></label>
-                                <div class="col-sm-10"><button type="submit" class="btn btn-primary">Criar</button></div>
+                                <div class="col-sm-10"><button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> Criar</button></div>
                             </div>
                         </fieldset>
                     </div>

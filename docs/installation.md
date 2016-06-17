@@ -10,7 +10,7 @@ Instalamos os plugins utilizados
 > bower install
 
 #### Passo 3:
-Instalamos os pacotes do packagist utilizando o composer, as libraries que [utilizamos são essas aqui](#php-libraries).
+Instalamos os pacotes do packagist utilizando o composer.
 > composer install
 
 #### Passo 4:

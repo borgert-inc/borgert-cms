@@ -158,7 +158,7 @@ Vamos adicionar a librarie UploadHandle que foi criada pelo Blueimp - jQuery Fil
 use App\Libraries\UploadHandler;
 ```
 
-#### 5.2 Metodo store
+#### 5.2 Metodo store()
 Logo após o objeto ser salvo iremos pegar o ID do objeto que foi salvo para mover os arquivos do diretório temporário para o novo diretório que será o ID do registro.
 
 ```php
@@ -176,7 +176,7 @@ if(\Storage::disk('uploads')->exists($path_from)){
 
 ```
 
-#### 5.3 Metodo destroy
+#### 5.3 Metodo destroy()
 Ao excluirmos um registro também devemos apagar o diretório onde foi feito upload dos arquivos. O nome module da variável $path é o nome do diretório dentro da pasta `public/uploads`.
 
 ```php
@@ -189,42 +189,36 @@ Ao excluirmos um registro também devemos apagar o diretório onde foi feito upl
 	}
 ```
 
-#### 5.4 Metodo upload
+#### 5.4 Metodo upload()
 
 ```php
 public function upload(Request $request, $id = null)
 {
-	
-	// Usuário logado
     $user = \Auth::User();
-	
-	// Pasta temporária para o usuário
-    $path = 'temp-' . $user->id; // Local onde serão salvos os arquivos
 
-    if(is_numeric($id)){
-        $path = $id; // Se existir um ID é porque é uma ação de edição
+    $path = 'temp-'.$user->id;
+
+    if (is_numeric($id)) {
+        $path = $id;
     }
-	
-	// Configurações para o UploadHandler
-    $config = array(
-        'script_url' => '/admin/module/upload/' . $path . '/',
-        'upload_dir' => base_path() . '/public/uploads/module/' . $path . '/',
-        'upload_url' => url('/') . '/uploads/module/' . $path . '/',
-        'delete_type' => 'GET'
-    );
 
-    // Se vier um arquivo por GET deletamos ele
-    if(isset($_GET['file'])){
-		
-		// Deletamos o arquivo original
-        $file = 'module/' . $path . '/' . $_GET['file'];
-        if(\Storage::disk('uploads')->has($file)){
+    $config = [
+        'script_url' => '/admin/module/upload/'.$path.'/',
+        'upload_dir' => base_path().'/public/uploads/module/'.$path.'/',
+        'upload_url' => url('/').'/uploads/module/'.$path.'/',
+        'delete_type' => 'GET',
+    ];
+
+
+    // Deletamos a imagem por GET
+    if (isset($request->file)) {
+        $file = 'module/'.$path.'/'.$request->file;
+        if (\Storage::disk('uploads')->has($file)) {
             \Storage::disk('uploads')->delete($file);
         }
 
-		// Deletamos o thumbnail gerado
-        $thumb = 'module/' . $path . '/thumbnail/' . $_GET['file'];
-        if(\Storage::disk('uploads')->has($thumb)){
+        $thumb = 'module/'.$path.'/thumbnail/'.$request->file;
+        if (\Storage::disk('uploads')->has($thumb)) {
             \Storage::disk('uploads')->delete($thumb);
         }
     }
@@ -232,7 +226,6 @@ public function upload(Request $request, $id = null)
     new UploadHandler($config);
 
     return view('admin._inc.fileupload.empty');
-
 }
 
 ```

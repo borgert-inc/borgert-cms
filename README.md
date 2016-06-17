@@ -19,8 +19,13 @@
 
 * [Guia de Instalação](docs/installation.md)
 * [Guia de Uso](docs/usage.md)
+	* [Routes](docs/usage.md#routes)
+	* [Controllers](docs/usage.md#controllers)
+	* [Models](docs/usage.md#models)
+	* [Views](docs/usage.md#views)
+	* [Assets](docs/usage.md#assets)
+	* [Uploads](docs/uploads.md)
 * [Módulos](docs/modules.md)
-* [Uploads](docs/uploads.md)
 * [Libraries - PHP & Javascript](docs/libraries.md)
 
 -----

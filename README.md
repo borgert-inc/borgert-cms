@@ -33,6 +33,8 @@
 <a name="updates"></a>
 ## Updates
 
+* v0.0.6
+	* Aplicado método withInput() nos formulários **create**
 * v0.0.5
 	* Adicionado ordenação por colunas usando o Kyslik/column-sortable
 * v0.0.4

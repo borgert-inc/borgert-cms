@@ -33,6 +33,9 @@
 <a name="updates"></a>
 ## Updates
 
+* v0.0.7
+	* Refatorado módulo Gallerys
+	* Criado upload de imagens para o módulo produtos
 * v0.0.6
 	* Aplicado método withInput() nos formulários **create**
 * v0.0.5

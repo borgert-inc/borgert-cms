@@ -55,7 +55,7 @@ class UsersController extends Controller
 
         \Session::flash('success', 'O usuário foi atualizado com sucesso!');
 
-        return redirect()->route('admin.users.list');
+        return redirect()->route('admin.users.list')->withInput();
     }
 
     /**
@@ -97,7 +97,7 @@ class UsersController extends Controller
 
         \Session::flash('success', 'O usuário foi atualizado com sucesso!');
 
-        return redirect()->route('admin.users.list');
+        return redirect()->route('admin.users.list')->withInput();
     }
 
     /**

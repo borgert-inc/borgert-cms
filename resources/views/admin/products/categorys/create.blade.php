@@ -25,14 +25,14 @@
                         <fieldset class="form-horizontal">
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Categoria:</label>
-                                <div class="col-sm-10"><input type="text" name="title" class="form-control"></div>
+                                <div class="col-sm-10"><input type="text" name="title" class="form-control" value="{{ old('title') }}"></div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Status:</label>
                                 <div class="col-sm-10">
                                     <select name="status" class="form-control">
-                                        <option value="1">Ativo</option>
-                                        <option value="0">Inativo</option>
+                                        <option value="1" {{ old('status') == 1 ? 'selected' : '' }}>Ativo</option>
+                                        <option value="0" {{ old('status') == 0 ? 'selected' : '' }}>Inativo</option>
                                     </select>
                                 </div>
                             </div>

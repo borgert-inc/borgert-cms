@@ -38,20 +38,20 @@
                         <fieldset class="form-horizontal">
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Título:</label>
-                                <div class="col-sm-10"><input type="text" name="title" class="form-control"></div>
+                                <div class="col-sm-10"><input type="text" name="title" class="form-control" value="{{ old('title') }}"></div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Conteúdo:</label>
                                 <div class="col-sm-10">
-                                    <textarea name="content" class="form-control summernote"></textarea>
+                                    <textarea name="content" class="form-control summernote">{{ old('content') }}</textarea>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Status:</label>
                                 <div class="col-sm-10">
                                     <select name="status" class="form-control">
-                                        <option value="1">Ativo</option>
-                                        <option value="0">Inativo</option>
+                                        <option value="1" {{ old('status') == 1 ? 'selected' : '' }}>Ativo</option>
+                                        <option value="0" {{ old('status') == 0 ? 'selected' : '' }}>Inativo</option>
                                     </select>
                                 </div>
                             </div>
@@ -75,14 +75,14 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Título:</label>
                                 <div class="col-sm-10">
-                                    <input type="text" maxlength="70" name="seo_title" class="form-control">
+                                    <input type="text" maxlength="70" name="seo_title" class="form-control" value="{{ old('seo_title') }}">
                                     <div class="text-muted">Permitido até 70 caracteres.</div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Descrição:</label>
                                 <div class="col-sm-10">
-                                    <textarea maxlength="170" name="seo_description" class="form-control"></textarea>
+                                    <textarea maxlength="170" name="seo_description" class="form-control">{{ old('seo_description') }}</textarea>
                                     <div class="text-muted">Permitido até 170 caracteres.</div>
                                 </div>
                             </div>

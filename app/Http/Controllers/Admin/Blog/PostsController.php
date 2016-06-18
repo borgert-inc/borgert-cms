@@ -61,7 +61,7 @@ class PostsController extends Controller
 
         \Session::flash('success', 'O post foi criado com sucesso!');
 
-        return redirect()->route('admin.blog.posts.list');
+        return redirect()->route('admin.blog.posts.list')->withInput();
     }
 
     /**
@@ -107,7 +107,7 @@ class PostsController extends Controller
 
         \Session::flash('success', 'O post foi atualizado com sucesso!');
 
-        return redirect()->route('admin.blog.posts.list');
+        return redirect()->route('admin.blog.posts.list')->withInput();
     }
 
     /**

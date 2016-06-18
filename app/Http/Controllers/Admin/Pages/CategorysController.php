@@ -51,7 +51,7 @@ class CategorysController extends Controller
 
         \Session::flash('success', 'A categoria foi criada com sucesso!');
 
-        return redirect()->route('admin.pages.categorys.list');
+        return redirect()->route('admin.pages.categorys.list')->withInput();
     }
 
     /**
@@ -89,7 +89,7 @@ class CategorysController extends Controller
 
         \Session::flash('success', 'A categoria foi atualizada com sucesso!');
 
-        return redirect()->route('admin.pages.categorys.list');
+        return redirect()->route('admin.pages.categorys.list')->withInput();
     }
 
     /**

@@ -61,7 +61,7 @@ class ContentsController extends Controller
 
         \Session::flash('success', 'O conteúdo foi criado com sucesso!');
 
-        return redirect()->route('admin.pages.contents.list');
+        return redirect()->route('admin.pages.contents.list')->withInput();
     }
 
     /**
@@ -107,7 +107,7 @@ class ContentsController extends Controller
 
         \Session::flash('success', 'O conteúdo foi atualizado com sucesso!');
 
-        return redirect()->route('admin.pages.contents.list');
+        return redirect()->route('admin.pages.contents.list')->withInput();
     }
 
     /**

@@ -65,7 +65,7 @@ class GallerysController extends Controller
 
         \Session::flash('success', 'A galeria foi criada com sucesso!');
 
-        return redirect()->route('admin.gallerys.list');
+        return redirect()->route('admin.gallerys.list')->withInput();
     }
 
     /**
@@ -108,7 +108,7 @@ class GallerysController extends Controller
 
         \Session::flash('success', 'A galeria foi atualizada com sucesso!');
 
-        return redirect()->route('admin.gallerys.list');
+        return redirect()->route('admin.gallerys.list')->withInput();
     }
 
     /**

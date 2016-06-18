@@ -25,11 +25,11 @@
                         <fieldset class="form-horizontal">
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Nome:</label>
-                                <div class="col-sm-10"><input type="text" name="name" class="form-control" placeholder="Nome"></div>
+                                <div class="col-sm-10"><input type="text" name="name" class="form-control" placeholder="Nome" value="{{ old('name') }}"></div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">E-mail:</label>
-                                <div class="col-sm-10"><input type="email" name="email" class="form-control" placeholder="E-mail"></div>
+                                <div class="col-sm-10"><input type="email" name="email" class="form-control" placeholder="E-mail" value="{{ old('email') }}"></div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Senha:</label>
@@ -39,8 +39,8 @@
                                 <label class="col-sm-2 control-label">Status:</label>
                                 <div class="col-sm-10">
                                     <select name="status" class="form-control">
-                                        <option value="1">Ativo</option>
-                                        <option value="0">Inativo</option>
+                                        <option value="1" {{ old('status') == 1 ? 'selected' : '' }}>Ativo</option>
+                                        <option value="0" {{ old('status') == 0 ? 'selected' : '' }}>Inativo</option>
                                     </select>
                                 </div>
                             </div>

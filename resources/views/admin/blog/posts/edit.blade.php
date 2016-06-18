@@ -49,8 +49,8 @@
                                 <label class="col-sm-2 control-label">Status:</label>
                                 <div class="col-sm-10">
                                     <select name="status" class="form-control">
-                                        <option value="1" {{ $post->status === 1 ? 'selected' : '' }}>Ativo</option>
-                                        <option value="0" {{ $post->status === 0 ? 'selected' : '' }}>Inativo</option>
+                                        <option value="1" {{ $post->status == 1 ? 'selected' : '' }}>Ativo</option>
+                                        <option value="0" {{ $post->status == 0 ? 'selected' : '' }}>Inativo</option>
                                     </select>
                                 </div>
                             </div>

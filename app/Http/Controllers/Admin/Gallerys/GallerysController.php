@@ -9,6 +9,9 @@ use App\Libraries\UploadHandler;
 
 class GallerysController extends Controller
 {
+    const UPLOAD_PATH = 'gallerys/';
+    const UPLOAD_ROUTE = 'admin.gallerys.upload';
+
     /**
      * Display a listing of the resource.
      *
@@ -56,8 +59,8 @@ class GallerysController extends Controller
         $gallery->save();
 
         $user = \Auth::User();
-        $path_from = 'gallerys/temp-'.$user->id.'/';
-        $path_to = 'gallerys/'.$gallery->id;
+        $path_from = self::UPLOAD_PATH.'temp-'.$user->id.'/';
+        $path_to = self::UPLOAD_PATH.$gallery->id;
 
         if (\Storage::disk('uploads')->exists($path_from)) {
             \Storage::disk('uploads')->move($path_from, $path_to);
@@ -132,7 +135,7 @@ class GallerysController extends Controller
         // tem que ser um foreach porque é um array de galerias
         foreach ($request->gallerys as $id) {
             // Checamos se o diretório existe
-            $path = 'gallerys/'.$id;
+            $path = self::UPLOAD_PATH.$id;
 
             // Deletamos o diretório da imagem
             if (\Storage::disk('uploads')->exists($path)) {
@@ -160,21 +163,21 @@ class GallerysController extends Controller
         }
 
         $config = [
-            'script_url' => '/admin/gallerys/upload/'.$path.'/',
-            'upload_dir' => base_path().'/public/uploads/gallerys/'.$path.'/',
-            'upload_url' => url('/').'/uploads/gallerys/'.$path.'/',
+            'script_url' => route(self::UPLOAD_ROUTE,$path),
+            'upload_dir' => base_path().'/public/uploads/'.self::UPLOAD_PATH.$path.'/',
+            'upload_url' => url('/').'/uploads/'.self::UPLOAD_PATH.$path.'/',
             'delete_type' => 'GET',
         ];
 
 
         // Deletamos a imagem por GET
         if (isset($request->file)) {
-            $file = 'gallerys/'.$path.'/'.$request->file;
+            $file = self::UPLOAD_PATH.$path.'/'.$request->file;
             if (\Storage::disk('uploads')->has($file)) {
                 \Storage::disk('uploads')->delete($file);
             }
 
-            $thumb = 'gallerys/'.$path.'/thumbnail/'.$request->file;
+            $thumb = self::UPLOAD_PATH.$path.'/thumbnail/'.$request->file;
             if (\Storage::disk('uploads')->has($thumb)) {
                 \Storage::disk('uploads')->delete($thumb);
             }

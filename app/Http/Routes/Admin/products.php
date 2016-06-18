@@ -73,6 +73,11 @@ Route::group(['prefix' => 'products', 'as' => 'products.'], function () {
             'as' => 'destroy',
             'uses' => 'Admin\Products\ContentsController@destroy',
         ]);
+
+        Route::any('upload/{id?}', [
+            'as' => 'upload',
+            'uses' => 'Admin\Products\ContentsController@upload',
+        ]);
     });
 
     // --------------------------------------------------------------------------------------------

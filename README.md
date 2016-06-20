@@ -16,6 +16,8 @@
 
 -----
 
+[![Join the chat at https://gitter.im/odirleiborgert/rocket-cms](https://badges.gitter.im/odirleiborgert/rocket-cms.svg)](https://gitter.im/odirleiborgert/rocket-cms?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ## Documentação
 
 * [Guia de Instalação](docs/installation.md)

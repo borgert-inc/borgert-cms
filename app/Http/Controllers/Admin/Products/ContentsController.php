@@ -12,7 +12,7 @@ class ContentsController extends Controller
 {
     const UPLOAD_PATH = 'products/';
     const UPLOAD_ROUTE = 'admin.products.contents.upload';
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -171,7 +171,7 @@ class ContentsController extends Controller
         }
 
         $config = [
-            'script_url' => route(self::UPLOAD_ROUTE,$path),
+            'script_url' => route(self::UPLOAD_ROUTE, $path),
             'upload_dir' => base_path().'/public/uploads/'.self::UPLOAD_PATH.$path.'/',
             'upload_url' => url('/').'/uploads/'.self::UPLOAD_PATH.$path.'/',
             'delete_type' => 'GET',

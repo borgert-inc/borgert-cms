@@ -167,10 +167,10 @@ Logo após o objeto ser salvo iremos pegar o ID do objeto que foi salvo para mov
 $object->save();
 
 $user = \Auth::User();
-$path_from = 'module/temp-' . $user->id . '/';
-$path_to = 'module/' . $object->id;
+$path_from = self::UPLOAD_PATH.'temp-'.$user->id.'/';
+$path_to = self::UPLOAD_PATH.$content->id;
 
-if(\Storage::disk('uploads')->exists($path_from)){
+if (\Storage::disk('uploads')->exists($path_from)) {
     \Storage::disk('uploads')->move($path_from, $path_to);
 }
 
@@ -180,16 +180,24 @@ if(\Storage::disk('uploads')->exists($path_from)){
 Ao excluirmos um registro também devemos apagar o diretório onde foi feito upload dos arquivos. O nome module da variável $path é o nome do diretório dentro da pasta `public/uploads`.
 
 ```php
-	// Pegamos o diretório do registro
-	$path = 'module/' . $id;
+// Checamos se o diretório existe
+$path = self::UPLOAD_PATH.$id;
 
-	// Checamos e existe e deletamos o diretório
-	if(\Storage::disk('uploads')->exists($path)){
-	    \Storage::disk('uploads')->deleteDirectory($path);
-	}
+// Deletamos o diretório da imagem
+if (\Storage::disk('uploads')->exists($path)) {
+    \Storage::disk('uploads')->deleteDirectory($path);
+}
 ```
 
 #### 5.4 Metodo upload()
+
+Adicionar constantes a classe onde configuramos a pasta onde irá ser feito o upload das imagens e qual é a rota que irá acessar ao método upload().
+
+```
+const UPLOAD_PATH = 'products/';
+const UPLOAD_ROUTE = 'admin.products.contents.upload';
+```
+
 
 ```php
 public function upload(Request $request, $id = null)
@@ -203,21 +211,21 @@ public function upload(Request $request, $id = null)
     }
 
     $config = [
-        'script_url' => '/admin/module/upload/'.$path.'/',
-        'upload_dir' => base_path().'/public/uploads/module/'.$path.'/',
-        'upload_url' => url('/').'/uploads/module/'.$path.'/',
+        'script_url' => route(self::UPLOAD_ROUTE, $path),
+        'upload_dir' => base_path().'/public/uploads/'.self::UPLOAD_PATH.$path.'/',
+        'upload_url' => url('/').'/uploads/'.self::UPLOAD_PATH.$path.'/',
         'delete_type' => 'GET',
     ];
 
 
     // Deletamos a imagem por GET
     if (isset($request->file)) {
-        $file = 'module/'.$path.'/'.$request->file;
+        $file = self::UPLOAD_PATH.$path.'/'.$request->file;
         if (\Storage::disk('uploads')->has($file)) {
             \Storage::disk('uploads')->delete($file);
         }
 
-        $thumb = 'module/'.$path.'/thumbnail/'.$request->file;
+        $thumb = self::UPLOAD_PATH.$path.'/thumbnail/'.$request->file;
         if (\Storage::disk('uploads')->has($thumb)) {
             \Storage::disk('uploads')->delete($thumb);
         }

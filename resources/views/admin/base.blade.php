@@ -86,7 +86,7 @@
                         </div>
                         <ul class="nav navbar-top-links navbar-right">
                             <li><span class="m-r-sm text-muted welcome-message">Olá <strong>{{ Auth::user()->name }}</strong></span><img src="{{ Gravatar::src(Auth::user()->email, 60) }}" class="img-circle" height="32"></li>
-                            <li><a href="{{ route('logout') }}"><i class="fa fa-sign-out"></i> Sair</a></li>
+                            <li><a href="{{ route('auth.logout') }}"><i class="fa fa-sign-out"></i> Sair</a></li>
                         </ul>
                     </nav>
                 </div>

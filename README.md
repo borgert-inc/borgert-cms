@@ -24,7 +24,6 @@
 
 [![DOAR](https://img.shields.io/badge/DOAR-PAYPAL-blue.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=odirleiborgert%40gmail%2ecom&lc=MQ&item_name=Odirlei%20Borgert&currency_code=BRL&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)
 
-
 -----
 
 ## Documentação

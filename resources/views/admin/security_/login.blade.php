@@ -26,7 +26,7 @@
                 @include('admin._inc.alerts')
             </div>
             
-            <form class="m-t" role="form" method="POST" action="/auth/login">
+            <form class="m-t" role="form" method="POST" action="{{ route('auth.login') }}">
 
                 {!! csrf_field() !!}
 
@@ -38,7 +38,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
 
-                <a href="{{ route('forget_password') }}"><small>Esqueceu sua senha?</small></a>
+                <a href="{{ route('auth.forget_password') }}"><small>Esqueceu sua senha?</small></a>
             </form>
             <br>
             <br>

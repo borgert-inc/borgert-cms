@@ -11,7 +11,18 @@
 	<br>
 </div>
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ad3c062e22ba4c25b8017041b619e217)](https://www.codacy.com/app/odirleiborgert/rocket-planet?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=odirleiborgert/rocket-planet&amp;utm_campaign=Badge_Grade) [![StyleCI](https://styleci.io/repos/60208254/shield?branch=master)](https://styleci.io/repos/60208254) [![License](https://img.shields.io/badge/License-MIT-orange.svg)](https://opensource.org/licenses/MIT) [![GitHub issues](https://img.shields.io/github/issues/odirleiborgert/rocket-cms.svg)](https://github.com/odirleiborgert/rocket-cms/issues) [![Twitter](https://img.shields.io/twitter/url/https/github.com/odirleiborgert/rocket-cms.svg?style=social)](https://twitter.com/intent/tweet?text=Rocket CMS criado com Laravel 5.2&url=https://github.com/odirleiborgert/rocket-cms)
+
+> Qualidade / Licença
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ad3c062e22ba4c25b8017041b619e217)](https://www.codacy.com/app/odirleiborgert/rocket-planet?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=odirleiborgert/rocket-planet&amp;utm_campaign=Badge_Grade) [![StyleCI](https://styleci.io/repos/60208254/shield?branch=master)](https://styleci.io/repos/60208254) [![License](https://img.shields.io/badge/License-MIT-orange.svg)](https://opensource.org/licenses/MIT) 
+
+> Contribuções
+
+[![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg?maxAge=2592000)](https://gitter.im/odirleiborgert/rocket-cms) [![GitHub issues](https://img.shields.io/github/issues/odirleiborgert/rocket-cms.svg)](https://github.com/odirleiborgert/rocket-cms/issues) [![Twitter](https://img.shields.io/twitter/url/https/github.com/odirleiborgert/rocket-cms.svg?style=social)](https://twitter.com/intent/tweet?text=Rocket CMS criado com Laravel 5.2&url=https://github.com/odirleiborgert/rocket-cms)
+
+> Doações
+
+[![DOAR](https://img.shields.io/badge/DOAR-PAYPAL-blue.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=odirleiborgert%40gmail%2ecom&lc=MQ&item_name=Odirlei%20Borgert&currency_code=BRL&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)
 
 
 -----
@@ -42,16 +53,8 @@
 	* Aplicado método withInput() nos formulários **create**
 * v0.0.5
 	* Adicionado ordenação por colunas usando o Kyslik/column-sortable
-* v0.0.4
-	* Adicionado campos para SEO (title,description)
-* v0.0.3
-	* Módulo Galeria de Imagens
-	* Guia de utilização para upload de arquivos com [Blueimp - jQuery File Upload](https://github.com/blueimp/jQuery-File-Upload)
-* v0.0.2
-	* Ordenação das listagens feita por created_at DESC
-* v0.0.1
-	* Módulos Blog, Páginas, Produtos, Mailbox e Usuários
 
+[Outros](docs/updates.md)
 
 -----
 <a name="screenshots"></a>

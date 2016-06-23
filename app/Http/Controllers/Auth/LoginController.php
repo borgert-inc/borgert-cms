@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Security;
+namespace App\Http\Controllers\Auth;
 
 use Auth;
 use Illuminate\Http\Request;
@@ -10,7 +10,7 @@ class LoginController extends Controller
 {
     public function index()
     {
-        return view('admin.security.login');
+        return view('auth.login');
     }
 
     /**
@@ -26,6 +26,6 @@ class LoginController extends Controller
 
         \Session::flash('error', 'Usuário ou senha inválidos!');
 
-        return redirect()->route('login');
+        return redirect()->route('auth.login');
     }
 }

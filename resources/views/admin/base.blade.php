@@ -105,7 +105,7 @@
                 
                 <!-- Footer -->
                 <div class="footer">
-                    <div class="pull-right"><a href="https://github.com/odirleiborgert/rocket-cms" target="_blank"><u>Open Source</u> <i class="fa fa-github"></i></a> - <strong>v.0.0.7</strong></div>
+                    <div class="pull-right"><a href="https://github.com/odirleiborgert/rocket-cms" target="_blank"><u>Open Source</u> <i class="fa fa-github"></i></a> - <strong>v.0.0.8</strong></div>
                     <div><strong>Rocket CMS</strong> - {{ date('Y') }}</div>
                 </div>
 

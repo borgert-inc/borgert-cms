@@ -30,12 +30,21 @@
                             @include('admin._inc.alerts')
                         </div>
 
+                        @if (session('status'))
+                            <div class="alert alert-success">
+                                {{ session('status') }}
+                            </div>
+                        @endif
+
                         <div class="row">
 
                             <div class="col-lg-12">
-                                <form class="m-t" role="form" action="index.html">
+                                <form class="m-t" role="form" action="{{ route('auth.password.email') }}" method="POST">
+
+                                    {{ csrf_field() }}
+
                                     <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="E-mail" required="">
+                                        <input type="email" name="email" class="form-control" placeholder="E-mail" required="">
                                     </div>
 
                                     <button type="submit" class="btn btn-primary block full-width m-b">Enviar nova senha</button>
@@ -44,7 +53,7 @@
                             </div>
                         </div>
 
-                        <a href="{{ route('login') }}"><small>Voltar ao Login</small></a>
+                        <a href="{{ route('auth.login') }}"><small>Voltar ao Login</small></a>
 
                     </div>
                 </div>

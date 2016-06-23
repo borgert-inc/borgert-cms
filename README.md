@@ -16,6 +16,10 @@
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ad3c062e22ba4c25b8017041b619e217)](https://www.codacy.com/app/odirleiborgert/rocket-planet?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=odirleiborgert/rocket-planet&amp;utm_campaign=Badge_Grade) [![StyleCI](https://styleci.io/repos/60208254/shield?branch=master)](https://styleci.io/repos/60208254) [![License](https://img.shields.io/badge/License-MIT-orange.svg)](https://opensource.org/licenses/MIT) 
 
+> Tags / Releases
+
+[![GitHub tag](https://img.shields.io/github/tag/odirleiborgert/rocket-cms.svg?maxAge=2592000)](https://github.com/odirleiborgert/rocket-cms/releases)
+
 > Contribuções
 
 [![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg?maxAge=2592000)](https://gitter.im/odirleiborgert/rocket-cms) [![GitHub issues](https://img.shields.io/github/issues/odirleiborgert/rocket-cms.svg)](https://github.com/odirleiborgert/rocket-cms/issues) [![Twitter](https://img.shields.io/twitter/url/https/github.com/odirleiborgert/rocket-cms.svg?style=social)](https://twitter.com/intent/tweet?text=Rocket CMS criado com Laravel 5.2&url=https://github.com/odirleiborgert/rocket-cms)

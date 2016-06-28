@@ -194,8 +194,8 @@ if (\Storage::disk('uploads')->exists($path)) {
 Adicionar constantes a classe onde configuramos a pasta onde irá ser feito o upload das imagens e qual é a rota que irá acessar ao método upload().
 
 ```
-const UPLOAD_PATH = 'products/';
-const UPLOAD_ROUTE = 'admin.products.contents.upload';
+const UPLOAD_PATH = 'modulo/';
+const UPLOAD_ROUTE = 'admin.modulo.contents.upload';
 ```
 
 

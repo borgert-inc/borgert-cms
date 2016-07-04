@@ -42,5 +42,17 @@ Route::group(['prefix' => 'blog', 'as' => 'blog.'], function() {
 ## Assets
 * Utilizando o comando `gulp watch` em background ficará escutando os arquivos LESS, JS que está  no diretório `resources/assets/[js,less,sass]` e quando for detectado alguma neles são compilados e salvos na pasta `public/assets/[css,js]/`
 
+<a name="languages"></a>
+## Idiomas
+Dois idiomas disponíveis no momento para o Rocket, Portuguès e Inglês, por padrão estaremos setando o inglês. 
+No arquivo config/app.php procure por locale e fallback_locale e altere para `pt_BR`.
+
+Os arquivos para traduções estarão localizados na pasta `resources\lang\[en,pt_BR\admin\**`
+
+```php
+    'locale' => 'en',
+    'fallback_locale' => 'en',
+`
+
 #### Alguma dificuldade ou sugestão de melhorias?
 Reporte com uma [issue](https://github.com/odirleiborgert/rocket-cms/issues).

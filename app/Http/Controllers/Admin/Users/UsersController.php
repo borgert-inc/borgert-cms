@@ -53,7 +53,7 @@ class UsersController extends Controller
 
         $users->save();
 
-        \Session::flash('success', 'O usuário foi atualizado com sucesso!');
+        \Session::flash('success', trans('admin/users.update.messages.success'));
 
         return redirect()->route('admin.users.list')->withInput();
     }
@@ -95,7 +95,7 @@ class UsersController extends Controller
 
         $user->save();
 
-        \Session::flash('success', 'O usuário foi atualizado com sucesso!');
+        \Session::flash('success', trans('admin/users.update.messages.success'));
 
         return redirect()->route('admin.users.list')->withInput();
     }
@@ -108,7 +108,7 @@ class UsersController extends Controller
     public function destroy(Request $request)
     {
         if (is_null($request->users)) {
-            \Session::flash('info', 'Nenhum usuário foi selecionado.');
+            \Session::flash('info', trans('admin/users.destroy.messages.info'));
 
             return redirect()->route('admin.users.list');
         }
@@ -116,13 +116,13 @@ class UsersController extends Controller
         $user = \Auth::user();
 
         if (in_array($user->id, $request->users)) {
-            \Session::flash('warning', 'Você não pode excluir seu próprio usuário!');
+            \Session::flash('warning', trans('admin/users.destroy.messages.warning'));
 
             return redirect()->route('admin.users.list');
         }
 
         Users::destroy($request->users);
-        \Session::flash('success', 'O usuário(s) removido(s) com sucesso!');
+        \Session::flash('success', trans('admin/users.destroy.messages.success'));
 
         return redirect()->route('admin.users.list');
     }

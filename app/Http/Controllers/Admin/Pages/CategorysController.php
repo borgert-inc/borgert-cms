@@ -49,7 +49,7 @@ class CategorysController extends Controller
 
         $category->save();
 
-        \Session::flash('success', 'A categoria foi criada com sucesso!');
+        \Session::flash('success', trans('admin/pages.categorys.store.messages.success'));
 
         return redirect()->route('admin.pages.categorys.list')->withInput();
     }
@@ -87,7 +87,7 @@ class CategorysController extends Controller
 
         $category->save();
 
-        \Session::flash('success', 'A categoria foi atualizada com sucesso!');
+        \Session::flash('success', trans('admin/pages.categorys.update.messages.success'));
 
         return redirect()->route('admin.pages.categorys.list')->withInput();
     }
@@ -100,13 +100,13 @@ class CategorysController extends Controller
     public function destroy(Request $request)
     {
         if (is_null($request->categorys)) {
-            \Session::flash('info', 'Nenhuma categoria foi selecionada.');
+            \Session::flash('info', trans('admin/pages.categorys.destroy.messages.info'));
 
             return redirect()->route('admin.pages.categorys.list');
         }
 
         Categorys::destroy($request->categorys);
-        \Session::flash('success', 'A(s) categorias(s) foram removida(s) com sucesso!');
+        \Session::flash('success', trans('admin/pages.categorys.destroy.messages.success'));
 
         return redirect()->route('admin.pages.categorys.list');
     }

@@ -4,7 +4,7 @@
 
     <div class="middle-box loginscreen animated fadeInDown">
 
-        <h3>Esqueci minha senha</h3>
+        <h3>@lang('auth.forget.title')</h3>
 
         <div class="text-left">
             @include('admin._inc.alerts')
@@ -21,15 +21,15 @@
             {{ csrf_field() }}
 
             <div class="form-group">
-                <input type="email" name="email" class="form-control" placeholder="E-mail" required="">
+                <input type="email" name="email" class="form-control" placeholder="@lang('auth.forget.form.email')" required="">
             </div>
 
-            <button type="submit" class="btn btn-primary block full-width m-b">Enviar nova senha</button>
+            <button type="submit" class="btn btn-primary block full-width m-b">@lang('auth.forget.form.button')</button>
 
         </form>
 
         <p class="text-center">
-            <a href="{{ route('auth.login') }}"><small>Voltar ao Login</small></a>
+            <a href="{{ route('auth.login') }}"><small>@lang('auth.forget.back')</small></a>
         </p>
 
     </div>

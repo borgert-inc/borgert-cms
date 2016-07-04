@@ -1,61 +1,61 @@
 @extends('admin.users.index')
 
-@section('title', 'Editar | Usuário ', @parent)
+@section('title', trans('admin/users.edit.title'), @parent)
 
 @section('actions')
-	<a href="{{ route('admin.users.list') }}" class="btn btn-default"><i class="fa fa-angle-left"></i> Voltar</a>
+	<a href="{{ route('admin.users.list') }}" class="btn btn-default"><i class="fa fa-angle-left"></i> @lang('admin/_globals.buttons.back')</a>
 @endsection
 
 @section('users')
     
-    @section('subtitle', 'Editar usuário')
+    @section('subtitle', trans('admin/users.edit.title'))
 
     <div class="tabs-container">
 
         <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#tab-dados"> Dados</a></li>
-            <li class=""><a data-toggle="tab" href="#tab-imagem"> Imagem</a></li>
+            <li class="active"><a data-toggle="tab" href="#tab-contents"> @lang('admin/_globals.forms.nav.contents')</a></li>
+            <li class=""><a data-toggle="tab" href="#tab-images"> @lang('admin/_globals.forms.nav.images')</a></li>
         </ul>
 
         <form action="{{ route('admin.users.update',$user->id) }}" method="post">
             <div class="tab-content">
-                <div id="tab-dados" class="tab-pane active">
+                <div id="tab-contents" class="tab-pane active">
                     <div class="panel-body">
                         {{ csrf_field() }}
                         <fieldset class="form-horizontal">
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">Nome:</label>
-                                <div class="col-sm-10"><input type="text" name="name" class="form-control" placeholder="Nome" value="{{ $user->name }}"></div>
+                                <label class="col-sm-2 control-label">@lang('admin/_globals.forms.name'):</label>
+                                <div class="col-sm-10"><input type="text" name="name" class="form-control" placeholder="@lang('admin/_globals.forms.name')" value="{{ $user->name }}"></div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">E-mail:</label>
-                                <div class="col-sm-10"><input type="email" name="email" class="form-control" placeholder="E-mail" value="{{ $user->email }}"></div>
+                                <label class="col-sm-2 control-label">@lang('admin/_globals.forms.email'):</label>
+                                <div class="col-sm-10"><input type="email" name="email" class="form-control" placeholder="@lang('admin/_globals.forms.email')" value="{{ $user->email }}"></div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">Senha:</label>
-                                <div class="col-sm-10"><input type="password" name="password" class="form-control" placeholder="Senha"></div>
+                                <label class="col-sm-2 control-label">@lang('admin/_globals.forms.password'):</label>
+                                <div class="col-sm-10"><input type="password" name="password" class="form-control" placeholder="@lang('admin/_globals.forms.password')"></div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">Status:</label>
+                                <label class="col-sm-2 control-label">@lang('admin/_globals.forms.status'):</label>
                                 <div class="col-sm-10">
                                     <select name="status" class="form-control">
-                                        <option value="1" {{ $user->status === 1 ? 'selected' : '' }}>Ativo</option>
-                                        <option value="0" {{ $user->status === 0 ? 'selected' : '' }}>Inativo</option>
+                                        <option value="1" {{ $user->status === 1 ? 'selected' : '' }}>@lang('admin/_globals.forms.active')</option>
+                                        <option value="0" {{ $user->status === 0 ? 'selected' : '' }}>@lang('admin/_globals.forms.inactive')</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label"></label>
-                                <div class="col-sm-10"><button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> Salvar</button></div>
+                                <div class="col-sm-10"><button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> @lang('admin/_globals.buttons.save')</button></div>
                             </div>
                         </fieldset>
                     </div>
                 </div>
-                <div id="tab-imagem" class="tab-pane">
+                <div id="tab-images" class="tab-pane">
                     <div class="panel-body">
-                        <h3>Gravatar</h3>
-                        <p>Seu Gravatar é uma imagem que segue você de site à site aparecendo ao lado do seu nome quando você faz coisas como um comentário ou post em um blog. Os avatares ajudam a identificar os seus posts em blogs e fóruns na web, então porque não em qualquer site?</p>
-                        <a href="https://br.gravatar.com/" target="_blank" class="btn btn-primary">Crie seu gravatar <i class="fa fa-external-link"></i></a>
+                        <h3>@lang('admin/users.gravatar.title')</h3>
+                        <p>@lang('admin/users.gravatar.description')</p>
+                        <a href="https://br.gravatar.com/" target="_blank" class="btn btn-primary">@lang('admin/users.gravatar.button') <i class="fa fa-external-link"></i></a>
                     </div>
                 </div>
             </div>

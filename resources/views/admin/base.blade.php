@@ -47,32 +47,32 @@
                                 <i class="fa fa-rocket"></i>
                             </div>
                         </li>
-                        <li><a href="{{ route('admin.index') }}"><i class="fa fa-dashboard"></i> <span class="nav-label">Dashboard</span></a></li>
+                        <li><a href="{{ route('admin.index') }}"><i class="fa fa-dashboard"></i> <span class="nav-label">@lang('admin/dashboard.module')</span></a></li>
                         <li>
-                            <a href="#"><i class="fa fa-comments"></i> <span class="nav-label">Blog</span> <span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-comments"></i> <span class="nav-label">@lang('admin/blog.module')</span> <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li><a href="{{ route('admin.blog.categorys.list') }}">Categorias</a></li>
-                                <li><a href="{{ route('admin.blog.posts.list') }}">Posts</a></li>
-                                <li><a href="{{ route('admin.blog.comments.list') }}">Comentários</a></li>
+                                <li><a href="{{ route('admin.blog.categorys.list') }}">@lang('admin/blog.submodule.categorys')</a></li>
+                                <li><a href="{{ route('admin.blog.posts.list') }}">@lang('admin/blog.submodule.posts')</a></li>
+                                <li><a href="{{ route('admin.blog.comments.list') }}">@lang('admin/blog.submodule.comments')</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-file-text"></i> <span class="nav-label">Páginas</span> <span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-file-text"></i> <span class="nav-label">@lang('admin/pages.module')</span> <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li><a href="{{ route('admin.pages.categorys.list') }}">Categorias</a></li>
-                                <li><a href="{{ route('admin.pages.contents.list') }}">Conteúdos</a></li>
+                                <li><a href="{{ route('admin.pages.categorys.list') }}">@lang('admin/pages.submodule.categorys')</a></li>
+                                <li><a href="{{ route('admin.pages.contents.list') }}">@lang('admin/pages.submodule.contents')</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-cube"></i> <span class="nav-label">Produtos</span> <span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-cube"></i> <span class="nav-label">@lang('admin/products.module')</span> <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li><a href="{{ route('admin.products.categorys.list') }}">Categorias</a></li>
-                                <li><a href="{{ route('admin.products.contents.list') }}">Conteúdos</a></li>
+                                <li><a href="{{ route('admin.products.categorys.list') }}">@lang('admin/products.submodule.categorys')</a></li>
+                                <li><a href="{{ route('admin.products.contents.list') }}">@lang('admin/products.submodule.contents')</a></li>
                             </ul>
                         </li>
-                        <li><a href="{{ route('admin.gallerys.list') }}"><i class="fa fa-photo"></i> <span class="nav-label">Galerias de Imagens</span></a></li>
-                        <li><a href="{{ route('admin.mailbox.inbox') }}"><i class="fa fa-envelope"></i> <span class="nav-label">Mailbox</span></a></li>
-                        <li><a href="{{ route('admin.users.list') }}"><i class="fa fa-users"></i> <span class="nav-label">Usuários</span></a></li>
+                        <li><a href="{{ route('admin.gallerys.list') }}"><i class="fa fa-photo"></i> <span class="nav-label">@lang('admin/gallerys.module')</span></a></li>
+                        <li><a href="{{ route('admin.mailbox.inbox') }}"><i class="fa fa-envelope"></i> <span class="nav-label">@lang('admin/mailbox.module')</span></a></li>
+                        <li><a href="{{ route('admin.users.list') }}"><i class="fa fa-users"></i> <span class="nav-label">@lang('admin/users.module')</span></a></li>
                     </ul>
                 </div>
             </nav>
@@ -85,8 +85,8 @@
                             <a class="navbar-minimalize minimalize-styl-2 btn btn-default" href="#"><i class="fa fa-bars"></i> </a>
                         </div>
                         <ul class="nav navbar-top-links navbar-right">
-                            <li><span class="m-r-sm text-muted welcome-message">Olá <strong>{{ Auth::user()->name }}</strong></span><img src="{{ Gravatar::src(Auth::user()->email, 60) }}" class="img-circle" height="32"></li>
-                            <li><a href="{{ route('auth.logout') }}"><i class="fa fa-sign-out"></i> Sair</a></li>
+                            <li><span class="m-r-sm text-muted welcome-message">@lang('admin/_globals.hello') <strong>{{ Auth::user()->name }}</strong></span><img src="{{ Gravatar::src(Auth::user()->email, 60) }}" class="img-circle" height="32"></li>
+                            <li><a href="{{ route('auth.logout') }}"><i class="fa fa-sign-out"></i> @lang('admin/_globals.exit')</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -105,7 +105,7 @@
                 
                 <!-- Footer -->
                 <div class="footer">
-                    <div class="pull-right"><a href="https://github.com/odirleiborgert/rocket-cms" target="_blank"><u>Open Source</u> <i class="fa fa-github"></i></a> - <strong>v.0.0.9</strong></div>
+                    <div class="pull-right"><a href="https://github.com/odirleiborgert/rocket-cms" target="_blank"><u>Open Source</u> <i class="fa fa-github"></i></a> - <strong>v.0.0.10</strong></div>
                     <div><strong>Rocket CMS</strong> - {{ date('Y') }}</div>
                 </div>
 

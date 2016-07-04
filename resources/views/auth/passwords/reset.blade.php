@@ -5,7 +5,7 @@
 
     <div class="middle-box loginscreen animated fadeInDown">
 
-        <h3>Resete senha</h3>
+        <h3>@lang('auth.reset.title')</h3>
 
         <form class="m-t" role="form" method="POST" action="{{ route('auth.password.reset') }}">
             
@@ -14,7 +14,7 @@
             <input type="hidden" name="token" value="{{ $token }}">
             
             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                <input type="email" class="form-control" name="email" value="{{ $email or old('email') }}" placeholder="E-mail">
+                <input type="email" class="form-control" name="email" value="{{ $email or old('email') }}" placeholder="@lang('auth.reset.form.email')">
                 @if ($errors->has('email'))
                     <span class="help-block">
                         <strong>{{ $errors->first('email') }}</strong>
@@ -23,7 +23,7 @@
             </div>
 
             <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                <input type="password" class="form-control" name="password" placeholder="Senha">
+                <input type="password" class="form-control" name="password" placeholder="@lang('auth.reset.form.password_confirmation')">
                 @if ($errors->has('password'))
                     <span class="help-block">
                         <strong>{{ $errors->first('password') }}</strong>
@@ -32,7 +32,7 @@
             </div>
 
             <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                <input type="password" class="form-control" name="password_confirmation" placeholder="Confirme a senha">
+                <input type="password" class="form-control" name="password_confirmation" placeholder="@lang('auth.reset.form.password_confirmation')">
                 @if ($errors->has('password_confirmation'))
                     <span class="help-block">
                         <strong>{{ $errors->first('password_confirmation') }}</strong>
@@ -40,7 +40,7 @@
                 @endif
             </div>
 
-            <button type="submit" class="btn btn-primary block full-width"><i class="fa fa-btn fa-refresh"></i> Resetar senha</button>
+            <button type="submit" class="btn btn-primary block full-width"><i class="fa fa-btn fa-refresh"></i> @lang('auth.reset.form.button')</button>
 
         </form>
 

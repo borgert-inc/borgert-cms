@@ -59,7 +59,7 @@ class ContentsController extends Controller
 
         $content->save();
 
-        \Session::flash('success', 'O conteúdo foi criado com sucesso!');
+        \Session::flash('success', trans('admin/pages.contents.store.messages.success'));
 
         return redirect()->route('admin.pages.contents.list')->withInput();
     }
@@ -105,7 +105,7 @@ class ContentsController extends Controller
 
         $content->save();
 
-        \Session::flash('success', 'O conteúdo foi atualizado com sucesso!');
+        \Session::flash('success', trans('admin/pages.contents.update.messages.success'));
 
         return redirect()->route('admin.pages.contents.list')->withInput();
     }
@@ -118,13 +118,13 @@ class ContentsController extends Controller
     public function destroy(Request $request)
     {
         if (is_null($request->contents)) {
-            \Session::flash('info', 'Nenhuma conteúdo foi selecionado.');
+            \Session::flash('info', trans('admin/pages.contents.destroy.messages.info'));
 
             return redirect()->route('admin.pages.contents.list');
         }
 
         Contents::destroy($request->contents);
-        \Session::flash('success', 'O(s) conteúdos(s) foram removido(s) com sucesso!');
+        \Session::flash('success', trans('admin/pages.contents.destroy.messages.success'));
 
         return redirect()->route('admin.pages.contents.list');
     }

@@ -50,10 +50,9 @@
 <a name="screenshots"></a>
 ## Screenshots
 
-![alt tag](http://i.imgur.com/Ox6vGP1.png)
+![alt tag](http://i.imgur.com/Y3JKkJB.png)
 
-![alt tag](http://i.imgur.com/dQQKLzM.png)
-
+![alt tag](http://i.imgur.com/A0MxUGL.png)
 
 
 <a name="contributions"></a>

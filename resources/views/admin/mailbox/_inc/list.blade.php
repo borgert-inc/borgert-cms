@@ -23,7 +23,7 @@
         {!! $mailbox->render() !!}
 
         <div class="mail-body">
-            <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> Remover Selecionados</button>
+            <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> @lang('admin/_globals.buttons.delete_selected')</button>
         </div>
     </form>
 

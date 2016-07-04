@@ -55,7 +55,7 @@ class CommentsController extends Controller
         $comments->status = 1;
         $comments->save();
 
-        \Session::flash('success', 'O comentário foi aprovado com sucesso!');
+        \Session::flash('success', trans('admin/blog.comments.aprove.messages.success'));
 
         return redirect()->back();
     }
@@ -72,7 +72,7 @@ class CommentsController extends Controller
         $comments->status = 2;
         $comments->save();
 
-        \Session::flash('success', 'O comentário foi reprovado com sucesso!');
+        \Session::flash('success', trans('admin/blog.comments.reprove.messages.success'));
 
         return redirect()->back();
     }

@@ -1,12 +1,13 @@
 @extends('admin.mailbox.index')
 
-@section('title', 'Arquivados | Mailbox ', @parent)
+@section('title', trans('admin/mailbox.archive.title'), @parent)
 
 @section('mailbox')
     
     <div class="mail-box-header">
 
-        <h2>Arquivados ({{ $mailbox->total() }})</h2>
+        <h2>@lang('admin/mailbox.archive.title') ({{ $mailbox->total() }})</h2>
+        
         @include('admin/mailbox/_inc/empty',['icone'=>'archive'])
 
     </div>

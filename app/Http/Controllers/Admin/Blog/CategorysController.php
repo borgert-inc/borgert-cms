@@ -49,7 +49,7 @@ class CategorysController extends Controller
 
         $category->save();
 
-        \Session::flash('success', 'A categoria foi criada com sucesso!');
+        \Session::flash('success', trans('admin/blog.categorys.store.messages.success'));
 
         return redirect()->route('admin.blog.categorys.list')->withInput();
     }
@@ -87,7 +87,7 @@ class CategorysController extends Controller
 
         $category->save();
 
-        \Session::flash('success', 'A categoria foi atualizada com sucesso!');
+        \Session::flash('success', trans('admin/blog.categorys.update.messages.success'));
 
         return redirect()->route('admin.blog.categorys.list')->withInput();
     }
@@ -101,13 +101,13 @@ class CategorysController extends Controller
     public function destroy(Request $request)
     {
         if (is_null($request->categorys)) {
-            \Session::flash('info', 'Nenhuma categoria foi selecionada.');
+            \Session::flash('info', trans('admin/blog.categorys.destroy.messages.info'));
 
             return redirect()->route('admin.blog.categorys.list');
         }
 
         Categorys::destroy($request->categorys);
-        \Session::flash('success', 'A(s) categorias(s) foram removida(s) com sucesso!');
+        \Session::flash('success', trans('admin/blog.categorys.destroy.messages.success'));
 
         return redirect()->route('admin.blog.categorys.list');
     }

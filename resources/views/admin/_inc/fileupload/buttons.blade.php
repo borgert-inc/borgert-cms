@@ -3,7 +3,7 @@
         <!-- The fileinput-button span is used to style the file input field as button -->
         <span class="btn btn-success fileinput-button">
             <i class="fa fa-plus"></i>
-            <span>Adicionar Imagem</span>
+            <span>@lang('admin/_globals.buttons.add_image')</span>
             <input type="file" name="files[]" multiple>
         </span>
         <span class="fileupload-process"></span>

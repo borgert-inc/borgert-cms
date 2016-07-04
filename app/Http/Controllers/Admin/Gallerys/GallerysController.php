@@ -66,7 +66,7 @@ class GallerysController extends Controller
             \Storage::disk('uploads')->move($path_from, $path_to);
         }
 
-        \Session::flash('success', 'A galeria foi criada com sucesso!');
+        \Session::flash('success', trans('admin/gallerys.store.messages.success'));
 
         return redirect()->route('admin.gallerys.list')->withInput();
     }
@@ -109,7 +109,7 @@ class GallerysController extends Controller
 
         $gallery->save();
 
-        \Session::flash('success', 'A galeria foi atualizada com sucesso!');
+        \Session::flash('success', trans('admin/gallerys.update.messages.success'));
 
         return redirect()->route('admin.gallerys.list')->withInput();
     }
@@ -123,13 +123,13 @@ class GallerysController extends Controller
     public function destroy(Request $request)
     {
         if (is_null($request->gallerys)) {
-            \Session::flash('info', 'Nenhuma galeria foi selecionado.');
+            \Session::flash('info', trans('admin/gallerys.destroy.messages.info'));
 
             return redirect()->route('admin.gallerys.list');
         }
 
         Gallerys::destroy($request->gallerys);
-        \Session::flash('success', 'A(s) galerias(s) foram removida(s) com sucesso!');
+        \Session::flash('success', trans('admin/gallerys.destroy.messages.success'));
 
         // Precisamos remover as imagens desse ID também
         // tem que ser um foreach porque é um array de galerias

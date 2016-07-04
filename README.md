@@ -72,6 +72,10 @@
 <a name="log"></a>
 ## Change log
 
+* v0.0.10
+    * Add Languages - English and Portuguese.
+* v0.0.9
+    * Created docs English and Portuguese.
 * v0.0.8
     * Creating area to recover password
 * v0.0.7

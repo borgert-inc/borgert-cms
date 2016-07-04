@@ -20,7 +20,7 @@ class TrashController extends Controller
         $mailbox->map = 'TRASH';
         $mailbox->save();
 
-        \Session::flash('success', 'A mensagem foi movida para "Lixeira".');
+        \Session::flash('success', trans('admin/mailbox.trash.messages.success'));
 
         return redirect()->route('admin.mailbox.trash');
     }

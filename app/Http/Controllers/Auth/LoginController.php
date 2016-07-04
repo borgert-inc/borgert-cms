@@ -24,7 +24,7 @@ class LoginController extends Controller
             return redirect()->route('admin.index');
         }
 
-        \Session::flash('error', 'Usuário ou senha inválidos!');
+        \Session::flash('error', trans('auth.login.messages.error'));
 
         return redirect()->route('auth.login');
     }

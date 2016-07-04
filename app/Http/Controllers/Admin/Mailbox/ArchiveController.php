@@ -20,7 +20,7 @@ class ArchiveController extends Controller
         $mailbox->map = 'ARCHIVE';
         $mailbox->save();
 
-        \Session::flash('success', 'A mensagem foi movida para "Arquivados".');
+        \Session::flash('success', trans('admin/mailbox.archive.messages.success'));
 
         return redirect()->route('admin.mailbox.archive');
     }

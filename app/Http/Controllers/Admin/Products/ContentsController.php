@@ -71,7 +71,7 @@ class ContentsController extends Controller
             \Storage::disk('uploads')->move($path_from, $path_to);
         }
 
-        \Session::flash('success', 'O produto foi criado com sucesso!');
+        \Session::flash('success', trans('admin/products.contents.store.messages.success'));
 
         return redirect()->route('admin.products.contents.list')->withInput();
     }
@@ -117,7 +117,7 @@ class ContentsController extends Controller
 
         $content->save();
 
-        \Session::flash('success', 'O produto foi atualizado com sucesso!');
+        \Session::flash('success', trans('admin/products.contents.update.messages.success'));
 
         return redirect()->route('admin.products.contents.list')->withInput();
     }
@@ -131,13 +131,13 @@ class ContentsController extends Controller
     public function destroy(Request $request)
     {
         if (is_null($request->contents)) {
-            \Session::flash('info', 'Nenhuma produto foi selecionado.');
+            \Session::flash('info', trans('admin/products.contents.destroy.messages.info'));
 
             return redirect()->route('admin.products.contents.list');
         }
 
         Contents::destroy($request->contents);
-        \Session::flash('success', 'O(s) produto(s) foram removido(s) com sucesso!');
+        \Session::flash('success', trans('admin/products.contents.destroy.messages.success'));
 
         // Precisamos remover as imagens desse ID também
         // tem que ser um foreach porque é um array de galerias

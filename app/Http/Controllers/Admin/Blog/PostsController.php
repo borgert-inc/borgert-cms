@@ -59,7 +59,7 @@ class PostsController extends Controller
 
         $post->save();
 
-        \Session::flash('success', 'O post foi criado com sucesso!');
+        \Session::flash('success', trans('admin/blog.posts.store.messages.success'));
 
         return redirect()->route('admin.blog.posts.list')->withInput();
     }
@@ -105,7 +105,7 @@ class PostsController extends Controller
 
         $post->save();
 
-        \Session::flash('success', 'O post foi atualizado com sucesso!');
+        \Session::flash('success', trans('admin/blog.posts.update.messages.success'));
 
         return redirect()->route('admin.blog.posts.list')->withInput();
     }
@@ -119,13 +119,13 @@ class PostsController extends Controller
     public function destroy(Request $request)
     {
         if (is_null($request->posts)) {
-            \Session::flash('info', 'Nenhum post foi selecionado.');
+            \Session::flash('info', trans('admin/blog.posts.destroy.messages.info'));
 
             return redirect()->route('admin.blog.posts.list');
         }
 
         Posts::destroy($request->posts);
-        \Session::flash('success', 'O(s) post(s) foram removido(s) com sucesso!');
+        \Session::flash('success', trans('admin/blog.posts.destroy.messages.success'));
 
         return redirect()->route('admin.blog.posts.list');
     }

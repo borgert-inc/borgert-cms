@@ -25,12 +25,12 @@
                 {% if (file.deleteUrl) { %}
                     <button class="btn btn-danger delete" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
                         <i class="fa fa-trash"></i>
-                        <span>Deletar</span>
+                        <span>@lang('admin/_globals.buttons.delete')</span>
                     </button>
                 {% } else { %}
                     <button class="btn btn-warning cancel">
                         <i class="fa fa-ban-circle"></i>
-                        <span>Cancelar</span>
+                        <span>@lang('admin/_globals.buttons.cancel')</span>
                     </button>
                 {% } %}
             </td>

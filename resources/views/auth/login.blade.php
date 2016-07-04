@@ -4,7 +4,7 @@
 
     <div class="middle-box text-center loginscreen animated fadeInDown">
             
-        <h3>Bem Vindo ao Rocket CMS</h3>
+        <h3>@lang('auth.login.welcome')</h3>
 
         <div class="text-left">
             @include('admin._inc.alerts')
@@ -15,7 +15,7 @@
             {!! csrf_field() !!}
 
             <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
-                <input type="email" name="email" class="form-control" placeholder="E-mail" required="" value="{{ old('email') }}">
+                <input type="email" name="email" class="form-control" placeholder="@lang('auth.login.form.email')" required="" value="{{ old('email') }}">
                 @if ($errors->has('email'))
                     <span class="help-block">
                         <strong>{{ $errors->first('email') }}</strong>
@@ -24,7 +24,7 @@
             </div>
 
             <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
-                <input type="password" name="password" class="form-control" placeholder="Senha" required="">
+                <input type="password" name="password" class="form-control" placeholder="@lang('auth.login.form.senha')" required="">
                 @if ($errors->has('password'))
                     <span class="help-block">
                         <strong>{{ $errors->first('password') }}</strong>
@@ -32,13 +32,9 @@
                 @endif
             </div>
             
-            <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
-            
-            <!-- <div class="form-group">
-                <input type="checkbox" name="remember"> Lembre-me da senha
-            </div> -->
+            <button type="submit" class="btn btn-primary block full-width m-b">@lang('auth.login.form.button')</button>
 
-            <a href="{{ route('auth.forget_password') }}"><small>Esqueceu sua senha?</small></a>
+            <a href="{{ route('auth.forget_password') }}"><small>@lang('auth.login.forgot')</small></a>
         </form>
 
         <br>

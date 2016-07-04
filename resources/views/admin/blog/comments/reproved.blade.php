@@ -1,10 +1,10 @@
 @extends('admin.blog.comments.index')
 
-@section('title', 'Lista de comentários reprovados | Blog ', @parent)
+@section('title', trans('admin/blog.comments.reproved.title', ['total' => $comments->total()]), @parent)
 
 @section('comments')
     
-    @section('subtitle', 'Lista de comentários reprovados (' . $comments->total() . ')')
+    @section('subtitle', trans('admin/blog.comments.reproved.title', ['total' => $comments->total()]))
 
     <div class="mail-box">
 
@@ -20,7 +20,7 @@
                                 <img src="{{ Gravatar::src($comment->email, 60) }}" class="img-circle">
                             </a>
                             <div class="media-body ">
-                                <strong>{{ $comment->name }}</strong> postou mensagem em <strong>{{ $comment->post->title }}</strong> no blog. <br>
+                                @lang('admin/blog.posts.edit.posted',['name' => $comment->name, 'title' => $comment->post->title]) <br>
                                 <small class="text-muted">{{ date('d M Y | H:i', $comment->created_at->timestamp) }}</small>
                                 <div class="well">
                                     {{ $comment->content }}
@@ -36,7 +36,7 @@
             @else
                 <div class="widget p-lg text-center">
                     <i class="fa fa-exclamation-triangle fa-2x"></i>
-                    <h4 class="no-margins">Não existe commentários reprovados.</h4>
+                    <h4 class="no-margins">@lang('admin/blog.comments.reproved.is_empty')</h4>
                 </div>
             @endif
 

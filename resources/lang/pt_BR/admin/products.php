@@ -8,7 +8,6 @@ return [
         'categorys' => 'Categorias',
         'contents' => 'Conteúdos',
     ],
-    
 
     'categorys' => [
         'list' => [

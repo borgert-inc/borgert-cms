@@ -5,7 +5,7 @@ return [
     'module' => 'Mailbox',
 
     'is_empty' => 'Não existe nenhuma mensagem.',
-    
+
     'inbox' => [
         'title' => 'Caixa de Entrada',
     ],

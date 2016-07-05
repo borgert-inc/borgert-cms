@@ -3,7 +3,7 @@
 return [
 
     'module' => 'Image Gallery',
-    
+
     'list' => [
         'title' => 'List of image galleries (:total)',
         'is_empty' => 'None of registered images gallery',

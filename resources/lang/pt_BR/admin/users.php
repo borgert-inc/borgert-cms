@@ -3,7 +3,7 @@
 return [
 
     'module' => 'Usuários',
-    
+
     'list' => [
         'title' => 'Lista de usuários (:total)',
         'is_empty' => 'Nenhum usuário cadastrado',

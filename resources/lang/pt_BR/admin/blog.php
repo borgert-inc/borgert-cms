@@ -48,9 +48,9 @@ return [
 
 
     'comments' => [
-        
+
         'is_empty' => 'Não existe comentários para este post.',
-        
+
         'types' => [
             'pending' => 'Pendentes',
             'approved' => 'Aprovados',

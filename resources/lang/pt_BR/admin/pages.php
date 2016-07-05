@@ -8,7 +8,7 @@ return [
         'categorys' => 'Categorias',
         'contents' => 'Conteúdos',
     ],
-    
+
     'categorys' => [
         'list' => [
             'title' => 'Lista de categorias (:total)',

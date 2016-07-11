@@ -40,7 +40,7 @@
 | 2.3 Models                  | [EN](docs/en/usage.md#models)         | [PT-BR](docs/pt-br/usage.md#models)         |
 | 2.4 Views                   | [EN](docs/en/usage.md#views)          | [PT-BR](docs/pt-br/usage.md#views)          |
 | 2.5 Assets                  | [EN](docs/en/usage.md#assets)         | [PT-BR](docs/pt-br/usage.md#assets)         |
-| 2.6 Uploads                 | [EN](docs/en/usage.md#uploads)        | [PT-BR](docs/pt-br/usage.md#uploads)        |
+| 2.6 Uploads                 | [EN](docs/en/uploads.md)              | [PT-BR](docs/pt-br/uploads.md)              |
 | 3. Modules                  | [EN](docs/en/modules.md)              | [PT-BR](docs/pt-br/modules.md)              |
 | 4. Libraries                | [EN](docs/en/libraries.md)            | [PT-BR](docs/pt-br/libraries.md)            |
 

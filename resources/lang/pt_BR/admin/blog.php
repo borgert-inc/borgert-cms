@@ -22,7 +22,7 @@ return [
         ],
 
         'store' => [
-            'messages' =>[
+            'messages' => [
                 'success' => 'A categoria foi criada com sucesso!',
             ],
         ],
@@ -32,7 +32,7 @@ return [
         ],
 
         'update' => [
-            'messages' =>[
+            'messages' => [
                 'success' => 'A categoria foi salva com sucesso!',
             ],
         ],

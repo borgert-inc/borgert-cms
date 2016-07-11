@@ -56,7 +56,7 @@ return [
         'edit' => [
             'title' => 'Editar página',
         ],
-        
+
         'store' => [
             'messages' => [
                 'success' => 'O conteúdo foi criado com sucesso!',

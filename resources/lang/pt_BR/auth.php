@@ -44,7 +44,7 @@ return [
     'email' => [
         'password' => [
             'description' => 'Clique aqui para redefinir sua senha:',
-        ]
+        ],
     ],
 
     // Reset de senha

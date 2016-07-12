@@ -71,6 +71,8 @@
 <a name="log"></a>
 ## Change log
 
+* v0.0.11
+    * Adding images to the blog post
 * v0.0.10
     * Add Languages - English and Portuguese.
 * v0.0.9

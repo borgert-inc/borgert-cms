@@ -17,9 +17,12 @@ Packagist install the packages using the composer.
 Set or create `.env` file with your database settings, `.env.example` file can be used as an example.
 
 #### Step 5:
-> php artisan migrate
+> php artisan key:generate
 
 #### Step 6:
+> php artisan migrate
+
+#### Step 7:
 Let access to tinker artisan to create the first user to access the CMS.
 
 > php artisan tinker 
@@ -32,15 +35,15 @@ $user->password = \Hash::make('YourPassword');
 $user->save(); 
 ```
 
-#### Step 7:
+#### Step 8:
 In the console started to listen to gulp our files *.less and *.js that are within the folder `resources/assets/[js,less]` If you have modifications. I remember that in this case I'm just using `less`, can also be used `stylus && sass`.
 > gulp watch
 
-#### Step 8:
+#### Step 9:
 In another console we started the server.
 > php artisan serve
 
-#### Step 9:
+#### Step 10:
 Visit <a href="http://localhost:8000/admin">http://localhost:8000/admin</a>
 
 

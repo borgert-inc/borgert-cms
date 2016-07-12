@@ -17,9 +17,12 @@ Instalamos os pacotes do packagist utilizando o composer.
 Configure ou crie o arquivo `.env` com suas configurações de banco de dados, o arquivo `.env.example` pode ser usado como exemplo.
 
 #### Passo 5:
-> php artisan migrate
+> php artisan key:generate
 
 #### Passo 6:
+> php artisan migrate
+
+#### Passo 7:
 Vamos acessar ao tinker do artisan para criar o primeiro usuário para acessar ao CMS
 
 > php artisan tinker 
@@ -32,15 +35,15 @@ $user->password = \Hash::make('SuaSenha');
 $user->save(); 
 ```
 
-#### Passo 7:
+#### Passo 8:
 No console iniciamos o gulp para escutar nossos arquivos *.less e *.js que estão dentro da pasta `resources/assets/[js,less]` caso tiver modificações. Lembro que nesse caso estou só utilizando o `less`, também pode ser utilizado `stylus && sass`.
 > gulp watch
 
-#### Passo 8:
+#### Passo 9:
 Em outro console iniciamos o servidor.
 > php artisan serve
 
-#### Passo 9:
+#### Passo 10:
 Acessar <a href="http://localhost:8000/admin">http://localhost:8000/admin</a>
 
 

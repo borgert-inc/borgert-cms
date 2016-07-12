@@ -12,7 +12,7 @@ To upload files we implement other modules in Rocket CMS will use the walkthroug
 * [3. Routes](#routes)
 * [4. Views](#views)
 * [5. Controllers](#controllers)
-* [6. Contributions](#contribuicoes)
+* [6. Contributions](#contributions)
 
 
 -----

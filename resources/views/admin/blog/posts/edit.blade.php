@@ -2,6 +2,16 @@
 
 @section('title',  trans('admin/blog.posts.edit.title'), @parent)
 
+@section('stylesheet')
+
+    @parent
+    
+    <!-- Blueimp Jquery File Upload -->
+    <link href="{!! asset('assets/components/blueimp-file-upload/css/jquery.fileupload.css') !!}" rel="stylesheet">
+    <link href="{!! asset('assets/components/blueimp-file-upload/css/jquery.fileupload-ui.css') !!}" rel="stylesheet">
+
+@show
+
 @section('actions')
     <a href="{{ route('admin.blog.posts.list') }}" class="btn btn-default"><i class="fa fa-angle-left"></i> @lang('admin/_globals.buttons.back')</a>
 @endsection
@@ -14,11 +24,12 @@
         
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#tab-contents"> @lang('admin/_globals.forms.nav.contents')</a></li>
+            <li><a data-toggle="tab" href="#tab-images"> @lang('admin/_globals.forms.nav.images')</a></li>
             <li><a data-toggle="tab" href="#tab-seo"> @lang('admin/_globals.forms.nav.seo')</a></li>
             <li><a data-toggle="tab" href="#tab-comments"> @lang('admin/_globals.forms.nav.comments') ({{ $post->comments->count() }})</a></li>
         </ul>
 
-        <form action="{{ route('admin.blog.posts.update', $post->id) }}" method="post">
+        <form action="{{ route('admin.blog.posts.update', $post->id) }}" class="fileupload" method="post" enctype="multipart/form-data">
             <div class="tab-content">
                 
                 <div id="tab-contents" class="tab-pane active">
@@ -61,6 +72,12 @@
                         </fieldset>
                         
                 	</div>
+                </div>
+
+                <div id="tab-images" class="tab-pane">
+                    <div class="panel-body">
+                        @include('admin._inc.fileupload.buttons')
+                    </div>
                 </div>
 
                 <div id="tab-seo" class="tab-pane">
@@ -127,3 +144,51 @@
     </div>
 
 @endsection
+
+@section('javascript')
+
+    @parent
+
+    @include('admin._inc.fileupload.upload')
+    @include('admin._inc.fileupload.download')
+
+    <!-- Blueimp Jquery File Upload -->
+    <script type="text/javascript" src="{!! asset('assets/components/blueimp-file-upload/js/vendor/jquery.ui.widget.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('assets/components/blueimp-tmpl/js/tmpl.min.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('assets/components/blueimp-load-image/js/load-image.all.min.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('assets/components/blueimp-canvas-to-blob/js/canvas-to-blob.min.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('assets/components/blueimp-file-upload/js/jquery.iframe-transport.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('assets/components/blueimp-file-upload/js/jquery.fileupload.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('assets/components/blueimp-file-upload/js/jquery.fileupload-process.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('assets/components/blueimp-file-upload/js/jquery.fileupload-image.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('assets/components/blueimp-file-upload/js/jquery.fileupload-audio.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('assets/components/blueimp-file-upload/js/jquery.fileupload-video.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('assets/components/blueimp-file-upload/js/jquery.fileupload-validate.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('assets/components/blueimp-file-upload/js/jquery.fileupload-ui.js') !!}"></script>
+
+    <script type="text/javascript">
+        
+        // Initialize the jQuery File Upload widget:
+        $('.fileupload').fileupload({
+            autoUpload: true,
+            acceptFileTypes: /(\.|\/)(gif|jpe?g|png|bmp)$/i,
+            maxFileSize: 10240000, // 10 MB
+            url: '{{ route('admin.blog.posts.upload',$post->id) }}' ,
+        });
+
+         // Load existing files:
+        $('.fileupload').addClass('fileupload-processing');
+
+        $.ajax({
+            url: $('.fileupload').fileupload('option', 'url'),
+            dataType: 'json',
+            context: $('.fileupload')[0]
+        }).always(function () {
+            $(this).removeClass('fileupload-processing');
+        }).done(function (result) {
+            $(this).fileupload('option', 'done').call(this, $.Event('done'), {result: result});
+        });
+
+    </script>
+
+@stop

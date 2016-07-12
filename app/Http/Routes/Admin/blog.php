@@ -71,6 +71,11 @@ Route::group(['prefix' => 'blog', 'as' => 'blog.'], function () {
             'as' => 'destroy',
             'uses' => 'Admin\Blog\PostsController@destroy',
         ]);
+
+        Route::any('upload/{id?}', [
+            'as' => 'upload',
+            'uses' => 'Admin\Blog\PostsController@upload',
+        ]);
     });
 
     // --------------------------------------------------------------------------------------------

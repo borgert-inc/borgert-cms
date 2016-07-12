@@ -6,9 +6,13 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Blog\Categorys;
 use App\Models\Admin\Blog\Posts;
+use App\Libraries\UploadHandler;
 
 class PostsController extends Controller
 {
+    const UPLOAD_PATH = 'blog/posts/';
+    const UPLOAD_ROUTE = 'admin.blog.posts.upload';
+
     /**
      * Display a listing of the resource.
      *
@@ -58,6 +62,14 @@ class PostsController extends Controller
         $post->seo_description = $request->seo_description;
 
         $post->save();
+
+        $user = \Auth::User();
+        $path_from = self::UPLOAD_PATH.'temp-'.$user->id.'/';
+        $path_to = self::UPLOAD_PATH.$post->id;
+
+        if (\Storage::disk('uploads')->exists($path_from)) {
+            \Storage::disk('uploads')->move($path_from, $path_to);
+        }
 
         \Session::flash('success', trans('admin/blog.posts.store.messages.success'));
 
@@ -127,6 +139,60 @@ class PostsController extends Controller
         Posts::destroy($request->posts);
         \Session::flash('success', trans('admin/blog.posts.destroy.messages.success'));
 
+        // Precisamos remover as imagens desse ID também
+        // tem que ser um foreach porque é um array de galerias
+        foreach ($request->contents as $id) {
+            // Checamos se o diretório existe
+            $path = self::UPLOAD_PATH.$id;
+
+            // Deletamos o diretório da imagem
+            if (\Storage::disk('uploads')->exists($path)) {
+                \Storage::disk('uploads')->deleteDirectory($path);
+            }
+        }
+
         return redirect()->route('admin.blog.posts.list');
+    }
+
+    /**
+     * Faz o envio ou carrrega as imagens de um diretório.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function upload(Request $request, $id = null)
+    {
+        $user = \Auth::User();
+
+        $path = 'temp-'.$user->id;
+
+        if (is_numeric($id)) {
+            $path = $id;
+        }
+
+        $config = [
+            'script_url' => route(self::UPLOAD_ROUTE, $path),
+            'upload_dir' => base_path().'/public/uploads/'.self::UPLOAD_PATH.$path.'/',
+            'upload_url' => url('/').'/uploads/'.self::UPLOAD_PATH.$path.'/',
+            'delete_type' => 'GET',
+        ];
+
+
+        // Deletamos a imagem por GET
+        if (isset($request->file)) {
+            $file = self::UPLOAD_PATH.$path.'/'.$request->file;
+            if (\Storage::disk('uploads')->has($file)) {
+                \Storage::disk('uploads')->delete($file);
+            }
+
+            $thumb = self::UPLOAD_PATH.$path.'/thumbnail/'.$request->file;
+            if (\Storage::disk('uploads')->has($thumb)) {
+                \Storage::disk('uploads')->delete($thumb);
+            }
+        }
+
+        new UploadHandler($config);
+
+        return view('admin._inc.fileupload.empty');
     }
 }

@@ -2,7 +2,7 @@
     <h1>Rocket CMS</h1>
     <p>
         A simple CMS to start projects in Laravel 5.2 containing some modules.<br>
-        Blog, Pages, Products, Mailbox, Database Images and Users.
+        Blog, Pages, Products, Mailbox, Image Gallery and Users.
     </p>
     <br>
     <img src="http://i.imgur.com/uDYYTwS.png" width="250px">

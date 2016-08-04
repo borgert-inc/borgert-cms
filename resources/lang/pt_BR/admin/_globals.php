@@ -54,6 +54,7 @@ return [
         'name' => 'Nome',
         'email' => 'E-mail',
         'password' => 'Senha',
+        'confirm_password' => 'Confirme a Senha',
         'status' => 'Status',
         'active' => 'Ativo',
         'inactive' => 'Inativo',

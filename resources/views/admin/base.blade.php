@@ -85,7 +85,7 @@
                             <a class="navbar-minimalize minimalize-styl-2 btn btn-default" href="#"><i class="fa fa-bars"></i> </a>
                         </div>
                         <ul class="nav navbar-top-links navbar-right">
-                            <li><span class="m-r-sm text-muted welcome-message">@lang('admin/_globals.hello') <strong>{{ Auth::user()->name }}</strong></span><img src="{{ Gravatar::src(Auth::user()->email, 60) }}" class="img-circle" height="32"></li>
+                            <li><span class="m-r-sm text-muted welcome-message">@lang('admin/_globals.hello') <strong><a href="{{ route('admin.profile.profile') }}" class="no-padding">{{ Auth::user()->name }}</a></strong></span><img src="{{ Gravatar::src(Auth::user()->email, 60) }}" class="img-circle" height="32"></li>
                             <li><a href="{{ route('auth.logout') }}"><i class="fa fa-sign-out"></i> @lang('admin/_globals.exit')</a></li>
                         </ul>
                     </nav>
@@ -105,7 +105,7 @@
                 
                 <!-- Footer -->
                 <div class="footer">
-                    <div class="pull-right"><a href="https://github.com/odirleiborgert/rocket-cms" target="_blank"><u>Open Source</u> <i class="fa fa-github"></i></a> - <strong>v.0.0.11</strong></div>
+                    <div class="pull-right"><a href="https://github.com/odirleiborgert/rocket-cms" target="_blank"><u>Open Source</u> <i class="fa fa-github"></i></a> - <strong>v.0.0.12</strong></div>
                     <div><strong>Rocket CMS</strong> - {{ date('Y') }}</div>
                 </div>
 

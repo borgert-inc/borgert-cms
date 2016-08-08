@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin\Users;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Admin\Users;
+use App\User;
 
 class UsersController extends Controller
 {
@@ -15,7 +15,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = Users::sortable(['created_at' => 'desc'])->paginate(10);
+        $users = User::sortable(['created_at' => 'desc'])->paginate(10);
 
         return view('admin.users.list', ['users' => $users]);
     }
@@ -44,7 +44,7 @@ class UsersController extends Controller
             'password'   => 'required',
         ]);
 
-        $users = new Users;
+        $users = new User;
 
         $users->name = $request->name;
         $users->email = $request->email;
@@ -66,7 +66,7 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        $user = Users::find($id);
+        $user = User::find($id);
 
         return view('admin.users.edit', ['user' => $user]);
     }
@@ -86,7 +86,7 @@ class UsersController extends Controller
             'password'   => 'required',
         ]);
 
-        $user = Users::find($id);
+        $user = User::find($id);
 
         $user->name = $request->name;
         $user->email = $request->email;
@@ -121,7 +121,7 @@ class UsersController extends Controller
             return redirect()->route('admin.users.list');
         }
 
-        Users::destroy($request->users);
+        User::destroy($request->users);
         \Session::flash('success', trans('admin/users.destroy.messages.success'));
 
         return redirect()->route('admin.users.list');

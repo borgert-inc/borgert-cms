@@ -34,6 +34,7 @@ class ProfileController extends Controller
 
         if ($request->password != $request->confirm_password) {
             \Session::flash('success', trans('admin/profile.profile.password.messages.error'));
+
             return redirect()->route('admin.profile.profile');
         }
 
@@ -45,5 +46,4 @@ class ProfileController extends Controller
 
         return redirect()->route('admin.profile.profile');
     }
-
 }

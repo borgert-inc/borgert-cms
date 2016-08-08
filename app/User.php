@@ -7,7 +7,7 @@ use Kyslik\ColumnSortable\Sortable;
 
 class User extends Authenticatable
 {
-    use Sortable
+    use Sortable;
 
     /**
      * The attributes that are mass assignable.

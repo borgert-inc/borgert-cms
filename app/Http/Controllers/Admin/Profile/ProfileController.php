@@ -32,7 +32,7 @@ class ProfileController extends Controller
             'confirm_password'  => 'required',
         ]);
 
-        if($request->password <> $request->confirm_password){
+        if ($request->password != $request->confirm_password) {
             \Session::flash('success', trans('admin/profile.profile.password.messages.error'));
             return redirect()->route('admin.profile.profile');
         }

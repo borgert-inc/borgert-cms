@@ -4,7 +4,7 @@
 Route::group(['prefix' => 'profile', 'as' => 'profile.'], function () {
 
     // --------------------------------------------------------------------------------------------
-    
+
     Route::get('', [
         'as' => 'profile',
         'uses' => 'Admin\Profile\ProfileController@index',

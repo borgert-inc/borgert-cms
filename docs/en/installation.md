@@ -32,6 +32,7 @@ $user = new App\User;
 $user->name = 'Your Name';
 $user->email = 'your@email.com';
 $user->password = \Hash::make('YourPassword');
+$user->status = 1;
 $user->save(); 
 ```
 

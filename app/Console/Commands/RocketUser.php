@@ -49,7 +49,7 @@ class RocketUser extends Command
         $user->status = 1;
 
         $user->save();
-        
+
         $this->info('The user create with success!');
     }
 }

@@ -25,6 +25,10 @@ Set or create `.env` file with your database settings, `.env.example` file can b
 #### Step 7:
 Let access to tinker artisan to create the first user to access the CMS.
 
+> php artisan rocket:user 
+
+OR
+
 > php artisan tinker 
 
 ```shell

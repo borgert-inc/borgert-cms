@@ -25,6 +25,10 @@ Configure ou crie o arquivo `.env` com suas configurações de banco de dados, o
 #### Passo 7:
 Vamos acessar ao tinker do artisan para criar o primeiro usuário para acessar ao CMS
 
+> php artisan rocket:user 
+
+Ou
+
 > php artisan tinker 
 
 ```shell

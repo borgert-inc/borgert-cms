@@ -71,6 +71,8 @@
 <a name="log"></a>
 ## Change log
 
+* v0.0.13
+    * Implement publish_at in post blog
 * v0.0.12
     * Create profile user (access: http://localhost:8000/admin/profile/)
 * v0.0.11

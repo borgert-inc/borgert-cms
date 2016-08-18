@@ -20,6 +20,9 @@
             
             <!-- Animate.css -->
             <link href="{!! asset('assets/components/animate.css/animate.min.css') !!}" rel="stylesheet">
+
+            <!-- Bootstrap datetimepicker -->
+            <link href="{!! asset('assets/components/datetimepicker/jquery.datetimepicker.css') !!}" rel="stylesheet">
             
             <!-- Blueimp Jquery File Upload -->
             <link href="{!! asset('assets/components/blueimp-file-upload/css/jquery.fileupload.css') !!}" rel="stylesheet">
@@ -133,6 +136,9 @@
             <!-- Summernote (Editor) -->
             <script type="text/javascript" src="{!! asset('assets/components/summernote/dist/summernote.min.js') !!}"></script>
             <script type="text/javascript" src="{!! asset('assets/components/summernote/dist/lang/summernote-pt-BR.min.js') !!}"></script>
+
+            <!-- Bootstrap datetimepicker -->
+            <script src="{!! asset('assets/components/datetimepicker/build/jquery.datetimepicker.full.min.js') !!}" type="text/javascript"></script>
 
             <!-- Pace (Loading) -->
             <script type="text/javascript" src="{!! asset('assets/components/pace/pace.min.js') !!}"></script>

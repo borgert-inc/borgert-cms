@@ -36,6 +36,7 @@ return [
         'active' => 'Active',
         'inactive' => 'Inactive',
         'not_found' => 'There are no records.',
+        'publish_at' => 'Publish at',
     ],
 
     // Forms
@@ -60,6 +61,7 @@ return [
         'inactive' => 'Inactive',
         'limit_characters' => 'Allowed to limit :limit characters',
         'processing' => 'Processing',
+        'publish_at' => 'Publish at',
     ],
 
 ];

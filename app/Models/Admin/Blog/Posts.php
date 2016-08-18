@@ -24,7 +24,13 @@ class Posts extends Model
         'title',
         'status',
         'created_at',
+        'publish_at',
     ];
+
+    public function publish()
+    {
+        return date('d M Y | H:i', strtotime($this->publish_at));
+    }
 
     public function category()
     {

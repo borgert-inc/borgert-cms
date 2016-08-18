@@ -21,6 +21,7 @@
                                 <tr>
                                     <th>@sortablelink('id', '#')</th>
                                     <th>@sortablelink('created_at', trans('admin/_globals.tables.created_at'))</th>
+                                    <th>@sortablelink('publish_at', trans('admin/_globals.tables.publish_at'))</th>
                                     <th>@sortablelink('category_id', trans('admin/_globals.tables.category'))</th>
                                     <th>@sortablelink('title', trans('admin/_globals.tables.title'))</th>
                                     <th>@lang('admin/_globals.tables.comments')</th>
@@ -33,6 +34,7 @@
                                     <tr>
                                         <td><input type="checkbox" class="i-checks" name="posts[]" value="{{ $post->id }}"></td>
                                         <td>{{ date('d M Y | H:i', $post->created_at->timestamp) }}</td>
+                                        <td>{{ $post->publish() }}</td>
                                         <td>{{ $post->category->title }}</td>
                                         <td>{{ $post->title }}</td>
                                         <td>{{ $post->comments->count() }}</td>

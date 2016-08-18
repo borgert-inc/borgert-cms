@@ -36,6 +36,10 @@
                         {{ csrf_field() }}
                         <fieldset class="form-horizontal">
                             <div class="form-group">
+                                <label class="col-sm-2 control-label">@lang('admin/_globals.forms.publish_at'):</label>
+                                <div class="col-sm-10"><input type="text" name="publish_at" class="form-control datetimepicker" value="{{ old('publish_at') }}"></div>
+                            </div>
+                            <div class="form-group">
                                 <label class="col-sm-2 control-label">@lang('admin/_globals.forms.category'):</label>
                                 <div class="col-sm-10">
                                     <select name="category_id" class="form-control">

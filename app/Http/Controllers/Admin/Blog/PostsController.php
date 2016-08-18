@@ -45,7 +45,9 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
+
         $this->validate($request, [
+            'publish_at'  => 'required',
             'category_id' => 'required|integer',
             'title'       => 'required',
             'content'     => 'required',
@@ -54,6 +56,7 @@ class PostsController extends Controller
 
         $post = new Posts;
 
+        $post->publish_at = $request->publish_at;
         $post->category_id = $request->category_id;
         $post->title = $request->title;
         $post->content = $request->content;
@@ -100,6 +103,7 @@ class PostsController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
+            'publish_at'  => 'required',
             'category_id' => 'required|integer',
             'title'       => 'required',
             'content'     => 'required',
@@ -108,6 +112,7 @@ class PostsController extends Controller
 
         $post = Posts::find($id);
 
+        $post->publish_at = $request->publish_at;
         $post->category_id = $request->category_id;
         $post->title = $request->title;
         $post->content = $request->content;

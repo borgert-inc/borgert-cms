@@ -5,7 +5,7 @@ return [
     'module' => 'Blog',
 
     'submodule' => [
-        'categorys' => 'Categorys',
+        'categorys' => 'Categories',
         'comments' => 'Comments',
         'posts' => 'Posts',
     ],
@@ -13,7 +13,7 @@ return [
 
     'categorys' => [
         'list' => [
-            'title' => 'List categorys (:total)',
+            'title' => 'List categories (:total)',
             'is_empty' => 'No category registered.',
         ],
 
@@ -33,7 +33,7 @@ return [
 
         'update' => [
             'messages' => [
-                'success' => 'The category was successful!',
+                'success' => 'The category was updated successfully!',
             ],
         ],
 
@@ -108,7 +108,7 @@ return [
 
         'update' => [
             'messages' => [
-                'success' => 'The post has been updated successfully.',
+                'success' => 'The post has been successfully updated.',
             ],
         ],
 

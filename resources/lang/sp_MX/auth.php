@@ -13,48 +13,48 @@ return [
     |
     */
 
-    'failed' => 'These credentials do not match our records.',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'failed' => 'Estas credenciales no existen en nuestro registro.',
+    'throttle' => 'Demaciados Intentos. Intenta de nuevo :seconds segundos.',
 
     // Login
     'login' => [
-        'welcome' => 'Welcome to Rocket CMS',
+        'welcome' => 'Bienvenido a Rocket CMS',
         'form' => [
             'email' => 'E-mail',
-            'senha' => 'Password',
-            'button' => 'Login',
+            'senha' => 'contraseña',
+            'button' => 'Iniciar sesion',
         ],
         'messages' => [
-            'error' => 'Username or password is invalid!',
+            'error' => 'Usuario or contraseña invalido!',
         ],
-        'forgot' => 'Forgot your password?',
+        'forgot' => '¿Olvidaste tu contraseña?',
     ],
 
     // Forget Password
     'forget' => [
-        'title' => 'Forgot my password',
+        'title' => 'Olvide mi contraseña',
         'form' => [
             'email' => 'E-mail',
-            'button' => 'Send new password',
+            'button' => 'Enviar nueva contraseña',
         ],
-        'back' => 'Back to Login',
+        'back' => 'Regreso Login',
     ],
 
     // E-mail
     'email' => [
         'password' => [
-            'description' => 'Click here to reset your password:',
+            'description' => 'Haz Click aqui para restaurar contraseña:',
         ],
     ],
 
     // Reset de senha
     'reset' => [
-        'title' => 'Reset your password',
+        'title' => 'Restablecer contraseña',
         'form' => [
             'email' => 'E-mail',
-            'password' => 'Password',
-            'password_confirmation' => 'Confirm the Password',
-            'button' => 'Redefine password',
+            'password' => 'Contraseña',
+            'password_confirmation' => 'Confirmar la contraseña',
+            'button' => 'Restablecer contraseña',
         ],
     ],
 

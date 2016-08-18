@@ -25,7 +25,7 @@ return [
 
     'update' => [
         'messages' => [
-            'success' => 'The gallery was successful!',
+            'success' => 'The gallery was successfully updated!',
         ],
     ],
 

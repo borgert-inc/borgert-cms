@@ -5,13 +5,13 @@ return [
     'module' => 'Pages',
 
     'submodule' => [
-        'categorys' => 'Categorys',
+        'categorys' => 'Categories',
         'contents' => 'Contents',
     ],
 
     'categorys' => [
         'list' => [
-            'title' => 'List of Categorys (:total)',
+            'title' => 'List of Categories (:total)',
             'is_empty' => 'No category registered',
         ],
 
@@ -31,7 +31,7 @@ return [
 
         'update' => [
             'messages' => [
-                'success' => 'The category was successful!',
+                'success' => 'The category was successfully updated!',
             ],
         ],
 

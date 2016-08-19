@@ -4,9 +4,7 @@ namespace App\Http\Controllers\Admin\Pages;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Pages\Categorys;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
 
 class CategorysController extends Controller
 {

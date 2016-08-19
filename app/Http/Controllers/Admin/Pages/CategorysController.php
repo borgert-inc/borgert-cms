@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers\Admin\Pages;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Pages\Categorys;
-use Carbon\Carbon;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
 
 class CategorysController extends Controller
 {
@@ -18,6 +16,7 @@ class CategorysController extends Controller
     public function index()
     {
         $categorys = Categorys::sortable(['created_at' => 'desc'])->paginate(10);
+
         return view('admin.pages.categorys.list', ['categorys' => $categorys]);
     }
 

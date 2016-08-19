@@ -30,7 +30,7 @@
                                 @foreach($gallerys as $key => $gallery)
                                     <tr>
                                         <td><input type="checkbox" class="i-checks" name="gallerys[]" value="{{ $gallery->id }}"></td>
-                                        <td>{{ date('d M Y | H:i', $gallery->created_at->timestamp) }}</td>
+                                        <td>{{ $gallery->created_at->diffForHumans()  }}</td>
                                         <td>{{ $gallery->title }}</td>
                                         <td>
                                             @if ($gallery->status === 1)

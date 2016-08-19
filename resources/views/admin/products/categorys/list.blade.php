@@ -30,7 +30,7 @@
                                 @foreach($categorys as $key => $category)
                                     <tr>
                                         <td><input type="checkbox" class="i-checks" name="categorys[]" value="{{ $category->id }}"></td>
-                                        <td>{{ date('d M Y | H:i', $category->created_at->timestamp) }}</td>
+                                        <td>{{ $category->created_at->diffForHumans()  }}</td>
                                         <td>{{ $category->title }}</td>
                                         <td>
                                             @if ($category->status === 1)

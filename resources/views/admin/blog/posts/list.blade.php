@@ -33,7 +33,7 @@
                                 @foreach($posts as $key => $post)
                                     <tr>
                                         <td><input type="checkbox" class="i-checks" name="posts[]" value="{{ $post->id }}"></td>
-                                        <td>{{ date('d M Y | H:i', $post->created_at->timestamp) }}</td>
+                                        <td>{{ $post->created_at->diffForHumans() }}</td>
                                         <td>{{ $post->publish() }}</td>
                                         <td>{{ $post->category->title }}</td>
                                         <td>{{ $post->title }}</td>

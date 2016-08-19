@@ -31,7 +31,7 @@
                                 @foreach($users as $key => $user)
                                     <tr>
                                         <td><input type="checkbox" class="i-checks" name="users[]" value="{{ $user->id }}"></td>
-                                        <td>{{ date('d M Y | H:i', $user->created_at->timestamp) }}</td>
+                                        <td>{{ $user->created_at->diffForHumans() }}</td>
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->email }}</td>
                                         <td>

@@ -31,7 +31,7 @@
                                 @foreach($contents as $key => $content)
                                     <tr>
                                         <td><input type="checkbox" class="i-checks" name="contents[]" value="{{ $content->id }}"></td>
-                                        <td>{{ date('d M Y | H:i', $content->created_at->timestamp) }}</td>
+                                        <td>{{ $content->created_at->diffForHumans() }}</td>
                                         <td>{{ $content->category->title }}</td>
                                         <td>{{ $content->title }}</td>
                                         <td>

@@ -140,25 +140,25 @@ class UploadHandler
                     'auto_orient' => true,
                 ],
                 // Uncomment the following to create medium sized images:
-                /*
-                'medium' => array(
-                    'max_width' => 800,
-                    'max_height' => 600
-                ),
-                */
+                // 'medium' => array(
+                //     'max_width' => 800,
+                //     'max_height' => 600
+                // ),
                 'thumbnail' => [
-                    // Uncomment the following to use a defined directory for the thumbnails
-                    // instead of a subdirectory based on the version identifier.
-                    // Make sure that this directory doesn't allow execution of files if you
-                    // don't pose any restrictions on the type of uploaded files, e.g. by
-                    // copying the .htaccess file from the files directory for Apache:
-                    //'upload_dir' => dirname($this->get_server_var('SCRIPT_FILENAME')).'/thumb/',
-                    //'upload_url' => $this->get_full_url().'/thumb/',
-                    // Uncomment the following to force the max
-                    // dimensions and e.g. create square thumbnails:
-                    //'crop' => true,
-                    'max_width' => 80,
-                    'max_height' => 80,
+                    /**
+                     * Uncomment the following to use a defined directory for the thumbnails
+                     * instead of a subdirectory based on the version identifier.
+                     * Make sure that this directory doesn't allow execution of files if you
+                     * don't pose any restrictions on the type of uploaded files, e.g. by
+                     * copying the .htaccess file from the files directory for Apache:
+                     * 'upload_dir' => dirname($this->get_server_var('SCRIPT_FILENAME')).'/thumb/',
+                     * Uncomment the following to force the max
+                     * 'upload_url' => $this->get_full_url().'/thumb/',
+                     * dimensions and e.g. create square thumbnails:
+                     */
+                    'crop' => true,
+                    'max_width' => 100,
+                    'max_height' => 100,
                 ],
             ],
             'print_response' => true,
@@ -214,7 +214,7 @@ class UploadHandler
 
     protected function get_user_id()
     {
-        @session_start();
+        session_start();
 
         return session_id();
     }
@@ -231,9 +231,8 @@ class UploadHandler
     protected function get_upload_path($file_name = null, $version = null)
     {
         $file_name = $file_name ? $file_name : '';
-        if (empty($version)) {
-            $version_path = '';
-        } else {
+        $version_path = '';
+        if (! empty($version)) {
             $version_dir = @$this->options['image_versions'][$version]['upload_dir'];
             if ($version_dir) {
                 return $version_dir.$this->get_user_path().$file_name;
@@ -263,9 +262,9 @@ class UploadHandler
 
             return $url.'&download=1';
         }
-        if (empty($version)) {
-            $version_path = '';
-        } else {
+        $version_path = '';
+
+        if (! empty($version)) {
             $version_url = @$this->options['image_versions'][$version]['upload_url'];
             if ($version_url) {
                 return $version_url.$this->get_user_path().rawurlencode($file_name);
@@ -273,8 +272,7 @@ class UploadHandler
             $version_path = rawurlencode($version).'/';
         }
 
-        return $this->options['upload_url'].$this->get_user_path()
-            .$version_path.rawurlencode($file_name);
+        return $this->options['upload_url'].$this->get_user_path().$version_path.rawurlencode($file_name);
     }
 
     protected function set_additional_file_properties($file)
@@ -392,7 +390,7 @@ class UploadHandler
         return $this->fix_integer_overflow($val);
     }
 
-    protected function validate($uploaded_file, $file, $error, $index)
+    protected function validate($uploaded_file, $file, $error)
     {
         if ($error) {
             $file->error = $this->get_error_message($error);
@@ -498,16 +496,10 @@ class UploadHandler
 
     protected function upcount_name($name)
     {
-        return preg_replace_callback(
-            '/(?:(?: \(([\d]+)\))?(\.[^.]+))?$/',
-            [$this, 'upcount_name_callback'],
-            $name,
-            1
-        );
+        return preg_replace_callback('/(?:(?: \(([\d]+)\))?(\.[^.]+))?$/', [$this, 'upcount_name_callback'], $name, 1);
     }
 
-    protected function get_unique_filename($file_path, $name, $size, $type, $error,
-            $index, $content_range)
+    protected function get_unique_filename($file_path, $name, $size, $type, $error, $index, $content_range)
     {
         while (is_dir($this->get_upload_path($name))) {
             $name = $this->upcount_name($name);
@@ -525,8 +517,7 @@ class UploadHandler
         return $name;
     }
 
-    protected function fix_file_extension($file_path, $name, $size, $type, $error,
-            $index, $content_range)
+    protected function fix_file_extension($file_path, $name, $size, $type, $error, $index, $content_range)
     {
         // Add missing file extension for known image types:
         if (strpos($name, '.') === false &&
@@ -1154,7 +1145,7 @@ class UploadHandler
             $index, $content_range);
         $file->size = $this->fix_integer_overflow((int) $size);
         $file->type = $type;
-        if ($this->validate($uploaded_file, $file, $error, $index)) {
+        if ($this->validate($uploaded_file, $file, $error)) {
             $this->handle_form_data($file, $index);
             $upload_dir = $this->get_upload_path();
             if (! is_dir($upload_dir)) {

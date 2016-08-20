@@ -45,7 +45,6 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-
         $this->validate($request, [
             'publish_at'  => 'required',
             'category_id' => 'required|integer',

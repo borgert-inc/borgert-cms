@@ -34,7 +34,7 @@
                                     <tr>
                                         <td><input type="checkbox" class="i-checks" name="posts[]" value="{{ $post->id }}"></td>
                                         <td>{{ $post->created_at->diffForHumans() }}</td>
-                                        <td>{{ $post->publish() }}</td>
+                                        <td>{{ $post->publish_at->diffForHumans() }}</td>
                                         <td>{{ $post->category->title }}</td>
                                         <td>{{ $post->title }}</td>
                                         <td>{{ $post->comments->count() }}</td>

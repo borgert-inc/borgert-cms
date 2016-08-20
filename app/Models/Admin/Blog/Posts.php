@@ -12,6 +12,8 @@ class Posts extends Model
 
     protected $table = 'blog_posts';
 
+    protected $dates = ['publish_at'];
+
     protected $fillable = [
         'category_id',
         'title',
@@ -26,11 +28,6 @@ class Posts extends Model
         'created_at',
         'publish_at',
     ];
-
-    public function publish()
-    {
-        return date('d M Y | H:i', strtotime($this->publish_at));
-    }
 
     public function category()
     {

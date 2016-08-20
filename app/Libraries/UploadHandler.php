@@ -145,7 +145,7 @@ class UploadHandler
                 //     'max_height' => 600
                 // ),
                 'thumbnail' => [
-                    /**
+                    /*
                      * Uncomment the following to use a defined directory for the thumbnails
                      * instead of a subdirectory based on the version identifier.
                      * Make sure that this directory doesn't allow execution of files if you

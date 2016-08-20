@@ -14,7 +14,7 @@
                     <td class="mail-ontact"><a href="{{ route('admin.mailbox.message',$item->id) }}">{{ $item->name }}</a></td>
                     <td class="mail-subject"><a href="{{ route('admin.mailbox.message',$item->id) }}">{{ $item->subject }}</a></td>
                     <td class=""></td>
-                    <td class="text-right mail-date">{{ date('d M Y | H:i', $item->created_at->timestamp) }}</td>
+                    <td class="text-right mail-date">{{ $item->created_at->diffForHumans() }}</td>
                 </tr>
                 @endforeach
             </tbody>

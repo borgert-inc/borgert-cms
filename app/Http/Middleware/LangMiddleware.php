@@ -4,7 +4,6 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Auth;
 
 class LangMiddleware
 {
@@ -20,8 +19,9 @@ class LangMiddleware
 
         $user = \Auth::user();
         
-        if(isset($user))
+        if (isset($user)) {
             App::setLocale($user->lang);
+        }
 
         return $next($request);
     }

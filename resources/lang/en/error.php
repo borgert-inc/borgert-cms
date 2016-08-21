@@ -13,8 +13,8 @@ return [
     |
     */
 
-	'title'					=> 'Page not found',
-	'description'			=> 'Sorry, the page that you are searching for was not found. Redirect to dashboard.',
-	'link'					=> 'go to Dashboard',
+    'title'                 => 'Page not found',
+    'description'           => 'Sorry, the page that you are searching for was not found. Redirect to dashboard.',
+    'link'                  => 'go to Dashboard',
 
 ];

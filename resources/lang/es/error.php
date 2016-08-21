@@ -13,8 +13,8 @@ return [
     |
     */
 
-	'title'					=> 'Pagina no encontrada',
-	'description'			=> 'Disculpe, la pagina que usted esta buscando no fue encontrada. Haz click en el boton para regresar al dashboard.',
-	'link'					=> 'ir a Dashboard',
+    'title'                 => 'Pagina no encontrada',
+    'description'           => 'Disculpe, la pagina que usted esta buscando no fue encontrada. Haz click en el boton para regresar al dashboard.',
+    'link'                  => 'ir a Dashboard',
 
 ];

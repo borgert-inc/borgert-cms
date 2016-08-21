@@ -15,7 +15,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return view('admin.profile.profile',['user'=>\Auth::user()]);
+        return view('admin.profile.profile', ['user'=>\Auth::user()]);
     }
 
     /**
@@ -40,8 +40,9 @@ class ProfileController extends Controller
         $user = \Auth::user();
         $user->lang = $request->lang;
 
-        if($request->password != "")
+        if ($request->password != "") {
             $user->password = \Hash::make($request->password);
+        }
 
         $user->save();
         \Session::flash('success', trans('admin/profile.profile.password.messages.success'));

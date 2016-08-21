@@ -16,9 +16,11 @@ class DashboardController extends Controller
     {
 
         // Mailbox
-        $mailbox['inbox'] = Mailbox::where('map', 'INBOX');
-        $mailbox['archive'] = Mailbox::where('map', 'ARCHIVE');
-        $mailbox['trash'] = Mailbox::where('map', 'TRASH');
+        $mailbox = [
+            'inbox' => Mailbox::where('map', 'INBOX'),
+            'archive' => Mailbox::where('map', 'ARCHIVE'),
+            'trash' => Mailbox::where('map', 'TRASH'),
+        ];
 
         return view('admin.dashboard.index', $mailbox);
     }

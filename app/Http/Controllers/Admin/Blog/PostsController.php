@@ -45,7 +45,6 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-
         $this->validate($request, [
             'publish_at'  => 'required',
             'category_id' => 'required|integer',
@@ -130,7 +129,6 @@ class PostsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(Request $request)

@@ -9,7 +9,7 @@
         <div class="mail-tools tooltip-demo m-t-md">
             <h3><span class="font-noraml">@lang('admin/mailbox.message.subject'): </span>{{ $message->subject }}</h3>
             <h5>
-                <span class="pull-right font-noraml">{{ $message->created_at }}</span>
+                <span class="pull-right font-noraml">{{ $message->created_at->diffForHumans() }}</span>
                 <span class="font-noraml">@lang('admin/mailbox.message.from'): {{ $message->name }} [<a href="mailto:{{ $message->email }}"><u>{{ $message->email }}</u></a>]</span>
             </h5>
         </div>

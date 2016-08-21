@@ -21,7 +21,7 @@
                             </a>
                             <div class="media-body ">
                                 @lang('admin/blog.posts.edit.posted',['name' => $comment->name, 'title' => $comment->post->title]) <br>
-                                <small class="text-muted">{{ date('d M Y | H:i', $comment->created_at->timestamp) }}</small>
+                                <small class="text-muted">{{ $comment->created_at->diffForHumans() }}</small>
                                 <div class="well">
                                     {{ $comment->content }}
                                 </div>

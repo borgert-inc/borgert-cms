@@ -22,7 +22,14 @@
                 <h3>@lang('admin/profile.profile.password.title')</h3>
 
                 {{ csrf_field() }}
-
+                <div class="form-group">
+                    <label class="control-label">@lang('admin/_globals.forms.language'):</label>
+                    <select class='form-control' name="lang">
+                        <option value="en" @if($user->lang == "en") selected @endif >English</option>
+                        <option value="pt" @if($user->lang == "pt") selected @endif >Portuges</option>
+                        <option value="es" @if($user->lang == "es") selected @endif >Español</option>
+                    </select>
+                </div>
                 <div class="form-group">
                     <label class="control-label">@lang('admin/_globals.forms.password'):</label>
                     <input type="password" name="password" class="form-control">

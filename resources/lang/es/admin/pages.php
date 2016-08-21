@@ -5,7 +5,7 @@ return [
     'module' => 'Paginas',
 
     'submodule' => [
-        'categorys' => 'Categories',
+        'categorys' => 'Categorias',
         'contents' => 'Contenidos',
     ],
 

@@ -10,7 +10,7 @@ return [
         'last_access' => 'Ultimo Acceso',
 
         'password' => [
-            'title' => 'Actializar Contraseña',
+            'title' => 'Actializar Perfil',
             'messages' => [
                 'error' => 'Contraseñas no coinciden.',
                 'success' => '¡Contraseña Actualizada!',

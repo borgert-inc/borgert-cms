@@ -21,13 +21,13 @@
 
     <div class="middle-box text-center animated fadeInDown">
         <h1>404</h1>
-        <h3 class="font-bold">Página não encontrada</h3>
+        <h3 class="font-bold">@lang('error.title')</h3>
 
         <div class="error-desc">
-            Desculpe, mas a página que você está procurando não foi encontrada. Tente verificar a URL para erro, em seguida, apertar o botão de atualizar do seu navegador.
+            @lang('error.description')
         </div>
         <br>    
-        <a href="{{ route('admin.index') }}" class="btn btn-primary">Ir para o Dashboard</a>
+        <a href="{{ route('admin.index') }}" class="btn btn-primary"> @lang('error.link') </a>
     </div>
 
     <div class="footer">

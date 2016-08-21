@@ -10,7 +10,7 @@ return [
         'last_access' => 'Last access',
 
         'password' => [
-            'title' => 'Update Password',
+            'title' => 'Update Profile',
             'messages' => [
                 'error' => 'The two passwords do not match, retype.',
                 'success' => 'Your password has been successfully updated.',

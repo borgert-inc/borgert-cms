@@ -15,7 +15,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return view('admin.profile.profile');
+        return view('admin.profile.profile',['user'=>\Auth::user()]);
     }
 
     /**
@@ -28,8 +28,8 @@ class ProfileController extends Controller
     public function password(Request $request)
     {
         $this->validate($request, [
-            'password'          => 'required',
-            'confirm_password'  => 'required',
+            'password'          => 'sometimes|min:6',
+            'confirm_password'  => 'sometimes|min:6',
         ]);
 
         if ($request->password != $request->confirm_password) {
@@ -39,9 +39,12 @@ class ProfileController extends Controller
         }
 
         $user = \Auth::user();
-        $user->password = \Hash::make($request->password);
-        $user->save();
+        $user->lang = $request->lang;
 
+        if($request->password != "")
+            $user->password = \Hash::make($request->password);
+
+        $user->save();
         \Session::flash('success', trans('admin/profile.profile.password.messages.success'));
 
         return redirect()->route('admin.profile.profile');

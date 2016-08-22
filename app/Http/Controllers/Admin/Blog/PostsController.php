@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Admin\Blog\Categorys;
 use App\Models\Admin\Blog\Posts;
 use App\Libraries\UploadHandler;
+use Carbon\Carbon;
 
 class PostsController extends Controller
 {
@@ -55,7 +56,7 @@ class PostsController extends Controller
 
         $post = new Posts;
 
-        $post->publish_at = $request->publish_at;
+        $post->publish_at = new Carbon($request->publish_at);
         $post->category_id = $request->category_id;
         $post->title = $request->title;
         $post->content = $request->content;
@@ -111,7 +112,7 @@ class PostsController extends Controller
 
         $post = Posts::find($id);
 
-        $post->publish_at = $request->publish_at;
+        $post->publish_at = new Carbon($request->publish_at);
         $post->category_id = $request->category_id;
         $post->title = $request->title;
         $post->content = $request->content;

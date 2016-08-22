@@ -16,7 +16,6 @@ class LangMiddleware
      */
     public function handle($request, Closure $next)
     {
-
         $user = \Auth::user();
         
         if (isset($user)) {

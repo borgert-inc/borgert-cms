@@ -24,8 +24,7 @@ class Contents extends Model
         'created_at',
     ];
 
-    public function category()
-    {
+    public function category() {
         return $this->belongsTo('App\Models\Admin\Pages\Categorys');
     }
 }

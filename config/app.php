@@ -160,7 +160,6 @@ return [
         Thomaswelton\LaravelGravatar\LaravelGravatarServiceProvider::class,
         Kyslik\ColumnSortable\ColumnSortableServiceProvider::class,
 
-
     ],
 
     /*
@@ -209,6 +208,7 @@ return [
 
         'Gravatar' => Thomaswelton\LaravelGravatar\Facades\Gravatar::class,
         'Input' => Illuminate\Support\Facades\Input::class,
+        'Routing' => App\Http\Routes\Routing::class,
 
     ],
 

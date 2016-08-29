@@ -27,7 +27,7 @@
 			$config = ['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'];
 			Route::group($config, function () {
 
-				$this->require('/Admin');
+				$this->make('/Admin');
 
 			});
 
@@ -37,12 +37,12 @@
 
 		private function pages() {
 
-			$this->require('/Custom');
+			$this->make('/Custom');
 			return $this;
 
 		}
 
-		private function require($folder) {
+		private function make($folder) {
 
 			$files = File::allFiles(__DIR__.$folder);
 

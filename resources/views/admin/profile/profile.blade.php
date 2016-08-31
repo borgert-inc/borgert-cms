@@ -26,7 +26,7 @@
                     <label class="control-label">@lang('admin/_globals.forms.language'):</label>
                     <select class='form-control' name="lang">
                         <option value="en" @if($user->lang == "en") selected @endif >English</option>
-                        <option value="pt" @if($user->lang == "pt") selected @endif >Portuges</option>
+                        <option value="pt" @if($user->lang == "pt") selected @endif >Português</option>
                         <option value="es" @if($user->lang == "es") selected @endif >Español</option>
                     </select>
                 </div>

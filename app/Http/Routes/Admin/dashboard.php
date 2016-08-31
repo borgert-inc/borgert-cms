@@ -1,4 +1,6 @@
 <?php
 
 // Dashboard
-Route::get('/', ['as' => 'index', 'uses' => 'Admin\DashboardController@index']);
+Route::get('/dashboard', ['as' => 'index', 'uses' => 'Admin\DashboardController@index']);
+
+

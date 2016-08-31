@@ -21,6 +21,7 @@ return [
         'send' => 'Send',
         'send_trash' => 'Send to Trash',
         'archive' => 'Archive',
+        'view' => 'View',
     ],
 
     // Tables and lists

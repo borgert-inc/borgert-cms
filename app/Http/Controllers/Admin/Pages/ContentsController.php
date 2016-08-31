@@ -42,7 +42,7 @@ class ContentsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'category_id' => 'required|integer',
+            'category_id' => 'sometimes|integer',
             'title'       => 'required',
             'content'     => 'required',
             'status'      => 'required|integer',
@@ -56,7 +56,7 @@ class ContentsController extends Controller
         $content->status = $request->status;
         $content->seo_title = $request->seo_title;
         $content->seo_description = $request->seo_description;
-
+        $content->slug = str_slug($request->title);
         $content->save();
 
         \Session::flash('success', trans('admin/pages.contents.store.messages.success'));
@@ -88,7 +88,7 @@ class ContentsController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'category_id' => 'required|integer',
+            'category_id' => 'sometimes|integer',
             'title'       => 'required',
             'content'     => 'required',
             'status'      => 'required|integer',
@@ -102,6 +102,7 @@ class ContentsController extends Controller
         $content->status = $request->status;
         $content->seo_title = $request->seo_title;
         $content->seo_description = $request->seo_description;
+        $content->slug = str_slug($request->title);
 
         $content->save();
 

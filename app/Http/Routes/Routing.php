@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\File;
 
 class Routing
 {
-
     public static function get()
     {
         $routing = new self();
@@ -46,7 +45,6 @@ class Routing
             if (! file_exists($file)) {
                 $text = 'O arquivo da ['.$file.'] da da rota não existe.';
                 throw new FileNotFoundException($text);
-
             }
 
             require_once $file;

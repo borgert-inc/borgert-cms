@@ -1,64 +1,60 @@
 <?php
 
-	namespace App\Http\Routes;
+    namespace App\Http\Routes;
 
-	use Illuminate\Support\Facades\Route;
-	use Illuminate\Support\Facades\File;
-	use Illuminate\Support\Facades\App;
-	
-	class Routing {
+    use Illuminate\Support\Facades\Route;
+    use Illuminate\Support\Facades\File;
+    use Illuminate\Support\Facades\App;
+    
+    class Routing {
 
-		public static function get(){
+        public static function get()
+        {
+            $routing = new Routing();
+            $routing->auth()->admin()->pages();
+        }
 
-			$routing = new Routing();
-			$routing->auth()->admin()->pages();
+        private function auth()
+        {
+            require_once  __DIR__.'/Auth/auth.php';
 
-		}
+            return $this;
+        }
 
-		private function auth() {
+        private function admin()
+        {
+            $config = ['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'];
+            Route::group($config, function () {
+                $this->make('/Admin');
+            });
 
-			require_once  __DIR__.'/Auth/auth.php';
-			return $this;
+            return $this;
+        }
 
-		}
+        private function pages()
+        {
+            $this->make('/Custom');
 
-		private function admin() {
+            return $this;
+        }
 
-			$config = ['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'];
-			Route::group($config, function () {
+        private function make($folder)
+        {
 
-				$this->make('/Admin');
+            $files = File::allFiles(__DIR__.$folder);
 
-			});
+            foreach ($files as $file) {
 
-			return $this;
+                if (! file_exists($file)) {
 
-		}
+                    $text = 'O arquivo da ['.$file.'] da da rota não existe.';
+                    throw new FileNotFoundException($text);
 
-		private function pages() {
+                }
 
-			$this->make('/Custom');
-			return $this;
+                require_once $file;
+            }
 
-		}
+        }
 
-		private function make($folder) {
-
-			$files = File::allFiles(__DIR__.$folder);
-
-			foreach ($files as $file) {
-
-				if (! file_exists($file)) {
-
-			    	$text = 'O arquivo da ['.$file.'] da da rota não existe.';
-			        throw new FileNotFoundException($text);
-
-			    }
-
-				require_once $file;
-
-			}
-
-		}
-
-	}
+    }

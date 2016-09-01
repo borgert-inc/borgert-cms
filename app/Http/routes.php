@@ -1,3 +1,3 @@
 <?php
 
-	Routing::get();
+    Routing::get();

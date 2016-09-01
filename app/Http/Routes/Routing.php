@@ -1,60 +1,56 @@
 <?php
 
-    namespace App\Http\Routes;
+namespace App\Http\Routes;
 
-    use Illuminate\Support\Facades\Route;
-    use Illuminate\Support\Facades\File;
-    use Illuminate\Support\Facades\App;
-    
-    class Routing {
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\App;
 
-        public static function get()
-        {
-            $routing = new Routing();
-            $routing->auth()->admin()->pages();
-        }
+class Routing
+{
 
-        private function auth()
-        {
-            require_once  __DIR__.'/Auth/auth.php';
+    public static function get()
+    {
+        $routing = new self();
+        $routing->auth()->admin()->pages();
+    }
 
-            return $this;
-        }
+    private function auth()
+    {
+        require_once __DIR__.'/Auth/auth.php';
 
-        private function admin()
-        {
-            $config = ['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'];
-            Route::group($config, function () {
-                $this->make('/Admin');
-            });
+        return $this;
+    }
 
-            return $this;
-        }
+    private function admin()
+    {
+        $config = ['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'];
+        Route::group($config, function () {
+            $this->make('/Admin');
+        });
 
-        private function pages()
-        {
-            $this->make('/Custom');
+        return $this;
+    }
 
-            return $this;
-        }
+    private function pages()
+    {
+        $this->make('/Custom');
 
-        private function make($folder)
-        {
+        return $this;
+    }
 
-            $files = File::allFiles(__DIR__.$folder);
+    private function make($folder)
+    {
+        $files = File::allFiles(__DIR__.$folder);
 
-            foreach ($files as $file) {
+        foreach ($files as $file) {
+            if (! file_exists($file)) {
+                $text = 'O arquivo da ['.$file.'] da da rota não existe.';
+                throw new FileNotFoundException($text);
 
-                if (! file_exists($file)) {
-
-                    $text = 'O arquivo da ['.$file.'] da da rota não existe.';
-                    throw new FileNotFoundException($text);
-
-                }
-
-                require_once $file;
             }
 
+            require_once $file;
         }
-
     }
+}

@@ -4,8 +4,7 @@ use Illuminate\Support\Facades\App;
 use App\Models\Admin\Pages\Contents;
 
 Route::get('/{page}', ['as' => 'pages', function ($page) {
-
-    $page = Contents::where('slug',$page)->first();
+    $page = Contents::where('slug', $page)->first();
     if (isset($page)) {
         return view('pages.template', ['page' => $page]);
     }
@@ -13,6 +12,6 @@ Route::get('/{page}', ['as' => 'pages', function ($page) {
     App::abort(404);
 }]);
 
-Route::get('/', function() {
+Route::get('/', function () {
     return view('base');
 });

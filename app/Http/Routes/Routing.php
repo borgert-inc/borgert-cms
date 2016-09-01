@@ -4,7 +4,6 @@ namespace App\Http\Routes;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\App;
 
 class Routing
 {

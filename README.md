@@ -22,7 +22,7 @@
 
 > Contributions
 
-[![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg?maxAge=2592000)](https://gitter.im/odirleiborgert/borgert-cms) [![GitHub issues](https://img.shields.io/github/issues/odirleiborgert/borgert-cms.svg)](https://github.com/odirleiborgert/borgert-cms/issues) [![Twitter](https://img.shields.io/twitter/url/https/github.com/odirleiborgert/borgert-cms.svg?style=social)](https://twitter.com/intent/tweet?text=Borgert is a CMS Open Source created with Laravel Framework&url=https://github.com/odirleiborgert/borgert-cms)
+[![GitHub issues](https://img.shields.io/github/issues/odirleiborgert/borgert-cms.svg)](https://github.com/odirleiborgert/borgert-cms/issues) [![Twitter](https://img.shields.io/twitter/url/https/github.com/odirleiborgert/borgert-cms.svg?style=social)](https://twitter.com/intent/tweet?text=Borgert is a CMS Open Source created with Laravel Framework&url=https://github.com/odirleiborgert/borgert-cms)
 
 > Donate
 

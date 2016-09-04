@@ -14,15 +14,15 @@
 
 > Quality
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ad3c062e22ba4c25b8017041b619e217)](https://www.codacy.com/app/odirleiborgert/rocket-planet?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=odirleiborgert/rocket-planet&amp;utm_campaign=Badge_Grade) [![StyleCI](https://styleci.io/repos/60208254/shield?branch=master)](https://styleci.io/repos/60208254) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/odirleiborgert/rocket-cms/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/odirleiborgert/rocket-cms/?branch=master) [![Build Status](https://scrutinizer-ci.com/g/odirleiborgert/rocket-cms/badges/build.png?b=master)](https://scrutinizer-ci.com/g/odirleiborgert/rocket-cms/build-status/master)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ad3c062e22ba4c25b8017041b619e217)](https://www.codacy.com/app/odirleiborgert/borgert-cms?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=odirleiborgert/borgert-cms&amp;utm_campaign=Badge_Grade) [![StyleCI](https://styleci.io/repos/60208254/shield?branch=master)](https://styleci.io/repos/60208254) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/odirleiborgert/borgert-cms/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/odirleiborgert/borgert-cms/?branch=master) [![Build Status](https://scrutinizer-ci.com/g/odirleiborgert/borgert-cms/badges/build.png?b=master)](https://scrutinizer-ci.com/g/odirleiborgert/borgert-cms/build-status/master)
 
 > Tags / Releases
 
-[![GitHub tag](https://img.shields.io/github/tag/odirleiborgert/rocket-cms.svg?maxAge=2592000)](https://github.com/odirleiborgert/rocket-cms/releases)
+[![GitHub tag](https://img.shields.io/github/tag/odirleiborgert/borgert-cms.svg?maxAge=2592000)](https://github.com/odirleiborgert/borgert-cms/releases)
 
 > Contributions
 
-[![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg?maxAge=2592000)](https://gitter.im/odirleiborgert/rocket-cms) [![GitHub issues](https://img.shields.io/github/issues/odirleiborgert/rocket-cms.svg)](https://github.com/odirleiborgert/rocket-cms/issues) [![Twitter](https://img.shields.io/twitter/url/https/github.com/odirleiborgert/rocket-cms.svg?style=social)](https://twitter.com/intent/tweet?text=Rocket CMS criado com Laravel 5.2&url=https://github.com/odirleiborgert/rocket-cms)
+[![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg?maxAge=2592000)](https://gitter.im/odirleiborgert/borgert-cms) [![GitHub issues](https://img.shields.io/github/issues/odirleiborgert/borgert-cms.svg)](https://github.com/odirleiborgert/borgert-cms/issues) [![Twitter](https://img.shields.io/twitter/url/https/github.com/odirleiborgert/borgert-cms.svg?style=social)](https://twitter.com/intent/tweet?text=Borgert is a CMS Open Source created with Laravel Framework&url=https://github.com/odirleiborgert/borgert-cms)
 
 > Donate
 
@@ -51,17 +51,21 @@
 <a name="screenshots"></a>
 ## Screenshots
 
-![alt tag](http://i.imgur.com/Y3JKkJB.png)
+[Imgur](http://i.imgur.com/rbY3B1I.png)
 
-![alt tag](http://i.imgur.com/A0MxUGL.png)
+[Imgur](http://i.imgur.com/Ld8aWJR.png)
+
+[Imgur](http://i.imgur.com/XAMfuXc.png)
+
+[Imgur](http://i.imgur.com/jfysnOh.png)
 
 
 <a name="contributions"></a>
 ## Contributions
 
-> **Want to help?** How about a pull request or create an [issue] (https://github.com/odirleiborgert/rocket-cms/issues) with improvements.
+> **Want to help?** How about a pull request or create an [issue] (https://github.com/odirleiborgert/borgert-cms/issues) with improvements.
 
-[![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg?maxAge=2592000)](https://gitter.im/odirleiborgert/rocket-cms) [![GitHub issues](https://img.shields.io/github/issues/odirleiborgert/rocket-cms.svg)](https://github.com/odirleiborgert/rocket-cms/issues) [![Twitter](https://img.shields.io/twitter/url/https/github.com/odirleiborgert/rocket-cms.svg?style=social)](https://twitter.com/intent/tweet?text=Rocket CMS criado com Laravel 5.2&url=https://github.com/odirleiborgert/rocket-cms)
+[![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg?maxAge=2592000)](https://gitter.im/odirleiborgert/borgert-cms) [![GitHub issues](https://img.shields.io/github/issues/odirleiborgert/borgert-cms.svg)](https://github.com/odirleiborgert/borgert-cms/issues) [![Twitter](https://img.shields.io/twitter/url/https/github.com/odirleiborgert/borgert-cms.svg?style=social)](https://twitter.com/intent/tweet?text=Rocket CMS criado com Laravel 5.2&url=https://github.com/odirleiborgert/borgert-cms)
 
 **We recommend cloud Digital Ocean** 
 > Earn $ 10 cloud dollars using our link 

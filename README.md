@@ -1,5 +1,5 @@
 <div align="center">
-    <h1>Rocket CMS</h1>
+    <h1>Borgert CMS</h1>
     <p>
         A simple CMS to start projects in Laravel 5.2 containing some modules.<br>
         Blog, Pages, Products, Mailbox, Image Gallery and Users.
@@ -43,6 +43,7 @@
 | 2.6 Uploads                 | [EN](docs/en/uploads.md)              | [PT-BR](docs/pt-br/uploads.md)              |
 | 3. Modules                  | [EN](docs/en/modules.md)              | [PT-BR](docs/pt-br/modules.md)              |
 | 4. Libraries                | [EN](docs/en/libraries.md)            | [PT-BR](docs/pt-br/libraries.md)            |
+| 5. Tips                     | [EN](docs/en/tips.md)                 | [PT-BR](docs/pt-br/tips.md)            |
 
 
 

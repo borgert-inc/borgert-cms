@@ -1,8 +1,8 @@
 
-# Uploads - Rocket CMS
+# Uploads
 
 We will use the librarie [Blueimp - jQuery File Upload](https://github.com/blueimp/jQuery-File-Upload).
-To upload files we implement other modules in Rocket CMS will use the walkthrough below.
+To upload files we implement other modules in CMS will use the walkthrough below.
 
 
 -----
@@ -239,10 +239,10 @@ public function upload(Request $request, $id = null)
 ```
 
 
------
-<a name="contributions"></a>
-## 6. Contributions
+------------------------------
 
-> **Want to help?** How about a pull request or create an [issue] (https://github.com/odirleiborgert/rocket-cms/issues) with improvements.
+#### You want to join?
+- Making a pull request or by creating an [issue] (https://github.com/odirleiborgert/borgert-cms/issues).
 
-
+#### Is there a problem in the installation?
+Report with a [issue] (https://github.com/odirleiborgert/borgert-cms/issues).

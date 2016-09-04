@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <title>@yield('title') | Rocket CMS</title>
+        <title>@yield('title') | Borgert CMS</title>
 
         @section('stylesheet')
         
@@ -41,13 +41,13 @@
                     <ul class="nav metismenu" id="side-menu">
                         <li class="nav-header text-center">
                             <div class="profile-element">
-                                <img src="{{ asset('assets/admin/img/rocket.png') }}">
+                                <img src="{{ asset('assets/admin/img/borgert.png') }}">
                                 <span class="block m-t-xs">
-                                    <strong class="font-bold">ROCKET CMS</strong>
+                                    <strong class="font-bold">BORGERT CMS</strong>
                                 </span>
                             </div>
                             <div class="logo-element">
-                                <i class="fa fa-rocket"></i>
+                                <i class="fa fa-diamond"></i>
                             </div>
                         </li>
                         <li><a href="{{ route('admin.index') }}"><i class="fa fa-dashboard"></i> <span class="nav-label">@lang('admin/dashboard.module')</span></a></li>
@@ -110,8 +110,8 @@
                 
                 <!-- Footer -->
                 <div class="footer">
-                    <div class="pull-right"><a href="https://github.com/odirleiborgert/rocket-cms" target="_blank"><u>Open Source</u> <i class="fa fa-github"></i></a> - <strong>v.0.0.14</strong></div>
-                    <div><strong>Rocket CMS</strong> - {{ date('Y') }}</div>
+                    <div class="pull-right"><a href="https://github.com/odirleiborgert/borgert-cms" target="_blank"><u>Open Source</u> <i class="fa fa-github"></i></a> - <strong>v.0.0.14</strong></div>
+                    <div><strong>Borgert CMS</strong> - {{ date('Y') }}</div>
                 </div>
 
             </div>

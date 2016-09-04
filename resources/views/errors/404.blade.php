@@ -7,13 +7,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>404 | Rocket Planet CMS</title>
+    <title>404 | Borgert Planet CMS</title>
 
     <link href="{!! asset('assets/components/bootstrap/dist/css/bootstrap.min.css') !!}" rel="stylesheet">
     <link href="{!! asset('assets/components/font-awesome/css/font-awesome.min.css') !!}" rel="stylesheet">
     
     <link href="{!! asset('assets/components/animate.css/animate.min.css') !!}" rel="stylesheet">
-    <link href="{!! asset('assets/admin/css/rocket-planet.css') !!}" rel="stylesheet">
+    <link href="{!! asset('assets/admin/css/app.css') !!}" rel="stylesheet">
 
 </head>
 
@@ -32,7 +32,7 @@
 
     <div class="footer">
         <div class="pull-right">Versão <strong>0.0.1</strong>.</div>
-        <div><strong>Rocket Planet CMS</strong> &copy; {{ date('Y') }}</div>
+        <div><strong>Borgert CMS</strong> &copy; {{ date('Y') }}</div>
     </div>
 
     <!-- Mainly scripts -->

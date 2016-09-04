@@ -52,8 +52,8 @@
     <body>
         <div class="container">
             <div class="content">
-                <img src="{{ asset('assets/admin/img/rocket-logo.png') }}" width="250">
-                <div class="title">Rocket CMS</div>
+                <img src="{{ asset('assets/admin/img/borgert-logo.png') }}" width="250">
+                <div class="title">Borgert CMS</div>
                 <h4>Framework Laravel 5.2</h4>
                 <a href="{{ route('admin.index') }}" class="btn">Entrar</a>
             </div>

@@ -1,5 +1,5 @@
 
-# Libraries - Rocket CMS
+# Libraries
 
 -----
 #### PHP Libraries
@@ -28,3 +28,11 @@ For new libraries search the site <a href="http://bower.io/search/">bower.io/sea
 
 > bower install X_PACKAGE_X --save
 
+
+------------------------------
+
+#### You want to join?
+- Making a pull request or by creating an [issue] (https://github.com/odirleiborgert/borgert-cms/issues).
+
+#### Is there a problem in the installation?
+Report with a [issue] (https://github.com/odirleiborgert/borgert-cms/issues).

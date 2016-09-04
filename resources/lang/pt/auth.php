@@ -18,7 +18,7 @@ return [
 
     // Login
     'login' => [
-        'welcome' => 'Bem Vindo ao Rocket CMS',
+        'welcome' => 'Bem Vindo ao Borgert CMS',
         'form' => [
             'email' => 'E-mail',
             'senha' => 'Senha',

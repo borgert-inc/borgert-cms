@@ -1,5 +1,5 @@
 
-# Libraries - Rocket CMS
+# Libraries
 
 -----
 #### PHP Libraries
@@ -26,4 +26,14 @@
 
 Para novas libraries procure no site <a href="http://bower.io/search/">bower.io/search/</a> e utilize o comando abaixo que irá instalar na pasta `public/assets/components/`
 `> bower install X_PACKAGE_X --save`
+
+
+------------------------
+
+#### Quer participar?
+- Fazendo um pull request ou criando uma [issue](https://github.com/odirleiborgert/borgert-cms/issues).
+
+#### Algum problema na instalação?
+Reporte com uma [issue](https://github.com/odirleiborgert/borgert-cms/issues).
+
 

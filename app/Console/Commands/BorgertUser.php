@@ -5,14 +5,14 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use App\User;
 
-class RocketUser extends Command
+class BorgertUser extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'rocket:user';
+    protected $signature = 'borgert:user';
 
     /**
      * The console command description.

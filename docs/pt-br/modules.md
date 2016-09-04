@@ -1,5 +1,5 @@
 
-# Modulos - Rocket CMS
+# Modulos
 
 1. Blog
 	* Categorias
@@ -18,6 +18,13 @@
 5. Usuários
 
 
-#### Idéias para novos módulos? 
-Aguardamos sua idéia, abra uma [issue](https://github.com/odirleiborgert/rocket-cms/issues).
+------------------------
+
+#### Quer participar?
+- Fazendo um pull request ou criando uma [issue](https://github.com/odirleiborgert/borgert-cms/issues).
+
+#### Algum problema na instalação?
+Reporte com uma [issue](https://github.com/odirleiborgert/borgert-cms/issues).
+
+
 

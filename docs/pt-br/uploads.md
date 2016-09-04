@@ -1,8 +1,8 @@
 
-# Uploads - Rocket CMS
+# Uploads
 
 Utilizaremos a librarie [Blueimp - jQuery File Upload](https://github.com/blueimp/jQuery-File-Upload).
-Para implantarmos upload de arquivos em outros módulos no Rocket CMS utilizaremos o passo a passo abaixo.
+Para implantarmos upload de arquivos em outros módulos no CMS utilizaremos o passo a passo abaixo.
 
 
 -----
@@ -239,14 +239,15 @@ public function upload(Request $request, $id = null)
 ```
 
 
------
+------------------------
+
 <a name="contribuicoes"></a>
 ## 6. Contribuições
 
 #### Quer participar?
-- Fazendo um pull request ou criando uma [issue](https://github.com/odirleiborgert/rocket-cms/issues).
+- Fazendo um pull request ou criando uma [issue](https://github.com/odirleiborgert/borgert-cms/issues).
 
 #### Algum problema na instalação?
-Reporte com uma [issue](https://github.com/odirleiborgert/rocket-cms/issues).
+Reporte com uma [issue](https://github.com/odirleiborgert/borgert-cms/issues).
 
 

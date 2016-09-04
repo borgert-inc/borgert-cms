@@ -1,5 +1,5 @@
 
-# Installation Guide - Rocket CMS
+# Installation Guide
 
 #### Step 1: 
 Install gulp, laravel-elixir, bootstrap-sass and others.
@@ -25,7 +25,7 @@ Set or create `.env` file with your database settings, `.env.example` file can b
 #### Step 7:
 Let access to tinker artisan to create the first user to access the CMS.
 
-> php artisan rocket:user 
+> php artisan borgert:user 
 
 OR
 
@@ -52,5 +52,10 @@ In another console we started the server.
 Visit <a href="http://localhost:8000/admin">http://localhost:8000/admin</a>
 
 
-#### Problems installing?
-Report [issue](https://github.com/odirleiborgert/rocket-cms/issues).
+------------------------------
+
+#### You want to join?
+- Making a pull request or by creating an [issue] (https://github.com/odirleiborgert/borgert-cms/issues).
+
+#### Is there a problem in the installation?
+Report with a [issue] (https://github.com/odirleiborgert/borgert-cms/issues).

@@ -1,5 +1,5 @@
 
-# User Guide - Rocket CMS
+# User Guide
 
 <a name="routes"></a>
 ## Routes
@@ -54,5 +54,11 @@ The files for translations are located in the `resources\lang\[en,pt_BR\admin\**
     'fallback_locale' => 'en',
 `
 
-#### Some difficulty or suggestion for improvement?
-Report with a [issue] (https://github.com/odirleiborgert/rocket-cms/issues).
+
+------------------------------
+
+#### You want to join?
+- Making a pull request or by creating an [issue] (https://github.com/odirleiborgert/borgert-cms/issues).
+
+#### Is there a problem in the installation?
+Report with a [issue] (https://github.com/odirleiborgert/borgert-cms/issues).

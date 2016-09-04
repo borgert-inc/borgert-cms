@@ -1,5 +1,5 @@
 {
-  "name": "Rocket Planet CMS",
+  "name": "Borgert CMS",
   "description": "CMS desenvolvido utilizando o Framework Laravel",
   "main": "",
   "authors": [
@@ -7,13 +7,12 @@
   ],
   "license": "MIT",
   "keywords": [
-    "rocket",
-    "planet",
+    "borgert",
     "cms",
     "laravel",
     "admin"
   ],
-  "homepage": "https://github.com/odirleiborgert/rocket-planet",
+  "homepage": "https://github.com/odirleiborgert/borgert-cms",
   "private": true,
   "ignore": [
     "**/.*",

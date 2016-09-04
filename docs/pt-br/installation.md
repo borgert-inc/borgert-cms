@@ -1,5 +1,5 @@
 
-# Guia de Instalação - Rocket CMS
+# Guia de Instalação
 
 #### Passo 1: 
 Instalamos gulp, laravel-elixir, bootstrap-sass e demais pacotes via npm.
@@ -52,5 +52,13 @@ Em outro console iniciamos o servidor.
 Acessar <a href="http://localhost:8000/admin">http://localhost:8000/admin</a>
 
 
+
+------------------------
+
+#### Quer participar?
+- Fazendo um pull request ou criando uma [issue](https://github.com/odirleiborgert/borgert-cms/issues).
+
 #### Algum problema na instalação?
-Reporte com uma [issue](https://github.com/odirleiborgert/rocket-cms/issues).
+Reporte com uma [issue](https://github.com/odirleiborgert/borgert-cms/issues).
+
+

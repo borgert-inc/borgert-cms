@@ -51,13 +51,13 @@
 <a name="screenshots"></a>
 ## Screenshots
 
-[Imgur](http://i.imgur.com/rbY3B1I.png)
+![Imgur](http://i.imgur.com/rbY3B1I.png)
 
-[Imgur](http://i.imgur.com/Ld8aWJR.png)
+![Imgur](http://i.imgur.com/Ld8aWJR.png)
 
-[Imgur](http://i.imgur.com/XAMfuXc.png)
+![Imgur](http://i.imgur.com/XAMfuXc.png)
 
-[Imgur](http://i.imgur.com/jfysnOh.png)
+![Imgur](http://i.imgur.com/jfysnOh.png)
 
 
 <a name="contributions"></a>

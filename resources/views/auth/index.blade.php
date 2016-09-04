@@ -20,7 +20,7 @@
         <br>
 
         <div class="text-center">
-            <img src="{{ asset('assets/admin/img/borgert-medium.png') }}" class="img-circle">
+            <img src="{{ asset('assets/admin/img/borgert-medium.png') }}">
         </div>
 
         <br>

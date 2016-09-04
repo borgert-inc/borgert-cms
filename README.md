@@ -53,7 +53,7 @@
 
 ![Imgur](http://i.imgur.com/fzeaQPr.png)
 
-![Imgur](http://i.imgur.com/Ig7rvXr.png)
+![Imgur](http://i.imgur.com/sEoelZS.png)
 
 ![Imgur](http://i.imgur.com/u3cM0ug.png)
 

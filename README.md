@@ -5,7 +5,7 @@
         Blog, Pages, Products, Mailbox, Image Gallery and Users.
     </p>
     <br>
-    <img src="http://i.imgur.com/uDYYTwS.png" width="250px">
+    <img src="http://i.imgur.com/lxMkr3p.png" width="250px">
     <br>
     <br>
     <br>

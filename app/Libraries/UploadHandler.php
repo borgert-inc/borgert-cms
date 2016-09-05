@@ -909,12 +909,10 @@ class UploadHandler
 
     protected function imagick_create_scaled_image($file_name, $version, $options)
     {
-        list($file_path, $new_file_path) =
-            $this->get_scaled_image_file_paths($file_name, $version);
-        $image = $this->imagick_get_image_object(
-            $file_path,
-            ! empty($options['crop']) || ! empty($options['no_cache'])
-        );
+        list($file_path, $new_file_path) = $this->get_scaled_image_file_paths($file_name, $version);
+        
+        $image = $this->imagick_get_image_object($file_path, ! empty($options['crop']) || ! empty($options['no_cache']));
+        
         if ($image->getImageFormat() === 'GIF') {
             // Handle animated GIFs:
             $images = $image->coalesceImages();
@@ -946,29 +944,16 @@ class UploadHandler
         $crop = ! empty($options['crop']);
         if ($crop) {
             $x = 0;
-            $y = 0;
+            $new_height = 0; // Enables proportional scaling based on max_width
+            $y = ($img_height / ($img_width / $max_width) - $max_height) / 2;
             if (($img_width / $img_height) >= ($max_width / $max_height)) {
                 $new_width = 0; // Enables proportional scaling based on max_height
                 $x = ($img_width / ($img_height / $max_height) - $max_width) / 2;
-            } else {
-                $new_height = 0; // Enables proportional scaling based on max_width
-                $y = ($img_height / ($img_width / $max_width) - $max_height) / 2;
             }
         }
-        $success = $image->resizeImage(
-            $new_width,
-            $new_height,
-            isset($options['filter']) ? $options['filter'] : \imagick::FILTER_LANCZOS,
-            isset($options['blur']) ? $options['blur'] : 1,
-            $new_width && $new_height // fit image into constraints if not to be cropped
-        );
+        $success = $image->resizeImage($new_width, $new_height, isset($options['filter']) ? $options['filter'] : \imagick::FILTER_LANCZOS, isset($options['blur']) ? $options['blur'] : 1, $new_width && $new_height);
         if ($success && $crop) {
-            $success = $image->cropImage(
-                $max_width,
-                $max_height,
-                $x,
-                $y
-            );
+            $success = $image->cropImage($max_width, $max_height, $x, $y);
             if ($success) {
                 $success = $image->setImagePage($max_width, $max_height, 0, 0);
             }
@@ -992,10 +977,8 @@ class UploadHandler
 
     protected function imagemagick_create_scaled_image($file_name, $version, $options)
     {
-        list($file_path, $new_file_path) =
-            $this->get_scaled_image_file_paths($file_name, $version);
-        $resize = @$options['max_width']
-            .(empty($options['max_height']) ? '' : 'X'.$options['max_height']);
+        list($file_path, $new_file_path) = $this->get_scaled_image_file_paths($file_name, $version);
+        $resize = @$options['max_width'].(empty($options['max_height']) ? '' : 'X'.$options['max_height']);
         if (! $resize && empty($options['auto_orient'])) {
             if ($file_path !== $new_file_path) {
                 return copy($file_path, $new_file_path);

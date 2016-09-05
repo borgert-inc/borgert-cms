@@ -23,6 +23,7 @@
                                     <th>@sortablelink('created_at', trans('admin/_globals.tables.created_at'))</th>
                                     <th>@sortablelink('category_id', trans('admin/_globals.tables.category'))</th>
                                     <th>@sortablelink('title', trans('admin/_globals.tables.title'))</th>
+                                    <th>@sortablelink('order', trans('admin/_globals.tables.order'))</th>
                                     <th>@sortablelink('status', trans('admin/_globals.tables.status'))</th>
                                     <th></th>
                                 </tr>
@@ -34,6 +35,7 @@
                                         <td>{{ $content->created_at->diffForHumans() }}</td>
                                         <td>{{ $content->category->title }}</td>
                                         <td>{{ $content->title }}</td>
+                                        <td>{{ $content->order }}</td>
                                         <td>
                                             @if ($content->status === 1)
                                                 <span class="badge badge-success">@lang('admin/_globals.tables.active')</span>

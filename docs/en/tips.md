@@ -3,7 +3,7 @@
 
 <a name="services"></a>
 ## Services
-	- [DeployHQ](http://www.deployhq.com) - Free for one project. http://www.deployhq.com
+* [DeployHQ](http://www.deployhq.com) - Free for one project. http://www.deployhq.com
 
 
 <a name="paths"></a>
@@ -18,6 +18,10 @@
 |   |	└── views
 | 	| 
 ```
+
+## Rename path `public` to `www`
+* https://laracasts.com/discuss/channels/servers/laravel-51-change-name-and-location-of-public-folder/replies/100565
+Recalling that to run the server locally you must also change the file `server.php`
 
 
 ------------------------

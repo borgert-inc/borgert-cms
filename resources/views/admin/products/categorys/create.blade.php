@@ -28,6 +28,10 @@
                                 <div class="col-sm-10"><input type="text" name="title" class="form-control" value="{{ old('title') }}"></div>
                             </div>
                             <div class="form-group">
+                                <label class="col-sm-2 control-label">@lang('admin/_globals.forms.order'):</label>
+                                <div class="col-sm-10"><input type="integer" min="0" name="order" class="form-control" value="{{ old('order') }}"></div>
+                            </div>
+                            <div class="form-group">
                                 <label class="col-sm-2 control-label">@lang('admin/_globals.forms.status'):</label>
                                 <div class="col-sm-10">
                                     <select name="status" class="form-control">

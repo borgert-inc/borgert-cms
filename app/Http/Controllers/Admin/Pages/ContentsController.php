@@ -53,6 +53,7 @@ class ContentsController extends Controller
         $content->category_id = $request->category_id;
         $content->title = $request->title;
         $content->content = $request->content;
+        $content->order = $request->order;
         $content->status = $request->status;
         $content->seo_title = $request->seo_title;
         $content->seo_description = $request->seo_description;
@@ -99,6 +100,7 @@ class ContentsController extends Controller
         $content->category_id = $request->category_id;
         $content->title = $request->title;
         $content->content = $request->content;
+        $content->order = $request->order;
         $content->status = $request->status;
         $content->seo_title = $request->seo_title;
         $content->seo_description = $request->seo_description;

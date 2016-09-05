@@ -38,6 +38,7 @@ return [
         'inactive' => 'Inactive',
         'not_found' => 'There are no records.',
         'publish_at' => 'Publish at',
+        'order' => 'Order',
     ],
 
     // Forms
@@ -64,6 +65,7 @@ return [
         'limit_characters' => 'Allowed to limit :limit characters',
         'processing' => 'Processing',
         'publish_at' => 'Publish at',
+        'order' => 'Order',
     ],
 
 ];

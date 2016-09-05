@@ -20,6 +20,7 @@ class Gallerys extends Model
     protected $sortable = [
         'id',
         'title',
+        'order',
         'status',
         'created_at',
     ];

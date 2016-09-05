@@ -22,6 +22,7 @@
                                     <th>@sortablelink('id', '#')</th>
                                     <th>@sortablelink('created_at', trans('admin/_globals.tables.created_at'))</th>
                                     <th>@sortablelink('title', trans('admin/_globals.tables.title'))</th>
+                                    <th>@sortablelink('order', trans('admin/_globals.tables.order'))</th>
                                     <th>@sortablelink('status', trans('admin/_globals.tables.status'))</th>
                                     <th></th>
                                 </tr>
@@ -32,6 +33,7 @@
                                         <td><input type="checkbox" class="i-checks" name="categorys[]" value="{{ $category->id }}"></td>
                                         <td>{{ $category->created_at->diffForHumans()  }}</td>
                                         <td>{{ $category->title }}</td>
+                                        <td>{{ $category->order }}</td>
                                         <td>
                                             @if ($category->status === 1)
                                                 <span class="badge badge-success">@lang('admin/_globals.tables.active')</span>

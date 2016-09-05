@@ -45,6 +45,7 @@ class CategorysController extends Controller
         $category = new Categorys;
 
         $category->title = $request->title;
+        $category->order = $request->order;
         $category->status = $request->status;
 
         $category->save();
@@ -83,6 +84,7 @@ class CategorysController extends Controller
         $category = Categorys::find($id);
 
         $category->title = $request->title;
+        $category->order = $request->order;
         $category->status = $request->status;
 
         $category->save();

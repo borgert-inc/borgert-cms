@@ -79,7 +79,7 @@
 
 * v0.0.16
     * Add column order in tables: `blog_categorys`, `pages_categorys`, `pages_contents`, `gallerys` and `products_categorys`
-* v0.0.14
+* v0.0.15 / v0.0.14
     * Implement select your language in profile
 * v0.0.13
     * Implement publish_at in post blog

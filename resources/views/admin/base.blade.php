@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <title>@yield('title') | Borgert CMS</title>
+        <title>@yield('title') | {{ config('borgert.name') }}</title>
 
         @section('stylesheet')
         
@@ -43,7 +43,7 @@
                             <div class="profile-element">
                                 <img src="{{ asset('assets/admin/img/borgert.png') }}">
                                 <span class="block m-t-xs">
-                                    <strong class="font-bold">BORGERT CMS</strong>
+                                    <strong class="font-bold">{{ config('borgert.name') }}</strong>
                                 </span>
                             </div>
                             <div class="logo-element">
@@ -110,8 +110,8 @@
                 
                 <!-- Footer -->
                 <div class="footer">
-                    <div class="pull-right"><a href="https://github.com/odirleiborgert/borgert-cms" target="_blank"><u>Open Source</u> <i class="fa fa-github"></i></a> - <strong>v.0.0.16</strong></div>
-                    <div><strong>Borgert CMS</strong> - {{ date('Y') }}</div>
+                    <div class="pull-right"><a href="{{ config('borgert.opensource') }}" target="_blank"><u>Open Source</u> <i class="fa fa-github"></i></a> - <strong>{{ config('borgert.version') }}</strong></div>
+                    <div><strong>{{ config('borgert.name') }}</strong> - {{ date('Y') }}</div>
                 </div>
 
             </div>

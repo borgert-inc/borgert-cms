@@ -13,8 +13,15 @@ return [
     |
     */
 
-    'title'                 => 'Pagina no encontrada',
-    'description'           => 'Disculpe, la pagina que usted esta buscando no fue encontrada. Haz click en el boton para regresar al dashboard.',
-    'link'                  => 'ir a Dashboard',
+    '404' => [
+        'title'                 => 'Pagina no encontrada',
+        'description'           => 'Disculpe, la pagina que usted esta buscando no fue encontrada. Haz click en el boton para regresar al dashboard.',
+        'link'                  => 'Ir a Dashboard',
+    ],
+    '503' => [
+        'title'                 => 'Servicio no disponible',
+        'description'           => 'Lo sentimos, pero por el momento el servicio no está disponible actualmente.',
+        'link'                  => 'Ir a Dashboard',
+    ],
 
 ];

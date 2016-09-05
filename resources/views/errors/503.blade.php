@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>503 | Borgert CMS</title>
+    <title>503 | {{ config('borgert.name') }}</title>
 
     <link href="{!! asset('assets/components/bootstrap/dist/css/bootstrap.min.css') !!}" rel="stylesheet">
     <link href="{!! asset('assets/components/font-awesome/css/font-awesome.min.css') !!}" rel="stylesheet">
@@ -21,18 +21,18 @@
 
     <div class="middle-box text-center animated fadeInDown">
         <h1>503</h1>
-        <h3 class="font-bold">Página não encontrada</h3>
+        <h3 class="font-bold">@lang('error.503.title')</h3>
 
         <div class="error-desc">
-            Desculpe, mas a página que você está procurando não foi encontrada. Tente verificar a URL para erro, em seguida, apertar o botão de atualizar do seu navegador.
+            @lang('error.503.description')
         </div>
         <br>    
-        <a href="{{ route('admin.index') }}" class="btn btn-primary">Ir para o Dashboard</a>
+        <a href="{{ route('admin.index') }}" class="btn btn-primary">@lang('error.404.link')</a>
     </div>
 
     <div class="footer">
-        <div class="pull-right">Versão <strong>0.0.1</strong>.</div>
-        <div><strong>Borgert CMS</strong> &copy; {{ date('Y') }}</div>
+        <div class="pull-right"><strong>{{ config('borgert.version') }}</strong>.</div>
+        <div><strong>{{ config('borgert.name') }}</strong> &copy; {{ date('Y') }}</div>
     </div>
 
     <!-- Mainly scripts -->

@@ -910,9 +910,9 @@ class UploadHandler
     protected function imagick_create_scaled_image($file_name, $version, $options)
     {
         list($file_path, $new_file_path) = $this->get_scaled_image_file_paths($file_name, $version);
-        
+
         $image = $this->imagick_get_image_object($file_path, ! empty($options['crop']) || ! empty($options['no_cache']));
-        
+
         if ($image->getImageFormat() === 'GIF') {
             // Handle animated GIFs:
             $images = $image->coalesceImages();

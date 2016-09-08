@@ -18,6 +18,7 @@ return [
         'aprove' => 'Aprove',
         'reprove' => 'Reprove',
         'add_image' => 'Add Image',
+        'add_file' => 'Add Files',
         'send' => 'Send',
         'send_trash' => 'Send to Trash',
         'archive' => 'Archive',
@@ -66,6 +67,7 @@ return [
         'processing' => 'Processing',
         'publish_at' => 'Publish at',
         'order' => 'Order',
+        'files_support' => 'Supported files',
     ],
 
 ];

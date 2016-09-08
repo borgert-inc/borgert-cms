@@ -78,7 +78,7 @@
                 
                 <div id="tab-images" class="tab-pane">
                     <div class="panel-body">
-                        @include('admin._inc.fileupload.buttons')
+                        @include('admin._inc.fileupload.buttons',['extensions' => ['GIF', 'JPG', 'JPEG', 'PNG']])
                     </div>
                 </div>
 

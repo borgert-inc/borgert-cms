@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\App;
 use App\Models\Admin\Pages\Contents;
 
+// ---------------------------------------------------------------------------------------------
+
+// Custom pages model
 Route::get('/{page}', ['as' => 'pages', function ($page) {
     $page = Contents::where('slug', $page)->first();
     if (isset($page)) {
@@ -12,6 +15,4 @@ Route::get('/{page}', ['as' => 'pages', function ($page) {
     App::abort(404);
 }]);
 
-Route::get('/', function () {
-    return view('base');
-});
+// ---------------------------------------------------------------------------------------------

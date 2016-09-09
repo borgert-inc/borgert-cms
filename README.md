@@ -1,7 +1,7 @@
 <div align="center">
     <h1>Borgert CMS</h1>
     <p>
-        A simple CMS to start projects in Laravel 5.2 containing some modules.<br>
+        A simple CMS to start projects in Laravel 5.3 containing some modules.<br>
         Blog, Pages, Products, Mailbox, Image Gallery and Users.
     </p>
     <br>
@@ -76,7 +76,10 @@
 <a name="log"></a>
 ## Change log
 
-
+* v0.0.17
+    * Upgrade Laravel 5.2 to 5.3
+    * Upgrade kyslik/column-sortable
+    * Fixed bug upload images
 * v0.0.16
     * Add column order in tables: `blog_categorys`, `pages_categorys`, `pages_contents`, `gallerys` and `products_categorys`
 * v0.0.15 / v0.0.14

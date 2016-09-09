@@ -44,7 +44,7 @@
                                             @endif
                                         </td>
                                         <td class="text-right">
-                                            <a href="{{ route('pages',$content->slug) }}" class="btn btn-primary">@lang('admin/_globals.buttons.view')</a>
+                                            <a href="{{ route('pages',$content->slug) }}" class="btn btn-default">@lang('admin/_globals.buttons.view') <i class="fa fa-external-link"></i></a>
                                             <a href="{{ route('admin.pages.contents.edit',$content->id) }}" class="btn btn-primary">@lang('admin/_globals.buttons.edit')</a>
                                         </td>
                                     </tr>

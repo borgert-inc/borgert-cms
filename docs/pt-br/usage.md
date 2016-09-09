@@ -3,7 +3,7 @@
 
 <a name="routes"></a>
 ## Routes
-* Novas rotas para outros modulos do CMS devem ser apenas incluidas dentro da pasta `app/Http/Routes/Admin/` utilizando o prefixo ou como segue o modelo.
+* Novas rotas para outros modulos do CMS devem ser apenas incluidas dentro da pasta `routes/admin/`, `routes/auth/` e `routes/custom/` utilizando o prefixo ou como segue o modelo.
 
 ```php
 Route::group(['prefix' => 'blog', 'as' => 'blog.'], function() {

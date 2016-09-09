@@ -9,7 +9,7 @@ return [
     */
 
     'name' => 'Borgert CMS',
-    'version' => '0.0.16',
+    'version' => '0.0.17',
     'opensource' => 'https://github.com/odirleiborgert/borgert-cms',
 
 ];

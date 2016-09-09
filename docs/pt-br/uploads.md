@@ -78,7 +78,7 @@ Para as views teremos inclusão de CSS, Javascript e HTML.
 ```html
 <form action="{{ route('admin.module.store') }}" class="fileupload" method="post" enctype="multipart/form-data">
 	<!-- Seu formulário de cadastro -->
-	@include('admin._inc.fileupload.buttons')
+    @include('admin._inc.fileupload.buttons',['extensions' => ['GIF', 'JPG', 'JPEG', 'PNG']]) 
 </form>
 ```
 

@@ -60,7 +60,7 @@ class UsersController extends Controller
 
         $users->save();
 
-        \Session::flash('success', trans('admin/users.update.messages.success'));
+        \Session::flash('success', trans('admin/users.store.messages.success'));
 
         return redirect()->route('admin.users.index')->withInput();
     }
@@ -87,7 +87,6 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-
         $this->validate($request, [
             'name'       => 'required',
             'email'      => 'required|email',

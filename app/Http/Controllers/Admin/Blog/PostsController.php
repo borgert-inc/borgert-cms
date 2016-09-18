@@ -23,7 +23,7 @@ class PostsController extends Controller
     {
         $posts = Posts::sortable(['created_at' => 'desc'])->paginate(10);
 
-        return view('admin.blog.posts.list', ['posts' => $posts]);
+        return view('admin.blog.posts.index', ['posts' => $posts]);
     }
 
     /**
@@ -76,7 +76,7 @@ class PostsController extends Controller
 
         \Session::flash('success', trans('admin/blog.posts.store.messages.success'));
 
-        return redirect()->route('admin.blog.posts.list')->withInput();
+        return redirect()->route('admin.blog.posts.index')->withInput();
     }
 
     /**
@@ -100,7 +100,7 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         $this->validate($request, [
             'publish_at'  => 'required',
@@ -110,7 +110,7 @@ class PostsController extends Controller
             'status'      => 'required|integer',
         ]);
 
-        $post = Posts::find($id);
+        $post = Posts::find($request->id);
 
         $post->publish_at = new Carbon($request->publish_at);
         $post->category_id = $request->category_id;
@@ -124,7 +124,7 @@ class PostsController extends Controller
 
         \Session::flash('success', trans('admin/blog.posts.update.messages.success'));
 
-        return redirect()->route('admin.blog.posts.list')->withInput();
+        return redirect()->route('admin.blog.posts.index')->withInput();
     }
 
     /**
@@ -137,7 +137,7 @@ class PostsController extends Controller
         if (is_null($request->posts)) {
             \Session::flash('info', trans('admin/blog.posts.destroy.messages.info'));
 
-            return redirect()->route('admin.blog.posts.list');
+            return redirect()->route('admin.blog.posts.index');
         }
 
         Posts::destroy($request->posts);
@@ -155,7 +155,7 @@ class PostsController extends Controller
             }
         }
 
-        return redirect()->route('admin.blog.posts.list');
+        return redirect()->route('admin.blog.posts.index');
     }
 
     /**

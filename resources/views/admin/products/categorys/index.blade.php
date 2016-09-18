@@ -1,6 +1,6 @@
-@extends('admin.products.index')
+@extends('admin.products.base')
 
-@section('title', trans('admin/products.categorys.list.title', ['total' => $categorys->total()]), @parent)
+@section('title', trans('admin/products.categorys.index.title', ['total' => $categorys->total()]), @parent)
 
 @section('actions')
 	<a href="{{ route('admin.products.categorys.create') }}" class="btn dim btn-primary"><i class="fa fa-plus"></i> @lang('admin/_globals.buttons.create')</a>
@@ -8,7 +8,7 @@
 
 @section('products')
 	
-	@section('subtitle', trans('admin/products.categorys.list.title', ['total' => $categorys->total()]))
+	@section('subtitle', trans('admin/products.categorys.index.title', ['total' => $categorys->total()]))
 
 	<div class="ibox">
         <div class="ibox-content">
@@ -55,7 +55,7 @@
             @else
                 <div class="widget p-lg text-center">
                     <i class="fa fa-exclamation-triangle fa-2x"></i>
-                    <h4 class="no-margins">@lang('admin/products.categorys.list.is_empty')</h4>
+                    <h4 class="no-margins">@lang('admin/products.categorys.index.is_empty')</h4>
                 </div>
             @endif
         </div>

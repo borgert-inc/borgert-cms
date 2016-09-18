@@ -17,7 +17,7 @@ class CategorysController extends Controller
     {
         $categorys = Categorys::sortable(['created_at' => 'desc'])->paginate(10);
 
-        return view('admin.blog.categorys.list', ['categorys' => $categorys]);
+        return view('admin.blog.categorys.index', ['categorys' => $categorys]);
     }
 
     /**
@@ -52,7 +52,7 @@ class CategorysController extends Controller
 
         \Session::flash('success', trans('admin/blog.categorys.store.messages.success'));
 
-        return redirect()->route('admin.blog.categorys.list')->withInput();
+        return redirect()->route('admin.blog.categorys.index')->withInput();
     }
 
     /**
@@ -75,13 +75,13 @@ class CategorysController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         $this->validate($request, [
             'title'       => 'required',
         ]);
 
-        $category = Categorys::find($id);
+        $category = Categorys::find($request->id);
 
         $category->title = $request->title;
         $category->order = $request->order;
@@ -91,7 +91,7 @@ class CategorysController extends Controller
 
         \Session::flash('success', trans('admin/blog.categorys.update.messages.success'));
 
-        return redirect()->route('admin.blog.categorys.list')->withInput();
+        return redirect()->route('admin.blog.categorys.index')->withInput();
     }
 
     /**
@@ -104,12 +104,12 @@ class CategorysController extends Controller
         if (is_null($request->categorys)) {
             \Session::flash('info', trans('admin/blog.categorys.destroy.messages.info'));
 
-            return redirect()->route('admin.blog.categorys.list');
+            return redirect()->route('admin.blog.categorys.index');
         }
 
         Categorys::destroy($request->categorys);
         \Session::flash('success', trans('admin/blog.categorys.destroy.messages.success'));
 
-        return redirect()->route('admin.blog.categorys.list');
+        return redirect()->route('admin.blog.categorys.index');
     }
 }

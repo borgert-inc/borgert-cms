@@ -14,7 +14,7 @@
 
 > Quality
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ad3c062e22ba4c25b8017041b619e217)](https://www.codacy.com/app/odirleiborgert/borgert-cms?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=odirleiborgert/borgert-cms&amp;utm_campaign=Badge_Grade) [![StyleCI](https://styleci.io/repos/60208254/shield?branch=master)](https://styleci.io/repos/60208254) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/odirleiborgert/borgert-cms/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/odirleiborgert/borgert-cms/?branch=master) [![Build Status](https://scrutinizer-ci.com/g/odirleiborgert/borgert-cms/badges/build.png?b=master)](https://scrutinizer-ci.com/g/odirleiborgert/borgert-cms/build-status/master)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ad3c062e22ba4c25b8017041b619e217)](https://www.codacy.com/app/odirleiborgert/borgert-cms?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=odirleiborgert/borgert-cms&amp;utm_campaign=Badge_Grade) [![StyleCI](https://styleci.io/repos/60208254/shield?branch=master)](https://styleci.io/repos/60208254) [![Build Status](https://scrutinizer-ci.com/g/odirleiborgert/borgert-cms/badges/build.png?b=master)](https://scrutinizer-ci.com/g/odirleiborgert/borgert-cms/build-status/master)
 
 > Tags / Releases
 

@@ -1,9 +1,9 @@
-@extends('admin.users.index')
+@extends('admin.users.base')
 
 @section('title',  trans('admin/users.create.title'), @parent)
 
 @section('actions')
-	<a href="{{ route('admin.users.list') }}" class="btn btn-default"><i class="fa fa-angle-left"></i> @lang('admin/_globals.buttons.back')</a>
+	<a href="{{ route('admin.users.index') }}" class="btn btn-default"><i class="fa fa-angle-left"></i> @lang('admin/_globals.buttons.back')</a>
 @endsection
 
 @section('users')

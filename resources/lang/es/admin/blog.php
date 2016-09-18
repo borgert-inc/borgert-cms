@@ -12,7 +12,7 @@ return [
 
 
     'categorys' => [
-        'list' => [
+        'index' => [
             'title' => 'Lista de Categorias (:total)',
             'is_empty' => 'Sin Categorias.',
         ],
@@ -56,7 +56,7 @@ return [
             'reproved' => 'Reprobado',
         ],
 
-        'list' => [
+        'index' => [
             'title' => 'List of comments reviews (:total)',
             'is_empty' => 'Sin comentarios pendientes.',
         ],
@@ -86,7 +86,7 @@ return [
 
 
     'posts' => [
-        'list' => [
+        'index' => [
             'title' => 'Lista de articulos (:total)',
             'is_empty' => 'Sin Articulos',
         ],

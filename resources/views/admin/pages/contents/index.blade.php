@@ -1,6 +1,6 @@
-@extends('admin.pages.index')
+@extends('admin.pages.base')
 
-@section('title', trans('admin/pages.contents.list.title', ['total' => $contents->total()]) , @parent)
+@section('title', trans('admin/pages.contents.index.title', ['total' => $contents->total()]) , @parent)
 
 @section('actions')
 	<a href="{{ route('admin.pages.contents.create') }}" class="btn dim btn-primary"><i class="fa fa-plus"></i> @lang('admin/_globals.buttons.create')</a>
@@ -8,7 +8,7 @@
 
 @section('pages')
 	
-	@section('subtitle', trans('admin/pages.contents.list.title', ['total' => $contents->total()]))
+	@section('subtitle', trans('admin/pages.contents.index.title', ['total' => $contents->total()]))
 
 	<div class="ibox">
         <div class="ibox-content">
@@ -58,7 +58,7 @@
             @else
                 <div class="widget p-lg text-center">
                     <i class="fa fa-exclamation-triangle fa-2x"></i>
-                    <h4 class="no-margins">@lang('admin/pages.contents.list.is_empty')</h4>
+                    <h4 class="no-margins">@lang('admin/pages.contents.index.is_empty')</h4>
                 </div>
             @endif
         </div>

@@ -4,7 +4,7 @@ return [
 
     'module' => 'Usuarios',
 
-    'list' => [
+    'index' => [
         'title' => 'Lista de usuarios (:total)',
         'is_empty' => 'Sin usuarios',
     ],

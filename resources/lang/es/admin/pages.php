@@ -10,7 +10,7 @@ return [
     ],
 
     'categorys' => [
-        'list' => [
+        'index' => [
             'title' => 'Lista de categorias (:total)',
             'is_empty' => 'Sin categorias',
         ],
@@ -44,7 +44,7 @@ return [
     ],
 
     'contents' => [
-        'list' => [
+        'index' => [
             'title' => 'Lista de paginas (:total)',
             'is_empty' => 'Sin paginas',
         ],

@@ -4,7 +4,7 @@ return [
 
     'module' => 'Galeria',
 
-    'list' => [
+    'index' => [
         'title' => 'Lista de galerias (:total)',
         'is_empty' => 'Sin Galerias',
     ],

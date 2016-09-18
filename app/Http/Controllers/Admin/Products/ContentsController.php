@@ -22,7 +22,7 @@ class ContentsController extends Controller
     {
         $contents = Contents::sortable(['created_at' => 'desc'])->paginate(10);
 
-        return view('admin.products.contents.list', ['contents' => $contents]);
+        return view('admin.products.contents.index', ['contents' => $contents]);
     }
 
     /**
@@ -73,7 +73,7 @@ class ContentsController extends Controller
 
         \Session::flash('success', trans('admin/products.contents.store.messages.success'));
 
-        return redirect()->route('admin.products.contents.list')->withInput();
+        return redirect()->route('admin.products.contents.index')->withInput();
     }
 
     /**
@@ -97,7 +97,7 @@ class ContentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         $this->validate($request, [
             'category_id' => 'required|integer',
@@ -106,7 +106,7 @@ class ContentsController extends Controller
             'status'      => 'required|integer',
         ]);
 
-        $content = Contents::find($id);
+        $content = Contents::find($request->id);
 
         $content->category_id = $request->category_id;
         $content->title = $request->title;
@@ -119,7 +119,7 @@ class ContentsController extends Controller
 
         \Session::flash('success', trans('admin/products.contents.update.messages.success'));
 
-        return redirect()->route('admin.products.contents.list')->withInput();
+        return redirect()->route('admin.products.contents.index')->withInput();
     }
 
     /**
@@ -132,7 +132,7 @@ class ContentsController extends Controller
         if (is_null($request->contents)) {
             \Session::flash('info', trans('admin/products.contents.destroy.messages.info'));
 
-            return redirect()->route('admin.products.contents.list');
+            return redirect()->route('admin.products.contents.index');
         }
 
         Contents::destroy($request->contents);
@@ -150,7 +150,7 @@ class ContentsController extends Controller
             }
         }
 
-        return redirect()->route('admin.products.contents.list');
+        return redirect()->route('admin.products.contents.index');
     }
 
     /**

@@ -1,4 +1,4 @@
-@extends('admin.products.index')
+@extends('admin.products.base')
 
 @section('title',  trans('admin/products.contents.edit.title') , @parent)
 
@@ -13,7 +13,7 @@
 @show
 
 @section('actions')
-    <a href="{{ route('admin.products.contents.list') }}" class="btn btn-default"><i class="fa fa-angle-left"></i> @lang('admin/_globals.buttons.back')</a>
+    <a href="{{ route('admin.products.contents.index') }}" class="btn btn-default"><i class="fa fa-angle-left"></i> @lang('admin/_globals.buttons.back')</a>
 @endsection
 
 @section('products')
@@ -28,7 +28,7 @@
             <li><a data-toggle="tab" href="#tab-seo"> @lang('admin/_globals.forms.nav.seo')</a></li>
         </ul>
 
-		<form action="{{ route('admin.products.contents.update', $content->id) }}" class="fileupload" method="post" enctype="multipart/form-data">
+		<form action="{{ route('admin.products.contents.update',$content->id) }}" class="fileupload" method="post" enctype="multipart/form-data">
             <div class="tab-content">
 
                 <div id="tab-contents" class="tab-pane active">

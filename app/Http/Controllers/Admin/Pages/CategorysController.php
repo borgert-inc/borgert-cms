@@ -17,7 +17,7 @@ class CategorysController extends Controller
     {
         $categorys = Categorys::sortable(['created_at' => 'desc'])->paginate(10);
 
-        return view('admin.pages.categorys.list', ['categorys' => $categorys]);
+        return view('admin.pages.categorys.index', ['categorys' => $categorys]);
     }
 
     /**
@@ -52,7 +52,7 @@ class CategorysController extends Controller
 
         \Session::flash('success', trans('admin/pages.categorys.store.messages.success'));
 
-        return redirect()->route('admin.pages.categorys.list')->withInput();
+        return redirect()->route('admin.pages.categorys.index')->withInput();
     }
 
     /**
@@ -91,7 +91,7 @@ class CategorysController extends Controller
 
         \Session::flash('success', trans('admin/pages.categorys.update.messages.success'));
 
-        return redirect()->route('admin.pages.categorys.list')->withInput();
+        return redirect()->route('admin.pages.categorys.index')->withInput();
     }
 
     /**
@@ -104,12 +104,12 @@ class CategorysController extends Controller
         if (is_null($request->categorys)) {
             \Session::flash('info', trans('admin/pages.categorys.destroy.messages.info'));
 
-            return redirect()->route('admin.pages.categorys.list');
+            return redirect()->route('admin.pages.categorys.index');
         }
 
         Categorys::destroy($request->categorys);
         \Session::flash('success', trans('admin/pages.categorys.destroy.messages.success'));
 
-        return redirect()->route('admin.pages.categorys.list');
+        return redirect()->route('admin.pages.categorys.index');
     }
 }

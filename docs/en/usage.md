@@ -3,12 +3,17 @@
 
 <a name="routes"></a>
 ## Routes
-* New routes for other CMS modules should only be included in the `routes/admin/`, `routes/auth/` and `routes/custom/` folder using the prefix or as follows the model
+* We indicate to use new routes `routes resource` in file `routes/web.php`.
 
 ```php
-Route::group(['prefix' => 'blog', 'as' => 'blog.'], function() {
-	// Your rules
+
+Route::resource('users', 'Admin\Users\UsersController');
+
+Route::group(['prefix' => 'blog', 'as' => 'blog.'], function () {
+    Route::resource('categorys', 'Admin\Blog\CategorysController');
+    ...
 });
+
 ```
 
 <a name="controllers"></a>

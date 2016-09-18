@@ -21,7 +21,7 @@ class GallerysController extends Controller
     {
         $gallerys = Gallerys::sortable(['created_at' => 'desc'])->paginate(10);
 
-        return view('admin.gallerys.list', ['gallerys' => $gallerys]);
+        return view('admin.gallerys.index', ['gallerys' => $gallerys]);
     }
 
     /**
@@ -69,7 +69,7 @@ class GallerysController extends Controller
 
         \Session::flash('success', trans('admin/gallerys.store.messages.success'));
 
-        return redirect()->route('admin.gallerys.list')->withInput();
+        return redirect()->route('admin.gallerys.index')->withInput();
     }
 
     /**
@@ -92,7 +92,7 @@ class GallerysController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         $this->validate($request, [
             'title'       => 'required',
@@ -100,7 +100,7 @@ class GallerysController extends Controller
             'status'      => 'required|integer',
         ]);
 
-        $gallery = Gallerys::find($id);
+        $gallery = Gallerys::find($request->id);
 
         $gallery->title = $request->title;
         $gallery->content = $request->content;
@@ -113,7 +113,7 @@ class GallerysController extends Controller
 
         \Session::flash('success', trans('admin/gallerys.update.messages.success'));
 
-        return redirect()->route('admin.gallerys.list')->withInput();
+        return redirect()->route('admin.gallerys.index')->withInput();
     }
 
     /**
@@ -126,7 +126,7 @@ class GallerysController extends Controller
         if (is_null($request->gallerys)) {
             \Session::flash('info', trans('admin/gallerys.destroy.messages.info'));
 
-            return redirect()->route('admin.gallerys.list');
+            return redirect()->route('admin.gallerys.index');
         }
 
         Gallerys::destroy($request->gallerys);
@@ -144,7 +144,7 @@ class GallerysController extends Controller
             }
         }
 
-        return redirect()->route('admin.gallerys.list');
+        return redirect()->route('admin.gallerys.index');
     }
 
     /**

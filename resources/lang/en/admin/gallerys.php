@@ -4,7 +4,7 @@ return [
 
     'module' => 'Image Gallery',
 
-    'list' => [
+    'index' => [
         'title' => 'List of image galleries (:total)',
         'is_empty' => 'None of registered images gallery',
     ],

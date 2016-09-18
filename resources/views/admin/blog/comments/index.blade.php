@@ -1,26 +1,49 @@
-@extends('admin.blog.index')
+@extends('admin.blog.comments.base')
 
-@section('blog')
-	
-    <div class="row">
-        <div class="col-lg-3">
-            <div class="ibox float-e-margins">
-                <div class="ibox-content mailbox-content">
-                    <div class="file-manager">
-                        <h5>Filtros</h5>
-                        <ul class="category-list folder-list" style="padding: 0">
-                            <li><a href="{{ route('admin.blog.comments.list') }}"> <i class="fa fa-circle text-navy"></i> @lang('admin/blog.comments.types.pending')</a></li>
-                            <li><a href="{{ route('admin.blog.comments.aproved') }}"> <i class="fa fa-circle text-primary"></i> @lang('admin/blog.comments.types.approved')</a></li>
-                            <li><a href="{{ route('admin.blog.comments.reproved') }}"> <i class="fa fa-circle text-danger"></i> @lang('admin/blog.comments.types.reproved')</a></li>
-                        </ul>
-                        <div class="clearfix"></div>
-                    </div>
+@section('title', trans('admin/blog.comments.index.title', ['total' => $comments->total()]), @parent)
+
+@section('comments')
+    
+    @section('subtitle', trans('admin/blog.comments.index.title', ['total' => $comments->total()]))
+
+    <div class="mail-box">
+
+        <div class="mail-body">
+
+            @if ($comments->total() > 0)
+
+                <div class="feed-activity-list">
+
+                    @foreach($comments as $key => $comment)
+                        <div class="feed-element">
+                            <a href="javascript:;" class="pull-left">
+                                <img src="{{ Gravatar::src($comment->email, 60) }}" class="img-circle">
+                            </a>
+                            <div class="media-body ">
+                                @lang('admin/blog.posts.edit.posted',['name' => $comment->name, 'title' => $comment->post->title]) <br>
+                                <small class="text-muted">{{ $comment->created_at->diffForHumans() }}</small>
+                                <div class="well">
+                                    {{ $comment->content }}
+                                </div>
+                                <a class="btn btn-sm btn-primary" href="{{ route('admin.blog.comments.aprove', $comment->id) }}"><i class="fa fa-thumbs-up"></i> @lang('admin/_globals.buttons.aprove')</a>
+                                <a class="btn btn-sm btn-default" href="{{ route('admin.blog.comments.reprove', $comment->id) }}"><i class="fa fa-thumbs-down"></i> @lang('admin/_globals.buttons.reprove')</a>
+                            </div>
+                        </div>
+                    @endforeach
+                    
                 </div>
-            </div>
+
+                {!! $comments->render() !!}
+
+            @else
+                <div class="widget p-lg text-center">
+                    <i class="fa fa-exclamation-triangle fa-2x"></i>
+                    <h4 class="no-margins">@lang('admin/blog.comments.index.is_empty')</h4>
+                </div>
+            @endif
+
         </div>
-        <div class="col-lg-9 animated fadeIn">
-            @yield('comments')
-        </div>
+
     </div>
 
 @endsection

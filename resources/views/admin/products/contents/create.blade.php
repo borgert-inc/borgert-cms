@@ -1,4 +1,4 @@
-@extends('admin.products.index')
+@extends('admin.products.base')
 
 @section('title',  trans('admin/products.contents.create.title'), @parent)
 
@@ -13,7 +13,7 @@
 @show
 
 @section('actions')
-    <a href="{{ route('admin.products.contents.list') }}" class="btn btn-default"><i class="fa fa-angle-left"></i> @lang('admin/_globals.buttons.back')</a>
+    <a href="{{ route('admin.products.contents.index') }}" class="btn btn-default"><i class="fa fa-angle-left"></i> @lang('admin/_globals.buttons.back')</a>
 @endsection
 
 @section('products')

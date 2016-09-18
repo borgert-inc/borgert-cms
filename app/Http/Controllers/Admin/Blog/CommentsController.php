@@ -16,7 +16,7 @@ class CommentsController extends Controller
     {
         $comments = Comments::where('status', '=', 0)->paginate(10);
 
-        return view('admin.blog.comments.list', ['comments' => $comments]);
+        return view('admin.blog.comments.index', ['comments' => $comments]);
     }
 
     /**

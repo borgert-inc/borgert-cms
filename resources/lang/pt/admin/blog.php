@@ -12,7 +12,7 @@ return [
 
 
     'categorys' => [
-        'list' => [
+        'index' => [
             'title' => 'Lista de categorias (:total)',
             'is_empty' => 'Nenhuma categoria cadastrada.',
         ],
@@ -57,7 +57,7 @@ return [
             'reproved' => 'Reprovados',
         ],
 
-        'list' => [
+        'index' => [
             'title' => 'Lista de comentários pendentes (:total)',
             'is_empty' => 'Não existe commentários pendentes.',
         ],
@@ -88,7 +88,7 @@ return [
 
 
     'posts' => [
-        'list' => [
+        'index' => [
             'title' => 'Lista de posts (:total)',
             'is_empty' => 'Nenhum post cadastrado',
         ],

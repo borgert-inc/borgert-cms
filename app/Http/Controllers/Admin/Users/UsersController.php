@@ -17,7 +17,14 @@ class UsersController extends Controller
     {
         $users = User::sortable(['created_at' => 'desc'])->paginate(10);
 
-        return view('admin.users.list', ['users' => $users]);
+        return view('admin.users.index', ['users' => $users]);
+    }
+
+    public function show($id)
+    {
+        $users = User::sortable(['created_at' => 'desc'])->paginate(10);
+
+        return view('admin.users.index', ['users' => $users]);
     }
 
     /**
@@ -55,7 +62,7 @@ class UsersController extends Controller
 
         \Session::flash('success', trans('admin/users.update.messages.success'));
 
-        return redirect()->route('admin.users.list')->withInput();
+        return redirect()->route('admin.users.index')->withInput();
     }
 
     /**
@@ -80,24 +87,27 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $this->validate($request, [
             'name'       => 'required',
             'email'      => 'required|email',
-            'password'   => 'required',
+            'password'   => 'sometimes',
         ]);
 
         $user = User::find($id);
 
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = \Hash::make($request->password);
+        if ($request->password) {
+            $user->password = \Hash::make($request->password);
+        }
         $user->status = $request->status;
 
         $user->save();
 
         \Session::flash('success', trans('admin/users.update.messages.success'));
 
-        return redirect()->route('admin.users.list')->withInput();
+        return redirect()->route('admin.users.index')->withInput();
     }
 
     /**
@@ -110,7 +120,7 @@ class UsersController extends Controller
         if (is_null($request->users)) {
             \Session::flash('info', trans('admin/users.destroy.messages.info'));
 
-            return redirect()->route('admin.users.list');
+            return redirect()->route('admin.users.index');
         }
 
         $user = \Auth::user();
@@ -118,12 +128,12 @@ class UsersController extends Controller
         if (in_array($user->id, $request->users)) {
             \Session::flash('warning', trans('admin/users.destroy.messages.warning'));
 
-            return redirect()->route('admin.users.list');
+            return redirect()->route('admin.users.index');
         }
 
         User::destroy($request->users);
         \Session::flash('success', trans('admin/users.destroy.messages.success'));
 
-        return redirect()->route('admin.users.list');
+        return redirect()->route('admin.users.index');
     }
 }

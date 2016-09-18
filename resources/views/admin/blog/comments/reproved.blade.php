@@ -1,4 +1,4 @@
-@extends('admin.blog.comments.index')
+@extends('admin.blog.comments.base')
 
 @section('title', trans('admin/blog.comments.reproved.title', ['total' => $comments->total()]), @parent)
 

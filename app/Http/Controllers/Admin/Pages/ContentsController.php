@@ -10,7 +10,7 @@ use App\Models\Admin\Pages\Contents;
 class ContentsController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a linting of the resource.
      *
      * @return \Illuminate\Http\Response
      */
@@ -18,7 +18,7 @@ class ContentsController extends Controller
     {
         $contents = Contents::sortable(['created_at' => 'desc'])->paginate(10);
 
-        return view('admin.pages.contents.list', ['contents' => $contents]);
+        return view('admin.pages.contents.index', ['contents' => $contents]);
     }
 
     /**
@@ -62,7 +62,7 @@ class ContentsController extends Controller
 
         \Session::flash('success', trans('admin/pages.contents.store.messages.success'));
 
-        return redirect()->route('admin.pages.contents.list')->withInput();
+        return redirect()->route('admin.pages.contents.index')->withInput();
     }
 
     /**
@@ -110,7 +110,7 @@ class ContentsController extends Controller
 
         \Session::flash('success', trans('admin/pages.contents.update.messages.success'));
 
-        return redirect()->route('admin.pages.contents.list')->withInput();
+        return redirect()->route('admin.pages.contents.index')->withInput();
     }
 
     /**
@@ -123,12 +123,12 @@ class ContentsController extends Controller
         if (is_null($request->contents)) {
             \Session::flash('info', trans('admin/pages.contents.destroy.messages.info'));
 
-            return redirect()->route('admin.pages.contents.list');
+            return redirect()->route('admin.pages.contents.index');
         }
 
         Contents::destroy($request->contents);
         \Session::flash('success', trans('admin/pages.contents.destroy.messages.success'));
 
-        return redirect()->route('admin.pages.contents.list');
+        return redirect()->route('admin.pages.contents.index');
     }
 }

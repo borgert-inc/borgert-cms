@@ -1,9 +1,9 @@
-@extends('admin.blog.index')
+@extends('admin.blog.base')
 
 @section('title',  trans('admin/blog.categorys.edit.title'), @parent)
 
 @section('actions')
-	<a href="{{ route('admin.blog.categorys.list') }}" class="btn btn-default"><i class="fa fa-angle-left"></i> @lang('admin/_globals.buttons.back')</a>
+	<a href="{{ route('admin.blog.categorys.index') }}" class="btn btn-default"><i class="fa fa-angle-left"></i> @lang('admin/_globals.buttons.back')</a>
 @endsection
 
 @section('blog')

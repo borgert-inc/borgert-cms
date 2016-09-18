@@ -82,7 +82,6 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'], fu
             Route::get('aprove/{id}', ['as' => 'aprove', 'uses' => 'Admin\Blog\CommentsController@aprove']);
             Route::get('reprove/{id}', ['as' => 'reprove', 'uses' => 'Admin\Blog\CommentsController@reprove']);
         });
-
     });
 
     // ---------------------------------------------------------------------------------------------
@@ -144,11 +143,10 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'], fu
     });
 
     // ---------------------------------------------------------------------------------------------
-    // 
+    //
     // Mobule: PROFILE
 
     Route::group(['prefix' => 'profile', 'as' => 'profile.'], function () {
-
         Route::get('', ['as' => 'profile', 'uses' => 'Admin\Profile\ProfileController@index']);
         Route::post('update', ['as' => 'update', 'uses' => 'Admin\Profile\ProfileController@password']);
     });

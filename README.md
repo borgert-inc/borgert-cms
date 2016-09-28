@@ -76,6 +76,10 @@
 <a name="log"></a>
 ## Change log
 
+* v0.0.19
+    * Further details for products - issue #22
+* v.0.0.18
+    * Update routes resource and rename views list to index
 * v0.0.17
     * Upgrade Laravel 5.2 to 5.3
     * Upgrade kyslik/column-sortable

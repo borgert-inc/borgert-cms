@@ -25,6 +25,7 @@
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#tab-contents"> @lang('admin/_globals.forms.nav.contents')</a></li>
             <li><a data-toggle="tab" href="#tab-images"> @lang('admin/_globals.forms.nav.images')</a></li>
+            <li><a data-toggle="tab" href="#tab-data"> @lang('admin/_globals.forms.nav.data')</a></li>
             <li><a data-toggle="tab" href="#tab-seo"> @lang('admin/_globals.forms.nav.seo')</a></li>
         </ul>
 
@@ -75,6 +76,29 @@
                 <div id="tab-images" class="tab-pane">
                     <div class="panel-body">
                         @include('admin._inc.fileupload.buttons',['extensions' => ['GIF', 'JPG', 'JPEG', 'PNG']])
+                    </div>
+                </div>
+
+                <div id="tab-data" class="tab-pane">
+                    <div class="panel-body">
+                        <fieldset class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">@lang('admin/_globals.forms.code'):</label>
+                                <div class="col-sm-10"><input type="text" name="code" class="form-control" value="{{ old('code') }}"></div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">@lang('admin/_globals.forms.price'):</label>
+                                <div class="col-sm-4"><input type="number" step="0.01" min="0" name="price" class="form-control" value="{{ old('price') }}"></div>
+                                <label class="col-sm-2 control-label">@lang('admin/_globals.forms.price_per'):</label>
+                                <div class="col-sm-4"><input type="number" step="0.01" min="0" name="price_per" class="form-control" value="{{ old('price_per') }}"></div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">@lang('admin/_globals.forms.information_technical'):</label>
+                                <div class="col-sm-10">
+                                    <textarea name="information_technical" class="form-control summernote">{{ old('information_technical') }}</textarea>
+                                </div>
+                            </div>
+                        </fieldset>
                     </div>
                 </div>
 

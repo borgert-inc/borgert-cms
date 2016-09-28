@@ -20,13 +20,6 @@ class UsersController extends Controller
         return view('admin.users.index', ['users' => $users]);
     }
 
-    public function show($id)
-    {
-        $users = User::sortable(['created_at' => 'desc'])->paginate(10);
-
-        return view('admin.users.index', ['users' => $users]);
-    }
-
     /**
      * Show the form for creating a new resource.
      *

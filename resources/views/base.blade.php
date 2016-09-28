@@ -54,7 +54,7 @@
             <div class="content">
                 <img src="{{ asset('assets/admin/img/borgert-logo.png') }}" width="250">
                 <div class="title">{{ config('borgert.name') }}</div>
-                <h4>Framework Laravel 5.2</h4>
+                <h4>Framework {{ config('borgert.laravel') }}</h4>
                 <a href="{{ route('admin.index') }}" class="btn">Enter</a>
             </div>
         </div>

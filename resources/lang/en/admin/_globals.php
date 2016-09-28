@@ -68,6 +68,10 @@ return [
         'publish_at' => 'Publish at',
         'order' => 'Order',
         'files_support' => 'Supported files',
+        'information_technical' => 'Information Technical',
+        'code' => 'Code',
+        'price' => 'Price',
+        'price_per' => 'Price Per',
     ],
 
 ];

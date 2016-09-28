@@ -57,6 +57,10 @@ class ContentsController extends Controller
         $content->category_id = $request->category_id;
         $content->title = $request->title;
         $content->content = $request->content;
+        $content->information_technical = $request->information_technical;
+        $content->price = $request->price;
+        $content->price_per = $request->price_per;
+        $content->code = $request->code;
         $content->status = $request->status;
         $content->seo_title = $request->seo_title;
         $content->seo_description = $request->seo_description;
@@ -111,6 +115,10 @@ class ContentsController extends Controller
         $content->category_id = $request->category_id;
         $content->title = $request->title;
         $content->content = $request->content;
+        $content->information_technical = $request->information_technical;
+        $content->price = $request->price;
+        $content->price_per = $request->price_per;
+        $content->code = $request->code;
         $content->status = $request->status;
         $content->seo_title = $request->seo_title;
         $content->seo_description = $request->seo_description;

@@ -68,6 +68,10 @@ return [
         'publish_at' => 'Publicado el',
         'order' => 'Orden',
         'files_support' => 'Archivos soportados',
+        'information_technical' => 'Información Técnica',
+        'code' => 'Código',
+        'price' => 'Precio',
+        'price_per' => 'Precio por',
     ],
 
 ];

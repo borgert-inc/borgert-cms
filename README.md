@@ -67,8 +67,8 @@
 
 [![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg?maxAge=2592000)](https://gitter.im/odirleiborgert/borgert-cms) [![GitHub issues](https://img.shields.io/github/issues/odirleiborgert/borgert-cms.svg)](https://github.com/odirleiborgert/borgert-cms/issues) [![Twitter](https://img.shields.io/twitter/url/https/github.com/odirleiborgert/borgert-cms.svg?style=social)](https://twitter.com/intent/tweet?text=Rocket CMS criado com Laravel 5.2&url=https://github.com/odirleiborgert/borgert-cms)
 
-**We recommend cloud Digital Ocean** 
-> Earn $ 10 cloud dollars using our link 
+**We recommend cloud Digital Ocean**
+> Earn $ 10 cloud dollars using our link
 
 [![DigitalOcean](https://img.shields.io/badge/Cloud-Digital%20Ocean-blue.svg)](https://m.do.co/c/bc3c53664276)
 
@@ -124,17 +124,6 @@
 
 [![License](https://img.shields.io/badge/License-MIT-orange.svg)](https://opensource.org/licenses/MIT) [![Author](https://img.shields.io/badge/Author-Odirlei%20Borgert-orange.svg)](http://www.odirleiborgert.com.br)
 
-The MIT License (MIT)
-Copyright (c) 2016 <Odirlei Borgert>
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
+Please see the [MIT license](./LICENSE.md).
 
 [![I Love Open Source](http://www.iloveopensource.io/images/logo-lightbg.png)](http://www.iloveopensource.io/users/odirleiborgert)
-
-
-

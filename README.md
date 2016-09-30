@@ -5,10 +5,6 @@
         Blog, Pages, Products, Mailbox, Image Gallery and Users.
     </p>
     <br>
-    <img src="http://i.imgur.com/lxMkr3p.png" width="250px">
-    <br>
-    <br>
-    <br>
 </div>
 
 
@@ -47,7 +43,6 @@
 
 
 
-
 <a name="screenshots"></a>
 ## Screenshots
 
@@ -65,7 +60,7 @@
 
 > **Want to help?** How about a pull request or create an [issue] (https://github.com/odirleiborgert/borgert-cms/issues) with improvements.
 
-[![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg?maxAge=2592000)](https://gitter.im/odirleiborgert/borgert-cms) [![GitHub issues](https://img.shields.io/github/issues/odirleiborgert/borgert-cms.svg)](https://github.com/odirleiborgert/borgert-cms/issues) [![Twitter](https://img.shields.io/twitter/url/https/github.com/odirleiborgert/borgert-cms.svg?style=social)](https://twitter.com/intent/tweet?text=Rocket CMS criado com Laravel 5.2&url=https://github.com/odirleiborgert/borgert-cms)
+[![GitHub issues](https://img.shields.io/github/issues/odirleiborgert/borgert-cms.svg)](https://github.com/odirleiborgert/borgert-cms/issues) [![Twitter](https://img.shields.io/twitter/url/https/github.com/odirleiborgert/borgert-cms.svg?style=social)](https://twitter.com/intent/tweet?text=Rocket CMS criado com Laravel 5.2&url=https://github.com/odirleiborgert/borgert-cms)
 
 **We recommend cloud Digital Ocean**
 > Earn $ 10 cloud dollars using our link
@@ -73,50 +68,8 @@
 [![DigitalOcean](https://img.shields.io/badge/Cloud-Digital%20Ocean-blue.svg)](https://m.do.co/c/bc3c53664276)
 
 
-<a name="log"></a>
-## Change log
-
-* v0.0.19
-    * Further details for products - issue #22
-* v.0.0.18
-    * Update routes resource and rename views list to index
-* v0.0.17
-    * Upgrade Laravel 5.2 to 5.3
-    * Upgrade kyslik/column-sortable
-    * Fixed bug upload images
-* v0.0.16
-    * Add column order in tables: `blog_categorys`, `pages_categorys`, `pages_contents`, `gallerys` and `products_categorys`
-* v0.0.15 / v0.0.14
-    * Implement select your language in profile
-* v0.0.13
-    * Implement publish_at in post blog
-* v0.0.12
-    * Create profile user (access: http://localhost:8000/admin/profile/)
-* v0.0.11
-    * Adding images to the blog post
-* v0.0.10
-    * Add Languages - English and Portuguese.
-* v0.0.9
-    * Created docs English and Portuguese.
-* v0.0.8
-    * Creating area to recover password
-* v0.0.7
-    * Module improvements Galleries
-    * Creating upload images for module products
-* v0.0.6
-    * Applied method withInput() in forms **create**
-* v0.0.5
-    * Added sorting by columns using `Kyslik/column-sortable`
-* v0.0.4
-    * Add fields for SEO (title,description)
-* v0.0.3
-    * Module Image Gallery
-    * Guide to use to upload files [Blueimp - jQuery File Upload](https://github.com/blueimp/jQuery-File-Upload)
-* v0.0.2
-    * Order list created_at DESC
-* v0.0.1
-    * Modules Blog, Pages, Products, Mailbox and Users
-
+<a name="changelog"></a>
+## [Changelog](./CHANGELOG.md).
 
 
 <a name="license"></a>
@@ -126,4 +79,3 @@
 
 Please see the [MIT license](./LICENSE.md).
 
-[![I Love Open Source](http://www.iloveopensource.io/images/logo-lightbg.png)](http://www.iloveopensource.io/users/odirleiborgert)

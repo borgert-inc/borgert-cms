@@ -16,14 +16,7 @@ elixir.config.sourcemaps = false;
 
 elixir(function(mix) {
 
-    mix.less('app.less','public/assets/admin/css');
-    mix.scripts('app.js', 'public/assets/admin/js');
-
-  //   mix.browserSync({
-  //   	proxy: 'public/index.php',
-  //   	ui: {
-		//     port: 8000
-		// }
-  //   });
+    mix.less('admin/app.less','public/assets/admin/css');
+    mix.scripts('admin/app.js', 'public/assets/admin/js');
 
 });

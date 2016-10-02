@@ -1,0 +1,17 @@
+language: php
+
+php:
+  - '5.6'
+  - '7.0'
+  - hhvm
+  - nightly
+
+before_script:
+  - cp .env.example .env
+  - mysql -e 'create database homestead_test;'
+  - composer self-update
+  - composer install --no-interaction
+  - php artisan key:generate
+
+script:
+  - vendor/bin/phpunit

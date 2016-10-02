@@ -26,7 +26,9 @@ $(document).ready(function () {
     // --------------------------------------------------------------------------------------
 
     // Switchery
-    new Switchery(document.querySelector('.js-switch'), {color: '#2281C3'});
+    if (document.querySelector('.js-switch') != null) {
+        new Switchery(document.querySelector('.js-switch'), {color: '#2281C3'});
+    }
 
     // --------------------------------------------------------------------------------------
 

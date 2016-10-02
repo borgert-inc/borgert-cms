@@ -160,7 +160,7 @@
             autoUpload: true,
             acceptFileTypes: /(\.|\/)(gif|jpe?g|png|bmp)$/i,
             maxFileSize: 10240000, // 10 MB
-            url: '{{ route('admin.products.contents.upload') }}',
+            url: '{{ route('admin.products.contents.upload',"temp-" . Auth::user()->id ) }}' ,
         });
 
          // Load existing files:

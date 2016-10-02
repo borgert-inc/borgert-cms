@@ -53,7 +53,7 @@ class GallerysController extends Controller
         $gallery->title = $request->title;
         $gallery->content = $request->content;
         $gallery->order = $request->order;
-        $gallery->status = $request->status;
+        $gallery->status = (isset($request->status) ? 1 : 0);
         $gallery->seo_title = $request->seo_title;
         $gallery->seo_description = $request->seo_description;
 
@@ -105,7 +105,7 @@ class GallerysController extends Controller
         $gallery->title = $request->title;
         $gallery->content = $request->content;
         $gallery->order = $request->order;
-        $gallery->status = $request->status;
+        $gallery->status = (isset($request->status) ? 1 : 0);
         $gallery->seo_title = $request->seo_title;
         $gallery->seo_description = $request->seo_description;
 

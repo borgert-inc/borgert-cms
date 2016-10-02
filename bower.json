@@ -34,6 +34,7 @@
     "summernote": "^0.8.1",
     "blueimp-file-upload": "^9.12.5",
     "awesome-bootstrap-checkbox": "^0.3.7",
-    "datetimepicker": "^2.5.4"
+    "datetimepicker": "^2.5.4",
+    "switchery": "^0.8.1"
   }
 }

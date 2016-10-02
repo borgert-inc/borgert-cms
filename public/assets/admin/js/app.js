@@ -25,6 +25,11 @@ $(document).ready(function () {
 
     // --------------------------------------------------------------------------------------
 
+    // Switchery
+    new Switchery(document.querySelector('.js-switch'), {color: '#2281C3'});
+
+    // --------------------------------------------------------------------------------------
+
     // Close menu in canvas mode
     $('.close-canvas-menu').click(function () {
         $("body").toggleClass("mini-navbar");

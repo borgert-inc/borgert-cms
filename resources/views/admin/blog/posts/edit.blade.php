@@ -63,10 +63,7 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">@lang('admin/_globals.forms.status'):</label>
                                 <div class="col-sm-10">
-                                    <select name="status" class="form-control">
-                                        <option value="1" {{ $post->status == 1 ? 'selected' : '' }}>@lang('admin/_globals.forms.active')</option>
-                                        <option value="0" {{ $post->status == 0 ? 'selected' : '' }}>@lang('admin/_globals.forms.inactive')</option>
-                                    </select>
+                                    <input type="checkbox" name="status" class="js-switch" value="1" {{ $post->status === 1 ? 'checked' : '' }} />
                                 </div>
                             </div>
                             <div class="form-group">

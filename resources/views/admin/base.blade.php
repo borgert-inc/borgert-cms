@@ -28,6 +28,8 @@
             <link href="{!! asset('assets/components/blueimp-file-upload/css/jquery.fileupload.css') !!}" rel="stylesheet">
             <link href="{!! asset('assets/components/blueimp-file-upload/css/jquery.fileupload-ui.css') !!}" rel="stylesheet">
 
+            <link href="{!! asset('assets/components/switchery/dist/switchery.min.css') !!}" rel="stylesheet" />
+
             <!-- App -->
             <link href="{!! asset('assets/admin/css/app.css') !!}" rel="stylesheet">
 
@@ -144,6 +146,9 @@
 
             <!-- Pace (Loading) -->
             <script type="text/javascript" src="{!! asset('assets/components/pace/pace.min.js') !!}"></script>
+
+            <!-- Switchery -->
+            <script type="text/javascript" src="{!! asset('assets/components/switchery/dist/switchery.min.js') !!}"></script>
 
             <!-- App -->
             <script type="text/javascript" src="{!! asset('assets/admin/js/app.js') !!}"></script>

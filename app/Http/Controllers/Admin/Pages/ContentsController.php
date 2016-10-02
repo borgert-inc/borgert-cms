@@ -54,7 +54,7 @@ class ContentsController extends Controller
         $content->title = $request->title;
         $content->content = $request->content;
         $content->order = $request->order;
-        $content->status = $request->status;
+        $content->status = (isset($request->status)?1:0);
         $content->seo_title = $request->seo_title;
         $content->seo_description = $request->seo_description;
         $content->slug = str_slug($request->title);
@@ -101,7 +101,7 @@ class ContentsController extends Controller
         $content->title = $request->title;
         $content->content = $request->content;
         $content->order = $request->order;
-        $content->status = $request->status;
+        $content->status = (isset($request->status)?1:0);
         $content->seo_title = $request->seo_title;
         $content->seo_description = $request->seo_description;
         $content->slug = str_slug($request->title);

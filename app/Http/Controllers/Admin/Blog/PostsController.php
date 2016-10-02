@@ -60,7 +60,7 @@ class PostsController extends Controller
         $post->category_id = $request->category_id;
         $post->title = $request->title;
         $post->content = $request->content;
-        $post->status = $request->status;
+        $post->status = (isset($request->status)?1:0);
         $post->seo_title = $request->seo_title;
         $post->seo_description = $request->seo_description;
 
@@ -116,7 +116,7 @@ class PostsController extends Controller
         $post->category_id = $request->category_id;
         $post->title = $request->title;
         $post->content = $request->content;
-        $post->status = $request->status;
+        $post->status = (isset($request->status)?1:0);
         $post->seo_title = $request->seo_title;
         $post->seo_description = $request->seo_description;
 

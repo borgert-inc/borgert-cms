@@ -61,7 +61,7 @@ class ContentsController extends Controller
         $content->price = $request->price;
         $content->price_per = $request->price_per;
         $content->code = $request->code;
-        $content->status = $request->status;
+        $content->status = (isset($request->status)?1:0);
         $content->seo_title = $request->seo_title;
         $content->seo_description = $request->seo_description;
 
@@ -119,7 +119,7 @@ class ContentsController extends Controller
         $content->price = $request->price;
         $content->price_per = $request->price_per;
         $content->code = $request->code;
-        $content->status = $request->status;
+        $content->status = (isset($request->status)?1:0);
         $content->seo_title = $request->seo_title;
         $content->seo_description = $request->seo_description;
 

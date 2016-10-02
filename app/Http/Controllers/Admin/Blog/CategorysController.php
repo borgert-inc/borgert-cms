@@ -46,7 +46,7 @@ class CategorysController extends Controller
 
         $category->title = $request->title;
         $category->order = $request->order;
-        $category->status = (isset($request->status)?1:0);
+        $category->status = (isset($request->status)? 1 : 0);
 
         $category->save();
 
@@ -85,7 +85,7 @@ class CategorysController extends Controller
 
         $category->title = $request->title;
         $category->order = $request->order;
-        $category->status = (isset($request->status)?1:0);
+        $category->status = (isset($request->status)? 1 : 0);
 
         $category->save();
 

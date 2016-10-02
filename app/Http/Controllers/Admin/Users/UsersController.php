@@ -49,7 +49,7 @@ class UsersController extends Controller
         $users->name = $request->name;
         $users->email = $request->email;
         $users->password = \Hash::make($request->password);
-        $users->status = (isset($request->status)?1:0);
+        $users->status = (isset($request->status)? 1 : 0);
 
         $users->save();
 
@@ -93,7 +93,7 @@ class UsersController extends Controller
         if ($request->password) {
             $user->password = \Hash::make($request->password);
         }
-        $user->status = (isset($request->status)?1:0);
+        $user->status = (isset($request->status)? 1 : 0);
 
         $user->save();
 

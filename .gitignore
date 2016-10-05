@@ -5,3 +5,4 @@
 /public/uploads
 .env
 .idea
+composer.lock

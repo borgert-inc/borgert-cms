@@ -1,4 +1,6 @@
-var elixir = require('laravel-elixir');
+const elixir = require('laravel-elixir');
+
+require('laravel-elixir-vue-2');
 
 /*
  |--------------------------------------------------------------------------
@@ -17,6 +19,6 @@ elixir.config.sourcemaps = false;
 elixir(function(mix) {
 
     mix.less('admin/app.less','public/assets/admin/css');
-    mix.scripts('admin/app.js', 'public/assets/admin/js');
+    mix.webpack('app.js', 'public/assets/admin/js');
 
 });

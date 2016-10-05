@@ -35,9 +35,17 @@
 
         @show
 
+        <!-- Global Scripts -->
+        <script>
+            window.Borgert = {!! json_encode([
+                // Laravel CSRF Token
+                'csrfToken' => csrf_token(),
+            ])  !!}
+        </script>
+
     </head>
     <body class="fixed-sidebar">
-        <div id="wrapper">
+        <div id="wrapper" v-cloak>
             <nav class="navbar-default navbar-static-side" role="navigation">
                 <div class="sidebar-collapse">
                     <ul class="nav metismenu" id="side-menu">
@@ -121,6 +129,9 @@
 
         @section('javascript')
 
+            <!-- App -->
+            <script type="text/javascript" src="{!! asset('assets/admin/js/app.js') !!}"></script>
+            
             <!-- Mainly scripts -->
             <script type="text/javascript" src="{!! asset('assets/components/jquery/dist/jquery.min.js') !!}"></script>
 
@@ -149,9 +160,6 @@
 
             <!-- Switchery -->
             <script type="text/javascript" src="{!! asset('assets/components/switchery/dist/switchery.min.js') !!}"></script>
-
-            <!-- App -->
-            <script type="text/javascript" src="{!! asset('assets/admin/js/app.js') !!}"></script>
 
         @show
 

@@ -159,6 +159,7 @@ return [
 
         Thomaswelton\LaravelGravatar\LaravelGravatarServiceProvider::class,
         Kyslik\ColumnSortable\ColumnSortableServiceProvider::class,
+        Laravel\Passport\PassportServiceProvider::class,
 
     ],
 

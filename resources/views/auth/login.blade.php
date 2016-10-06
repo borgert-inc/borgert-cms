@@ -34,7 +34,7 @@
             
             <button type="submit" class="btn btn-primary block full-width m-b">@lang('auth.login.form.button')</button>
 
-            <a href="{{ route('auth.forget_password') }}"><small>@lang('auth.login.forgot')</small></a>
+            <a href="{{ route('auth.password.forgot') }}"><small>@lang('auth.login.forgot')</small></a>
         </form>
 
         <br>

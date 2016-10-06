@@ -1,6 +1,9 @@
 
 ## Change log
 
+* v0.0.20
+    * Install VueJS
+    * Add Laravel Passport
 * v0.0.19
     * Further details for products - issue #22
 * v.0.0.18

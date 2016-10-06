@@ -13,7 +13,6 @@
     "require": {
         "php": ">=5.6.4",
         "laravel/framework": "5.3.*",
-        "illuminate/html": "^5.0",
         "doctrine/dbal": "^2.5",
         "thomaswelton/laravel-gravatar": "^1.1",
         "kyslik/column-sortable": "5.1.*",

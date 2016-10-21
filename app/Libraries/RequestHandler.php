@@ -7,21 +7,21 @@ class RequestHandler
 {
     public function get_upload_data($id)
     {
-        return isset($_FILES[$element]) ? $_FILES[$element] : null;
+        return isset($_FILES[$id]) ? $_FILES[$id] : null;
     }
 
     public function get_post_param($id)
     {
-        return isset($_POST[$element]) ? $_POST[$element] : null;
+        return isset($_POST[$id]) ? $_POST[$id] : null;
     }
 
     public function get_query_param($id)
     {
-        return isset($_GET[$element]) ? $_GET[$element] : null;
+        return isset($_GET[$id]) ? $_GET[$id] : null;
     }
 
     public function get_server_var($id)
     {
-        return isset($_GET[$element]) ? $_GET[$element] : null;
+        return isset($_SERVER[$id]) ? $_SERVER[$id] : null;
     }
 }

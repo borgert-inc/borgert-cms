@@ -41,9 +41,11 @@ class UploadHandler
     ];
 
     protected $image_objects = [];
+    protected $req;
 
     public function __construct($options = array, $initialize = true, $error_messages = array)
     {
+        $this->req = new RequestHandler();
         $this->response = [];
         $this->options = $this->set_options($options);
         $this->error_messages = $error_messages + $this->error_messages;
@@ -54,7 +56,7 @@ class UploadHandler
 
     protected function initialize()
     {
-        switch ($this->get_server_var('REQUEST_METHOD')) {
+        switch ($this->req->get_server_var('REQUEST_METHOD')) {
             case 'OPTIONS':
             case 'HEAD':
                 $this->head();
@@ -283,7 +285,7 @@ class UploadHandler
             return false;
         }
         $content_length = $this->fix_integer_overflow(
-            (int) $this->get_server_var('CONTENT_LENGTH')
+            (int) $this->req->get_server_var('CONTENT_LENGTH')
         );
         $post_max_size = $this->get_config_bytes(ini_get('post_max_size'));
         if ($post_max_size && ($content_length > $post_max_size)) {
@@ -1113,26 +1115,6 @@ class UploadHandler
         header($str);
     }
 
-    protected function get_upload_data($id)
-    {
-        return @$_FILES[$id];
-    }
-
-    protected function get_post_param($id)
-    {
-        return @$_POST[$id];
-    }
-
-    protected function get_query_param($id)
-    {
-        return @$_GET[$id];
-    }
-
-    protected function get_server_var($id)
-    {
-        return @$_SERVER[$id];
-    }
-
     protected function handle_form_data($file, $index)
     {
         // Handle form data, e.g. $_POST['description'][$index]
@@ -1140,7 +1122,7 @@ class UploadHandler
 
     protected function get_version_param()
     {
-        return $this->basename(stripslashes($this->get_query_param('version')));
+        return $this->basename(stripslashes($this->req->get_query_param('version')));
     }
 
     protected function get_singular_param_name()
@@ -1152,12 +1134,12 @@ class UploadHandler
     {
         $name = $this->get_singular_param_name();
 
-        return $this->basename(stripslashes($this->get_query_param($name)));
+        return $this->basename(stripslashes($this->req->get_query_param($name)));
     }
 
     protected function get_file_names_params()
     {
-        $params = $this->get_query_param($this->options['param_name']);
+        $params = $this->req->get_query_param($this->options['param_name']);
         if (! $params) {
             return;
         }
@@ -1232,7 +1214,7 @@ class UploadHandler
     protected function send_content_type_header()
     {
         $this->header('Vary: Accept');
-        if (strpos($this->get_server_var('HTTP_ACCEPT'), 'application/json') !== false) {
+        if (strpos($this->req->get_server_var('HTTP_ACCEPT'), 'application/json') !== false) {
             $this->header('Content-type: application/json');
         } else {
             $this->header('Content-type: text/plain');
@@ -1255,14 +1237,14 @@ class UploadHandler
         $this->response = $content;
         if ($print_response) {
             $json = json_encode($content);
-            $redirect = stripslashes($this->get_post_param('redirect'));
+            $redirect = stripslashes($this->req->get_post_param('redirect'));
             if ($redirect && preg_match($this->options['redirect_allow_target'], $redirect)) {
                 $this->header('Location: '.sprintf($redirect, rawurlencode($json)));
 
                 return;
             }
             $this->head();
-            if ($this->get_server_var('HTTP_CONTENT_RANGE')) {
+            if ($this->req->get_server_var('HTTP_CONTENT_RANGE')) {
                 $files = isset($content[$this->options['param_name']]) ?
                     $content[$this->options['param_name']] : null;
                 if ($files && is_array($files) && is_object($files[0]) && $files[0]->size) {
@@ -1297,7 +1279,7 @@ class UploadHandler
 
     public function get($print_response = true)
     {
-        if ($print_response && $this->get_query_param('download')) {
+        if ($print_response && $this->req->get_query_param('download')) {
             return $this->download();
         }
         // summary: if ?file=name then file=get_file(name) else files=get_files()
@@ -1317,12 +1299,12 @@ class UploadHandler
 
     public function post($print_response = true)
     {
-        if ($this->get_query_param('_method') === 'DELETE') {
+        if ($this->req->get_query_param('_method') === 'DELETE') {
             return $this->delete($print_response);
         }
-        $upload = $this->get_upload_data($this->options['param_name']);
+        $upload = $this->req->get_upload_data($this->options['param_name']);
         // Parse the Content-Disposition header, if available:
-        $content_disposition_header = $this->get_server_var('HTTP_CONTENT_DISPOSITION');
+        $content_disposition_header = $this->req->get_server_var('HTTP_CONTENT_DISPOSITION');
         $file_name = $content_disposition_header ?
             rawurldecode(preg_replace(
                 '/(^[^"]+")|("$)/',
@@ -1331,7 +1313,7 @@ class UploadHandler
             )) : null;
         // Parse the Content-Range header, which has the following form:
         // Content-Range: bytes 0-524287/2000000
-        $content_range_header = $this->get_server_var('HTTP_CONTENT_RANGE');
+        $content_range_header = $this->req->get_server_var('HTTP_CONTENT_RANGE');
         $content_range = $content_range_header ?
             preg_split('/[^0-9]+/', $content_range_header) : null;
         $size = $content_range ? $content_range[3] : null;
@@ -1359,9 +1341,9 @@ class UploadHandler
                     $file_name ? $file_name : (isset($upload['name']) ?
                             $upload['name'] : null),
                     $size ? $size : (isset($upload['size']) ?
-                            $upload['size'] : $this->get_server_var('CONTENT_LENGTH')),
+                            $upload['size'] : $this->req->get_server_var('CONTENT_LENGTH')),
                     isset($upload['type']) ?
-                            $upload['type'] : $this->get_server_var('CONTENT_TYPE'),
+                            $upload['type'] : $this->req->get_server_var('CONTENT_TYPE'),
                     isset($upload['error']) ? $upload['error'] : null,
                     null,
                     $content_range
@@ -1409,8 +1391,8 @@ class UploadHandler
     protected function default_options($options)
     {
         return $options + [
-            'script_url' => $this->get_full_url().'/'.$this->basename($this->get_server_var('SCRIPT_NAME')),
-            'upload_dir' => dirname($this->get_server_var('SCRIPT_FILENAME')).'/files/',
+            'script_url' => $this->get_full_url().'/'.$this->basename($this->req->get_server_var('SCRIPT_NAME')),
+            'upload_dir' => dirname($this->req->get_server_var('SCRIPT_FILENAME')).'/files/',
             'upload_url' => $this->get_full_url().'/files/',
             'input_stream' => 'php://input',
             'user_dirs' => false,
@@ -1437,9 +1419,9 @@ class UploadHandler
             ],
             // By default, allow redirects to the referer protocol+host:
             'redirect_allow_target' => '/^'.preg_quote(
-              parse_url($this->get_server_var('HTTP_REFERER'), PHP_URL_SCHEME)
+              parse_url($this->req->get_server_var('HTTP_REFERER'), PHP_URL_SCHEME)
                 .'://'
-                .parse_url($this->get_server_var('HTTP_REFERER'), PHP_URL_HOST)
+                .parse_url($this->req->get_server_var('HTTP_REFERER'), PHP_URL_HOST)
                 .'/', // Trailing slash to not match subdomains by mistake
               '/' // preg_quote delimiter param
             ).'/',
@@ -1515,7 +1497,7 @@ class UploadHandler
                     // Make sure that this directory doesn't allow execution of files if you
                     // don't pose any restrictions on the type of uploaded files, e.g. by
                     // copying the .htaccess file from the files directory for Apache:
-                    //'upload_dir' => dirname($this->get_server_var('SCRIPT_FILENAME')).'/thumb/',
+                    //'upload_dir' => dirname($this->req->get_server_var('SCRIPT_FILENAME')).'/thumb/',
                     //'upload_url' => $this->get_full_url().'/thumb/',
                     // Uncomment the following to force the max
                     // dimensions and e.g. create square thumbnails:

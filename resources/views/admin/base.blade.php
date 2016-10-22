@@ -33,6 +33,8 @@
             <!-- App -->
             <link href="{!! asset('assets/admin/css/app.css') !!}" rel="stylesheet">
 
+            <link href="{!! asset('assets/admin/favicon.ico') !!}" rel="icon" type="image/x-icon" />
+
         @show
 
         <!-- Global Scripts -->
@@ -52,9 +54,6 @@
                         <li class="nav-header text-center">
                             <div class="profile-element">
                                 <img src="{{ asset('assets/admin/img/borgert.png') }}">
-                                <span class="block m-t-xs">
-                                    <strong class="font-bold">{{ config('borgert.name') }}</strong>
-                                </span>
                             </div>
                             <div class="logo-element">
                                 <i class="fa fa-diamond"></i>

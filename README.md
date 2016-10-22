@@ -1,4 +1,5 @@
 <div align="center">
+	<img src="http://i.imgur.com/ogUP6GJ.png" alt="Borgert CMS">
     <h1>Borgert CMS</h1>
     <p>
         A simple CMS to start projects in Laravel 5.3 containing some modules.<br>
@@ -46,13 +47,13 @@
 <a name="screenshots"></a>
 ## Screenshots
 
-![Imgur](http://i.imgur.com/fzeaQPr.png)
+![Imgur](http://i.imgur.com/3Yci6u0.png)
 
-![Imgur](http://i.imgur.com/sEoelZS.png)
+![Imgur](http://i.imgur.com/SipAkyQ.png)
 
-![Imgur](http://i.imgur.com/u3cM0ug.png)
+![Imgur](http://i.imgur.com/e7uFs5B.png)
 
-![Imgur](http://i.imgur.com/Ca7SKOh.png)
+![Imgur](http://i.imgur.com/VGpDAPx.png)
 
 
 <a name="contributions"></a>
@@ -73,9 +74,7 @@
 
 
 <a name="license"></a>
-## License
+## [License](./LICENSE.md)
 
 [![License](https://img.shields.io/badge/License-MIT-orange.svg)](https://opensource.org/licenses/MIT) [![Author](https://img.shields.io/badge/Author-Odirlei%20Borgert-orange.svg)](http://www.odirleiborgert.com.br)
-
-Please see the [MIT license](./LICENSE.md).
 

@@ -3,7 +3,7 @@
     <head>
         <title>Laravel</title>
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet" type="text/css">
 
         <style>
             html, body {
@@ -30,17 +30,17 @@
                 display: inline-block;
             }
 
-            .title {
-                font-size: 96px;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
             h4 {
                 font-family: 'Lato';
+                font-weight: 300;
+                font-size: 20px;
+            }
+            h4 strong {
+                font-weight: 700;
             }
             .btn {
                 text-decoration: none;
-                background-color: #E77E23;
+                background-color: #273643;
                 color: #fff;
                 padding: 10px 15px;
                 border-radius: 4px;
@@ -53,8 +53,7 @@
         <div class="container">
             <div class="content">
                 <img src="{{ asset('assets/admin/img/borgert-logo.png') }}" width="250">
-                <div class="title">{{ config('borgert.name') }}</div>
-                <h4>Framework {{ config('borgert.laravel') }}</h4>
+                <h4><strong>{{ config('borgert.name') }}</strong> | Framework {{ config('borgert.laravel') }}</h4>
                 <a href="{{ route('admin.index') }}" class="btn">Enter</a>
             </div>
         </div>

@@ -20,7 +20,7 @@
         <br>
 
         <div class="text-center">
-            <img src="{{ asset('assets/admin/img/borgert-medium.png') }}">
+            <img src="{{ asset('assets/admin/img/borgert-logo.png') }}" width="250px">
         </div>
 
         <br>

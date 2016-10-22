@@ -1,6 +1,10 @@
 
 ## Change log
 
+
+* v0.0.21
+    * Create logo
+    * Update colors template
 * v0.0.20
     * Install VueJS
     * Add Laravel Passport

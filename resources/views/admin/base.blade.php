@@ -52,9 +52,6 @@
                         <li class="nav-header text-center">
                             <div class="profile-element">
                                 <img src="{{ asset('assets/admin/img/borgert.png') }}">
-                                <span class="block m-t-xs">
-                                    <strong class="font-bold">{{ config('borgert.name') }}</strong>
-                                </span>
                             </div>
                             <div class="logo-element">
                                 <i class="fa fa-diamond"></i>

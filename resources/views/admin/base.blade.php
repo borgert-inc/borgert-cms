@@ -33,6 +33,8 @@
             <!-- App -->
             <link href="{!! asset('assets/admin/css/app.css') !!}" rel="stylesheet">
 
+            <link href="{!! asset('assets/admin/favicon.ico') !!}" rel="icon" type="image/x-icon" />
+
         @show
 
         <!-- Global Scripts -->

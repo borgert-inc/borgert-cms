@@ -1,6 +1,5 @@
 <div align="center">
 	<img src="http://i.imgur.com/ogUP6GJ.png" alt="Borgert CMS">
-    <h1>Borgert CMS</h1>
     <p>
         A simple CMS to start projects in Laravel 5.3 containing some modules.<br>
         Blog, Pages, Products, Mailbox, Image Gallery and Users.
@@ -51,7 +50,7 @@
 
 ![Imgur](http://i.imgur.com/SipAkyQ.png)
 
-![Imgur](http://i.imgur.com/e7uFs5B.png)
+![Imgur](http://i.imgur.com/GTiisSM.png)
 
 ![Imgur](http://i.imgur.com/VGpDAPx.png)
 

@@ -13,7 +13,7 @@ class AddSlugToPagesContentsTable extends Migration
     public function up()
     {
         Schema::table('pages_contents', function (Blueprint $table) {
-            $table->string('slug');
+            $table->string('slug')->default('');
         });
     }
 

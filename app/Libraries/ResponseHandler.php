@@ -10,6 +10,7 @@ class ResponseHandler
     {
         $this->response = $content;
     }
+
     public function get_response()
     {
         return $this->response;

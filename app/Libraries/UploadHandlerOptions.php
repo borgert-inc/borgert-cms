@@ -7,7 +7,7 @@ class UploadHandlerOptions
     public $options;    //public because parent class does reference it directly at times.
     protected $req;
 
-    public function __construct(array $options = array(), RequestHandler $req)
+    public function __construct(array $options = [], RequestHandler $req)
     {
         $this->req = $req;
         $this->options = $options + $this->default_options();
@@ -33,8 +33,6 @@ class UploadHandlerOptions
 
         return session_id();
     }
-
-
 
     //-------------------
 

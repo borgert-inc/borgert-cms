@@ -25,5 +25,4 @@ class ResponseHandler
     {
         header($str);
     }
-
 }

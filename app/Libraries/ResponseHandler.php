@@ -24,5 +24,4 @@ class ResponseHandler
     {
         header($str);
     }
-
 }

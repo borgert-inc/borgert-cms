@@ -1145,6 +1145,7 @@ class UploadHandler
     protected function download_redirect_header($redirect_header, $file_name)
     {
         $url = $this->get_download_url($file_name, $this->get_version_param(), true);
+
         return $this->res->header($redirect_header.': '.$url);
     }
 

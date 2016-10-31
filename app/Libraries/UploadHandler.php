@@ -45,7 +45,7 @@ class UploadHandler
     protected $res;
     protected $opts;
 
-    public function __construct(array $options = array(), $initialize = true, array $error_messages = array())
+    public function __construct(array $options = [], $initialize = true, array $error_messages = [])
     {
         $this->req = new RequestHandler();
         $this->res = new ResponseHandler();
@@ -1141,11 +1141,13 @@ class UploadHandler
         }
         $this->direct_download($file_name);
     }
+
     protected function download_redirect_header($redirect_header, $file_name)
     {
         $url = $this->get_download_url($file_name, $this->get_version_param(), true);
         return $this->res->header($redirect_header.': '.$url);
     }
+
     protected function direct_download()
     {
         $file_path = $this->get_upload_path($file_name, $this->get_version_param());

@@ -34,10 +34,6 @@ class UploadHandlerOptions
         return session_id();
     }
 
-
-
-    //-------------------
-
     protected function default_options()
     {
         return [

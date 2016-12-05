@@ -5,6 +5,7 @@
     * Created area to edit name and email
     * Category id is required in create page
     * Create link register category's
+    * Add PhpCsFixer.phar with command `php artisan borgert:phpcsfixer`
 * v0.0.22
     * Fixed Style CI
 * v0.0.21

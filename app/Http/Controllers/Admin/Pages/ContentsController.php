@@ -36,19 +36,20 @@ class ContentsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         $this->validate($request, [
-            'category_id' => 'sometimes|integer',
-            'title'       => 'required',
-            'content'     => 'required',
-            'status'      => 'required|integer',
+            'category_id' => 'required|integer',
+            'title' => 'required',
+            'content' => 'required',
+            'status' => 'required|integer',
         ]);
 
-        $content = new Contents;
+        $content = new Contents();
 
         $content->category_id = $request->category_id;
         $content->title = $request->title;
@@ -68,7 +69,8 @@ class ContentsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -82,17 +84,18 @@ class ContentsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int                      $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'category_id' => 'sometimes|integer',
-            'title'       => 'required',
-            'content'     => 'required',
-            'status'      => 'required|integer',
+            'category_id' => 'required|integer',
+            'title' => 'required',
+            'content' => 'required',
+            'status' => 'required|integer',
         ]);
 
         $content = Contents::find($id);

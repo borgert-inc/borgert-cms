@@ -33,18 +33,19 @@ class UsersController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name'       => 'required',
-            'email'      => 'required|email',
-            'password'   => 'required',
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required',
         ]);
 
-        $users = new User;
+        $users = new User();
 
         $users->name = $request->name;
         $users->email = $request->email;
@@ -61,7 +62,8 @@ class UsersController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -74,16 +76,17 @@ class UsersController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int                      $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name'       => 'required',
-            'email'      => 'required|email',
-            'password'   => 'sometimes',
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'sometimes',
         ]);
 
         $user = User::find($id);

@@ -15,13 +15,21 @@
             </div>
         </div>
         
-        <div class="col-md-4">
+        <div class="col-md-6">
             
             <form action="{{ route('admin.profile.update') }}" method="post" class="ibox-content">
 
                 <h3>@lang('admin/profile.profile.password.title')</h3>
 
                 {{ csrf_field() }}
+                <div class="form-group">
+                    <label class="control-label">@lang('admin/_globals.forms.name'):</label>
+                    <input type="text" name="name" class="form-control" value="{{ Auth::user()->name }}">
+                </div>
+                <div class="form-group">
+                    <label class="control-label">@lang('admin/_globals.forms.email'):</label>
+                    <input type="text" name="email" class="form-control" value="{{ Auth::user()->email }}">
+                </div>
                 <div class="form-group">
                     <label class="control-label">@lang('admin/_globals.forms.language'):</label>
                     <select class='form-control' name="lang">

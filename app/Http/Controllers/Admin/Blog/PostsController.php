@@ -41,20 +41,21 @@ class PostsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         $this->validate($request, [
-            'publish_at'  => 'required',
+            'publish_at' => 'required',
             'category_id' => 'required|integer',
-            'title'       => 'required',
-            'content'     => 'required',
-            'status'      => 'required|integer',
+            'title' => 'required',
+            'content' => 'required',
+            'status' => 'required|integer',
         ]);
 
-        $post = new Posts;
+        $post = new Posts();
 
         $post->publish_at = new Carbon($request->publish_at);
         $post->category_id = $request->category_id;
@@ -82,7 +83,8 @@ class PostsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -96,18 +98,19 @@ class PostsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int                      $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request)
     {
         $this->validate($request, [
-            'publish_at'  => 'required',
+            'publish_at' => 'required',
             'category_id' => 'required|integer',
-            'title'       => 'required',
-            'content'     => 'required',
-            'status'      => 'required|integer',
+            'title' => 'required',
+            'content' => 'required',
+            'status' => 'required|integer',
         ]);
 
         $post = Posts::find($request->id);
@@ -161,7 +164,8 @@ class PostsController extends Controller
     /**
      * Faz o envio ou carrrega as imagens de um diretório.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function upload(Request $request, $id = null)
@@ -180,7 +184,6 @@ class PostsController extends Controller
             'upload_url' => url('/').'/uploads/'.self::UPLOAD_PATH.$path.'/',
             'delete_type' => 'GET',
         ];
-
 
         // Deletamos a imagem por GET
         if (isset($request->file)) {

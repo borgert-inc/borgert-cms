@@ -42,7 +42,7 @@ class ContentsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'category_id' => 'sometimes|integer',
+            'category_id' => 'required|integer',
             'title'       => 'required',
             'content'     => 'required',
             'status'      => 'required|integer',
@@ -89,7 +89,7 @@ class ContentsController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'category_id' => 'sometimes|integer',
+            'category_id' => 'required|integer',
             'title'       => 'required',
             'content'     => 'required',
             'status'      => 'required|integer',

@@ -33,16 +33,17 @@ class CategorysController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title'       => 'required',
+            'title' => 'required',
         ]);
 
-        $category = new Categorys;
+        $category = new Categorys();
 
         $category->title = $request->title;
         $category->order = $request->order;
@@ -58,7 +59,8 @@ class CategorysController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -71,14 +73,15 @@ class CategorysController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int                      $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request)
     {
         $this->validate($request, [
-            'title'       => 'required',
+            'title' => 'required',
         ]);
 
         $category = Categorys::find($request->id);

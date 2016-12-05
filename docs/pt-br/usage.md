@@ -59,6 +59,10 @@ Os arquivos para traduções estarão localizados na pasta `resources\lang\[en,p
     'fallback_locale' => 'en',
 `
 
+<a name="phpcsfixer"></a>
+## PhpCsFixer
+* Utilizamos o comando `php artisan borgert:phpcsfixer`, requer o arquivo phpcsfixer.phar 
+
 ------------------------
 
 #### Quer participar?

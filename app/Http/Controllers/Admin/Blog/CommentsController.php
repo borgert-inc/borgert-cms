@@ -47,6 +47,7 @@ class CommentsController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function aprove($id)
@@ -64,6 +65,7 @@ class CommentsController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function reprove($id)

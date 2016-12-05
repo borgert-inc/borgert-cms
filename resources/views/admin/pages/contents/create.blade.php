@@ -27,11 +27,15 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">@lang('admin/_globals.forms.category'):</label>
                                 <div class="col-sm-10">
-                                    <select name="category_id" class="form-control">
-                                        @foreach($categorys as $ky => $category)
-                                            <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>{{ $category->title }}</option>
-                                        @endforeach
-                                    </select>
+                                    @if ($categorys->count() > 0)
+                                        <select name="category_id" class="form-control">
+                                            @foreach($categorys as $ky => $category)
+                                                <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>{{ $category->title }}</option>
+                                            @endforeach
+                                        </select>
+                                    @else 
+                                        <a href="{{ route('admin.pages.categorys.create') }}" class="btn dim btn-primary"><i class="fa fa-plus"></i> @lang('admin/_globals.buttons.create')</a> <span class="text-inline"> @lang('admin/pages.categorys.index.is_empty')</span>
+                                    @endif
                                 </div>
                             </div>
                             <div class="form-group">

@@ -59,6 +59,9 @@ The files for translations are located in the `resources\lang\[en,pt_BR\admin\**
     'fallback_locale' => 'en',
 `
 
+<a name="phpcsfixer"></a>
+## PhpCsFixer
+* We use the command `php artisan borgert: phpcsfixer`, requires file phpcsfixer.phar
 
 ------------------------------
 

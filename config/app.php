@@ -157,7 +157,6 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-
         Thomaswelton\LaravelGravatar\LaravelGravatarServiceProvider::class,
         Kyslik\ColumnSortable\ColumnSortableServiceProvider::class,
         Laravel\Passport\PassportServiceProvider::class,

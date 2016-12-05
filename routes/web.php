@@ -15,7 +15,7 @@ use App\Models\Admin\Pages\Contents;
 */
 
 // ---------------------------------------------------------------------------------------------
-//
+
 // Web
 
 Route::get('', function () {
@@ -23,7 +23,7 @@ Route::get('', function () {
 });
 
 // ---------------------------------------------------------------------------------------------
-//
+
 // Mobule: AUTH
 
 Route::group(['as' => 'auth.'], function () {
@@ -38,7 +38,7 @@ Route::group(['as' => 'auth.'], function () {
 });
 
 // ---------------------------------------------------------------------------------------------
-//
+
 // Custom pages model
 
 Route::get('/{page}', ['as' => 'pages', function ($page) {
@@ -50,11 +50,9 @@ Route::get('/{page}', ['as' => 'pages', function ($page) {
     App::abort(404);
 }]);
 
-
 // ---------------------------------------------------------------------------------------------
-//
-// Borgert CMS Admin
 
+// Borgert CMS Admin
 
 Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'], function () {
 
@@ -62,7 +60,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'], fu
     Route::get('/dashboard', ['as' => 'index', 'uses' => 'Admin\DashboardController@index']);
 
     // ---------------------------------------------------------------------------------------------
-    //
+
     // Mobule: BLOG
 
     Route::group(['prefix' => 'blog', 'as' => 'blog.'], function () {
@@ -89,7 +87,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'], fu
     });
 
     // ---------------------------------------------------------------------------------------------
-    //
+
     // Mobule: GALLERYS
 
     Route::resource('gallerys', 'Admin\Gallerys\GallerysController');
@@ -98,7 +96,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'], fu
     Route::any('gallerys/upload/{id?}', 'Admin\Gallerys\GallerysController@upload')->name('gallerys.upload');
 
     // ---------------------------------------------------------------------------------------------
-    //
+
     // Mobule: MAILBOX
 
     Route::group(['prefix' => 'mailbox', 'as' => 'mailbox.'], function () {
@@ -112,7 +110,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'], fu
     });
 
     // ---------------------------------------------------------------------------------------------
-    //
+
     // Mobule: PAGES
 
     Route::group(['prefix' => 'pages', 'as' => 'pages.'], function () {
@@ -129,7 +127,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'], fu
     });
 
     // ---------------------------------------------------------------------------------------------
-    //
+
     // Mobule: PRODUCTS
 
     Route::group(['prefix' => 'products', 'as' => 'products.'], function () {
@@ -147,7 +145,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'], fu
     });
 
     // ---------------------------------------------------------------------------------------------
-    //
+
     // Mobule: PROFILE
 
     Route::group(['prefix' => 'profile', 'as' => 'profile.'], function () {
@@ -156,7 +154,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'], fu
     });
 
     // ---------------------------------------------------------------------------------------------
-    //
+
     // Mobule: USERS
 
     Route::resource('users', 'Admin\Users\UsersController');

@@ -21,17 +21,18 @@ class ProfileController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function password(Request $request)
     {
         $this->validate($request, [
-            'name'              => 'required',
-            'email'             => 'required',
-            'lang'             => 'required',
-            'password'          => 'sometimes|min:6',
-            'confirm_password'  => 'sometimes|min:6',
+            'name' => 'required',
+            'email' => 'required',
+            'lang' => 'required',
+            'password' => 'sometimes|min:6',
+            'confirm_password' => 'sometimes|min:6',
         ]);
 
         if ($request->password != $request->confirm_password) {

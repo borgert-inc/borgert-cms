@@ -40,7 +40,7 @@ class BorgertUser extends Command
         $email = $this->ask('What is your email?');
         $password = $this->secret('Create your password?');
 
-        $user = new User;
+        $user = new User();
         $user->name = $name;
         $user->email = $email;
         $user->password = \Hash::make($password);

@@ -7,7 +7,7 @@ class UploadHandlerOptions
     public $options;    //public because parent class does reference it directly at times.
     protected $req;
 
-    public function __construct(array $options = array(), RequestHandler $req)
+    public function __construct(array $options, RequestHandler $req)
     {
         $this->req = $req;
         $this->options = $options + $this->default_options();
@@ -33,8 +33,6 @@ class UploadHandlerOptions
 
         return session_id();
     }
-
-
 
     //-------------------
 
@@ -166,7 +164,7 @@ class UploadHandlerOptions
 
         return
             ($https ? 'https://' : 'http://').
-            (! empty($_SERVER['REMOTE_USER']) ? $_SERVER['REMOTE_USER'].'@' : '').
+            (!empty($_SERVER['REMOTE_USER']) ? $_SERVER['REMOTE_USER'].'@' : '').
             (isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : ($_SERVER['SERVER_NAME'].
             ($https && $_SERVER['SERVER_PORT'] === 443 ||
             $_SERVER['SERVER_PORT'] === 80 ? '' : ':'.$_SERVER['SERVER_PORT']))).
@@ -175,8 +173,8 @@ class UploadHandlerOptions
 
     protected function is_https()
     {
-        return ! empty($_SERVER['HTTPS']) && strcasecmp($_SERVER['HTTPS'], 'on') === 0 ||
-            ! empty($_SERVER['HTTP_X_FORWARDED_PROTO']) &&
+        return !empty($_SERVER['HTTPS']) && strcasecmp($_SERVER['HTTPS'], 'on') === 0 ||
+            !empty($_SERVER['HTTP_X_FORWARDED_PROTO']) &&
                 strcasecmp($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') === 0;
     }
 

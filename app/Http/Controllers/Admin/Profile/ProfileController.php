@@ -27,6 +27,9 @@ class ProfileController extends Controller
     public function password(Request $request)
     {
         $this->validate($request, [
+            'name'              => 'required',
+            'email'             => 'required',
+            'lang'             => 'required',
             'password'          => 'sometimes|min:6',
             'confirm_password'  => 'sometimes|min:6',
         ]);
@@ -38,6 +41,8 @@ class ProfileController extends Controller
         }
 
         $user = \Auth::user();
+        $user->name = $request->name;
+        $user->email = $request->email;
         $user->lang = $request->lang;
 
         if ($request->password != '') {

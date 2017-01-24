@@ -43,7 +43,6 @@ return [
         ],
     ],
 
-
     'contents' => [
         'index' => [
             'title' => 'Lista de produtos (:total)',
@@ -77,7 +76,5 @@ return [
             ],
         ],
     ],
-
-
 
 ];

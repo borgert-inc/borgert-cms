@@ -10,7 +10,6 @@ return [
         'posts' => 'Posts',
     ],
 
-
     'categorys' => [
         'index' => [
             'title' => 'List categories (:total)',
@@ -44,7 +43,6 @@ return [
             ],
         ],
     ],
-
 
     'comments' => [
 
@@ -84,7 +82,6 @@ return [
         ],
     ],
 
-
     'posts' => [
         'index' => [
             'title' => 'List of posts (:total)',
@@ -119,6 +116,5 @@ return [
             ],
         ],
     ],
-
 
 ];

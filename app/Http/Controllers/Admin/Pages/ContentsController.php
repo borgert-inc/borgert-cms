@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Admin\Pages;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Admin\Pages\Categorys;
 use App\Models\Admin\Pages\Contents;
+use App\Models\Admin\Pages\Categorys;
 
 class ContentsController extends Controller
 {

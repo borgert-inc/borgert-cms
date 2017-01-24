@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin\Pages;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Pages\Categorys;
-use Illuminate\Http\Request;
 
 class CategorysController extends Controller
 {

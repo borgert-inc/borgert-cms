@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\Admin\Mailbox;
+use App\Http\Controllers\Controller;
 
 class DashboardController extends Controller
 {

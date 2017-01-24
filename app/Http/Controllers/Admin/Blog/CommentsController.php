@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin\Blog;
 
-use App\Http\Controllers\Controller;
 use App\Models\Admin\Blog\Comments;
+use App\Http\Controllers\Controller;
 
 class CommentsController extends Controller
 {

@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin\Products;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Models\Admin\Products\Categorys;
-use App\Models\Admin\Products\Contents;
 use App\Libraries\UploadHandler;
+use App\Http\Controllers\Controller;
+use App\Models\Admin\Products\Contents;
+use App\Models\Admin\Products\Categorys;
 
 class ContentsController extends Controller
 {

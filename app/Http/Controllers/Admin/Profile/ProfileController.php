@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin\Profile;
 
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\User;
 
 class ProfileController extends Controller
 {

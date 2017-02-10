@@ -1,6 +1,10 @@
 
 ## Change log
 
+* v0.0.24 
+    * Update laravel framework 5.3 => 5.4
+    * Update phpunit 4.0 => 5.0
+    * Remove packages `symfony/css-selector` and `symfony/dom-crawler`
 * v0.0.23
     * Created area to edit name and email
     * Category id is required in create page

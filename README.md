@@ -1,7 +1,7 @@
 <div align="center">
 	<img src="http://i.imgur.com/ogUP6GJ.png" alt="Borgert CMS">
     <p>
-        A simple CMS to start projects in Laravel 5.3 containing some modules.<br>
+        A simple CMS to start projects in Laravel 5.4 containing some modules.<br>
         Blog, Pages, Products, Mailbox, Image Gallery and Users.
     </p>
     <br>
@@ -63,7 +63,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/odirleiborgert/borgert-cms.svg)](https://github.com/odirleiborgert/borgert-cms/issues) [![Twitter](https://img.shields.io/twitter/url/https/github.com/odirleiborgert/borgert-cms.svg?style=social)](https://twitter.com/intent/tweet?text=Rocket CMS criado com Laravel 5.2&url=https://github.com/odirleiborgert/borgert-cms)
 
 **We recommend cloud Digital Ocean**
-> Earn $ 10 cloud dollars using our link
+> Earn $10 cloud dollars using our link
 
 [![DigitalOcean](https://img.shields.io/badge/Cloud-Digital%20Ocean-blue.svg)](https://m.do.co/c/bc3c53664276)
 

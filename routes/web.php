@@ -39,25 +39,12 @@ Route::group(['as' => 'auth.'], function () {
 
 // ---------------------------------------------------------------------------------------------
 
-// Custom pages model
-
-Route::get('/{page}', ['as' => 'pages', function ($page) {
-    $page = Contents::where('slug', $page)->first();
-    if (isset($page)) {
-        return view('pages.template', ['page' => $page]);
-    }
-
-    App::abort(404);
-}]);
-
-// ---------------------------------------------------------------------------------------------
-
 // Borgert CMS Admin
 
 Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'], function () {
 
     // Dashboard
-    Route::get('/dashboard', ['as' => 'index', 'uses' => 'Admin\DashboardController@index']);
+    Route::get('/', ['as' => 'index', 'uses' => 'Admin\DashboardController@index']);
 
     // ---------------------------------------------------------------------------------------------
 
@@ -163,3 +150,17 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'], fu
 });
 
 // ---------------------------------------------------------------------------------------------
+
+// Custom pages model
+
+Route::get('/{page}', ['as' => 'pages', function ($page) {
+    $page = Contents::where('slug', $page)->first();
+    if (isset($page)) {
+        return view('pages.template', ['page' => $page]);
+    }
+
+    App::abort(404);
+}]);
+
+// ---------------------------------------------------------------------------------------------
+

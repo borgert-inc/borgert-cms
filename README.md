@@ -60,7 +60,7 @@
 
 > **Want to help?** How about a pull request or create an [issue] (https://github.com/odirleiborgert/borgert-cms/issues) with improvements.
 
-[![GitHub issues](https://img.shields.io/github/issues/odirleiborgert/borgert-cms.svg)](https://github.com/odirleiborgert/borgert-cms/issues) [![Twitter](https://img.shields.io/twitter/url/https/github.com/odirleiborgert/borgert-cms.svg?style=social)](https://twitter.com/intent/tweet?text=Rocket CMS criado com Laravel 5.2&url=https://github.com/odirleiborgert/borgert-cms)
+[![GitHub issues](https://img.shields.io/github/issues/odirleiborgert/borgert-cms.svg)](https://github.com/odirleiborgert/borgert-cms/issues) [![Twitter](https://img.shields.io/twitter/url/https/github.com/odirleiborgert/borgert-cms.svg?style=social)](https://twitter.com/intent/tweet?text=Rocket CMS criado com Laravel 5.4&url=https://github.com/odirleiborgert/borgert-cms)
 
 **We recommend cloud Digital Ocean**
 > Earn $10 cloud dollars using our link

@@ -1,6 +1,10 @@
 
 ## Change log
 
+* v0.0.25
+    * Changed route page to the end of the routes
+    * Changed route `admin/dashboard` for `admin`
+    * Updated `app\Http\Kernell.php` to fix issues
 * v0.0.24 
     * Update laravel framework 5.3 => 5.4
     * Update phpunit 4.0 => 5.0

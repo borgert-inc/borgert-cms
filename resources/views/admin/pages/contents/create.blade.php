@@ -45,7 +45,7 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">@lang('admin/_globals.forms.content'):</label>
                                 <div class="col-sm-10">
-                                    <textarea name="content" class="form-control summernote">{{ old('content') }}</textarea>
+                                    <textarea name="description" class="form-control summernote">{{ old('description') }}</textarea>
                                 </div>
                             </div>
                             <div class="form-group">

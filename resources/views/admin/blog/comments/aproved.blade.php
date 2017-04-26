@@ -24,7 +24,7 @@
                                 <br>
                                 <small class="text-muted">{{ $comment->created_at->diffForHumans() }}</small>
                                 <div class="well">
-                                    {{ $comment->content }}
+                                    {{ $comment->description }}
                                 </div>
                             </div>
                         </div>

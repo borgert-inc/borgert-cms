@@ -23,7 +23,7 @@
                                 @lang('admin/blog.posts.edit.posted',['name' => $comment->name, 'title' => $comment->post->title]) <br>
                                 <small class="text-muted">{{ $comment->created_at->diffForHumans() }}</small>
                                 <div class="well">
-                                    {{ $comment->content }}
+                                    {{ $comment->description }}
                                 </div>
                                 <a class="btn btn-sm btn-primary" href="{{ route('admin.blog.comments.aprove', $comment->id) }}"><i class="fa fa-thumbs-up"></i> @lang('admin/_globals.buttons.aprove')</a>
                                 <a class="btn btn-sm btn-default" href="{{ route('admin.blog.comments.reprove', $comment->id) }}"><i class="fa fa-thumbs-down"></i> @lang('admin/_globals.buttons.reprove')</a>

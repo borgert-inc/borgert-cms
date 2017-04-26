@@ -1,6 +1,10 @@
 
 ## Change log
 
+* v0.0.26
+    * Reorganized / grouped migrations
+    * Upload uses the filesystems variable to check the upload folder
+    * Changed columns `content` for` description`
 * v0.0.25
     * Changed route page to the end of the routes
     * Changed route `admin/dashboard` for `admin`

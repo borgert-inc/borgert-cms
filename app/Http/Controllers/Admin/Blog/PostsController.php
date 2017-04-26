@@ -51,7 +51,7 @@ class PostsController extends Controller
             'publish_at' => 'required',
             'category_id' => 'required|integer',
             'title' => 'required',
-            'content' => 'required',
+            'description' => 'required',
             'status' => 'required|integer',
         ]);
 
@@ -60,7 +60,7 @@ class PostsController extends Controller
         $post->publish_at = new Carbon($request->publish_at);
         $post->category_id = $request->category_id;
         $post->title = $request->title;
-        $post->content = $request->content;
+        $post->description = $request->description;
         $post->status = (isset($request->status) ? 1 : 0);
         $post->seo_title = $request->seo_title;
         $post->seo_description = $request->seo_description;
@@ -109,7 +109,7 @@ class PostsController extends Controller
             'publish_at' => 'required',
             'category_id' => 'required|integer',
             'title' => 'required',
-            'content' => 'required',
+            'description' => 'required',
             'status' => 'required|integer',
         ]);
 
@@ -118,7 +118,7 @@ class PostsController extends Controller
         $post->publish_at = new Carbon($request->publish_at);
         $post->category_id = $request->category_id;
         $post->title = $request->title;
-        $post->content = $request->content;
+        $post->description = $request->description;
         $post->status = (isset($request->status) ? 1 : 0);
         $post->seo_title = $request->seo_title;
         $post->seo_description = $request->seo_description;
@@ -148,7 +148,7 @@ class PostsController extends Controller
 
         // Precisamos remover as imagens desse ID também
         // tem que ser um foreach porque é um array de galerias
-        foreach ($request->contents as $id) {
+        foreach ($request->posts as $id) {
             // Checamos se o diretório existe
             $path = self::UPLOAD_PATH.$id;
 
@@ -180,7 +180,7 @@ class PostsController extends Controller
 
         $config = [
             'script_url' => route(self::UPLOAD_ROUTE, $path),
-            'upload_dir' => base_path().'/public/uploads/'.self::UPLOAD_PATH.$path.'/',
+            'upload_dir' => config('filesystems.disks.uploads.root').'/'.self::UPLOAD_PATH.$path.'/',
             'upload_url' => url('/').'/uploads/'.self::UPLOAD_PATH.$path.'/',
             'delete_type' => 'GET',
         ];

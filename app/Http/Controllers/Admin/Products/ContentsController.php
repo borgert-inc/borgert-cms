@@ -49,7 +49,7 @@ class ContentsController extends Controller
         $this->validate($request, [
             'category_id' => 'required|integer',
             'title' => 'required',
-            'content' => 'required',
+            'description' => 'required',
             'status' => 'required|integer',
         ]);
 
@@ -57,7 +57,7 @@ class ContentsController extends Controller
 
         $content->category_id = $request->category_id;
         $content->title = $request->title;
-        $content->content = $request->content;
+        $content->description = $request->description;
         $content->information_technical = $request->information_technical;
         $content->price = $request->price;
         $content->price_per = $request->price_per;
@@ -109,7 +109,7 @@ class ContentsController extends Controller
         $this->validate($request, [
             'category_id' => 'required|integer',
             'title' => 'required',
-            'content' => 'required',
+            'description' => 'required',
             'status' => 'required|integer',
         ]);
 
@@ -117,7 +117,7 @@ class ContentsController extends Controller
 
         $content->category_id = $request->category_id;
         $content->title = $request->title;
-        $content->content = $request->content;
+        $content->description = $request->description;
         $content->information_technical = $request->information_technical;
         $content->price = $request->price;
         $content->price_per = $request->price_per;
@@ -183,7 +183,7 @@ class ContentsController extends Controller
 
         $config = [
             'script_url' => route(self::UPLOAD_ROUTE, $path),
-            'upload_dir' => base_path().'/public/uploads/'.self::UPLOAD_PATH.$path.'/',
+            'upload_dir' => config('filesystems.disks.uploads.root').'/'.self::UPLOAD_PATH.$path.'/',
             'upload_url' => url('/').'/uploads/'.self::UPLOAD_PATH.$path.'/',
             'delete_type' => 'GET',
         ];

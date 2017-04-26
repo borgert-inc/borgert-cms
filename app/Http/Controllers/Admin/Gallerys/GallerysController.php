@@ -45,14 +45,14 @@ class GallerysController extends Controller
     {
         $this->validate($request, [
             'title' => 'required',
-            'content' => 'required',
+            'description' => 'required',
             'status' => 'required|integer',
         ]);
 
         $gallery = new Gallerys();
 
         $gallery->title = $request->title;
-        $gallery->content = $request->content;
+        $gallery->description = $request->description;
         $gallery->order = $request->order;
         $gallery->status = (isset($request->status) ? 1 : 0);
         $gallery->seo_title = $request->seo_title;
@@ -99,14 +99,14 @@ class GallerysController extends Controller
     {
         $this->validate($request, [
             'title' => 'required',
-            'content' => 'required',
+            'description' => 'required',
             'status' => 'required|integer',
         ]);
 
         $gallery = Gallerys::find($request->id);
 
         $gallery->title = $request->title;
-        $gallery->content = $request->content;
+        $gallery->description = $request->description;
         $gallery->order = $request->order;
         $gallery->status = (isset($request->status) ? 1 : 0);
         $gallery->seo_title = $request->seo_title;
@@ -169,7 +169,7 @@ class GallerysController extends Controller
 
         $config = [
             'script_url' => route(self::UPLOAD_ROUTE, $path),
-            'upload_dir' => base_path().'/public/uploads/'.self::UPLOAD_PATH.$path.'/',
+            'upload_dir' => config('filesystems.disks.uploads.root').'/'.self::UPLOAD_PATH.$path.'/',
             'upload_url' => url('/').'/uploads/'.self::UPLOAD_PATH.$path.'/',
             'delete_type' => 'GET',
         ];

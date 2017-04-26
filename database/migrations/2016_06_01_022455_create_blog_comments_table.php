@@ -16,7 +16,7 @@ class CreateBlogCommentsTable extends Migration
             $table->increments('id');
             $table->string('name', 100);
             $table->string('email', 150);
-            $table->text('content');
+            $table->text('description');
             $table->integer('post_id')->unsigned();
             $table->foreign('post_id')->references('id')->on('blog_posts');
             $table->integer('status')->default(1);

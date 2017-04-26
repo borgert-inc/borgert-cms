@@ -15,9 +15,13 @@ class CreateProductsContentsTable extends Migration
         Schema::create('products_contents', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title', 170);
-            $table->text('content');
+            $table->text('description');
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('products_categorys');
+            $table->string('information_technical')->nullable();
+            $table->decimal('price', 15, 2)->nullable();
+            $table->decimal('price_per', 15, 2)->nullable();
+            $table->string('code')->nullable();
             $table->integer('status')->default(1);
             $table->string('seo_title', 70);
             $table->string('seo_description', 170);

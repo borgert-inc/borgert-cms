@@ -15,12 +15,13 @@ class CreateBlogPostsTable extends Migration
         Schema::create('blog_posts', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title', 170);
-            $table->text('content');
+            $table->text('description');
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('blog_category');
             $table->integer('status')->default(1);
-            $table->string('seo_title', 70);
-            $table->string('seo_description', 170);
+            $table->string('seo_title', 70)->nullable();
+            $table->string('seo_description', 170)->nullable();
+            $table->timestamp('publish_at')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

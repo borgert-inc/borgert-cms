@@ -1,9 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Mailbox extends Migration
+class CreateMailboxTable extends Migration
 {
     /**
      * Run the migrations.
@@ -18,7 +19,7 @@ class Mailbox extends Migration
             $table->string('name', 130);
             $table->string('email', 120);
             $table->string('subject', 70);
-            $table->text('content');
+            $table->text('description');
             $table->string('map', 40)->default('INBOX');
             $table->boolean('open')->default(0);
             $table->timestamps();
@@ -33,6 +34,6 @@ class Mailbox extends Migration
      */
     public function down()
     {
-        Schema::drop('mailbox');
+        Schema::dropIfExists('mailbox');
     }
 }

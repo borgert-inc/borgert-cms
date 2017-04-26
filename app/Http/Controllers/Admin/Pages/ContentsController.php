@@ -45,7 +45,7 @@ class ContentsController extends Controller
         $this->validate($request, [
             'category_id' => 'required|integer',
             'title' => 'required',
-            'content' => 'required',
+            'description' => 'required',
             'status' => 'required|integer',
         ]);
 
@@ -53,7 +53,7 @@ class ContentsController extends Controller
 
         $content->category_id = $request->category_id;
         $content->title = $request->title;
-        $content->content = $request->content;
+        $content->description = $request->description;
         $content->order = $request->order;
         $content->status = (isset($request->status) ? 1 : 0);
         $content->seo_title = $request->seo_title;
@@ -94,7 +94,7 @@ class ContentsController extends Controller
         $this->validate($request, [
             'category_id' => 'required|integer',
             'title' => 'required',
-            'content' => 'required',
+            'description' => 'required',
             'status' => 'required|integer',
         ]);
 
@@ -102,7 +102,7 @@ class ContentsController extends Controller
 
         $content->category_id = $request->category_id;
         $content->title = $request->title;
-        $content->content = $request->content;
+        $content->description = $request->description;
         $content->order = $request->order;
         $content->status = (isset($request->status) ? 1 : 0);
         $content->seo_title = $request->seo_title;

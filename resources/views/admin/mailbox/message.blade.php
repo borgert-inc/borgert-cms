@@ -18,7 +18,7 @@
 
         <div class="mail-body">
         
-            {!! $message->content !!}
+            {!! $message->description !!}
 
         </div>
 

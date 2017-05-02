@@ -1,6 +1,9 @@
 
 ## Change log
 
+* v0.0.27
+    * Add keywords in tables for SEO
+    * Remove column status in validations
 * v0.0.26
     * Reorganized / grouped migrations
     * Upload uses the filesystems variable to check the upload folder

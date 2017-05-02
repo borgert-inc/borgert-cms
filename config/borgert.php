@@ -10,7 +10,7 @@ return [
 
     'name' => 'Borgert CMS',
     'laravel' => 'Laravel 5.4',
-    'version' => '0.0.25',
+    'version' => '0.0.27',
     'opensource' => 'https://github.com/odirleiborgert/borgert-cms',
 
 ];

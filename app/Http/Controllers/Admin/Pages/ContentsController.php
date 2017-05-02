@@ -57,6 +57,7 @@ class ContentsController extends Controller
         $content->status = (isset($request->status) ? 1 : 0);
         $content->seo_title = $request->seo_title;
         $content->seo_description = $request->seo_description;
+        $content->seo_keywords = $request->seo_keywords;
         $content->slug = str_slug($request->title);
         $content->save();
 
@@ -105,6 +106,7 @@ class ContentsController extends Controller
         $content->status = (isset($request->status) ? 1 : 0);
         $content->seo_title = $request->seo_title;
         $content->seo_description = $request->seo_description;
+        $content->seo_keywords = $request->seo_keywords;
         $content->slug = str_slug($request->title);
 
         $content->save();

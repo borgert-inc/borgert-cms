@@ -79,6 +79,12 @@
                                     <div class="text-muted">@lang('admin/_globals.forms.limit_characters',['limit' => 170])</div>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">@lang('admin/_globals.forms.keywords'):</label>
+                                <div class="col-sm-10">
+                                    <textarea name="seo_keywords" class="form-control">{{ $content->seo_keywords }}</textarea>
+                                </div>
+                            </div>
                         </fieldset>
                     </div>
                 </div>

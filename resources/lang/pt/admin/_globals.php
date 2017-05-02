@@ -55,6 +55,7 @@ return [
         'category' => 'Categoria',
         'content' => 'Conteúdo',
         'description' => 'Descrição',
+        'keywords' => 'Palavras-Chave',
         'name' => 'Nome',
         'email' => 'E-mail',
         'password' => 'Senha',

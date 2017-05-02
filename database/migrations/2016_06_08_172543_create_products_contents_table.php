@@ -25,6 +25,7 @@ class CreateProductsContentsTable extends Migration
             $table->integer('status')->default(1);
             $table->string('seo_title', 70);
             $table->string('seo_description', 170);
+            $table->string('seo_keywords')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

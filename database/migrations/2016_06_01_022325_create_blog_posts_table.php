@@ -21,6 +21,7 @@ class CreateBlogPostsTable extends Migration
             $table->integer('status')->default(1);
             $table->string('seo_title', 70)->nullable();
             $table->string('seo_description', 170)->nullable();
+            $table->string('seo_keywords')->nullable();
             $table->timestamp('publish_at')->nullable();
             $table->softDeletes();
             $table->timestamps();

@@ -56,6 +56,7 @@ class GallerysController extends Controller
         $gallery->status = (isset($request->status) ? 1 : 0);
         $gallery->seo_title = $request->seo_title;
         $gallery->seo_description = $request->seo_description;
+        $gallery->seo_keywords = $request->seo_keywords;
 
         $gallery->save();
 
@@ -109,6 +110,7 @@ class GallerysController extends Controller
         $gallery->status = (isset($request->status) ? 1 : 0);
         $gallery->seo_title = $request->seo_title;
         $gallery->seo_description = $request->seo_description;
+        $gallery->seo_keywords = $request->seo_keywords;
 
         $gallery->save();
 

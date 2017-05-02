@@ -20,6 +20,7 @@ class CreateGallerysTable extends Migration
             $table->integer('status')->default(1);
             $table->string('seo_title', 70);
             $table->string('seo_description', 170);
+            $table->string('seo_keywords');
             $table->softDeletes();
             $table->timestamps();
         });

@@ -23,6 +23,7 @@ class CreatePagesContentsTable extends Migration
             $table->string('slug')->default('');
             $table->string('seo_title', 70);
             $table->string('seo_description', 170);
+            $table->string('seo_keywords')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

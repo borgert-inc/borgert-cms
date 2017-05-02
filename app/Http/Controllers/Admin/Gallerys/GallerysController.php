@@ -46,7 +46,6 @@ class GallerysController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'description' => 'required',
-            'status' => 'required|integer',
         ]);
 
         $gallery = new Gallerys();
@@ -100,7 +99,6 @@ class GallerysController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'description' => 'required',
-            'status' => 'required|integer',
         ]);
 
         $gallery = Gallerys::find($request->id);

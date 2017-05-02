@@ -52,7 +52,6 @@ class PostsController extends Controller
             'category_id' => 'required|integer',
             'title' => 'required',
             'description' => 'required',
-            'status' => 'required|integer',
         ]);
 
         $post = new Posts();
@@ -110,7 +109,6 @@ class PostsController extends Controller
             'category_id' => 'required|integer',
             'title' => 'required',
             'description' => 'required',
-            'status' => 'required|integer',
         ]);
 
         $post = Posts::find($request->id);

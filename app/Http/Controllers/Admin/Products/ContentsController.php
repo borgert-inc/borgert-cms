@@ -50,7 +50,6 @@ class ContentsController extends Controller
             'category_id' => 'required|integer',
             'title' => 'required',
             'description' => 'required',
-            'status' => 'required|integer',
         ]);
 
         $content = new Contents();
@@ -110,7 +109,6 @@ class ContentsController extends Controller
             'category_id' => 'required|integer',
             'title' => 'required',
             'description' => 'required',
-            'status' => 'required|integer',
         ]);
 
         $content = Contents::find($request->id);

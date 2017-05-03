@@ -27,6 +27,23 @@ class Gallerys extends Model
 
     // -------------------------------------------------------------------------------
 
+    public function image($thumb = false)
+    {
+        $img = collect(\Storage::disk('uploads')->files('gallerys/'.$this->id.'/' . ($thumb?'thumbnail/':'')))->first();
+
+        return $img ? public_path('uploads/'.$img) : null;
+    }
+
+    // -------------------------------------------------------------------------------
+
+    public function images()
+    {
+        $imgs = collect(\Storage::disk('uploads')->files('gallerys/'.$this->id))->all();
+
+        return $imgs ? $imgs : null;
+    }
+    // -------------------------------------------------------------------------------
+
     public function seo($type = null)
     {
         if ($type === null) {

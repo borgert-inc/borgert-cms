@@ -26,6 +26,14 @@ class Contents extends Model
 
     // -------------------------------------------------------------------------------
 
+    public function image($thumb = false)
+    {
+        $img = collect(\Storage::disk('uploads')->files('products/'.$this->id.'/' . ($thumb?'thumbnail/':'')))->first();
+
+        return $img ? public_path('uploads/'.$img) : null;
+    }
+    // -------------------------------------------------------------------------------
+
     public function category()
     {
         return $this->belongsTo('App\Models\Admin\Products\Categorys');

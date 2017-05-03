@@ -32,6 +32,10 @@ Route::group(['prefix' => 'blog', 'as' => 'blog.'], function () {
     * `App\Models\Admin\Products\Contents` 
     
     Ex.: {{ $item->seo('title')}}
+* * Add image() (true or false returns the thumbnail or large image) and images() (Gallerys) method that returns the first image if any.
+    * `App\Models\Admin\Blog\Posts`
+    * `App\Models\Admin\Gallerys\Gallerys` 
+    * `App\Models\Admin\Products\Contents` 
 
 <a name="views"></a>
 ## Views

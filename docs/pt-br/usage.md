@@ -33,6 +33,11 @@ Route::group(['prefix' => 'blog', 'as' => 'blog.'], function () {
     
     Ex.: {{ $item->seo('title')}}
 
+* Adicionado método image(true or false)  e images() (Gallerys) que retorna a primeira imagem se existir alguma.
+    * `App\Models\Admin\Blog\Posts`
+    * `App\Models\Admin\Gallerys\Gallerys` 
+    * `App\Models\Admin\Products\Contents` 
+
 <a name="views"></a>
 ## Views
 * Para as views utilizamos o seguinte padrão dentro da pasta `resources/views/admin/`. Onde teremos um index.blade.php que extenderá para as views create, edit e list ou qualquer outra que vier a criar.

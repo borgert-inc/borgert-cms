@@ -45,6 +45,15 @@ class Posts extends Model
 
     // -------------------------------------------------------------------------------
 
+    public function image($thumb = false)
+    {
+        $img = collect(\Storage::disk('uploads')->files('blog/posts/'.$this->id.'/' . ($thumb?'thumbnail/':'')))->first();
+
+        return $img ? public_path('uploads/'.$img) : null;
+    }
+
+    // -------------------------------------------------------------------------------
+
     public function seo($type = null)
     {
         if ($type === null) {

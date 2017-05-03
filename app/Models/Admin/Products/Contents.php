@@ -32,6 +32,7 @@ class Contents extends Model
 
         return $img ? public_path('uploads/'.$img) : null;
     }
+
     // -------------------------------------------------------------------------------
 
     public function category()

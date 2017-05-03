@@ -16,13 +16,9 @@
 
 [![GitHub tag](https://img.shields.io/github/tag/odirleiborgert/borgert-cms.svg?maxAge=2592000)](https://github.com/odirleiborgert/borgert-cms/releases)
 
-> Contributions
+> Contributions / Donate
 
-[![GitHub issues](https://img.shields.io/github/issues/odirleiborgert/borgert-cms.svg)](https://github.com/odirleiborgert/borgert-cms/issues) 
-
-> Donate
-
-[![Donate](https://img.shields.io/badge/Donate-PAYPAL-blue.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=odirleiborgert%40gmail%2ecom&lc=MQ&item_name=Odirlei%20Borgert&currency_code=BRL&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)
+[![GitHub issues](https://img.shields.io/github/issues/odirleiborgert/borgert-cms.svg)](https://github.com/odirleiborgert/borgert-cms/issues)  [![Donate](https://img.shields.io/badge/Donate-PAYPAL-blue.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=odirleiborgert%40gmail%2ecom&lc=MQ&item_name=Odirlei%20Borgert&currency_code=BRL&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)
 
 
 ## Documentation

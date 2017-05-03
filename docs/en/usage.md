@@ -25,6 +25,13 @@ Route::group(['prefix' => 'blog', 'as' => 'blog.'], function () {
 <a name="models"></a>
 ## Models
 * The models are saved in the folder `app/Models/Admin/`
+* In the following models we have added a method called seo ($ param) where the parameter is the item you want to grab. Example: title, description or keywords.
+    * `App\Models\Admin\Blog\Posts`
+    * `App\Models\Admin\Gallerys\Gallerys` 
+    * `App\Models\Admin\Pages\Contents` 
+    * `App\Models\Admin\Products\Contents` 
+    
+    Ex.: {{ $item->seo('title')}}
 
 <a name="views"></a>
 ## Views
@@ -57,13 +64,12 @@ The files for translations are located in the `resources\lang\[en,pt_BR\admin\**
 ```php
     'locale' => 'en',
     'fallback_locale' => 'en',
-`
+```
 
 <a name="phpcsfixer"></a>
 ## PhpCsFixer
-* We use the command `php artisan borgert: phpcsfixer`, requires file phpcsfixer.phar
+* We use the command `php artisan borgert:phpcsfixer`, requires file phpcsfixer.phar
 
-------------------------------
 
 #### You want to join?
 - Making a pull request or by creating an [issue] (https://github.com/odirleiborgert/borgert-cms/issues).

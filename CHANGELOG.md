@@ -1,6 +1,9 @@
 
 ## Change log
 
+* v0.0.28
+    * Add method seo() in models
+    * Add method image() and images() in models
 * v0.0.27
     * Add keywords in tables for SEO
     * Remove column status in validations

@@ -1,6 +1,8 @@
 
 ## Change log
 
+* v0.0.29
+    * File upload refactoring 
 * v0.0.28
     * Add method seo() in models
     * Add method image() and images() in models

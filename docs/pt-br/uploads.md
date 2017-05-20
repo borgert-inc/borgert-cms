@@ -155,7 +155,7 @@ Para as views teremos inclusão de CSS, Javascript e HTML.
 Vamos adicionar a librarie UploadHandle que foi criada pelo Blueimp - jQuery File Upload.
 
 ```php
-use App\Libraries\UploadHandler;
+use App\Libraries\Upload;
 ```
 
 #### 5.2 Metodo store()
@@ -194,7 +194,7 @@ if (\Storage::disk('uploads')->exists($path)) {
 Adicionar constantes a classe onde configuramos a pasta onde irá ser feito o upload das imagens e qual é a rota que irá acessar ao método upload().
 
 ```
-const UPLOAD_PATH = 'modulo/';
+const UPLOAD_PATH = 'module/';
 const UPLOAD_ROUTE = 'admin.modulo.contents.upload';
 ```
 
@@ -202,38 +202,18 @@ const UPLOAD_ROUTE = 'admin.modulo.contents.upload';
 ```php
 public function upload(Request $request, $id = null)
 {
-    $user = \Auth::User();
 
-    $path = 'temp-'.$user->id;
+    new Upload(
+        $request,
+        [
+            'id' => $id,
+            'route' => self::UPLOAD_ROUTE, // Route `routes/web.app`
+            'path' => self::UPLOAD_PATH, // Path to upload file
+        ]
+    );
 
-    if (is_numeric($id)) {
-        $path = $id;
-    }
+    return;
 
-    $config = [
-        'script_url' => route(self::UPLOAD_ROUTE, $path),
-        'upload_dir' => base_path().'/public/uploads/'.self::UPLOAD_PATH.$path.'/',
-        'upload_url' => url('/').'/uploads/'.self::UPLOAD_PATH.$path.'/',
-        'delete_type' => 'GET',
-    ];
-
-
-    // Deletamos a imagem por GET
-    if (isset($request->file)) {
-        $file = self::UPLOAD_PATH.$path.'/'.$request->file;
-        if (\Storage::disk('uploads')->has($file)) {
-            \Storage::disk('uploads')->delete($file);
-        }
-
-        $thumb = self::UPLOAD_PATH.$path.'/thumbnail/'.$request->file;
-        if (\Storage::disk('uploads')->has($thumb)) {
-            \Storage::disk('uploads')->delete($thumb);
-        }
-    }
-
-    new UploadHandler($config);
-
-    return view('admin._inc.fileupload.empty');
 }
 
 ```

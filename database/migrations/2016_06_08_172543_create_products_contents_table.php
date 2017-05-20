@@ -23,8 +23,8 @@ class CreateProductsContentsTable extends Migration
             $table->decimal('price_per', 15, 2)->nullable();
             $table->string('code')->nullable();
             $table->integer('status')->default(1);
-            $table->string('seo_title', 70);
-            $table->string('seo_description', 170);
+            $table->string('seo_title', 70)->nullable();
+            $table->string('seo_description', 170)->nullable();
             $table->string('seo_keywords')->nullable();
             $table->softDeletes();
             $table->timestamps();

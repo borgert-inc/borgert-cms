@@ -18,9 +18,9 @@ class CreateGallerysTable extends Migration
             $table->text('description')->nullable();
             $table->integer('order')->default(0);
             $table->integer('status')->default(1);
-            $table->string('seo_title', 70);
-            $table->string('seo_description', 170);
-            $table->string('seo_keywords');
+            $table->string('seo_title', 70)->nullable();
+            $table->string('seo_description', 170)->nullable();
+            $table->string('seo_keywords')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

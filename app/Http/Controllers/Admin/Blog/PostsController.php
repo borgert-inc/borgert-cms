@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin\Blog;
 
-use App\Libraries\Upload;
 use Carbon\Carbon;
+use App\Libraries\Upload;
 use Illuminate\Http\Request;
 use App\Models\Admin\Blog\Posts;
 use App\Http\Controllers\Controller;
@@ -170,7 +170,6 @@ class PostsController extends Controller
      */
     public function upload(Request $request, $id = null)
     {
-
         new Upload(
             $request,
             [
@@ -179,8 +178,6 @@ class PostsController extends Controller
                 'path' => self::UPLOAD_PATH, // Path to upload file
             ]
         );
-
         return;
-
     }
 }

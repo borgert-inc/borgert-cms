@@ -27,12 +27,13 @@ class Upload
 
         // Deletamos a imagem por GET
         if (isset($request->file)) {
-            $file = $init['path'].'/'.$request->file;
+
+            $file = $init['path'] . $path . '/' . $request->file;
             if (\Storage::disk('uploads')->has($file)) {
                 \Storage::disk('uploads')->delete($file);
             }
 
-            $thumb = $init['path'].'/thumbnail/'.$request->file;
+            $thumb = $init['path'] . $path . '/thumbnail/' . $request->file;
             if (\Storage::disk('uploads')->has($thumb)) {
                 \Storage::disk('uploads')->delete($thumb);
             }

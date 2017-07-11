@@ -1,6 +1,8 @@
 
 ## Change log
 
+* v.0.0.30
+    * Fixed bug in class app/Libraries/Upload
 * v0.0.29
     * File upload refactoring 
 * v0.0.28

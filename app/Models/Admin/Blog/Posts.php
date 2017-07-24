@@ -2,8 +2,8 @@
 
 namespace App\Models\Admin\Blog;
 
-use App\Traits\ImageTrait;
 use App\Traits\SeoTrait;
+use App\Traits\ImageTrait;
 use Kyslik\ColumnSortable\Sortable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -32,7 +32,7 @@ class Posts extends Model
     ];
 
     protected $image_trait = [
-        'path' => 'blog/posts/'
+        'path' => 'blog/posts/',
     ];
 
     // -------------------------------------------------------------------------------
@@ -50,5 +50,4 @@ class Posts extends Model
     }
 
     // -------------------------------------------------------------------------------
-
 }

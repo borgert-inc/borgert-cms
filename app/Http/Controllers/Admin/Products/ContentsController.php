@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin\Products;
 
-use Illuminate\Http\Request;
 use App\Libraries\Upload;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Products\Contents;
 use App\Models\Admin\Products\Categorys;
@@ -173,7 +173,6 @@ class ContentsController extends Controller
      */
     public function upload(Request $request, $id = null)
     {
-
         new Upload(
             $request,
             [
@@ -182,8 +181,5 @@ class ContentsController extends Controller
                 'path' => self::UPLOAD_PATH, // Path to upload file
             ]
         );
-
-        return;
-
     }
 }

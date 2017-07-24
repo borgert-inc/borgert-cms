@@ -2,8 +2,8 @@
 
 namespace App\Models\Admin\Gallerys;
 
-use App\Traits\ImageTrait;
 use App\Traits\SeoTrait;
+use App\Traits\ImageTrait;
 use Kyslik\ColumnSortable\Sortable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -28,7 +28,7 @@ class Gallerys extends Model
     ];
 
     protected $image_trait = [
-        'path' => 'gallerys/'
+        'path' => 'gallerys/',
     ];
 
     // -------------------------------------------------------------------------------

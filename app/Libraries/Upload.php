@@ -6,10 +6,8 @@ use Illuminate\Http\Request;
 
 class Upload
 {
-
     public function __construct(Request $request, $init)
     {
-
         $user = \Auth::User();
 
         $path = 'temp-'.$user->id;
@@ -39,8 +37,5 @@ class Upload
         }
 
         new UploadHandler($config);
-
-        return;
-
     }
 }

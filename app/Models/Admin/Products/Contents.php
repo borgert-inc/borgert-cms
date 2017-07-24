@@ -2,8 +2,8 @@
 
 namespace App\Models\Admin\Products;
 
-use App\Traits\ImageTrait;
 use App\Traits\SeoTrait;
+use App\Traits\ImageTrait;
 use Kyslik\ColumnSortable\Sortable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -27,7 +27,7 @@ class Contents extends Model
     ];
 
     protected $image_trait = [
-        'path' => 'products/'
+        'path' => 'products/',
     ];
 
     // -------------------------------------------------------------------------------

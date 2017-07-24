@@ -178,6 +178,5 @@ class PostsController extends Controller
                 'path' => self::UPLOAD_PATH, // Path to upload file
             ]
         );
-        return;
     }
 }

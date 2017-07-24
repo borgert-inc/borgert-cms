@@ -159,7 +159,6 @@ class GallerysController extends Controller
      */
     public function upload(Request $request, $id = null)
     {
-
         new Upload(
             $request,
             [
@@ -168,8 +167,5 @@ class GallerysController extends Controller
                 'path' => self::UPLOAD_PATH, // Path to upload file
             ]
         );
-
-        return;
-
     }
 }

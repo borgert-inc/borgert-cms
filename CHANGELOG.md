@@ -1,6 +1,8 @@
 
 ## Change log
 
+* v.0.0.31
+    * Implement Traits - SEO and Image
 * v.0.0.30
     * Fixed bug in class app/Libraries/Upload
 * v0.0.29

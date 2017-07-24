@@ -30,6 +30,7 @@ trait SeoTrait
             if (! empty($this->seo_keywords)) {
                 return $this->seo_keywords;
             }
+
             return;
         }
     }

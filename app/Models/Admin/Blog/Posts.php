@@ -2,13 +2,15 @@
 
 namespace App\Models\Admin\Blog;
 
+use App\Traits\ImageTrait;
+use App\Traits\SeoTrait;
 use Kyslik\ColumnSortable\Sortable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Posts extends Model
 {
-    use SoftDeletes, Sortable;
+    use SoftDeletes, Sortable, SeoTrait, ImageTrait;
 
     protected $table = 'blog_posts';
 
@@ -29,6 +31,10 @@ class Posts extends Model
         'publish_at',
     ];
 
+    protected $image_trait = [
+        'path' => 'blog/posts/'
+    ];
+
     // -------------------------------------------------------------------------------
 
     public function category()
@@ -45,41 +51,4 @@ class Posts extends Model
 
     // -------------------------------------------------------------------------------
 
-    public function image($thumb = false)
-    {
-        $img = collect(\Storage::disk('uploads')->files('blog/posts/'.$this->id.'/'.($thumb ? 'thumbnail/' : '')))->first();
-
-        return $img ? public_path('uploads/'.$img) : null;
-    }
-
-    // -------------------------------------------------------------------------------
-
-    public function seo($type = null)
-    {
-        if ($type === null) {
-            return;
-        }
-
-        if ($type === 'title') {
-            if (! empty($this->seo_title)) {
-                return str_limit($this->seo_title, 70);
-            }
-
-            return str_limit($this->title, 70);
-        }
-
-        if ($type === 'description') {
-            if (! empty($this->seo_description)) {
-                return str_limit($this->seo_description, 170);
-            }
-
-            return str_limit($this->description, 170);
-        }
-
-        if ($type === 'keywords') {
-            return $this->seo_keywords;
-        }
-    }
-
-    // -------------------------------------------------------------------------------
 }

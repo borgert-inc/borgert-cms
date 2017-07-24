@@ -2,13 +2,15 @@
 
 namespace App\Models\Admin\Products;
 
+use App\Traits\ImageTrait;
+use App\Traits\SeoTrait;
 use Kyslik\ColumnSortable\Sortable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Contents extends Model
 {
-    use SoftDeletes, Sortable;
+    use SoftDeletes, Sortable, SeoTrait, ImageTrait;
 
     protected $table = 'products_contents';
 
@@ -24,49 +26,15 @@ class Contents extends Model
         'created_at',
     ];
 
-    // -------------------------------------------------------------------------------
-
-    public function image($thumb = false)
-    {
-        $img = collect(\Storage::disk('uploads')->files('products/'.$this->id.'/'.($thumb ? 'thumbnail/' : '')))->first();
-
-        return $img ? public_path('uploads/'.$img) : null;
-    }
+    protected $image_trait = [
+        'path' => 'products/'
+    ];
 
     // -------------------------------------------------------------------------------
 
     public function category()
     {
         return $this->belongsTo('App\Models\Admin\Products\Categorys');
-    }
-
-    // -------------------------------------------------------------------------------
-
-    public function seo($type = null)
-    {
-        if ($type === null) {
-            return;
-        }
-
-        if ($type === 'title') {
-            if (! empty($this->seo_title)) {
-                return str_limit($this->seo_title, 70);
-            }
-
-            return str_limit($this->title, 70);
-        }
-
-        if ($type === 'description') {
-            if (! empty($this->seo_description)) {
-                return str_limit($this->seo_description, 170);
-            }
-
-            return str_limit($this->description, 170);
-        }
-
-        if ($type === 'keywords') {
-            return $this->seo_keywords;
-        }
     }
 
     // -------------------------------------------------------------------------------

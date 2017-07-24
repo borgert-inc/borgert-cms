@@ -2,13 +2,14 @@
 
 namespace App\Models\Admin\Pages;
 
+use App\Traits\SeoTrait;
 use Kyslik\ColumnSortable\Sortable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Contents extends Model
 {
-    use SoftDeletes, Sortable;
+    use SoftDeletes, Sortable, SeoTrait;
 
     protected $table = 'pages_contents';
 
@@ -30,35 +31,6 @@ class Contents extends Model
     public function category()
     {
         return $this->belongsTo('App\Models\Admin\Pages\Categorys');
-    }
-
-    // -------------------------------------------------------------------------------
-
-    public function seo($type = null)
-    {
-        if ($type === null) {
-            return;
-        }
-
-        if ($type === 'title') {
-            if (! empty($this->seo_title)) {
-                return str_limit($this->seo_title, 70);
-            }
-
-            return str_limit($this->title, 70);
-        }
-
-        if ($type === 'description') {
-            if (! empty($this->seo_description)) {
-                return str_limit($this->seo_description, 170);
-            }
-
-            return str_limit($this->description, 170);
-        }
-
-        if ($type === 'keywords') {
-            return $this->seo_keywords;
-        }
     }
 
     // -------------------------------------------------------------------------------

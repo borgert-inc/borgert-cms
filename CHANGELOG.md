@@ -1,6 +1,8 @@
 
 ## Change log
 
+* v.0.0.32
+    * Update Traits - SEO and Image
 * v.0.0.31
     * Implement Traits - SEO and Image
 * v.0.0.30

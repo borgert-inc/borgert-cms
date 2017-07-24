@@ -2,10 +2,8 @@
 
 namespace App\Traits;
 
-
 trait SeoTrait
 {
-
     public function seo($type = null)
     {
         if ($type === null) {
@@ -32,5 +30,4 @@ trait SeoTrait
             return $this->seo_keywords;
         }
     }
-
 }

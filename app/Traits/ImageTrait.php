@@ -2,17 +2,14 @@
 
 namespace App\Traits;
 
-
 trait ImageTrait
 {
-
     // -------------------------------------------------------------------------------
 
     public function image($thumb = false)
     {
-
-        if (!$this->image_trait['path'] ) {
-            return null;
+        if (! $this->image_trait['path']) {
+            return;
         }
 
         $img = collect(\Storage::disk('uploads')->files($this->image_trait['path'].$this->id.'/'.($thumb ? 'thumbnail/' : '')))->first();
@@ -24,9 +21,8 @@ trait ImageTrait
 
     public function images($thumb = false)
     {
-
-        if (!$this->image_trait['path'] ) {
-            return null;
+        if (! $this->image_trait['path']) {
+            return;
         }
 
         $img = collect(\Storage::disk('uploads')->files($this->image_trait['path'].$this->id.'/'.($thumb ? 'thumbnail/' : '')))->all();
@@ -35,5 +31,4 @@ trait ImageTrait
     }
 
     // -------------------------------------------------------------------------------
-
 }

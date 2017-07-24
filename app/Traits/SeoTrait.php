@@ -15,7 +15,7 @@ trait SeoTrait
                 return str_limit($this->seo_title, 70);
             }
 
-            return str_limit($this->title, 70);
+            return str_limit($this->{$this->traits['seo']['title']}, 70);
         }
 
         if ($type === 'description') {
@@ -23,11 +23,14 @@ trait SeoTrait
                 return str_limit($this->seo_description, 170);
             }
 
-            return str_limit($this->description, 170);
+            return str_limit($this->{$this->traits['seo']['description']}, 170);
         }
 
         if ($type === 'keywords') {
-            return $this->seo_keywords;
+            if (! empty($this->seo_keywords)) {
+                return $this->seo_keywords;
+            }
+            return;
         }
     }
 }

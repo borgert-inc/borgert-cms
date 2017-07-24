@@ -12,7 +12,7 @@ trait ImageTrait
             return;
         }
 
-        $img = collect(\Storage::disk('uploads')->files($this->image_trait['path'].$this->id.'/'.($thumb ? 'thumbnail/' : '')))->first();
+        $img = collect(\Storage::disk('uploads')->files($this->traits['image']['path'].$this->id.'/'.($thumb ? 'thumbnail/' : '')))->first();
 
         return $img ? 'uploads/'.$img : null;
     }
@@ -25,7 +25,7 @@ trait ImageTrait
             return;
         }
 
-        $img = collect(\Storage::disk('uploads')->files($this->image_trait['path'].$this->id.'/'.($thumb ? 'thumbnail/' : '')))->all();
+        $img = collect(\Storage::disk('uploads')->files($this->traits['image']['path'].$this->id.'/'.($thumb ? 'thumbnail/' : '')))->all();
 
         return $img ? 'uploads/'.$img : null;
     }

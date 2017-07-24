@@ -31,8 +31,14 @@ class Posts extends Model
         'publish_at',
     ];
 
-    protected $image_trait = [
-        'path' => 'blog/posts/',
+    protected $traits = [
+        'image' => [
+            'path' => 'blog/posts/',
+        ],
+        'seo' => [
+            'title' => 'title',
+            'description' => 'description',
+        ],
     ];
 
     // -------------------------------------------------------------------------------

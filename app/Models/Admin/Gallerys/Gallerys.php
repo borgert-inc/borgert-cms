@@ -27,8 +27,14 @@ class Gallerys extends Model
         'created_at',
     ];
 
-    protected $image_trait = [
-        'path' => 'gallerys/',
+    protected $traits = [
+        'image' => [
+            'path' => 'gallerys/',
+        ],
+        'seo' => [
+            'title' => 'title',
+            'description' => 'description',
+        ],
     ];
 
     // -------------------------------------------------------------------------------

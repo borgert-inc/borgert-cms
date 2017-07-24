@@ -26,6 +26,13 @@ class Contents extends Model
         'created_at',
     ];
 
+    protected $traits = [
+        'seo' => [
+            'title' => 'title',
+            'description' => 'description',
+        ],
+    ];
+
     // -------------------------------------------------------------------------------
 
     public function category()

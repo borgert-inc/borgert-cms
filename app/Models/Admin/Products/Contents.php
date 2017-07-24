@@ -26,8 +26,14 @@ class Contents extends Model
         'created_at',
     ];
 
-    protected $image_trait = [
-        'path' => 'products/',
+    protected $traits = [
+        'image' => [
+            'path' => 'products/',
+        ],
+        'seo' => [
+            'title' => 'title',
+            'description' => 'description',
+        ],
     ];
 
     // -------------------------------------------------------------------------------

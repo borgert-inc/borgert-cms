@@ -1,7 +1,7 @@
 <div align="center">
 	<img src="http://i.imgur.com/ogUP6GJ.png" alt="Borgert CMS">
     <p>
-        A simple CMS to start projects in Laravel 5.4 containing some modules.<br>
+        A simple CMS to start projects in Laravel containing some modules.<br>
         Blog, Pages, Products, Mailbox, Image Gallery and Users.
     </p>
     <br>

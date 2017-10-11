@@ -14,7 +14,6 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         Commands\BorgertUser::class,
-        Commands\PhpCsFixer::class,
     ];
 
     /**

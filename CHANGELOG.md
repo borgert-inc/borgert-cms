@@ -1,6 +1,11 @@
 
 ## Change log
 
+* v.1.0.0
+    * Upgrade Laravel 5.5
+
+---------
+
 * v.0.0.32
     * Update Traits - SEO and Image
 * v.0.0.31

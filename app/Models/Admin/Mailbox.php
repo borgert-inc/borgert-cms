@@ -16,5 +16,7 @@ class Mailbox extends Model
         'email',
         'subject',
         'content',
+        'map',
+        'open'
     ];
 }

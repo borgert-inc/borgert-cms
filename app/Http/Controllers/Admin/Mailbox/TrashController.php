@@ -17,8 +17,7 @@ class TrashController extends Controller
     public function trash($id)
     {
         $mailbox = Mailbox::find($id);
-        $mailbox->map = 'TRASH';
-        $mailbox->save();
+        $mailbox->update(['map' => 'TRASH']);
 
         \Session::flash('success', trans('admin/mailbox.trash.messages.success'));
 

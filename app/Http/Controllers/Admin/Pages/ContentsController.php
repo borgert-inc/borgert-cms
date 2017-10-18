@@ -10,13 +10,34 @@ use App\Models\Admin\Pages\Categorys;
 class ContentsController extends Controller
 {
     /**
+     * @var Contents
+     */
+    protected $contents;
+
+    /**
+     * @var Categorys
+     */
+    protected $categorys;
+
+    /**
+     * ContentsController constructor.
+     * @param Contents $contents
+     * @param Categorys $categorys
+     */
+    public function __construct(Contents $contents, Categorys $categorys)
+    {
+        $this->contents = $contents;
+        $this->categorys = $categorys;
+    }
+
+    /**
      * Display a linting of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $contents = Contents::sortable(['created_at' => 'desc'])->paginate(10);
+        $contents = $this->contents->sortable(['created_at' => 'desc'])->paginate(10);
 
         return view('admin.pages.contents.index', ['contents' => $contents]);
     }
@@ -28,7 +49,7 @@ class ContentsController extends Controller
      */
     public function create()
     {
-        $categorys = Categorys::all();
+        $categorys = $this->categorys->all();
 
         return view('admin.pages.contents.create', ['categorys' => $categorys]);
     }
@@ -48,18 +69,10 @@ class ContentsController extends Controller
             'description' => 'required',
         ]);
 
-        $content = new Contents();
-
-        $content->category_id = $request->category_id;
-        $content->title = $request->title;
-        $content->description = $request->description;
-        $content->order = $request->order;
-        $content->status = (isset($request->status) ? 1 : 0);
-        $content->seo_title = $request->seo_title;
-        $content->seo_description = $request->seo_description;
-        $content->seo_keywords = $request->seo_keywords;
-        $content->slug = str_slug($request->title);
-        $content->save();
+        $contentDetails = $request->all();
+        $contentDetails['status'] = isset($request->status) ? 1 : 0;
+        $contentDetails['slug'] = str_slug($request->title);
+        $this->contents->create($contentDetails);
 
         \Session::flash('success', trans('admin/pages.contents.store.messages.success'));
 
@@ -75,8 +88,8 @@ class ContentsController extends Controller
      */
     public function edit($id)
     {
-        $categorys = Categorys::all();
-        $content = Contents::find($id);
+        $categorys = $this->categorys->all();
+        $content = $this->contents->find($id);
 
         return view('admin.pages.contents.edit', ['categorys' => $categorys, 'content' => $content]);
     }
@@ -97,19 +110,12 @@ class ContentsController extends Controller
             'description' => 'required',
         ]);
 
-        $content = Contents::find($id);
+        $content = $this->contents->find($id);
 
-        $content->category_id = $request->category_id;
-        $content->title = $request->title;
-        $content->description = $request->description;
-        $content->order = $request->order;
-        $content->status = (isset($request->status) ? 1 : 0);
-        $content->seo_title = $request->seo_title;
-        $content->seo_description = $request->seo_description;
-        $content->seo_keywords = $request->seo_keywords;
-        $content->slug = str_slug($request->title);
-
-        $content->save();
+        $contentDetails = $request->all();
+        $contentDetails['status'] = isset($request->status) ? 1 : 0;
+        $contentDetails['slug'] = str_slug($request->title);
+        $content->update($contentDetails);
 
         \Session::flash('success', trans('admin/pages.contents.update.messages.success'));
 

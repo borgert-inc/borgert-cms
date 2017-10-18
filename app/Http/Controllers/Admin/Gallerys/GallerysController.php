@@ -13,13 +13,27 @@ class GallerysController extends Controller
     const UPLOAD_ROUTE = 'admin.gallerys.upload';
 
     /**
+     * @var Gallerys
+     */
+    protected $gallerys;
+
+    /**
+     * GallerysController constructor.
+     * @param Gallerys $gallerys
+     */
+    public function __construct(Gallerys $gallerys)
+    {
+        $this->gallerys = $gallerys;
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $gallerys = Gallerys::sortable(['created_at' => 'desc'])->paginate(10);
+        $gallerys = $this->gallerys->sortable(['created_at' => 'desc'])->paginate(10);
 
         return view('admin.gallerys.index', ['gallerys' => $gallerys]);
     }
@@ -48,19 +62,11 @@ class GallerysController extends Controller
             'description' => 'required',
         ]);
 
-        $gallery = new Gallerys();
+        $galleryDetails = $request->all();
+        $galleryDetails['status'] = isset($request->status) ? 1 : 0;
+        $gallery = $this->gallerys->create($galleryDetails);
 
-        $gallery->title = $request->title;
-        $gallery->description = $request->description;
-        $gallery->order = $request->order;
-        $gallery->status = (isset($request->status) ? 1 : 0);
-        $gallery->seo_title = $request->seo_title;
-        $gallery->seo_description = $request->seo_description;
-        $gallery->seo_keywords = $request->seo_keywords;
-
-        $gallery->save();
-
-        $user = \Auth::User();
+        $user = $request->user();
         $path_from = self::UPLOAD_PATH.'temp-'.$user->id.'/';
         $path_to = self::UPLOAD_PATH.$gallery->id;
 
@@ -82,7 +88,7 @@ class GallerysController extends Controller
      */
     public function edit($id)
     {
-        $gallery = Gallerys::find($id);
+        $gallery = $this->gallerys->find($id);
 
         return view('admin.gallerys.edit', ['gallery' => $gallery]);
     }
@@ -102,17 +108,11 @@ class GallerysController extends Controller
             'description' => 'required',
         ]);
 
-        $gallery = Gallerys::find($request->id);
+        $gallery = $this->gallerys->find($request->id);
 
-        $gallery->title = $request->title;
-        $gallery->description = $request->description;
-        $gallery->order = $request->order;
-        $gallery->status = (isset($request->status) ? 1 : 0);
-        $gallery->seo_title = $request->seo_title;
-        $gallery->seo_description = $request->seo_description;
-        $gallery->seo_keywords = $request->seo_keywords;
-
-        $gallery->save();
+        $galleryDetails = $request->all();
+        $galleryDetails['status'] = isset($request->status) ? 1 : 0;
+        $gallery->update($galleryDetails);
 
         \Session::flash('success', trans('admin/gallerys.update.messages.success'));
 
@@ -132,7 +132,7 @@ class GallerysController extends Controller
             return redirect()->route('admin.gallerys.index');
         }
 
-        Gallerys::destroy($request->gallerys);
+        $this->gallerys->destroy($request->gallerys);
         \Session::flash('success', trans('admin/gallerys.destroy.messages.success'));
 
         // Precisamos remover as imagens desse ID também

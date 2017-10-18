@@ -16,6 +16,13 @@ class Contents extends Model
     protected $fillable = [
         'title',
         'description',
+        'order',
+        'category_id',
+        'status',
+        'seo_title',
+        'seo_description',
+        'seo_keywords',
+        'slug'
     ];
 
     protected $sortable = [

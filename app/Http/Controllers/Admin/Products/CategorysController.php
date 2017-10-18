@@ -9,13 +9,27 @@ use App\Models\Admin\Products\Categorys;
 class CategorysController extends Controller
 {
     /**
+     * @var Categorys
+     */
+    protected $categorys;
+
+    /**
+     * CategorysController constructor.
+     * @param Categorys $categorys
+     */
+    public function __construct(Categorys $categorys)
+    {
+        $this->categorys = $categorys;
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $categorys = Categorys::sortable(['created_at' => 'desc'])->paginate(10);
+        $categorys = $this->categorys->sortable(['created_at' => 'desc'])->paginate(10);
 
         return view('admin.products.categorys.index', ['categorys' => $categorys]);
     }
@@ -43,13 +57,9 @@ class CategorysController extends Controller
             'title' => 'required',
         ]);
 
-        $category = new Categorys();
-
-        $category->title = $request->title;
-        $category->order = $request->order;
-        $category->status = (isset($request->status) ? 1 : 0);
-
-        $category->save();
+        $categoryDetail = $request->all();
+        $categoryDetail['status'] = isset($request->status) ? 1 : 0;
+        $this->categorys->create($categoryDetail);
 
         \Session::flash('success', trans('admin/products.contents.store.messages.success'));
 
@@ -65,7 +75,7 @@ class CategorysController extends Controller
      */
     public function edit($id)
     {
-        $category = Categorys::find($id);
+        $category = $this->categorys->find($id);
 
         return view('admin.products.categorys.edit', ['category' => $category]);
     }
@@ -84,13 +94,11 @@ class CategorysController extends Controller
             'title' => 'required',
         ]);
 
-        $category = Categorys::find($request->id);
+        $category = $this->categorys->find($request->id);
 
-        $category->title = $request->title;
-        $category->order = $request->order;
-        $category->status = (isset($request->status) ? 1 : 0);
-
-        $category->save();
+        $categoryDetail = $request->all();
+        $categoryDetail['status'] = isset($request->status) ? 1 : 0;
+        $category->update($categoryDetail);
 
         \Session::flash('success', trans('admin/products.contents.update.messages.success'));
 
@@ -110,7 +118,7 @@ class CategorysController extends Controller
             return redirect()->route('admin.products.categorys.index');
         }
 
-        Categorys::destroy($request->categorys);
+        $this->categorys->destroy($request->categorys);
         \Session::flash('success', trans('admin/products.contents.destroy.messages.success'));
 
         return redirect()->route('admin.products.categorys.index');

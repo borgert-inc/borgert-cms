@@ -10,9 +10,7 @@ class MessageController extends Controller
     public function index($id)
     {
         $message = Mailbox::find($id);
-
-        $message->open = 1;
-        $message->save();
+        $message->update(['open' => 1]);
 
         return view('admin.mailbox.message', ['message' => $message]);
     }

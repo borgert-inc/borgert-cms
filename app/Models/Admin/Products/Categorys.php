@@ -14,6 +14,9 @@ class Categorys extends Model
 
     protected $fillable = [
         'title',
+        'description',
+        'status',
+        'order'
     ];
 
     protected $sortable = [

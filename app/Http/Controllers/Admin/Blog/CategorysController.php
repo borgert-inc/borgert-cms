@@ -9,13 +9,27 @@ use App\Models\Admin\Blog\Categorys;
 class CategorysController extends Controller
 {
     /**
+     * @var Categorys
+     */
+    protected $categorys;
+
+    /**
+     * CategorysController constructor.
+     * @param Categorys $categorys
+     */
+    public function __construct(Categorys $categorys)
+    {
+        $this->categorys = $categorys;
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $categorys = Categorys::sortable(['created_at' => 'desc'])->paginate(10);
+        $categorys = $this->categorys->sortable(['created_at' => 'desc'])->paginate(10);
 
         return view('admin.blog.categorys.index', ['categorys' => $categorys]);
     }
@@ -43,13 +57,9 @@ class CategorysController extends Controller
             'title' => 'required',
         ]);
 
-        $category = new Categorys();
-
-        $category->title = $request->title;
-        $category->order = $request->order;
-        $category->status = (isset($request->status) ? 1 : 0);
-
-        $category->save();
+        $categoryDetails = $request->all();
+        $categoryDetails['status'] = isset($request->status) ? 1 : 0;
+        $this->categorys->create($categoryDetails);
 
         \Session::flash('success', trans('admin/blog.categorys.store.messages.success'));
 
@@ -65,7 +75,7 @@ class CategorysController extends Controller
      */
     public function edit($id)
     {
-        $category = Categorys::find($id);
+        $category = $this->categorys->find($id);
 
         return view('admin.blog.categorys.edit', ['category' => $category]);
     }
@@ -84,13 +94,11 @@ class CategorysController extends Controller
             'title' => 'required',
         ]);
 
-        $category = Categorys::find($request->id);
+        $category = $this->categorys->find($request->id);
 
-        $category->title = $request->title;
-        $category->order = $request->order;
-        $category->status = (isset($request->status) ? 1 : 0);
-
-        $category->save();
+        $categoryDetails = $request->all();
+        $categoryDetails['status'] = isset($request->status) ? 1 : 0;
+        $category->update($categoryDetails);
 
         \Session::flash('success', trans('admin/blog.categorys.update.messages.success'));
 
@@ -110,7 +118,7 @@ class CategorysController extends Controller
             return redirect()->route('admin.blog.categorys.index');
         }
 
-        Categorys::destroy($request->categorys);
+        $this->categorys->destroy($request->categorys);
         \Session::flash('success', trans('admin/blog.categorys.destroy.messages.success'));
 
         return redirect()->route('admin.blog.categorys.index');

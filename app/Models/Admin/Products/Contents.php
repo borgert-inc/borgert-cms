@@ -4,6 +4,7 @@ namespace App\Models\Admin\Products;
 
 use App\Traits\SeoTrait;
 use App\Traits\ImageTrait;
+use App\Traits\SetStatusMutator;
 use Kyslik\ColumnSortable\Sortable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -17,6 +18,15 @@ class Contents extends Model
     protected $fillable = [
         'title',
         'description',
+        'information_technical',
+        'category_id',
+        'price',
+        'price_per',
+        'code',
+        'status',
+        'seo_title',
+        'seo_description',
+        'seo_keywords'
     ];
 
     protected $sortable = [

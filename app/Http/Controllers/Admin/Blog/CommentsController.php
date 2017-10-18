@@ -8,13 +8,27 @@ use App\Http\Controllers\Controller;
 class CommentsController extends Controller
 {
     /**
+     * @var Comments
+     */
+    protected $comments;
+
+    /**
+     * CommentsController constructor.
+     * @param Comments $comments
+     */
+    public function __construct(Comments $comments)
+    {
+        $this->comments = $comments;
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $comments = Comments::where('status', '=', 0)->paginate(10);
+        $comments = $this->comments->where('status', '=', 0)->whereHas('post')->paginate(10);
 
         return view('admin.blog.comments.index', ['comments' => $comments]);
     }
@@ -26,7 +40,7 @@ class CommentsController extends Controller
      */
     public function aproved()
     {
-        $comments = Comments::where('status', '=', 1)->paginate(10);
+        $comments = $this->comments->where('status', '=', 1)->whereHas('post')->paginate(10);
 
         return view('admin.blog.comments.aproved', ['comments' => $comments]);
     }
@@ -38,7 +52,7 @@ class CommentsController extends Controller
      */
     public function reproved()
     {
-        $comments = Comments::where('status', '=', 2)->paginate(10);
+        $comments = $this->comments->where('status', '=', 2)->whereHas('post')->paginate(10);
 
         return view('admin.blog.comments.reproved', ['comments' => $comments]);
     }
@@ -52,9 +66,8 @@ class CommentsController extends Controller
      */
     public function aprove($id)
     {
-        $comments = Comments::find($id);
-        $comments->status = 1;
-        $comments->save();
+        $comments = $this->comments->find($id);
+        $comments->update(['status' => 1]);
 
         \Session::flash('success', trans('admin/blog.comments.aprove.messages.success'));
 
@@ -70,9 +83,8 @@ class CommentsController extends Controller
      */
     public function reprove($id)
     {
-        $comments = Comments::find($id);
-        $comments->status = 2;
-        $comments->save();
+        $comments = $this->comments->find($id);
+        $comments->update(['status' => 2]);
 
         \Session::flash('success', trans('admin/blog.comments.reprove.messages.success'));
 

@@ -17,6 +17,11 @@ class Gallerys extends Model
     protected $fillable = [
         'title',
         'description',
+        'order',
+        'status',
+        'seo_title',
+        'seo_description',
+        'seo_keywords'
     ];
 
     protected $sortable = [

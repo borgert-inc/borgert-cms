@@ -9,13 +9,27 @@ use App\Models\Admin\Pages\Categorys;
 class CategorysController extends Controller
 {
     /**
+     * @var Categorys
+     */
+    protected $categorys;
+
+    /**
+     * CategorysController constructor.
+     * @param Categorys $categorys
+     */
+    public function __construct(Categorys $categorys)
+    {
+        $this->categorys = $categorys;
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $categorys = Categorys::sortable(['created_at' => 'desc'])->paginate(10);
+        $categorys = $this->categorys->sortable(['created_at' => 'desc'])->paginate(10);
 
         return view('admin.pages.categorys.index', ['categorys' => $categorys]);
     }
@@ -43,13 +57,9 @@ class CategorysController extends Controller
             'title' => 'required',
         ]);
 
-        $category = new Categorys();
-
-        $category->title = $request->title;
-        $category->order = $request->order;
-        $category->status = (isset($request->status) ? 1 : 0);
-
-        $category->save();
+        $categoryDetail = $request->all();
+        $categoryDetail['status'] = isset($request->status) ? 1 : 0;
+        $this->categorys->create($categoryDetail);
 
         \Session::flash('success', trans('admin/pages.categorys.store.messages.success'));
 
@@ -84,13 +94,11 @@ class CategorysController extends Controller
             'title' => 'required',
         ]);
 
-        $category = Categorys::find($id);
+        $category = $this->categorys->find($id);
 
-        $category->title = $request->title;
-        $category->order = $request->order;
-        $category->status = (isset($request->status) ? 1 : 0);
-
-        $category->save();
+        $categoryDetail = $request->all();
+        $categoryDetail['status'] = isset($request->status) ? 1 : 0;
+        $category->update($categoryDetail);
 
         \Session::flash('success', trans('admin/pages.categorys.update.messages.success'));
 

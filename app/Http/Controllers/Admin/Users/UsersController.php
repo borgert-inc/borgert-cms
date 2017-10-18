@@ -9,13 +9,27 @@ use App\Http\Controllers\Controller;
 class UsersController extends Controller
 {
     /**
+     * @var User
+     */
+    protected $users;
+
+    /**
+     * UsersController constructor.
+     * @param User $users
+     */
+    public function __construct(User $users)
+    {
+        $this->users = $users;
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $users = User::sortable(['created_at' => 'desc'])->paginate(10);
+        $users = $this->users->sortable(['created_at' => 'desc'])->paginate(10);
 
         return view('admin.users.index', ['users' => $users]);
     }
@@ -45,14 +59,10 @@ class UsersController extends Controller
             'password' => 'required',
         ]);
 
-        $users = new User();
-
-        $users->name = $request->name;
-        $users->email = $request->email;
-        $users->password = \Hash::make($request->password);
-        $users->status = (isset($request->status) ? 1 : 0);
-
-        $users->save();
+        $userDetails = $request->all();
+        $userDetails['password'] = \Hash::make($request->password);
+        $userDetails['status'] = isset($request->status) ? 1 : 0;
+        $this->users->create($userDetails);
 
         \Session::flash('success', trans('admin/users.store.messages.success'));
 
@@ -68,7 +78,7 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find($id);
+        $user = $this->users->find($id);
 
         return view('admin.users.edit', ['user' => $user]);
     }
@@ -89,16 +99,14 @@ class UsersController extends Controller
             'password' => 'sometimes',
         ]);
 
-        $user = User::find($id);
+        $user = $this->users->find($id);
 
-        $user->name = $request->name;
-        $user->email = $request->email;
+        $userDetails = $request->all();
         if ($request->password) {
-            $user->password = \Hash::make($request->password);
+            $userDetails['password'] = \Hash::make($request->password);
         }
-        $user->status = (isset($request->status) ? 1 : 0);
-
-        $user->save();
+        $userDetails['status'] = isset($request->status) ? 1 : 0;
+        $user->update($userDetails);
 
         \Session::flash('success', trans('admin/users.update.messages.success'));
 
@@ -126,7 +134,7 @@ class UsersController extends Controller
             return redirect()->route('admin.users.index');
         }
 
-        User::destroy($request->users);
+        $this->users->destroy($request->users);
         \Session::flash('success', trans('admin/users.destroy.messages.success'));
 
         return redirect()->route('admin.users.index');

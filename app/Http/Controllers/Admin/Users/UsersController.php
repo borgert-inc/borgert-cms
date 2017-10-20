@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin\Users;
 
+use function App\Helpers\issetStatus;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -60,8 +61,8 @@ class UsersController extends Controller
         ]);
 
         $userDetails = $request->all();
-        $userDetails['password'] = \Hash::make($request->password);
-        $userDetails['status'] = isset($request->status) ? 1 : 0;
+        $userDetails['password'] = \Hash::make($request['password']);
+        $userDetails['status'] = issetStatus($request['status']);
         $this->users->create($userDetails);
 
         \Session::flash('success', trans('admin/users.store.messages.success'));
@@ -102,10 +103,10 @@ class UsersController extends Controller
         $user = $this->users->find($id);
 
         $userDetails = $request->all();
-        if ($request->password) {
-            $userDetails['password'] = \Hash::make($request->password);
+        if ($request['password']) {
+            $userDetails['password'] = \Hash::make($request['password']);
         }
-        $userDetails['status'] = isset($request->status) ? 1 : 0;
+        $userDetails['status'] = issetStatus($request['status']);
         $user->update($userDetails);
 
         \Session::flash('success', trans('admin/users.update.messages.success'));
@@ -120,21 +121,21 @@ class UsersController extends Controller
      */
     public function destroy(Request $request)
     {
-        if (is_null($request->users)) {
+        if (is_null($request['users'])) {
             \Session::flash('info', trans('admin/users.destroy.messages.info'));
 
             return redirect()->route('admin.users.index');
         }
 
-        $user = \Auth::user();
+        $user = $request->user();
 
-        if (in_array($user->id, $request->users)) {
+        if (in_array($user->id, $request['users'])) {
             \Session::flash('warning', trans('admin/users.destroy.messages.warning'));
 
             return redirect()->route('admin.users.index');
         }
 
-        $this->users->destroy($request->users);
+        $this->users->destroy($request['users']);
         \Session::flash('success', trans('admin/users.destroy.messages.success'));
 
         return redirect()->route('admin.users.index');

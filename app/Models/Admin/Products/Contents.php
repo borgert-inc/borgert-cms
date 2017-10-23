@@ -4,7 +4,6 @@ namespace App\Models\Admin\Products;
 
 use App\Traits\SeoTrait;
 use App\Traits\ImageTrait;
-use App\Traits\SetStatusMutator;
 use Kyslik\ColumnSortable\Sortable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -26,7 +25,7 @@ class Contents extends Model
         'status',
         'seo_title',
         'seo_description',
-        'seo_keywords'
+        'seo_keywords',
     ];
 
     protected $sortable = [

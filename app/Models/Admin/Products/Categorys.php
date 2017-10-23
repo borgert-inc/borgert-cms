@@ -16,7 +16,7 @@ class Categorys extends Model
         'title',
         'description',
         'status',
-        'order'
+        'order',
     ];
 
     protected $sortable = [

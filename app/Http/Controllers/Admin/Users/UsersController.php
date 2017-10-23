@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Admin\Users;
 
-use function App\Helpers\issetStatus;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use function App\Helpers\issetStatus;
 
 class UsersController extends Controller
 {

@@ -2,14 +2,14 @@
 
 namespace Tests\Unit\User;
 
-use App\Http\Controllers\Admin\Users\UsersController;
 use App\User;
-use Illuminate\Contracts\Pagination\LengthAwarePaginator;
-use Illuminate\Http\RedirectResponse;
+use Mockery as m;
+use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\View\View;
-use Mockery as m;
+use Illuminate\Http\RedirectResponse;
+use App\Http\Controllers\Admin\Users\UsersController;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 class UserControllerTest extends \TestCase
 {
@@ -45,8 +45,8 @@ class UserControllerTest extends \TestCase
     public function it_should_store_users()
     {
         $request = m::mock(Request::class);
-        $userController = m::mock(UsersController::class . '[validate]', [
-            $this->users
+        $userController = m::mock(UsersController::class.'[validate]', [
+            $this->users,
         ]);
         $userController->shouldReceive('validate')
             ->once()
@@ -60,7 +60,7 @@ class UserControllerTest extends \TestCase
             'name' => 'John Doe',
             'email' => 'john@gmail.com',
             'password' => '1234567',
-            'status' => 1
+            'status' => 1,
         ];
         $hashedPassword = '1234567';
         $request->shouldReceive('all')
@@ -105,8 +105,8 @@ class UserControllerTest extends \TestCase
     public function it_should_update_user()
     {
         $request = m::mock(Request::class);
-        $userController = m::mock(UsersController::class . '[validate]', [
-            $this->users
+        $userController = m::mock(UsersController::class.'[validate]', [
+            $this->users,
         ]);
         $user = m::mock(User::class);
         $userController->shouldReceive('validate')
@@ -121,7 +121,7 @@ class UserControllerTest extends \TestCase
             'name' => 'John Doe',
             'email' => 'john@gmail.com',
             'password' => '1234567',
-            'status' => 1
+            'status' => 1,
         ];
         $this->users->shouldReceive('find')
             ->once()

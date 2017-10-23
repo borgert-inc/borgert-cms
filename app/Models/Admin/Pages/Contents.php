@@ -22,7 +22,7 @@ class Contents extends Model
         'seo_title',
         'seo_description',
         'seo_keywords',
-        'slug'
+        'slug',
     ];
 
     protected $sortable = [

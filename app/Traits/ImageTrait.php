@@ -8,7 +8,7 @@ trait ImageTrait
 
     public function image($thumb = false)
     {
-        if (! $this->image_trait['path']) {
+        if (! $this->traits['image']['path']) {
             return;
         }
 
@@ -21,13 +21,11 @@ trait ImageTrait
 
     public function images($thumb = false)
     {
-        if (! $this->image_trait['path']) {
+        if (! $this->traits['image']['path']) {
             return;
         }
 
-        $img = collect(\Storage::disk('uploads')->files($this->traits['image']['path'].$this->id.'/'.($thumb ? 'thumbnail/' : '')))->all();
-
-        return $img ? 'uploads/'.$img : null;
+        return collect(\Storage::disk('uploads')->files($this->traits['image']['path'].$this->id.'/'.($thumb ? 'thumbnail/' : '')))->all();
     }
 
     // -------------------------------------------------------------------------------

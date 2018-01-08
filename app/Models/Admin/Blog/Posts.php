@@ -20,6 +20,11 @@ class Posts extends Model
         'category_id',
         'title',
         'description',
+        'publish_at',
+        'status',
+        'seo_title',
+        'seo_description',
+        'seo_keywords'
     ];
 
     protected $sortable = [

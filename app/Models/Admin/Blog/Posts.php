@@ -24,7 +24,7 @@ class Posts extends Model
         'status',
         'seo_title',
         'seo_description',
-        'seo_keywords'
+        'seo_keywords',
     ];
 
     protected $sortable = [

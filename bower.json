@@ -23,7 +23,7 @@
   ],
   "dependencies": {
     "bootstrap": "^3.3.6",
-    "jquery": "^2.2.4",
+    "jquery": "^3.3.0",
     "font-awesome": "Font-Awesome#^4.6.3",
     "animate.css": "^3.5.1",
     "metisMenu": "^2.5.2",

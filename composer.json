@@ -16,7 +16,8 @@
         "doctrine/dbal": "^2.5",
         "thomaswelton/laravel-gravatar": "^1.1",
         "kyslik/column-sortable": "5.5.*",
-        "laravel/passport": "^2.0"
+        "laravel/passport": "^2.0",
+        "rap2hpoutre/laravel-log-viewer": "^0.11.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

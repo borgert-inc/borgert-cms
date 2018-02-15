@@ -16,6 +16,7 @@
 	* Archive
 	* Trash
 5. Users
+6. Log Viewer
 
 
 ------------------------------

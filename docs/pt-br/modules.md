@@ -16,6 +16,7 @@
 	* Arquivados
 	* Lixeira
 5. Usuários
+6. Log Viewer
 
 
 ------------------------

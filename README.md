@@ -2,7 +2,7 @@
 	<img src="http://i.imgur.com/ogUP6GJ.png" alt="Borgert CMS">
     <p>
         A simple CMS to start projects in Laravel containing some modules.<br>
-        Blog, Pages, Products, Mailbox, Image Gallery and Users.
+        Blog, Pages, Products, Mailbox, Image Gallery, Log Viewer and Users.
     </p>
     <br>
 </div>

@@ -1,6 +1,8 @@
 
 ## Change log
 
+* v.1.0.3
+    * Add module log viewer
 * v.1.0.0
     * Upgrade Laravel 5.5
 

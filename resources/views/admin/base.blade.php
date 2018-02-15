@@ -85,6 +85,7 @@
                         <li><a href="{{ route('admin.gallerys.index') }}"><i class="fa fa-photo"></i> <span class="nav-label">@lang('admin/gallerys.module')</span></a></li>
                         <li><a href="{{ route('admin.mailbox.inbox') }}"><i class="fa fa-envelope"></i> <span class="nav-label">@lang('admin/mailbox.module')</span></a></li>
                         <li><a href="{{ route('admin.users.index') }}"><i class="fa fa-users"></i> <span class="nav-label">@lang('admin/users.module')</span></a></li>
+                        <li><a href="{{ route('admin.logs.index') }}"><i class="fa fa-history"></i> <span class="nav-label">@lang('admin/logs.module')</span></a></li>
                     </ul>
                 </div>
             </nav>

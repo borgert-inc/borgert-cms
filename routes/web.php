@@ -46,6 +46,8 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'], fu
     // Dashboard
     Route::get('/', ['as' => 'index', 'uses' => 'Admin\DashboardController@index']);
 
+    Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->name('logs.index');
+
     // ---------------------------------------------------------------------------------------------
 
     // Mobule: BLOG

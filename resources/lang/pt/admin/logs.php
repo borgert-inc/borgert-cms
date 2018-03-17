@@ -14,7 +14,7 @@ return [
             'context' => 'Contexto',
             'date' => 'Data',
             'content' => 'Conteúdo',
-        ]
+        ],
     ],
 
     'file' => [

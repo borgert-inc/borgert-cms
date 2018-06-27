@@ -18,8 +18,9 @@
 
 > Contributions / Donate
 
-[![GitHub issues](https://img.shields.io/github/issues/odirleiborgert/borgert-cms.svg)](https://github.com/odirleiborgert/borgert-cms/issues)  [![Donate](https://img.shields.io/badge/Donate-PAYPAL-blue.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=odirleiborgert%40gmail%2ecom&lc=MQ&item_name=Odirlei%20Borgert&currency_code=BRL&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)
-
+[![GitHub issues](https://img.shields.io/github/issues/odirleiborgert/borgert-cms.svg)](https://github.com/odirleiborgert/borgert-cms/issues)  
+[![Donate](https://img.shields.io/badge/Donate-PAYPAL-blue.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=odirleiborgert%40gmail%2ecom&lc=MQ&item_name=Odirlei%20Borgert&currency_code=BRL&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)
+[![Beerpay](https://beerpay.io/odirleiborgert/borgert-cms/badge.svg)](https://beerpay.io/odirleiborgert/borgert-cms)
 
 ## Documentation
 
@@ -63,6 +64,7 @@
 
 [![DigitalOcean](https://img.shields.io/badge/Cloud-Digital%20Ocean-blue.svg)](https://m.do.co/c/bc3c53664276)
 
+[![Beerpay](https://beerpay.io/odirleiborgert/borgert-cms/badge.svg)](https://beerpay.io/odirleiborgert/borgert-cms)
 
 <a name="changelog"></a>
 ## [Changelog](./CHANGELOG.md).

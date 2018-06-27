@@ -73,3 +73,8 @@
 
 [![License](https://img.shields.io/badge/License-MIT-orange.svg)](https://opensource.org/licenses/MIT) [![Author](https://img.shields.io/badge/Author-Odirlei%20Borgert-orange.svg)](http://www.odirleiborgert.com.br)
 
+
+## Support on Beerpay
+Hey dude! Help me out for a couple of :beers:!
+
+[![Beerpay](https://beerpay.io/odirleiborgert/borgert-cms/badge.svg?style=beer-square)](https://beerpay.io/odirleiborgert/borgert-cms)  [![Beerpay](https://beerpay.io/odirleiborgert/borgert-cms/make-wish.svg?style=flat-square)](https://beerpay.io/odirleiborgert/borgert-cms?focus=wish)

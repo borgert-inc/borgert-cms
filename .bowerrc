@@ -1,3 +1,4 @@
 {
-	"directory":"public/assets/components"
+	"directory":"public/assets/components",
+	"registry": "https://registry.bower.io"
 }

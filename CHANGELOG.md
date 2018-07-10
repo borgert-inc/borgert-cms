@@ -1,6 +1,11 @@
 
 ## Change log
 
+* v.1.0.5
+    * Add language chinese
+    * Fixed bug bower.io
+* v.1.0.4
+    * Add BEERPAY in Readme
 * v.1.0.3
     * Add module log viewer
 * v.1.0.0

@@ -6,3 +6,4 @@
 .env
 .idea
 composer.lock
+package-lock.json

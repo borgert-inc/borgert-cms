@@ -31,11 +31,11 @@ class Categorys extends Model
     public function seo($type = null)
     {
         if ($type === null) {
-            return null;
+            return;
         }
 
         if ($type === 'title') {
-            if (!empty($this->seo_title)) {
+            if (! empty($this->seo_title)) {
                 return str_limit($this->seo_title, 70);
             }
 
@@ -43,7 +43,7 @@ class Categorys extends Model
         }
 
         if ($type === 'description') {
-            if (!empty($this->seo_description)) {
+            if (! empty($this->seo_description)) {
                 return str_limit($this->seo_description, 170);
             }
 
@@ -56,5 +56,4 @@ class Categorys extends Model
     }
 
     // ----------------------------------------------------------------------------
-
 }

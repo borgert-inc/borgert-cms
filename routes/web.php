@@ -24,6 +24,19 @@ Route::get('', function () {
 
 // ---------------------------------------------------------------------------------------------
 
+// Blog
+
+Route::group(['prefix' => 'blog', 'as' => 'blog.'], function () {
+    Route::get('/', ['as' => 'index', 'uses' => 'Blog\BlogController@index']);
+    Route::get('/post/{title}/{id}', ['as' => 'post', 'uses' => 'Blog\PostController@index'])->where('id', '[0-9]+');
+    Route::post('/comment/{title}/{id}', ['as' => 'comment', 'uses' => 'Blog\CommentController@index'])->where('id', '[0-9]+');
+    Route::get('/categorie/{title}/{id}', ['as' => 'categorie', 'uses' => 'Blog\CategorieController@index'])->where('id', '[0-9]+');
+    Route::get('/search', ['as' => 'search', 'uses' => 'Blog\SearchController@index']);
+    Route::get('/sitemap.xml', ['as' => 'sitemap', 'uses' => 'Blog\SitemapController@index']);
+});
+
+// ---------------------------------------------------------------------------------------------
+
 // Mobule: AUTH
 
 Route::group(['as' => 'auth.'], function () {

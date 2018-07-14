@@ -3,6 +3,7 @@
     <p>
         A simple CMS to start projects in Laravel containing some modules.<br>
         Blog, Pages, Products, Mailbox, Image Gallery, Log Viewer and Users. <br><br>
+        Frontend: Blog (httpp://localhost:8000/blog) <br><br>
         Languages: English (default), Portuguese, Spanish and Chinese 
     </p>
     <br>

@@ -54,6 +54,7 @@ return [
         'title' => 'Título',
         'category' => 'Categoria',
         'content' => 'Conteúdo',
+        'summary' => 'Resumo',
         'description' => 'Descrição',
         'keywords' => 'Palavras-Chave',
         'name' => 'Nome',

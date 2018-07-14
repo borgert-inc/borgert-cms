@@ -54,6 +54,7 @@ return [
         'title' => '标题',
         'category' => '分类',
         'content' => '内容',
+        'summary' => '概要',
         'description' => '描述',
         'keywords' => '关键字',
         'name' => '名称',

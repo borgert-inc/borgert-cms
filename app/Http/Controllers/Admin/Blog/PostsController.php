@@ -69,6 +69,7 @@ class PostsController extends Controller
             'publish_at' => 'required',
             'category_id' => 'required|integer',
             'title' => 'required',
+            'summary' => 'required',
             'description' => 'required',
         ]);
 
@@ -120,6 +121,7 @@ class PostsController extends Controller
             'category_id' => 'required|integer',
             'title' => 'required',
             'description' => 'required',
+            'summary' => 'required',
         ]);
 
         $post = $this->posts->find($request->id);

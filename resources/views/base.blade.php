@@ -55,6 +55,7 @@
                 <img src="{{ asset('assets/admin/img/borgert-logo.png') }}" width="250">
                 <h4><strong>{{ config('borgert.name') }}</strong> | Framework {{ config('borgert.laravel') }}</h4>
                 <a href="{{ route('admin.index') }}" class="btn">Enter</a>
+                <a href="{{ route('blog.index') }}" class="btn">Blog</a>
             </div>
         </div>
     </body>

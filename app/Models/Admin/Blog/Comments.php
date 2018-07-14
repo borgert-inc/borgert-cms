@@ -15,7 +15,8 @@ class Comments extends Model
         'post_id',
         'name',
         'email',
-        'content',
+        'description',
+        'status',
     ];
 
     public function post()

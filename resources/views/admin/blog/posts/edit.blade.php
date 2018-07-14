@@ -55,6 +55,12 @@
                                 <div class="col-sm-10"><input type="text" name="title" class="form-control" value="{{ $post->title }}"></div>
                             </div>
                             <div class="form-group">
+                                <label class="col-sm-2 control-label">@lang('admin/_globals.forms.summary'):</label>
+                                <div class="col-sm-10">
+                                    <textarea name="summary" class="form-control">{{ $post->summary }}</textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label class="col-sm-2 control-label">@lang('admin/_globals.forms.content'):</label>
                                 <div class="col-sm-10">
                                     <textarea name="description" class="form-control summernote">{{ $post->description }}</textarea>

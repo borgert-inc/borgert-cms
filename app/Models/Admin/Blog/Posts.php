@@ -53,7 +53,7 @@ class Posts extends Model
             'title' => 10,
             'summary' => 8,
             'description' => 6,
-        ]
+        ],
     ];
 
     // -------------------------------------------------------------------------------
@@ -74,7 +74,7 @@ class Posts extends Model
 
     public function image($thumb = false)
     {
-        $img = collect(\Storage::disk('uploads')->files('blog/posts/'.$this->id.'/' . ($thumb?'thumbnail/':'')))->first();
+        $img = collect(\Storage::disk('uploads')->files('blog/posts/'.$this->id.'/'.($thumb ? 'thumbnail/' : '')))->first();
 
         return $img ? 'uploads/'.$img : null;
     }
@@ -91,11 +91,11 @@ class Posts extends Model
     public function seo($type = null)
     {
         if ($type === null) {
-            return null;
+            return;
         }
 
         if ($type === 'title') {
-            if (!empty($this->seo_title)) {
+            if (! empty($this->seo_title)) {
                 return str_limit($this->seo_title, 70);
             }
 
@@ -103,7 +103,7 @@ class Posts extends Model
         }
 
         if ($type === 'description') {
-            if (!empty($this->seo_description)) {
+            if (! empty($this->seo_description)) {
                 return str_limit($this->seo_description, 170);
             }
 

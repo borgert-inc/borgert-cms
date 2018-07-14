@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers\Blog;
 
-use App\Http\Controllers\Controller;
 use App\Models\Admin\Blog\Posts;
-use App\Models\Admin\Blog\SearchTerms;
+use App\Http\Controllers\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 class SearchController extends Controller
@@ -13,7 +12,6 @@ class SearchController extends Controller
 
     public function index(Request $request)
     {
-
         $page = ($request->page ? $request->page : 1);
         $term = $request->input('term');
 

@@ -27,7 +27,6 @@
 
         @yield('content')
 
-
         @section('javascrippt')
             <!-- jQuery -->
             <script type="text/javascript" src="{!! asset('assets/components/jquery/dist/jquery.min.js') !!}"></script>

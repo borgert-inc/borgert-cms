@@ -32,4 +32,8 @@ elixir(function(mix) {
     mix.sass(['site/styles.scss'],'public/assets/site/css/all.css');
     mix.scripts(['site/scripts.js'], 'public/assets/site/js/all.js');
 
+    // Errors
+    mix.sass(['errors/styles.scss'],'public/assets/errors/css/all.css');
+    mix.scripts(['errors/scripts.js'], 'public/assets/errors/js/all.js');
+
 });

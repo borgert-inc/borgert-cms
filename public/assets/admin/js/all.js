@@ -21,6 +21,17 @@ $(document).ready(function () {
         new Switchery(document.querySelector('.js-switch'), {color: '#F9D600'});
     }
 
+    // Slim scroll
+    $('body .scrollbar').slimScroll({
+        height: '100%',
+        railOpacity: 0.9
+    });
+
+    // Datetimepicker
+    $('.datetimepicker').datetimepicker({
+        step: 10
+    });
+
     // --------------------------------------------------------------------------------------
 
     /**
@@ -28,10 +39,10 @@ $(document).ready(function () {
      */
 
     // Tooltips
-    // $('[data-toggle="tooltip"]').tooltip();
+    $('[data-toggle="tooltip"]').tooltip();
 
     // Popover
-    // $('[data-toggle="popover"]').popover();
+    $('[data-toggle="popover"]').popover();
 
     // --------------------------------------------------------------------------------------
 

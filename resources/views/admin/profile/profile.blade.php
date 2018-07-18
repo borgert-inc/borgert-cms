@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-md-6">
             <div class="profile-info text-center">
-                <img src="{{ Gravatar::src(Auth::user()->email, 120) }}" class="img-circle">
+                <img src="{{ Gravatar::src(Auth::user()->email, 120) }}" class="rounded-circle">
                 <br>
                 <br>
                 <h2 class="no-margins">{{ Auth::user()->name }}</h2>

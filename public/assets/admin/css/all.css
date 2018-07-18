@@ -64,16 +64,23 @@ header .navbar-user, header .navbar-user a {
   font-size: 12px;
 }
 
-header .navbar-user .img-circle {
-  border-radius: 100%;
-}
-
 /* Sidebar */
 .sidebar {
   background: #ced6e0;
   padding: 0;
-  padding-top: 80px;
+  padding-top: 70px;
   font-size: 14px;
+}
+
+.sidebar .scrollbar {
+  width: 100%;
+}
+
+/* Content */
+main.block-content {
+  padding-top: 80px !important;
+  height: 100%;
+  overflow-y: scroll;
 }
 
 /* Menu */
@@ -119,6 +126,11 @@ header .navbar-user .img-circle {
   font-size: 12px;
 }
 
+/* Forms */
+form label {
+  margin-bottom: 0;
+}
+
 /* Nav tags */
 .nav.nav-tabs {
   margin-bottom: 10px;
@@ -138,11 +150,6 @@ header .navbar-user .img-circle {
 
 .table tbody tr td {
   vertical-align: middle;
-}
-
-/* Content */
-main.block-content {
-  padding-top: 100px !important;
 }
 
 /* List group */

@@ -24,26 +24,23 @@
                         {{ csrf_field() }}
                         <fieldset class="form-horizontal">
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">@lang('admin/_globals.forms.name'):</label>
-                                <div class="col-sm-10"><input type="text" name="name" class="form-control" placeholder="@lang('admin/_globals.forms.name')" value="{{ old('name') }}"></div>
+                                <label>@lang('admin/_globals.forms.name'):</label>
+                                <input type="text" name="name" class="form-control" placeholder="@lang('admin/_globals.forms.name')" value="{{ old('name') }}">
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">@lang('admin/_globals.forms.email'):</label>
-                                <div class="col-sm-10"><input type="email" name="email" class="form-control" placeholder="@lang('admin/_globals.forms.email')" value="{{ old('email') }}"></div>
+                                <label>@lang('admin/_globals.forms.email'):</label>
+                                <input type="email" name="email" class="form-control" placeholder="@lang('admin/_globals.forms.email')" value="{{ old('email') }}">
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">@lang('admin/_globals.forms.password'):</label>
-                                <div class="col-sm-10"><input type="password" name="password" class="form-control" placeholder="@lang('admin/_globals.forms.password')"></div>
+                                <label>@lang('admin/_globals.forms.password'):</label>
+                                <input type="password" name="password" class="form-control" placeholder="@lang('admin/_globals.forms.password')">
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">@lang('admin/_globals.forms.status'):</label>
-                                <div class="col-sm-10">
-                                    <input type="checkbox" name="status" class="js-switch" value="1" {{ old('status') === 1 ? 'checked' : '' }} />
-                                </div>
+                                <label>@lang('admin/_globals.forms.status'):</label>
+                                <input type="checkbox" name="status" class="js-switch" value="1" {{ old('status') === 1 ? 'checked' : '' }} />
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2 control-label"></label>
-                                <div class="col-sm-10"><button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> @lang('admin/_globals.buttons.create')</button></div>
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> @lang('admin/_globals.buttons.create')</button>
                             </div>
                         </fieldset>
                     </div>

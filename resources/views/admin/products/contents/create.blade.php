@@ -37,38 +37,31 @@
                         {{ csrf_field() }}
                         <fieldset class="form-horizontal">
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">@lang('admin/_globals.forms.category'):</label>
-                                <div class="col-sm-10">
-                                    @if ($categorys->count() > 0)
-                                        <select name="category_id" class="form-control">
-                                            @foreach($categorys as $ky => $category)
-                                                <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>{{ $category->title }}</option>
-                                            @endforeach
-                                        </select>
-                                    @else
-                                        <a href="{{ route('admin.products.categorys.create') }}" class="btn dim btn-primary"><i class="fa fa-plus"></i> @lang('admin/_globals.buttons.create')</a> @lang('admin/products.categorys.index.is_empty')
-                                    @endif
-                                </div>
+                                <label>@lang('admin/_globals.forms.category'):</label>
+                                @if ($categorys->count() > 0)
+                                    <select name="category_id" class="form-control">
+                                        @foreach($categorys as $ky => $category)
+                                            <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>{{ $category->title }}</option>
+                                        @endforeach
+                                    </select>
+                                @else
+                                    <a href="{{ route('admin.products.categorys.create') }}" class="btn dim btn-primary"><i class="fa fa-plus"></i> @lang('admin/_globals.buttons.create')</a> @lang('admin/products.categorys.index.is_empty')
+                                @endif
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">@lang('admin/_globals.forms.title'):</label>
-                                <div class="col-sm-10"><input type="text" name="title" class="form-control" value="{{ old('title') }}"></div>
+                                <label>@lang('admin/_globals.forms.title'):</label>
+                                <input type="text" name="title" class="form-control" value="{{ old('title') }}">
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">@lang('admin/_globals.forms.content'):</label>
-                                <div class="col-sm-10">
-                                    <textarea name="description" class="form-control summernote">{{ old('description') }}</textarea>
-                                </div>
+                                <label>@lang('admin/_globals.forms.content'):</label>
+                                <textarea name="description" class="form-control summernote">{{ old('description') }}</textarea>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">@lang('admin/_globals.forms.status'):</label>
-                                <div class="col-sm-10">
-                                    <input type="checkbox" name="status" class="js-switch" value="1" {{ old('status') === 1 ? 'checked' : '' }} />
-                                </div>
+                                <label>@lang('admin/_globals.forms.status'):</label>
+                                <input type="checkbox" name="status" class="js-switch" value="1" {{ old('status') === 1 ? 'checked' : '' }} />
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2 control-label"></label>
-                                <div class="col-sm-10"><button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> @lang('admin/_globals.buttons.create')</button></div>
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> @lang('admin/_globals.buttons.create')</button>
                             </div>
                         </fieldset>
                     </div>
@@ -82,51 +75,39 @@
 
                 <div id="tab-data" class="tab-pane">
                     <div class="panel-body">
-                        <fieldset class="form-horizontal">
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">@lang('admin/_globals.forms.code'):</label>
-                                <div class="col-sm-10"><input type="text" name="code" class="form-control" value="{{ old('code') }}"></div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">@lang('admin/_globals.forms.price'):</label>
-                                <div class="col-sm-4"><input type="number" step="0.01" min="0" name="price" class="form-control" value="{{ old('price') }}"></div>
-                                <label class="col-sm-2 control-label">@lang('admin/_globals.forms.price_per'):</label>
-                                <div class="col-sm-4"><input type="number" step="0.01" min="0" name="price_per" class="form-control" value="{{ old('price_per') }}"></div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">@lang('admin/_globals.forms.information_technical'):</label>
-                                <div class="col-sm-10">
-                                    <textarea name="information_technical" class="form-control summernote">{{ old('information_technical') }}</textarea>
-                                </div>
-                            </div>
-                        </fieldset>
+                        <div class="form-group">
+                            <label>@lang('admin/_globals.forms.code'):</label>
+                            <input type="text" name="code" class="form-control" value="{{ old('code') }}">
+                        </div>
+                        <div class="form-group">
+                            <label>@lang('admin/_globals.forms.price'):</label>
+                            <input type="number" step="0.01" min="0" name="price" class="form-control" value="{{ old('price') }}">
+                            <label>@lang('admin/_globals.forms.price_per'):</label>
+                            <input type="number" step="0.01" min="0" name="price_per" class="form-control" value="{{ old('price_per') }}">
+                        </div>
+                        <div class="form-group">
+                            <label>@lang('admin/_globals.forms.information_technical'):</label>
+                            <textarea name="information_technical" class="form-control summernote">{{ old('information_technical') }}</textarea>
+                        </div>
                     </div>
                 </div>
 
                 <div id="tab-seo" class="tab-pane">
                     <div class="panel-body">
-                        <fieldset class="form-horizontal">
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">@lang('admin/_globals.forms.title'):</label>
-                                <div class="col-sm-10">
-                                    <input type="text" maxlength="70" name="seo_title" class="form-control" value="{{ old('seo_title') }}">
-                                    <div class="text-muted">@lang('admin/_globals.forms.limit_characters',['limit' => 70])</div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">@lang('admin/_globals.forms.description'):</label>
-                                <div class="col-sm-10">
-                                    <textarea maxlength="170" name="seo_description" class="form-control">{{ old('seo_description') }}</textarea>
-                                    <div class="text-muted">@lang('admin/_globals.forms.limit_characters',['limit' => 170])</div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">@lang('admin/_globals.forms.keywords'):</label>
-                                <div class="col-sm-10">
-                                    <textarea name="seo_keywords" class="form-control">{{ old('seo_keywords') }}</textarea>
-                                </div>
-                            </div>
-                        </fieldset>
+                        <div class="form-group">
+                            <label>@lang('admin/_globals.forms.title'):</label>
+                            <input type="text" maxlength="70" name="seo_title" class="form-control" value="{{ old('seo_title') }}">
+                            <div class="text-muted">@lang('admin/_globals.forms.limit_characters',['limit' => 70])</div>
+                        </div>
+                        <div class="form-group">
+                            <label>@lang('admin/_globals.forms.description'):</label>
+                            <textarea maxlength="170" name="seo_description" class="form-control">{{ old('seo_description') }}</textarea>
+                            <div class="text-muted">@lang('admin/_globals.forms.limit_characters',['limit' => 170])</div>
+                        </div>
+                        <div class="form-group">
+                            <label>@lang('admin/_globals.forms.keywords'):</label>
+                            <textarea name="seo_keywords" class="form-control">{{ old('seo_keywords') }}</textarea>
+                        </div>
                     </div>
                 </div>
                 
@@ -136,8 +117,6 @@
 	</div>
 
 @endsection
-
-
 
 @section('javascript')
 

@@ -55,9 +55,9 @@
         </form>
         {!! $posts->render() !!}
     @else
-        <div class="widget p-lg text-center">
+        <div class="text-center">
             <i class="fa fa-exclamation-triangle fa-2x"></i>
-            <h4 class="no-margins">@lang('admin/blog.posts.index.is_empty')</h4>
+            <p>@lang('admin/blog.posts.index.is_empty')</p>
         </div>
     @endif
 

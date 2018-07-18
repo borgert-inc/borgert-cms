@@ -15,6 +15,7 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
   color: #273643;
+  outline: none;
 }
 
 a:hover {
@@ -65,25 +66,9 @@ header .navbar-user .img-circle {
 /* Sidebar */
 .sidebar {
   background: #ced6e0;
-  background: #E7E7E8;
+  padding: 0;
   padding-top: 80px;
   font-size: 14px;
-}
-
-.sidebar a {
-  text-decoration: none;
-}
-
-.sidebar a:hover {
-  font-weight: bold;
-}
-
-.sidebar .second-level {
-  padding-left: 20px;
-}
-
-.sidebar li {
-  list-style: none;
 }
 
 /* Menu */
@@ -93,9 +78,35 @@ header .navbar-user .img-circle {
   padding-left: 0;
 }
 
+.metismenu li {
+  list-style: none;
+}
+
 .metismenu > li > a {
   display: block;
-  padding: 4px 0;
+  padding: 6px 10px;
+  text-decoration: none;
+  border-top: 1px rgba(255, 255, 255, 0.7) solid;
+  border-bottom: 1px rgba(0, 0, 0, 0.05) solid;
+}
+
+.metismenu > li > a:hover {
+  background: #b0b7be;
+  color: #273643;
+}
+
+.metismenu .second-level {
+  padding-left: 20px;
+  font-size: 12px;
+}
+
+.metismenu .second-level li a {
+  padding: 4px 10px;
+  display: block;
+}
+
+.metismenu .second-level li a:hover {
+  text-decoration: none;
 }
 
 /* Table */
@@ -127,18 +138,8 @@ main.block-content {
   font-size: 16px;
 }
 
-/* Auth */
-.auth {
-  max-width: 300px;
-  margin: auto;
-  font-size: 13px;
-}
-
 /* Footer */
 footer.footer {
   font-size: 12px;
-}
-
-footer.footer a {
-  color: #666;
+  padding: 10px;
 }

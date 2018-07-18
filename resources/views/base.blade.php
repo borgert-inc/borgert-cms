@@ -52,7 +52,7 @@
     <body>
         <div class="container">
             <div class="content">
-                <img src="{{ asset('assets/admin/img/borgert-logo.png') }}" width="250">
+                <img src="{{ asset('assets/admin/img/borgert-logo.png') }}" width="200">
                 <h4><strong>{{ config('borgert.name') }}</strong> | Framework {{ config('borgert.laravel') }}</h4>
                 <a href="{{ route('admin.index') }}" class="btn">Enter</a>
                 <a href="{{ route('blog.index') }}" class="btn">Blog</a>

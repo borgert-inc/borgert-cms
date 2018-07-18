@@ -42,6 +42,7 @@
     </head>
     <body>
 
+    <!-- Header -->
     <header class="navbar navbar-expand fixed-top flex-column flex-md-row">
         <a class="navbar-brand" href="{{ route('admin.index') }}">
             <img src="{{ asset('assets/admin/img/borgert-navbar.png') }}">
@@ -57,10 +58,12 @@
         <div class="row full-height">
             <div class="col-12 col-md-3 col-xl-2 full-height sidebar">
 
+                <!-- Menu -->
                 @include('admin._inc.menu')
 
                 <hr>
 
+                <!-- Footer -->
                 <footer class="footer">
                     <div><strong>{{ config('borgert.name') }}</strong> - {{ date('Y') }}</div>
                     <div><a href="{{ config('borgert.opensource') }}" target="_blank">Open Source <i class="fa fa-github-alt"></i></a> - <strong>{{ config('borgert.version') }}</strong></div>
@@ -68,8 +71,13 @@
 
             </div>
 
+            <!-- Main -->
             <main class="col-12 col-md-9 col-xl-10 py-md-3 pl-md-5 block-content">
+
+                <!-- Alerts -->
                 @include('admin._inc.alerts')
+
+                <!-- Content -->
                 @yield('content')
             </main>
         </div>

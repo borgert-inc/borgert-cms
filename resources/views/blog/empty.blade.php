@@ -4,7 +4,7 @@
 
 @section('blog')
     
-	<section id="post" class="post">
+	<section class="post">
 
 		<div class="text-center">
 			<br>

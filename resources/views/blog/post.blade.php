@@ -11,7 +11,7 @@
 
 	@if($post)
 
-		<article id="post" class="post">
+		<article class="post">
 
 			<h1>{{ $post->title }}</h1>
 			<h3>{{ $post->summary }}</h3>

@@ -26,7 +26,7 @@
 
 
         @section('javascrippt')
-            <!-- Mainly scripts -->
+            <!-- jQuery -->
             <script type="text/javascript" src="{!! asset('assets/components/jquery/dist/jquery.min.js') !!}"></script>
 
             <!-- Bootstrap -->

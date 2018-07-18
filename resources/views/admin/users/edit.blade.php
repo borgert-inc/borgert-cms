@@ -37,8 +37,7 @@
                             </div>
                             <div class="form-group">
                                 <label>@lang('admin/_globals.forms.status'):</label>
-                                    <input type="checkbox" name="status" class="js-switch" value="1" {{ $user->status === 1 ? 'checked' : '' }} />
-                                </div>
+                                <input type="checkbox" name="status" class="js-switch" value="1" {{ $user->status === 1 ? 'checked' : '' }} />
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> @lang('admin/_globals.buttons.save')</button>

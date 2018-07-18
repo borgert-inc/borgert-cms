@@ -7,35 +7,48 @@
 
         <title>{{ config('borgert.name') }}</title>
 
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400" rel="stylesheet"> 
+
+        <!-- Bootstrap -->
         <link href="{!! asset('assets/components/bootstrap/dist/css/bootstrap.min.css') !!}" rel="stylesheet">
+
+        <!-- Font Awesome Icons -->
         <link href="{!! asset('assets/components/font-awesome/css/font-awesome.min.css') !!}" rel="stylesheet">
         
-        <link href="{!! asset('assets/components/animate.css/animate.min.css') !!}" rel="stylesheet">
-        <link href="{!! asset('assets/admin/css/app.css') !!}" rel="stylesheet">
+        <!-- Style Admin -->
+        <link href="{!! asset('assets/admin/css/style.css') !!}" rel="stylesheet">
 
+        <!-- Favicon -->
         <link href="{!! asset('assets/admin/favicon.ico') !!}" rel="icon" type="image/x-icon" />
 
     </head>
-    <body class="gray-bg">
+    <body>
 
-        <br>
-        <br>
+        <div class="auth">
 
-        <div class="text-center">
-            <img src="{{ asset('assets/admin/img/borgert-logo.png') }}" width="250px">
+            <br>
+            <br>
+
+            <div class="text-center">
+                <img src="{{ asset('assets/admin/img/borgert-logo.png') }}" width="250px">
+            </div>
+
+            <br>
+
+            @yield('content')
+
+            <hr>
+            
+            <p class="text-center"> <small>{{ config('borgert.name') }} {{ date('Y') }}</small> </p>
+
         </div>
 
-        <br>
+        <!-- jQuery -->
+        <script type="text/javascript" src="{!! asset('assets/components/jquery/dist/jquery.min.js') !!}"></script>
 
-        @yield('content')
-
-        <hr>
-        
-        <p class="m-t text-center"> <small>{{ config('borgert.name') }} {{ date('Y') }}</small> </p>
-
-        <!-- Mainly scripts -->
-        <script src="{!! asset('assets/components/jquery/dist/jquery.min.js') !!}"></script>
-        <script src="{!! asset('assets/components/bootstrap/dist/js/bootstrap.min.js') !!}"></script>
+        <!-- Bootstrap -->
+        <script type="text/javascript" src="{!! asset('assets/components/bootstrap/dist/js/bootstrap.min.js') !!}"></script>
 
     </body>
 </html>

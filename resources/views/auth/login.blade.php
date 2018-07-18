@@ -2,15 +2,15 @@
 
 @section('content')
 
-    <div class="middle-box text-center loginscreen animated fadeInDown">
+    <div class="login text-center">
             
-        <h3>@lang('auth.login.welcome')</h3>
+        <h5>@lang('auth.login.welcome')</h5>
 
         <div class="text-left">
             @include('admin._inc.alerts')
         </div>
         
-        <form class="m-t" role="form" method="POST" action="{{ route('auth.login') }}">
+        <form method="POST" action="{{ route('auth.login') }}">
 
             {!! csrf_field() !!}
 
@@ -32,7 +32,7 @@
                 @endif
             </div>
             
-            <button type="submit" class="btn btn-primary block full-width m-b">@lang('auth.login.form.button')</button>
+            <button type="submit" class="btn btn-primary btn-block">@lang('auth.login.form.button')</button>
 
             <a href="{{ route('auth.password.forgot') }}"><small>@lang('auth.login.forgot')</small></a>
         </form>

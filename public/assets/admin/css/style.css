@@ -57,6 +57,7 @@ header .navbar-user .img-circle {
     border-radius: 100%;
 }
 
+
 /* Sidebar */
 .sidebar {
     background: #ced6e0;
@@ -77,6 +78,19 @@ header .navbar-user .img-circle {
     list-style: none;
 }
 
+
+/* Menu */
+.metismenu {
+    color: #273643;
+    list-style: none;
+    padding-left: 0;
+}
+.metismenu > li > a {
+    display: block;
+    padding: 4px 0;
+}
+
+
 /* Table */
 .table, .table .badge {
     font-size: 12px;
@@ -92,6 +106,7 @@ main.block-content {
 }
 
 
+/* Titles */
 .page-heading {
     display: block;
     padding-bottom: 20px;
@@ -104,6 +119,13 @@ main.block-content {
 }
 
 
+/* Auth */
+.auth {
+    max-width: 300px;
+    margin: auto;
+    font-size: 13px;
+}
+
 
 /* Footer */
 footer.footer {
@@ -113,53 +135,3 @@ footer.footer a {
     color: #666;
 }
 
-
-.metismenu {
-    color: #273643;
-    list-style: none;
-    padding-left: 0;
-}
-.metismenu > li > a {
-    display: block;
-    padding: 4px 0;
-}
-
-
-
-.ibox:after,
-.ibox:before {
-    display: table;
-}
-.ibox-title {
-    -moz-border-bottom-colors: none;
-    -moz-border-left-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-top-colors: none;
-    background-color: #ffffff;
-    border-color: #e7eaec;
-    -o-border-image: none;
-    border-image: none;
-    border-style: solid solid none;
-    border-width: 3px 0 0;
-    color: inherit;
-    margin-bottom: 0;
-    padding: 14px 15px 7px;
-    min-height: 48px;
-}
-.ibox-content {
-    background-color: #ffffff;
-    color: inherit;
-    padding: 15px 20px 20px 20px;
-    border-color: #e7eaec;
-    -o-border-image: none;
-    border-image: none;
-    border-style: solid solid none;
-    border-width: 1px 0;
-}
-.ibox-footer {
-    color: inherit;
-    border-top: 1px solid #e7eaec;
-    font-size: 90%;
-    background: #ffffff;
-    padding: 10px 15px;
-}

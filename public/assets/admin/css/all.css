@@ -124,6 +124,12 @@ header .navbar-user .img-circle {
   margin-bottom: 10px;
 }
 
+.nav.nav-tabs .active {
+  margin-bottom: -2px;
+  background: #F3F3F4;
+  border-top: 2px #273643 solid;
+}
+
 /* Table */
 .table, .table .badge {
   font-size: 12px;

@@ -2,7 +2,7 @@
 $font-family: 'Roboto Condensed', sans-serif;
 $color-primary: #273643;
 $color-danger: #F9230E;
-
+$color-warning: #F9D600;
 
 /* Global */
 
@@ -116,6 +116,11 @@ header .navbar-user .img-circle {
 /* Nav tags */
 .nav.nav-tabs {
     margin-bottom: 10px;
+}
+.nav.nav-tabs .active {
+    margin-bottom: -2px;
+    background: #F3F3F4;
+    border-top: 2px $color-primary solid;
 }
 
 /* Table */

@@ -18,7 +18,7 @@ $(document).ready(function () {
 
     // Switchery
     if (document.querySelector('.js-switch') != null) {
-        new Switchery(document.querySelector('.js-switch'), {color: '#2281C3'});
+        new Switchery(document.querySelector('.js-switch'), {color: '#F9D600'});
     }
 
     // --------------------------------------------------------------------------------------
@@ -28,10 +28,10 @@ $(document).ready(function () {
      */
 
     // Tooltips
-    $('[data-toggle="tooltip"]').tooltip();
+    // $('[data-toggle="tooltip"]').tooltip();
 
     // Popover
-    $('[data-toggle="popover"]').popover();
+    // $('[data-toggle="popover"]').popover();
 
     // --------------------------------------------------------------------------------------
 

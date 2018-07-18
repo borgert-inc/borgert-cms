@@ -6,6 +6,7 @@ html, body {
 body {
   background: #F3F3F4;
   color: #273643;
+  font-size: 12px;
 }
 
 /* Custom */
@@ -31,6 +32,10 @@ a:hover {
 }
 
 /* Buttons */
+.btn {
+  font-size: 12px;
+}
+
 .btn-primary, .btn-primary:hover {
   background: #273643;
   border-color: #273643;
@@ -76,6 +81,7 @@ header .navbar-user .img-circle {
   color: #273643;
   list-style: none;
   padding-left: 0;
+  font-size: 12px;
 }
 
 .metismenu li {
@@ -86,8 +92,8 @@ header .navbar-user .img-circle {
   display: block;
   padding: 6px 10px;
   text-decoration: none;
-  border-top: 1px rgba(255, 255, 255, 0.7) solid;
-  border-bottom: 1px rgba(0, 0, 0, 0.05) solid;
+  border-top: 1px rgba(255, 255, 255, 0.5) solid;
+  border-bottom: 1px rgba(0, 0, 0, 0.1) solid;
 }
 
 .metismenu > li > a:hover {
@@ -97,7 +103,6 @@ header .navbar-user .img-circle {
 
 .metismenu .second-level {
   padding-left: 20px;
-  font-size: 12px;
 }
 
 .metismenu .second-level li a {
@@ -107,6 +112,16 @@ header .navbar-user .img-circle {
 
 .metismenu .second-level li a:hover {
   text-decoration: none;
+}
+
+/* Alerts */
+.alert {
+  font-size: 12px;
+}
+
+/* Nav tags */
+.nav.nav-tabs {
+  margin-bottom: 10px;
 }
 
 /* Table */
@@ -122,6 +137,15 @@ header .navbar-user .img-circle {
 /* Content */
 main.block-content {
   padding-top: 100px !important;
+}
+
+/* List group */
+.list-group-small {
+  font-size: 13px;
+}
+
+.list-group-small .list-group-item {
+  padding: 10px 15px;
 }
 
 /* Titles */

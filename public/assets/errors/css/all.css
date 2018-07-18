@@ -1,0 +1,25 @@
+/* Global */
+body {
+  background: #F3F3F4;
+  color: #273643;
+}
+
+/* Custom */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+a {
+  color: #273643;
+  outline: none;
+}
+
+a:hover {
+  color: #000;
+}
+
+/* Buttons */
+.btn-primary, .btn-primary:hover {
+  background: #273643;
+  border-color: #273643;
+}

@@ -19,7 +19,7 @@
             <link href="{!! asset('assets/components/font-awesome/css/font-awesome.min.css') !!}" rel="stylesheet">
 
             <!-- Summernote -->
-            <link href="{!! asset('assets/components/summernote/dist/summernote.css') !!}" rel="stylesheet">
+            <link href="{!! asset('assets/components/summernote/dist/summernote-lite.css') !!}" rel="stylesheet">
 
             <!-- Metis Menu -->
             <link href="{!! asset('assets/components/metisMenu/dist/metisMenu.min.css') !!}" rel="stylesheet">
@@ -91,11 +91,11 @@
             <!-- Bootstrap -->
             <script type="text/javascript" src="{!! asset('assets/components/bootstrap/dist/js/bootstrap.min.js') !!}"></script>
 
-            <!-- Bootstrap -->
+            <!-- Metis Menu -->
             <script type="text/javascript" src="{!! asset('assets/components/metisMenu/dist/metisMenu.min.js') !!}"></script>
 
             <!-- Summernote (Editor) -->
-            <script type="text/javascript" src="{!! asset('assets/components/summernote/dist/summernote.min.js') !!}"></script>
+            <script type="text/javascript" src="{!! asset('assets/components/summernote/dist/summernote-lite.js') !!}"></script>
             <script type="text/javascript" src="{!! asset('assets/components/summernote/dist/lang/summernote-pt-BR.min.js') !!}"></script>
 
             <!-- Switchery -->
@@ -103,7 +103,7 @@
 
             <!-- Scripts -->
             <script type="text/javascript" src="{!! asset('assets/admin/js/all.js') !!}"></script>
-            
+
         @show
 
     </body>

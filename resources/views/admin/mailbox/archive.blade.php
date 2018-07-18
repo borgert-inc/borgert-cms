@@ -6,7 +6,7 @@
     
     <div class="mail-box-header">
 
-        <h3>@lang('admin/mailbox.archive.title') ({{ $mailbox->total() }})</h3>
+        <h4>@lang('admin/mailbox.archive.title') ({{ $mailbox->total() }})</h4>
         
         @include('admin/mailbox/_inc/empty',['icone'=>'archive'])
 

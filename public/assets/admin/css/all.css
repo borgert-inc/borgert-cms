@@ -120,9 +120,19 @@ main.block-content {
   font-size: 12px;
 }
 
+.alert ul {
+  margin-bottom: 0;
+  padding-left: 20px;
+}
+
 /* Forms */
 form label {
   margin-bottom: 0;
+}
+
+form input, form select, form textarea, form .form-control {
+  font-size: 12px;
+  box-shadow: none !important;
 }
 
 /* Nav tags */

@@ -31,7 +31,7 @@
             <br>
 
             <div class="text-center">
-                <img src="{{ asset('assets/admin/img/borgert-logo.png') }}" width="250px">
+                <!-- <img src="{{ asset('assets/admin/img/borgert-logo.png') }}" width="250px"> -->
             </div>
 
             <br>

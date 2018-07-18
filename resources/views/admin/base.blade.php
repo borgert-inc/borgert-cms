@@ -45,7 +45,7 @@
     <!-- Header -->
     <header class="navbar navbar-expand fixed-top flex-column flex-md-row">
         <a class="navbar-brand" href="{{ route('admin.index') }}">
-            <img src="{{ asset('assets/admin/img/borgert-navbar.png') }}">
+            <!-- <img src="{{ asset('assets/abower dmin/img/borgert-navbar.png') }}"> -->
         </a>
         <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex navbar-user">
             <li>@lang('admin/_globals.hello') <strong><a href="{{ route('admin.profile.profile') }}">{{ Auth::user()->name }}</a></strong></li>

@@ -1,5 +1,5 @@
 <div class="row fileupload-buttonbar">
-    <div class="col-lg-12">
+    <div class="col-lg-12 col-sm-12 col-md-12">
         <!-- The fileinput-button span is used to style the file input field as button -->
         <span class="btn btn-success fileinput-button">
             <i class="fa fa-plus"></i>
@@ -15,7 +15,7 @@
         @endif
     </div>
     <!-- The global progress state -->
-    <div class="col-lg-12 fileupload-progress fade">
+    <div class="col-lg-12 col-sm-12 col-md-12 fileupload-progress fade">
         <!-- The global progress bar -->
         <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
             <div class="progress-bar progress-bar-success" style="width:0%;"></div>

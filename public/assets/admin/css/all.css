@@ -4,7 +4,7 @@ html, body {
 }
 
 body {
-  background: #F3F3F4;
+  background: #ced6e0;
   color: #273643;
   font-size: 12px;
 }
@@ -66,21 +66,15 @@ header .navbar-user, header .navbar-user a {
 
 /* Sidebar */
 .sidebar {
-  background: #ced6e0;
   padding: 0;
   padding-top: 70px;
   font-size: 14px;
 }
 
-.sidebar .scrollbar {
-  width: 100%;
-}
-
 /* Content */
 main.block-content {
   padding-top: 80px !important;
-  height: 100%;
-  overflow-y: scroll;
+  background: #F3F3F4;
 }
 
 /* Menu */

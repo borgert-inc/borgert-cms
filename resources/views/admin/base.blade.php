@@ -61,20 +61,16 @@
         <div class="row full-height">
             <div class="col-12 col-md-3 col-xl-2 full-height sidebar">
 
-                <div class="scrollbar">
+                <!-- Menu -->
+                @include('admin._inc.menu')
 
-                    <!-- Menu -->
-                    @include('admin._inc.menu')
-
-                    <!-- Footer -->
-                    <footer class="footer">
-                        <div>
-                            <strong>{{ config('borgert.name') }}</strong> - {{ date('Y') }} <br>
-                            <a href="{{ config('borgert.opensource') }}" target="_blank"><i class="fa fa-github-alt"></i> OpenSource v. <strong>{{ config('borgert.version') }}</strong></a>
-                        </div>
-                    </footer>
-
-                </div>
+                <!-- Footer -->
+                <footer class="footer">
+                    <div>
+                        <strong>{{ config('borgert.name') }}</strong> - {{ date('Y') }} <br>
+                        <a href="{{ config('borgert.opensource') }}" target="_blank"><i class="fa fa-github-alt"></i> OpenSource v. <strong>{{ config('borgert.version') }}</strong></a>
+                    </div>
+                </footer>
 
             </div>
 

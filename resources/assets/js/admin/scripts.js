@@ -21,12 +21,6 @@ $(document).ready(function () {
         new Switchery(document.querySelector('.js-switch'), {color: '#F9D600'});
     }
 
-    // Slim scroll
-    $('body .scrollbar').slimScroll({
-        height: '100%',
-        railOpacity: 0.9
-    });
-
     // Datetimepicker
     $('.datetimepicker').datetimepicker({
         step: 10

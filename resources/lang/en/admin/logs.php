@@ -19,6 +19,7 @@ return [
 
     'file' => [
         'download' => 'Download file',
+        'download_all' => 'Download all file',
         'delete' => 'Delete file',
         'delete_all' => 'Delete all',
         'confirm' => 'Are you sure?',

@@ -72,11 +72,9 @@ header .navbar-user, header .navbar-user a {
 }
 
 /* Content */
-main.block-content {
+.main-content {
     padding-top: 80px !important;
     background: #F3F3F4;
-    // height: 100%;
-    // overflow-y: scroll;
 }
 
 
@@ -153,7 +151,6 @@ form input, form select, form textarea, form .form-control {
 }
 
 
-
 /* List group */
 .list-group-small {
     font-size: 13px;
@@ -169,9 +166,11 @@ form input, form select, form textarea, form .form-control {
 }
 .page-heading h2 {
     font-size: 24px;
+    font-weight: 400;
 }
 .page-heading h2 small {
     font-size: 16px;
+    font-weight: 300;
 }
 
 

@@ -72,7 +72,7 @@ header .navbar-user, header .navbar-user a {
 }
 
 /* Content */
-main.block-content {
+.main-content {
   padding-top: 80px !important;
   background: #F3F3F4;
 }
@@ -173,10 +173,12 @@ form input, form select, form textarea, form .form-control {
 
 .page-heading h2 {
   font-size: 24px;
+  font-weight: 400;
 }
 
 .page-heading h2 small {
   font-size: 16px;
+  font-weight: 300;
 }
 
 /* Footer */

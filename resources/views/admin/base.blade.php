@@ -59,7 +59,7 @@
 
     <div class="container-fluid full-height">
         <div class="row full-height">
-            <div class="col-12 col-md-3 col-xl-2 full-height sidebar">
+            <div class="col-12 col-sm-3 col-lg-3 col-md-3 col-xl-2 full-height sidebar">
 
                 <!-- Menu -->
                 @include('admin._inc.menu')
@@ -75,7 +75,7 @@
             </div>
 
             <!-- Main -->
-            <main class="col-12 col-md-9 col-xl-10 py-md-3 pl-md-5 block-content">
+            <main class="col-12 col-sm-9 col-lg-9 col-md-9 col-xl-10 main-content">
 
                 <!-- Alerts -->
                 @include('admin._inc.alerts')
@@ -96,9 +96,6 @@
 
             <!-- Metis Menu -->
             <script type="text/javascript" src="{!! asset('assets/components/metisMenu/dist/metisMenu.min.js') !!}"></script>
-
-            <!-- Slim Scroll -->
-            <script type="text/javascript" src="{!! asset('assets/components/jquery-slimscroll/jquery.slimscroll.min.js') !!}"></script>
 
             <!-- Summernote (Editor) -->
             <script type="text/javascript" src="{!! asset('assets/components/summernote/dist/summernote-lite.js') !!}"></script>

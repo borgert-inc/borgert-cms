@@ -17,7 +17,7 @@
         <link href="{!! asset('assets/components/font-awesome/css/font-awesome.min.css') !!}" rel="stylesheet">
         
         <!-- Style Admin -->
-        <link href="{!! asset('assets/admin/css/style.css') !!}" rel="stylesheet">
+        <link href="{!! asset('assets/auth/css/styles.css') !!}" rel="stylesheet">
 
         <!-- Favicon -->
         <link href="{!! asset('assets/admin/favicon.ico') !!}" rel="icon" type="image/x-icon" />
@@ -49,6 +49,9 @@
 
         <!-- Bootstrap -->
         <script type="text/javascript" src="{!! asset('assets/components/bootstrap/dist/js/bootstrap.min.js') !!}"></script>
+
+        <!-- Scripts -->
+        <script type="text/javascript" src="{!! asset('assets/auth/js/scripts.js') !!}"></script>
 
     </body>
 </html>

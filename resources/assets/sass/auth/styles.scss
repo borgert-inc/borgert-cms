@@ -1,0 +1,143 @@
+
+$font-family: 'Roboto Condensed', sans-serif;
+$color-primary: #273643;
+$color-danger: #F9230E;
+
+
+
+
+/* Global */
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: #F3F3F4;
+    color: $color-primary;
+}
+
+
+/* Custom */
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-family;
+}
+a {
+    color: $color-primary;
+}
+a:hover {
+    color: #000;
+}
+.pull-right {
+    float: right;
+}
+.full-height {
+    height: 100%;
+}
+
+/* Buttons */
+.btn-primary, .btn-primary:hover {
+    background: $color-primary;
+    border-color: $color-primary;
+}
+.btn-danger, .btn-danger:hover {
+    background: $color-danger;
+    border-color: $color-danger;
+}
+
+/* Header */
+header.navbar {
+    background: $color-primary;
+}
+header .navbar-user {
+    line-height: 32px;
+}
+header .navbar-user li {
+    padding: 0 4px;
+}
+header .navbar-user, header .navbar-user a {
+    color: rgb(201, 201, 201);
+    font-size: 12px;
+}
+header .navbar-user .img-circle {
+    border-radius: 100%;
+}
+
+
+/* Sidebar */
+.sidebar {
+    background: #ced6e0;
+    background: #E7E7E8;
+    padding-top: 80px;
+    font-size: 14px;
+}
+.sidebar a {
+    text-decoration: none;
+}
+.sidebar a:hover {
+    font-weight: bold;
+}
+.sidebar .second-level  {
+    padding-left: 20px;
+}
+.sidebar li {
+    list-style: none;
+}
+
+
+/* Menu */
+.metismenu {
+    color: $color-primary;
+    list-style: none;
+    padding-left: 0;
+}
+.metismenu > li > a {
+    display: block;
+    padding: 4px 0;
+}
+
+
+/* Table */
+.table, .table .badge {
+    font-size: 12px;
+    font-weight: normal;
+}
+.table tbody tr td {
+    vertical-align: middle;
+}
+
+/* Content */
+main.block-content {
+    padding-top: 100px !important;
+}
+
+
+/* Titles */
+.page-heading {
+    display: block;
+    padding-bottom: 20px;
+}
+.page-heading h2 {
+    font-size: 24px;
+}
+.page-heading h2 small {
+    font-size: 16px;
+}
+
+
+/* Auth */
+.auth {
+    max-width: 300px;
+    margin: auto;
+    font-size: 13px;
+}
+
+
+/* Footer */
+footer.footer {
+    font-size: 12px;
+}
+footer.footer a {
+    color: #666;
+}
+

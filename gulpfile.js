@@ -1,7 +1,5 @@
 const elixir = require('laravel-elixir');
 
-require('laravel-elixir-vue-2');
-
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management
@@ -18,22 +16,20 @@ elixir.config.sourcemaps = false;
 
 elixir(function(mix) {
 
-	/**
-	* Compile CSS with LESS, SASS or STYLUS
-	*/
+    // Auth
+    mix.sass('auth/styles.scss','public/assets/auth/css');
+    mix.scripts('auth/scripts.js', 'public/assets/auth/js');
 
-    mix.less('admin/app.less','public/assets/admin/css');
-    // mix.stylus('admin/app.styl','public/assets/admin/css');
-    // mix.sass('admin/app.sass','public/assets/admin/css');
+    // Admin
+    mix.sass('admin/styles.scss','public/assets/admin/css');
+    mix.scripts('admin/scripts.js', 'public/assets/admin/js');
 
+    // Blog
+    mix.sass('blog/styles.scss','public/assets/blog/css');
+    mix.scripts('blog/scripts.js', 'public/assets/blog/js');
 
-    /**
-	* Compile Javascript with Webpack, rollup or scripts
-	*/
-
-    mix.webpack('app.js', 'public/assets/admin/js'); // for vue
-    // mix.rollup('app.js', 'public/assets/admin/js');
-    // mix.scripts('app.js', 'public/assets/admin/js');
-    // mix.scriptsIn('public/js/some/directory'); // for directory
+    // Site
+    mix.sass('site/styles.scss','public/assets/site/css');
+    mix.scripts('site/scripts.js', 'public/assets/site/js');
 
 });

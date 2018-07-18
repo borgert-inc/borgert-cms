@@ -171,7 +171,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'], fu
 Route::get('/{page}', ['as' => 'pages', function ($page) {
     $page = Contents::where('slug', $page)->first();
     if (isset($page)) {
-        return view('pages.template', ['page' => $page]);
+        return view('site.pages.template', ['page' => $page]);
     }
 
     App::abort(404);

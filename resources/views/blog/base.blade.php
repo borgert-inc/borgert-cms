@@ -31,6 +31,9 @@
 
             <!-- Bootstrap -->
             <script type="text/javascript" src="{!! asset('assets/components/bootstrap/dist/js/bootstrap.min.js') !!}"></script>
+
+            <!-- Scripts -->
+            <script type="text/javascript" src="{!! asset('assets/blog/js/scripts.js') !!}"></script>
         @show
 
     </body>

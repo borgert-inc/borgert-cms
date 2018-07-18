@@ -32,7 +32,7 @@
             <link href="{!! asset('assets/components/switchery/dist/switchery.min.css') !!}" rel="stylesheet" />
 
             <!-- Style Admin -->
-            <link href="{!! asset('assets/admin/css/styles.css') !!}" rel="stylesheet">
+            <link href="{!! asset('assets/admin/css/all.css') !!}" rel="stylesheet">
 
             <!-- Favicon -->
             <link href="{!! asset('assets/admin/favicon.ico') !!}" rel="icon" type="image/x-icon" />
@@ -102,7 +102,7 @@
             <script type="text/javascript" src="{!! asset('assets/components/switchery/dist/switchery.min.js') !!}"></script>
 
             <!-- Scripts -->
-            <script type="text/javascript" src="{!! asset('assets/admin/js/scripts.js') !!}"></script>
+            <script type="text/javascript" src="{!! asset('assets/admin/js/all.js') !!}"></script>
             
         @show
 

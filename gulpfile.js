@@ -17,19 +17,19 @@ elixir.config.sourcemaps = false;
 elixir(function(mix) {
 
     // Auth
-    mix.sass('auth/styles.scss','public/assets/auth/css');
-    mix.scripts('auth/scripts.js', 'public/assets/auth/js');
+    mix.sass(['auth/styles.scss'],'public/assets/auth/css/all.css');
+    mix.scripts(['auth/scripts.js'], 'public/assets/auth/js/all.js');
 
     // Admin
-    mix.sass('admin/styles.scss','public/assets/admin/css');
-    mix.scripts('admin/scripts.js', 'public/assets/admin/js');
+    mix.sass(['admin/styles.scss'],'public/assets/admin/css/all.css');
+    mix.scripts(['admin/scripts.js'], 'public/assets/admin/js/all.js');
 
     // Blog
-    mix.sass('blog/styles.scss','public/assets/blog/css');
-    mix.scripts('blog/scripts.js', 'public/assets/blog/js');
+    mix.sass(['blog/styles.scss'],'public/assets/blog/css/all.css');
+    mix.scripts(['blog/scripts.js'], 'public/assets/blog/js/all.js');
 
     // Site
-    mix.sass('site/styles.scss','public/assets/site/css');
-    mix.scripts('site/scripts.js', 'public/assets/site/js');
+    mix.sass(['site/styles.scss'],'public/assets/site/css/all.css');
+    mix.scripts(['site/scripts.js'], 'public/assets/site/js/all.js');
 
 });

@@ -13,8 +13,8 @@
     <div class="tabs-container">
 
         <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#tab-contentsdados"> @lang('admin/_globals.forms.nav.contents')</a></li>
-            <li><a data-toggle="tab" href="#tab-images"> @lang('admin/_globals.forms.nav.images')</a></li>
+            <li><a class="nav-link active" data-toggle="tab" href="#tab-contentsdados"> @lang('admin/_globals.forms.nav.contents')</a></li>
+            <li><a class="nav-link" data-toggle="tab" href="#tab-images"> @lang('admin/_globals.forms.nav.images')</a></li>
         </ul>
 
         <form action="{{ route('admin.users.store') }}" method="post">

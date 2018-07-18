@@ -23,10 +23,10 @@
     <div class="tabs-container">
         
         <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#tab-contents"> @lang('admin/_globals.forms.nav.contents')</a></li>
-            <li><a data-toggle="tab" href="#tab-images"> @lang('admin/_globals.forms.nav.images')</a></li>
-            <li><a data-toggle="tab" href="#tab-seo"> @lang('admin/_globals.forms.nav.seo')</a></li>
-            <li><a data-toggle="tab" href="#tab-comments"> @lang('admin/_globals.forms.nav.comments') ({{ $post->comments->count() }})</a></li>
+            <li><a class="nav-link active" data-toggle="tab" href="#tab-contents"> @lang('admin/_globals.forms.nav.contents')</a></li>
+            <li><a class="nav-link" data-toggle="tab" href="#tab-images"> @lang('admin/_globals.forms.nav.images')</a></li>
+            <li><a class="nav-link" data-toggle="tab" href="#tab-seo"> @lang('admin/_globals.forms.nav.seo')</a></li>
+            <li><a class="nav-link" data-toggle="tab" href="#tab-comments"> @lang('admin/_globals.forms.nav.comments') ({{ $post->comments->count() }})</a></li>
         </ul>
 
         <form action="{{ route('admin.blog.posts.update', $post->id) }}" class="fileupload" method="post" enctype="multipart/form-data">

@@ -18,14 +18,14 @@
 
 @section('gallerys')
 	
-	@section('subtitle',  trans('admin/gallerys.create.title'))
+    @section('subtitle',  trans('admin/gallerys.create.title'))
 
 	<div class="tabs-container">
 
         <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#tab-contents"> @lang('admin/_globals.forms.nav.contents')</a></li>
-            <li><a data-toggle="tab" href="#tab-images"> @lang('admin/_globals.forms.nav.images')</a></li>
-            <li><a data-toggle="tab" href="#tab-seo"> @lang('admin/_globals.forms.nav.seo')</a></li>
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#tab-contents"> @lang('admin/_globals.forms.nav.contents')</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#tab-images"> @lang('admin/_globals.forms.nav.images')</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#tab-seo"> @lang('admin/_globals.forms.nav.seo')</a></li>
         </ul>
         
         <form action="{{ route('admin.gallerys.store') }}" class="fileupload" method="post" enctype="multipart/form-data">

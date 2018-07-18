@@ -4,7 +4,7 @@
 
 @section('profile')
     
-    <div class="row m-b-lg m-t-lg">
+    <div class="row">
         <div class="col-md-6">
             <div class="profile-info text-center">
                 <img src="{{ Gravatar::src(Auth::user()->email, 120) }}" class="img-circle">

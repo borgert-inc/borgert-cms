@@ -6,43 +6,33 @@
     
     @section('subtitle', trans('admin/blog.comments.aproved.title', ['total' => $comments->total()]))
 
-    <div class="mail-box">
+    @if ($comments->total() > 0)
 
-        <div class="mail-body">
-
-            @if ($comments->total() > 0)
-
-                <div class="feed-activity-list">
-
-                    @foreach($comments as $key => $comment)
-                        <div class="feed-element">
-                            <a href="javascript:;" class="pull-left">
-                                <img src="{{ Gravatar::src($comment->email, 60) }}" class="img-circle">
-                            </a>
-                            <div class="media-body ">
-                                @lang('admin/blog.posts.edit.posted',['name' => $comment->name, 'title' => $comment->post->title])
-                                <br>
-                                <small class="text-muted">{{ $comment->created_at->diffForHumans() }}</small>
-                                <div class="well">
-                                    {{ $comment->description }}
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                    
+        @foreach($comments as $key => $comment)
+            <div>
+                <a href="javascript:;" class="pull-left mr-2">
+                    <img src="{{ Gravatar::src($comment->email, 60) }}" class="rounded-circle">
+                </a>
+                <div>
+                    @lang('admin/blog.posts.edit.posted',['name' => $comment->name, 'title' => $comment->post->title])
+                    <br>
+                    <small class="text-muted">{{ $comment->created_at->diffForHumans() }}</small>
+                    <div>
+                        {{ $comment->description }}
+                    </div>
                 </div>
+            </div>
+            <div class="clearfix"></div>
+            <br>
+        @endforeach
+            
+        {!! $comments->render() !!}
 
-                {!! $comments->render() !!}
-
-            @else
-                <div class="text-center">
-                    <i class="fa fa-exclamation-triangle fa-2x"></i>
-                    <p>@lang('admin/blog.comments.aproved.is_empty')</p>
-                </div>
-            @endif
-
+    @else
+        <div class="text-center">
+            <i class="fa fa-exclamation-triangle fa-2x"></i>
+            <p>@lang('admin/blog.comments.aproved.is_empty')</p>
         </div>
-
-    </div>
+    @endif
 
 @endsection

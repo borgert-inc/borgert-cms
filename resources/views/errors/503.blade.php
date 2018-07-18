@@ -9,35 +9,36 @@
 
     <title>503 | {{ config('borgert.name') }}</title>
 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400" rel="stylesheet"> 
+
+    <!-- Bootstrap -->
     <link href="{!! asset('assets/components/bootstrap/dist/css/bootstrap.min.css') !!}" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
     <link href="{!! asset('assets/components/font-awesome/css/font-awesome.min.css') !!}" rel="stylesheet">
-    
-    <link href="{!! asset('assets/components/animate.css/animate.min.css') !!}" rel="stylesheet">
-    <link href="{!! asset('assets/admin/css/app.css') !!}" rel="stylesheet">
+
+    <!-- Style Error -->
+    <link href="{!! asset('assets/errors/css/all.css') !!}" rel="stylesheet">
 
 </head>
 
-<body class="gray-bg">
+<body>
 
-    <div class="middle-box text-center animated fadeInDown">
+    <div class="container text-center">
         <h1>503</h1>
-        <h3 class="font-bold">@lang('error.503.title')</h3>
-
-        <div class="error-desc">
-            @lang('error.503.description')
-        </div>
+        <h3>@lang('error.503.title')</h3>
+        <div>@lang('error.503.description')</div>
         <br>    
         <a href="{{ route('admin.index') }}" class="btn btn-primary">@lang('error.404.link')</a>
+        <div class="footer">
+            <div class="pull-right"><strong>{{ config('borgert.version') }}</strong>.</div>
+            <div><strong>{{ config('borgert.name') }}</strong> &copy; {{ date('Y') }}</div>
+        </div>
     </div>
 
-    <div class="footer">
-        <div class="pull-right"><strong>{{ config('borgert.version') }}</strong>.</div>
-        <div><strong>{{ config('borgert.name') }}</strong> &copy; {{ date('Y') }}</div>
-    </div>
-
-    <!-- Mainly scripts -->
-    <script src="{!! asset('assets/components/jquery/dist/jquery.min.js') !!}"></script>
-    <script src="{!! asset('assets/components/bootstrap/dist/js/bootstrap.min.js') !!}"></script>
+    <!-- Scripts -->
+    <script type="text/javascript" src="{!! asset('assets/errors/js/all.js') !!}"></script>
 
 </body>
 

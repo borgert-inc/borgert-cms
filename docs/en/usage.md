@@ -56,24 +56,19 @@ Route::group(['prefix' => 'blog', 'as' => 'blog.'], function () {
 
 <a name="assets"></a>
 ## Assets
-* Using the command `gulp watch` in the background will be listening to the files LESS and JS that is in the `resources/assets/[js,less,sass]` and when detected some of them are compiled and saved in the `public/assets/[css,js]/`
+* Using the command `gulp watch` in the background will be listening to the files SASS and JS that is in the `resources/assets/[admin,blog,site,auth]/[js,sass]` and when detected some of them are compiled and saved in the `public/assets/[admin,blog,site,auth]/[css,js]/`
 
 <a name="languages"></a>
 ## Languages
-Two languages currently available for Rocket, Portuguès and English by default by setting will be English.
-The file config / app.php look for locale and fallback_locale and change to `pt_BR`.
+Four languages currently available for Borgert CMS, Portuguese, Spanish, and English, by default we will be setting English.
+In the config/app.php file, look for locale and fallback_locale and change to `pt`.
 
-The files for translations are located in the `resources\lang\[en,pt_BR\admin\**`
+The files for translations are located in the `resources/lang/[en,pt,es,zh_cn]/[admin,blog]/**`
 
 ```php
     'locale' => 'en',
     'fallback_locale' => 'en',
 ```
-
-<a name="phpcsfixer"></a>
-## PhpCsFixer
-* We use the command `php artisan borgert:phpcsfixer`, requires file phpcsfixer.phar
-
 
 #### You want to join?
 - Making a pull request or by creating an [issue] (https://github.com/odirleiborgert/borgert-cms/issues).

@@ -36,7 +36,7 @@
                                     @if ($user->status === 1)
                                         <span class="badge badge-success">@lang('admin/_globals.tables.active')</span>
                                     @elseif ($user->status === 0)
-                                        <span class="badge">@lang('admin/_globals.tables.inactive')</span>
+                                        <span class="badge badge-secondary">@lang('admin/_globals.tables.inactive')</span>
                                     @endif
                                 </td>
                                 <td class="text-right">

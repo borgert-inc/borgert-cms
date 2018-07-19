@@ -4,17 +4,10 @@
 
 @section('mailbox')
     
-    <div class="mail-box-header">
+    <h4>@lang('admin/mailbox.inbox.title') ({{ $mailbox->total() }})</h4>
 
-        <h4>@lang('admin/mailbox.inbox.title') ({{ $mailbox->total() }})</h4>
-
-        @include('admin/mailbox/_inc/empty',['icone'=>'inbox'])
+    @include('admin/mailbox/_inc/empty',['icone'=>'inbox'])
         
-    </div>
-    <div class="mail-box">
-        
-        @include('admin/mailbox/_inc/list')
-
-    </div>
+    @include('admin/mailbox/_inc/list')
 
 @endsection

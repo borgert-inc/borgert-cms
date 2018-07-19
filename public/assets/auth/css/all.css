@@ -30,3 +30,16 @@ a:hover {
   margin: auto;
   font-size: 13px;
 }
+
+/* Buttons */
+.btn {
+  font-size: 13px;
+}
+
+/* Forms */
+form .form-control {
+  font-size: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  box-shadow: none !important;
+}

@@ -14,10 +14,6 @@
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ad3c062e22ba4c25b8017041b619e217)](https://www.codacy.com/app/odirleiborgert/borgert-cms?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=odirleiborgert/borgert-cms&amp;utm_campaign=Badge_Grade) [![StyleCI](https://styleci.io/repos/60208254/shield?branch=master)](https://styleci.io/repos/60208254) 
 
-> Tags / Releases
-
-[![GitHub tag](https://img.shields.io/github/tag/odirleiborgert/borgert-cms.svg)](https://github.com/odirleiborgert/borgert-cms/releases)
-
 > Contributions / Donate
 
 [![GitHub issues](https://img.shields.io/github/issues/odirleiborgert/borgert-cms.svg)](https://github.com/odirleiborgert/borgert-cms/issues) [![Beerpay](https://img.shields.io/beerpay/odirleiborgert/borgert-cms.svg)](https://beerpay.io/odirleiborgert/borgert-cms) [![Donate](https://img.shields.io/badge/Donate-PAYPAL-blue.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=odirleiborgert%40gmail%2ecom&lc=MQ&item_name=Odirlei%20Borgert&currency_code=BRL&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)

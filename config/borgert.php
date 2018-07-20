@@ -9,8 +9,8 @@ return [
     */
 
     'name' => 'Borgert CMS',
-    'laravel' => 'Laravel 5.5',
-    'version' => '1.0.5',
+    'laravel' => 'Laravel 5.6',
+    'version' => '2.0.0',
     'opensource' => 'https://github.com/odirleiborgert/borgert-cms',
 
 ];

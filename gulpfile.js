@@ -1,7 +1,5 @@
 const elixir = require('laravel-elixir');
 
-require('laravel-elixir-vue-2');
-
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management
@@ -18,22 +16,24 @@ elixir.config.sourcemaps = false;
 
 elixir(function(mix) {
 
-	/**
-	* Compile CSS with LESS, SASS or STYLUS
-	*/
+    // Auth
+    mix.sass(['auth/styles.scss'],'public/assets/auth/css/all.css');
+    mix.scripts(['auth/scripts.js'], 'public/assets/auth/js/all.js');
 
-    mix.less('admin/app.less','public/assets/admin/css');
-    // mix.stylus('admin/app.styl','public/assets/admin/css');
-    // mix.sass('admin/app.sass','public/assets/admin/css');
+    // Admin
+    mix.sass(['admin/styles.scss'],'public/assets/admin/css/all.css');
+    mix.scripts(['admin/scripts.js'], 'public/assets/admin/js/all.js');
 
+    // Blog
+    mix.sass(['blog/styles.scss'],'public/assets/blog/css/all.css');
+    mix.scripts(['blog/scripts.js'], 'public/assets/blog/js/all.js');
 
-    /**
-	* Compile Javascript with Webpack, rollup or scripts
-	*/
+    // Site
+    mix.sass(['site/styles.scss'],'public/assets/site/css/all.css');
+    mix.scripts(['site/scripts.js'], 'public/assets/site/js/all.js');
 
-    mix.webpack('app.js', 'public/assets/admin/js'); // for vue
-    // mix.rollup('app.js', 'public/assets/admin/js');
-    // mix.scripts('app.js', 'public/assets/admin/js');
-    // mix.scriptsIn('public/js/some/directory'); // for directory
+    // Errors
+    mix.sass(['errors/styles.scss'],'public/assets/errors/css/all.css');
+    mix.scripts(['errors/scripts.js'], 'public/assets/errors/js/all.js');
 
 });

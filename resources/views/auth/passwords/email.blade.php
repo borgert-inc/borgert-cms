@@ -2,9 +2,9 @@
 
 @section('content')
 
-    <div class="middle-box loginscreen animated fadeInDown">
+    <div class="email">
 
-        <h3>@lang('auth.forget.title')</h3>
+        <h5>@lang('auth.forget.title')</h5>
 
         <div class="text-left">
             @include('admin._inc.alerts')
@@ -16,7 +16,7 @@
             </div>
         @endif
 
-        <form class="m-t" role="form" action="{{ route('auth.password.send') }}" method="POST">
+        <form action="{{ route('auth.password.send') }}" method="POST">
 
             {{ csrf_field() }}
 
@@ -24,7 +24,7 @@
                 <input type="email" name="email" class="form-control" placeholder="@lang('auth.forget.form.email')" required="">
             </div>
 
-            <button type="submit" class="btn btn-primary block full-width m-b">@lang('auth.forget.form.button')</button>
+            <button type="submit" class="btn btn-primary btn-block">@lang('auth.forget.form.button')</button>
 
         </form>
 

@@ -3,11 +3,11 @@
 @section('content')
 
 
-    <div class="middle-box loginscreen animated fadeInDown">
+    <div class="reset">
 
-        <h3>@lang('auth.reset.title')</h3>
+        <h5>@lang('auth.reset.title')</h5>
 
-        <form class="m-t" role="form" method="POST" action="{{ route('auth.password.reset') }}">
+        <form method="POST" action="{{ route('auth.password.reset') }}">
             
             {{ csrf_field() }}
 
@@ -40,7 +40,7 @@
                 @endif
             </div>
 
-            <button type="submit" class="btn btn-primary block full-width"><i class="fa fa-btn fa-refresh"></i> @lang('auth.reset.form.button')</button>
+            <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-btn fa-refresh"></i> @lang('auth.reset.form.button')</button>
 
         </form>
 

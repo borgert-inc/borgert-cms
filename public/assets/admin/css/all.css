@@ -1,0 +1,193 @@
+/* Global */
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #ced6e0;
+  color: #273643;
+  font-size: 12px;
+}
+
+/* Fixed bug jquery file upload */
+.fade.in {
+  opacity: 1;
+}
+
+/* Custom */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+a {
+  color: #273643;
+  outline: none;
+}
+
+a:hover {
+  color: #000;
+}
+
+.pull-right {
+  float: right;
+}
+
+.full-height {
+  height: 100%;
+}
+
+/* Buttons */
+.btn {
+  font-size: 13px;
+}
+
+.btn-primary, .btn-primary:hover {
+  background: #273643;
+  border-color: #273643;
+}
+
+.btn-danger, .btn-danger:hover {
+  background: #F9230E;
+  border-color: #F9230E;
+}
+
+/* Header */
+header.navbar {
+  background: #273643;
+}
+
+header .navbar-user {
+  line-height: 32px;
+}
+
+header .navbar-user li {
+  padding: 0 4px;
+}
+
+header .navbar-user, header .navbar-user a {
+  color: #c9c9c9;
+  font-size: 12px;
+}
+
+/* Sidebar */
+.sidebar {
+  padding: 0;
+  padding-top: 70px;
+  font-size: 14px;
+}
+
+/* Content */
+.main-content {
+  padding-top: 80px !important;
+  background: #F3F3F4;
+}
+
+/* Menu */
+.metismenu {
+  color: #273643;
+  list-style: none;
+  padding-left: 0;
+  font-size: 12px;
+}
+
+.metismenu li {
+  list-style: none;
+}
+
+.metismenu > li > a {
+  display: block;
+  padding: 6px 10px;
+  text-decoration: none;
+  border-top: 1px rgba(255, 255, 255, 0.5) solid;
+  border-bottom: 1px rgba(0, 0, 0, 0.1) solid;
+}
+
+.metismenu > li > a:hover {
+  background: #b0b7be;
+  color: #273643;
+}
+
+.metismenu .second-level {
+  padding-left: 20px;
+}
+
+.metismenu .second-level li a {
+  padding: 4px 10px;
+  display: block;
+}
+
+.metismenu .second-level li a:hover {
+  text-decoration: none;
+}
+
+/* Alerts */
+.alert {
+  font-size: 12px;
+}
+
+.alert ul {
+  margin-bottom: 0;
+  padding-left: 20px;
+}
+
+/* Forms */
+form label {
+  margin-bottom: 0;
+}
+
+form input, form select, form textarea, form .form-control {
+  font-size: 12px;
+  box-shadow: none !important;
+}
+
+/* Nav tags */
+.nav.nav-tabs {
+  margin-bottom: 10px;
+}
+
+.nav.nav-tabs .active {
+  margin-bottom: -2px;
+  background: #F3F3F4;
+  border-top: 2px #273643 solid;
+}
+
+/* Table */
+.table, .table .badge {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.table tbody tr td {
+  vertical-align: middle;
+}
+
+/* List group */
+.list-group-small {
+  font-size: 13px;
+}
+
+.list-group-small .list-group-item {
+  padding: 10px 15px;
+}
+
+/* Titles */
+.page-heading {
+  display: block;
+  padding-bottom: 20px;
+}
+
+.page-heading h2 {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.page-heading h2 small {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+/* Footer */
+footer.footer {
+  font-size: 12px;
+  padding: 10px;
+}

@@ -1,0 +1,58 @@
+
+$font-family: 'Roboto Condensed', sans-serif;
+$color-primary: #273643;
+$color-danger: #F9230E;
+
+
+
+/* Global */
+
+body {
+    background: #F3F3F4;
+    color: $color-primary;
+}
+
+
+/* Custom */
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-family;
+}
+a {
+    color: $color-primary;
+    outline: none;
+}
+a:hover {
+    color: #000;
+}
+
+
+/* Buttons */
+.btn-primary, .btn-primary:hover {
+    background: $color-primary;
+    border-color: $color-primary;
+}
+
+
+/* Auth */
+.auth {
+    max-width: 300px;
+    margin: auto;
+    font-size: 13px;
+}
+
+
+/* Buttons */
+.btn {
+    font-size: 13px;
+}
+
+/* Forms */
+form .form-control {
+    font-size: 12px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+

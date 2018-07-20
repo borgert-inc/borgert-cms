@@ -15,7 +15,7 @@
 	<section>
 
 		@if(isset($term))
-			<div class="term">
+			<div class="term shadow-sm p-3">
 				@lang('blog/frontend.search_term') <strong>{{ $term }}</strong>
 			</div>
 			<br>
@@ -28,18 +28,18 @@
 					<div class="col-sm-4 col-md-4 col-lg-4">
 						<a href="{{ route('blog.post',['id'=>$post->id, 'title'=>str_slug($post->title)]) }}">
 							@if($post->image())
-								<img src="{{ asset($post->image()) }}" class="img-responsive" alt="{{ $post->title }}">
+								<img src="{{ asset($post->image()) }}" class="img-fluid" alt="{{ $post->title }}">
 							@else
-								<img src="{{ asset('assets/blog/img/no-image.jpg') }}" class="img-responsive" alt="{{ $post->title }}">
+								<img src="{{ asset('assets/blog/img/no-image.jpg') }}" class="img-fluid" alt="{{ $post->title }}">
 							@endif
 						</a>
 					</div>
 					<div class="col-sm-8 col-md-8 col-lg-8">
 						<a href="{{ route('blog.post',['id'=>$post->id, 'title'=>str_slug($post->title)]) }}">
-							<h3>{{ $post->title }}</h3>
-							<span class="date">{{ $post->publish_at->format('d/m/Y H:i') }}</span>
-							<p>{{ $post->summary }}</p>
+							<h4>{{ $post->title }}</h4>
 						</a>
+						<span class="text-muted">{{ $post->publish_at->format('d/m/Y H:i') }}</span>
+						<p>{{ $post->summary }}</p>
 					</div>
 				</div>
 				<hr class="divider">

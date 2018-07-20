@@ -19,6 +19,7 @@ return [
 
     'file' => [
         'download' => '下载文件',
+        'download_all' => '下載所有文件',
         'delete' => '删除文件',
         'delete_all' => '删除所有',
         'confirm' => '您确定?',

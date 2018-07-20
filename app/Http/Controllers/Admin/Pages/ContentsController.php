@@ -67,6 +67,8 @@ class ContentsController extends Controller
             'category_id' => 'required|integer',
             'title' => 'required',
             'description' => 'required',
+            'seo_title' => 'required',
+            'seo_description' => 'required',
         ]);
 
         $contentDetails = $request->all();
@@ -108,6 +110,8 @@ class ContentsController extends Controller
             'category_id' => 'required|integer',
             'title' => 'required',
             'description' => 'required',
+            'seo_title' => 'required',
+            'seo_description' => 'required',
         ]);
 
         $content = $this->contents->find($id);

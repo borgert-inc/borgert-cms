@@ -17,6 +17,9 @@
             <!-- Font Awesome Icons -->
             <link href="{!! asset('assets/components/font-awesome/css/font-awesome.min.css') !!}" rel="stylesheet">
 
+            <!-- Styles -->
+            <link href="{!! asset('assets/blog/css/all.css') !!}" rel="stylesheet">
+
         @show
 
     </head>
@@ -24,13 +27,15 @@
 
         @yield('content')
 
-
         @section('javascrippt')
-            <!-- Mainly scripts -->
+            <!-- jQuery -->
             <script type="text/javascript" src="{!! asset('assets/components/jquery/dist/jquery.min.js') !!}"></script>
 
             <!-- Bootstrap -->
             <script type="text/javascript" src="{!! asset('assets/components/bootstrap/dist/js/bootstrap.min.js') !!}"></script>
+
+            <!-- Scripts -->
+            <script type="text/javascript" src="{!! asset('assets/blog/js/all.js') !!}"></script>
         @show
 
     </body>

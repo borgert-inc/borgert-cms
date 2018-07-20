@@ -1,0 +1,45 @@
+/* Global */
+body {
+  background: #F3F3F4;
+  color: #273643;
+}
+
+/* Custom */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+a {
+  color: #273643;
+  outline: none;
+}
+
+a:hover {
+  color: #000;
+}
+
+/* Buttons */
+.btn-primary, .btn-primary:hover {
+  background: #273643;
+  border-color: #273643;
+}
+
+/* Auth */
+.auth {
+  max-width: 300px;
+  margin: auto;
+  font-size: 13px;
+}
+
+/* Buttons */
+.btn {
+  font-size: 13px;
+}
+
+/* Forms */
+form .form-control {
+  font-size: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  box-shadow: none !important;
+}

@@ -7,20 +7,17 @@
 * [laravel/laravel](https://github.com/laravel/laravel) - A PHP Framework For Web Artisans
 * [thomaswelton/laravel-gravatar](https://github.com/thomaswelton/laravel-gravatar) - Image gravatar
 * [kyslik/column-sortable](https://github.com/Kyslik/column-sortable) - Order by column
+* [rap2hpoutre/laravel-log-viewer](https://github.com/rap2hpoutre/laravel-log-viewer) - Log viewer
+* [nicolaslopezj/searchable](https://github.com/nicolaslopezj/searchable) - Search for blog
 
 
 -----
 #### Javascript Libraries
 
-* [Animate.css](http://daneden.github.io/animate.css/) - Animation with CSS
 * [Bootstrap](http://getbootstrap.com) - Framework CSS
-* [Chart.js](http://chartjs.org) - Charts
 * [Font Awesome](http://http://fontawesome.io/) - Best Icones
 * [Jquery](http://jquery.com) - Framework Javascript
-* [Jquery UI](http://jqueryui.com) - User Interface
 * [Metis Menu](https://github.com/onokumus/metisMenu) - Menu toogle
-* [Pace](https://github.com/HubSpot/pace) - Loading pages
-* [Slim Scroll](https://github.com/rochal/jQuery-slimScroll) - Scroll
 * [Summer Note](https://github.com/summernote/summernote) - Editor text
 * [Blueimp - jQuery File Upload](https://github.com/blueimp/jQuery-File-Upload) - Upload files (ajax)
 

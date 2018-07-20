@@ -19,6 +19,7 @@ return [
 
     'file' => [
         'download' => 'Descargar archivo',
+        'download_all' => 'Descargue todo el archivo',
         'delete' => 'Borrar archivo',
         'delete_all' => 'Borrar todos los archivos',
         'confirm' => 'Estás seguro?',

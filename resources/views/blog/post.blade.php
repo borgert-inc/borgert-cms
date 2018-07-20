@@ -11,12 +11,12 @@
 
 	@if($post)
 
-		<article id="post" class="post">
+		<article class="post">
 
 			<h1>{{ $post->title }}</h1>
 			<h3>{{ $post->summary }}</h3>
 
-			<p class="date">{{ $post->publish_at->format('d/m/Y H:i') }}</p>
+			<p class="text-muted">{{ $post->publish_at->format('d/m/Y H:i') }}</p>
 
 			<div class="description">
 				{!! $post->description !!}
@@ -28,8 +28,8 @@
 
 				<!-- Nav tabs -->
 				<ul class="nav nav-tabs" role="tablist">
-					<li role="presentation" class="active"><a href="#comment" aria-controls="comment" role="tab" data-toggle="tab">@lang('blog/frontend.comments_nav_comment')</a></li>
-					<li role="presentation"><a href="#comments" aria-controls="comments" role="tab" data-toggle="tab">@lang('blog/frontend.comments_nav_comments')</a></li>
+					<li><a href="#comment" class="nav-link active" aria-controls="comment" role="tab" data-toggle="tab">@lang('blog/frontend.comments_nav_comment')</a></li>
+					<li><a href="#comments" class="nav-link" aria-controls="comments" role="tab" data-toggle="tab">@lang('blog/frontend.comments_nav_comments')</a></li>
 				</ul>
 
 				<!-- Tab panes -->

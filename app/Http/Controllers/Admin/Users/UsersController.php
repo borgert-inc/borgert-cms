@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin\Users;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use function App\Helpers\issetStatus;
 
 class UsersController extends Controller
 {
@@ -62,7 +61,7 @@ class UsersController extends Controller
 
         $userDetails = $request->all();
         $userDetails['password'] = \Hash::make($request['password']);
-        $userDetails['status'] = issetStatus($request['status']);
+        $userDetails['status'] = isset($request['status']) ? 1 : 0;
         $this->users->create($userDetails);
 
         \Session::flash('success', trans('admin/users.store.messages.success'));
@@ -106,7 +105,7 @@ class UsersController extends Controller
         if ($request['password']) {
             $userDetails['password'] = \Hash::make($request['password']);
         }
-        $userDetails['status'] = issetStatus($request['status']);
+        $userDetails['status'] = isset($request['status']) ? 1 : 0;
         $user->update($userDetails);
 
         \Session::flash('success', trans('admin/users.update.messages.success'));

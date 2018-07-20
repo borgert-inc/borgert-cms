@@ -43,13 +43,13 @@
 <a name="screenshots"></a>
 ## Screenshots
 
-[Imgur](https://i.imgur.com/eYoez0g.png)
+[!Imgur](https://i.imgur.com/eYoez0g.png)
 
-[Imgur](https://i.imgur.com/pZ8NfzQ.png)
+[!Imgur](https://i.imgur.com/pZ8NfzQ.png)
 
-[Imgur](https://i.imgur.com/MimQStg.png)
+[!Imgur](https://i.imgur.com/MimQStg.png)
 
-[Imgur](https://i.imgur.com/VpE9ysJ.png)
+[!Imgur](https://i.imgur.com/VpE9ysJ.png)
 
 
 <a name="contributions"></a>

@@ -52,7 +52,7 @@
 
 > **Want to help?** How about a pull request or create an [issue] (https://github.com/odirleiborgert/borgert-cms/issues) with improvements.
 
-[![GitHub issues](https://img.shields.io/github/issues/odirleiborgert/borgert-cms.svg)](https://github.com/odirleiborgert/borgert-cms/issues) 
+[![GitHub issues](https://img.shields.io/github/issues/borgert-inc/borgert-cms.svg)](https://github.com/borgert-inc/borgert-cms/issues) 
 
 **We recommend cloud Digital Ocean**
 > Earn $10 cloud dollars using our link
